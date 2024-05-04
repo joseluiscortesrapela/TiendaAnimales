@@ -272,14 +272,14 @@ namespace Tienda.Models
 
         }
 
-        // Filtra la busqueda de los jugadores que coincidan por nombre.
-        public static DataTable buscar(string tabla, string texto)
+        // Busca clientes
+        public static DataTable buscarClientes( string texto)
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
             // la abro.
             conexion.Open();
             // Mi consulta 
-            string sql = $"SELECT * FROM {tabla} WHERE nombre LIKE @texto OR apellidos LIKE @texto OR correo LIKE @texto";
+            string sql = $"SELECT * FROM clientes WHERE nombre LIKE @texto OR apellidos LIKE @texto OR correo LIKE @texto";
 
             MySqlCommand comando = new MySqlCommand(sql, conexion);
             comando.Parameters.AddWithValue("@texto", "%" + texto + "%");
@@ -304,13 +304,48 @@ namespace Tienda.Models
             return table;
         }
 
-        public static DataTable getAdministradores()
+        // Busca clientes
+        public static DataTable buscarProductos(string texto)
+        {
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            // la abro.
+            conexion.Open();
+            // Mi consulta 
+            string sql = $"SELECT * FROM productos WHERE nombre LIKE @texto OR categoria LIKE @texto";
+
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@texto", "%" + texto + "%");
+
+            // creo el adaptador
+            MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+
+            // Instancio una tabla vacia. 
+            DataTable table = new DataTable();
+
+            try
+            {
+                adapter.Fill(table); // Relleno la tabla con el resulatado de la consulta.
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return table;
+        }
+
+
+
+
+        public static DataTable getProductos()
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
             // la abro.
             conexion.Open();
             // Consulta sql
-            string sql = "SELECT * FROM administradores";
+            string sql = "SELECT * FROM productos";
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
             DataTable table = new DataTable();

@@ -19,9 +19,11 @@ namespace Tienda.Forms
             // Obtengo el id
             idUsuario = SesionUsuario.Id;
             // Obtengo el tipo o rol
-            tipo = SesionUsuario.Tipo;
+            // tipo = SesionUsuario.Tipo;
+            string tipo = "administrador";
+
             // Muestro el menu principal segun tipo usuario.
-            prepararInterfazUsuario(tipo);
+           prepararInterfazUsuario(tipo);
 
         }
 
@@ -31,19 +33,16 @@ namespace Tienda.Forms
             // Tipo usuario
             switch (tipo)
             {
-                case "administradores":
-                    btnAdministradores.Visible = true;
-                    btnAgentes.Visible = true;
+                case "administrador":
+                    btnInventario.Visible = true;
                     btnClientes.Visible = true;
-                    btnPolizas.Visible = true;
+                    btnVentas.Visible = true;
                     btnInformes.Visible = true;
                     break;
-                case "agentes":
-                    btnMisClientes.Visible = true;
+                case "empleado":
                     btnInformes.Visible = true;
                     break;
-                case "clientes":
-                    btnMisPolizas.Visible = true;
+                case "cliente":
                     break;
             }
 
@@ -64,7 +63,7 @@ namespace Tienda.Forms
         // Muestra las polizas
         private void btnPolizas_Click(object sender, EventArgs e)
         {
-            mostrarUserControl(new UC_CrudPolizas());
+            mostrarUserControl(new UC_CrudVentas());
         }
 
         // Muestro los clietnes
@@ -79,15 +78,10 @@ namespace Tienda.Forms
         private void btnAdministradores_Click(object sender, EventArgs e)
         {          
             // Muestro la ventana 
-            mostrarUserControl(new UC_CrudAdministradores());
+            mostrarUserControl(new UC_CrudInventario());
         }
 
-        // Muestro ventana con los agentes
-        private void btnAgentes_Click(object sender, EventArgs e)
-        {
-            // Muestro la ventana
-            mostrarUserControl(new UC_CrudAgentes());
-        }
+ 
 
         // Regreso al inico o home
         private void pbInicio_Click(object sender, EventArgs e)
@@ -124,7 +118,7 @@ namespace Tienda.Forms
         // Muestra las polizas de un cliente
         private void btnMisPolizas_Click(object sender, EventArgs e)
         {
-            mostrarUserControl(new UC_CrudPolizas(idUsuario));
+            mostrarUserControl(new UC_CrudVentas(idUsuario));
         }
 
         // Muestro ventana clientes

@@ -16,23 +16,8 @@ namespace Tienda.Models
             // la abro.
             conexion.Open();
             // Consulta sql
-            string sql = @"
-                            SELECT 'administradores' AS tipo, nombre, apellidos, idAdministrador AS id 
-                            FROM administradores 
-                            WHERE correo = @correo AND contraseña = @contraseña 
-
-                            UNION ALL 
-
-                            SELECT 'agentes' AS tipo, nombre, apellidos, idAgente AS id 
-                            FROM agentes 
-                            WHERE correo = @correo AND contraseña = @contraseña 
-
-                            UNION ALL 
-
-                            SELECT 'clientes' AS tipo, nombre, apellidos, idCliente AS id
-                            FROM clientes 
-                            WHERE correo = @correo AND contraseña = @contraseña;";
-
+            string sql = @"SELECT * FROM usuarios WHERE correo = @correo AND contraseña = @contraseña ";
+                           
             // Preparo la consulta
             MySqlCommand comando = new MySqlCommand(sql, conexion);
             // Le paso como parametro el correo del usuario
@@ -125,16 +110,16 @@ namespace Tienda.Models
             while (reader.Read())
             {
                 // Obtengo datos usuario 
-                int id = reader.GetInt32("id");
+                int id = reader.GetInt32("idUsuario");
                 string nombre = reader.GetString("nombre");
-                string tipo = reader.GetString("tipo");
+                //string tipo = reader.GetString("tipo");
 
-                Console.WriteLine("id: " + id + " nombre: " + nombre + " tipo: " + tipo);
+                Console.WriteLine("Sesion creada para el usuario id: " + id + " nombre: " + nombre );
 
                 // Creo la sesion con los datos basico del usaurio que se acaba de logear con exito.
                 SesionUsuario.Id = id;
                 SesionUsuario.Nombre = nombre;
-                SesionUsuario.Tipo = tipo;
+               // SesionUsuario.Tipo = tipo;
 
             }
 

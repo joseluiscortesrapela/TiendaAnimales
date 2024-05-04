@@ -156,17 +156,11 @@
     <Compile Include="Sesion\SesionPrograma.cs" />
     <Compile Include="Sesion\SesionUsuario.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="UserControls\UC_CrudAdministradores.cs">
+    <Compile Include="UserControls\UC_CrudInventario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_CrudAdministradores.Designer.cs">
-      <DependentUpon>UC_CrudAdministradores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UC_CrudAgentes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UC_CrudAgentes.Designer.cs">
-      <DependentUpon>UC_CrudAgentes.cs</DependentUpon>
+    <Compile Include="UserControls\UC_CrudInventario.Designer.cs">
+      <DependentUpon>UC_CrudInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UC_CrudClientes.cs">
       <SubType>UserControl</SubType>
@@ -174,11 +168,11 @@
     <Compile Include="UserControls\UC_CrudClientes.Designer.cs">
       <DependentUpon>UC_CrudClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_CrudPolizas.cs">
+    <Compile Include="UserControls\UC_CrudVentas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_CrudPolizas.Designer.cs">
-      <DependentUpon>UC_CrudPolizas.cs</DependentUpon>
+    <Compile Include="UserControls\UC_CrudVentas.Designer.cs">
+      <DependentUpon>UC_CrudVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UC_Informes.cs">
       <SubType>UserControl</SubType>
@@ -206,17 +200,14 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReportInforme.rdlc" />
-    <EmbeddedResource Include="UserControls\UC_CrudAdministradores.resx">
-      <DependentUpon>UC_CrudAdministradores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_CrudAgentes.resx">
-      <DependentUpon>UC_CrudAgentes.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UC_CrudInventario.resx">
+      <DependentUpon>UC_CrudInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_CrudClientes.resx">
       <DependentUpon>UC_CrudClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_CrudPolizas.resx">
-      <DependentUpon>UC_CrudPolizas.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UC_CrudVentas.resx">
+      <DependentUpon>UC_CrudVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Informes.resx">
       <DependentUpon>UC_Informes.cs</DependentUpon>

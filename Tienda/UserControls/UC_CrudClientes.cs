@@ -78,11 +78,11 @@ namespace Tienda.UserControls
                     if (tablaPolizas.Rows.Count >= 1)
                     {
                         // Muestro las polizas del clietne en el dgv
-                        dgvPolizas.DataSource = tablaPolizas;
+                        dgvVentas.DataSource = tablaPolizas;
                         // Cambio color a las filas segun su estado
-                        GestorInterfaz.CambiarColorFilas(dgvPolizas);
+                        GestorInterfaz.CambiarColorFilas(dgvVentas);
                         // Muestro nombre del cliente
-                        lbClienteSelecionado.Text = "El cliente/a " +  nombre + ", " + apellidos + " tiene contratada/s " + dgvPolizas.RowCount + " polizas.";
+                        lbClienteSelecionado.Text = "El cliente/a " +  nombre + ", " + apellidos + " tiene registradas " + dgvVentas.RowCount + " compras.";
                     }
                     else
                     {
@@ -237,12 +237,12 @@ namespace Tienda.UserControls
         // Resetea los valores del dgv
         private void resetearDgvPolizas()
         {   // Elimina todo el contenido 
-            dgvPolizas.DataSource = null;
+            dgvVentas.DataSource = null;
         }
 
         private void limpiarDgvPolizas()
         {
-            dgvPolizas.DataSource = null;
+            dgvVentas.DataSource = null;
             lbClienteSelecionado.Text = "";
         }
 
@@ -270,7 +270,7 @@ namespace Tienda.UserControls
             estado = false;
             pbOn.Visible = true;
             pbOff.Visible = false;
-            dgvPolizas.DataSource = null;
+            dgvVentas.DataSource = null;
             lbMensajeInterruptor.Text = "Deshabilitado";
             lbClienteSelecionado.Text = "";
             Console.WriteLine("off");
@@ -296,7 +296,7 @@ namespace Tienda.UserControls
             // Obtengo lo que ha escrito en el buscador
             string texto = tbBuscar.Text;
             // Obtengo los clientes que coincidan por los criterios de busqueda.
-            dgvClientes.DataSource = AdminModel.buscar("clientes", texto);
+            dgvClientes.DataSource = AdminModel.buscarClientes( texto );
         }
 
         // Limpia contendio del campo de texto del buscador, mensaje placeholder

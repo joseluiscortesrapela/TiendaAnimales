@@ -36,7 +36,7 @@
             this.pbEliminar = new System.Windows.Forms.PictureBox();
             this.pbCrear = new System.Windows.Forms.PictureBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.dgvPolizas = new System.Windows.Forms.DataGridView();
+            this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.pbOn = new System.Windows.Forms.PictureBox();
             this.pbOff = new System.Windows.Forms.PictureBox();
@@ -180,7 +180,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCrear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPolizas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOff)).BeginInit();
             this.panelFlSuperior.SuspendLayout();
@@ -278,23 +278,23 @@
             this.dgvClientes.TabIndex = 8;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
-            // dgvPolizas
+            // dgvVentas
             // 
-            this.dgvPolizas.AllowUserToAddRows = false;
-            this.dgvPolizas.AllowUserToDeleteRows = false;
-            this.dgvPolizas.AllowUserToOrderColumns = true;
-            this.dgvPolizas.AllowUserToResizeColumns = false;
-            this.dgvPolizas.AllowUserToResizeRows = false;
-            this.dgvPolizas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPolizas.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvPolizas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPolizas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPolizas.Location = new System.Drawing.Point(36, 430);
-            this.dgvPolizas.Name = "dgvPolizas";
+            this.dgvVentas.AllowUserToAddRows = false;
+            this.dgvVentas.AllowUserToDeleteRows = false;
+            this.dgvVentas.AllowUserToOrderColumns = true;
+            this.dgvVentas.AllowUserToResizeColumns = false;
+            this.dgvVentas.AllowUserToResizeRows = false;
+            this.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVentas.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentas.Location = new System.Drawing.Point(36, 430);
+            this.dgvVentas.Name = "dgvVentas";
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPolizas.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPolizas.Size = new System.Drawing.Size(1049, 165);
-            this.dgvPolizas.TabIndex = 26;
+            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvVentas.Size = new System.Drawing.Size(1049, 165);
+            this.dgvVentas.TabIndex = 26;
             // 
             // label4
             // 
@@ -302,9 +302,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(429, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 17);
+            this.label4.Size = new System.Drawing.Size(190, 17);
             this.label4.TabIndex = 29;
-            this.label4.Text = "Mostrar polizas clientes";
+            this.label4.Text = "Mostrar compras clientes";
             // 
             // pbOn
             // 
@@ -439,7 +439,7 @@
             this.panelCrudClientes.Controls.Add(this.pbEditar);
             this.panelCrudClientes.Controls.Add(this.label4);
             this.panelCrudClientes.Controls.Add(this.label1);
-            this.panelCrudClientes.Controls.Add(this.dgvPolizas);
+            this.panelCrudClientes.Controls.Add(this.dgvVentas);
             this.panelCrudClientes.Controls.Add(this.pbOff);
             this.panelCrudClientes.Controls.Add(this.pbDetalle);
             this.panelCrudClientes.Location = new System.Drawing.Point(0, 55);
@@ -1985,8 +1985,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.Controls.Add(this.panelEditarCliente);
             this.Controls.Add(this.panelCrudClientes);
+            this.Controls.Add(this.panelEditarCliente);
             this.Controls.Add(this.panelDetalleCliente);
             this.Controls.Add(this.panelCrearCliente);
             this.Controls.Add(this.panelFlSuperior);
@@ -1996,7 +1996,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCrear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPolizas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOff)).EndInit();
             this.panelFlSuperior.ResumeLayout(false);
@@ -2055,7 +2055,7 @@
         private System.Windows.Forms.PictureBox pbEliminar;
         private System.Windows.Forms.PictureBox pbCrear;
         private System.Windows.Forms.DataGridView dgvClientes;
-        private System.Windows.Forms.DataGridView dgvPolizas;
+        private System.Windows.Forms.DataGridView dgvVentas;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pbOn;
         private System.Windows.Forms.PictureBox pbOff;
