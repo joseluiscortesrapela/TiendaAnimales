@@ -33,6 +33,10 @@ namespace Tienda
                 // Muesstro la ventana
                 login.Show();
             }
+            else
+            {
+                lbMensaje.Text = "No se ha podido conectar a la base de datos, revise el valor de los campos";
+            }
 
         }
 

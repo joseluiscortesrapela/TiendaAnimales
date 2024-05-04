@@ -51,6 +51,7 @@ namespace Tienda
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbServer = new System.Windows.Forms.TextBox();
             this.tbDatabase = new System.Windows.Forms.TextBox();
+            this.lbMensaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -82,7 +83,7 @@ namespace Tienda
             this.btnConectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConectar.Font = new System.Drawing.Font("Showcard Gothic", 20F);
             this.btnConectar.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.btnConectar.Location = new System.Drawing.Point(327, 367);
+            this.btnConectar.Location = new System.Drawing.Point(334, 367);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(187, 53);
             this.btnConectar.TabIndex = 19;
@@ -201,6 +202,17 @@ namespace Tienda
             this.tbDatabase.Text = "Tienda";
             this.tbDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // lbMensaje
+            // 
+            this.lbMensaje.AutoSize = true;
+            this.lbMensaje.BackColor = System.Drawing.Color.Transparent;
+            this.lbMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensaje.ForeColor = System.Drawing.Color.Tomato;
+            this.lbMensaje.Location = new System.Drawing.Point(110, 430);
+            this.lbMensaje.Name = "lbMensaje";
+            this.lbMensaje.Size = new System.Drawing.Size(0, 24);
+            this.lbMensaje.TabIndex = 26;
+            // 
             // FormularioConexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +220,7 @@ namespace Tienda
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(858, 473);
+            this.Controls.Add(this.lbMensaje);
             this.Controls.Add(this.tbDatabase);
             this.Controls.Add(this.tbServer);
             this.Controls.Add(this.tbPassword);
@@ -245,5 +258,6 @@ namespace Tienda
         private TextBox tbPassword;
         private TextBox tbServer;
         private TextBox tbDatabase;
+        private Label lbMensaje;
     }
 }
