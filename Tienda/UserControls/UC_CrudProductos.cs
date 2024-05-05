@@ -13,6 +13,7 @@ namespace Tienda.UserControls
     public partial class UC_CrudProductos : UserControl
     {
         private int idProducto;
+        private Producto producto;
         private DataGridViewRow fila;
 
         // Constructor
@@ -52,7 +53,10 @@ namespace Tienda.UserControls
                 // Stock producto
                 int stock = int.Parse(fila.Cells["stock"].Value.ToString());
 
-                Console.WriteLine("Selecionado producto Id: " + idProducto + " nombre: " + nombre + " categoria: " + categoria + " descripcion: " + descripcion + " precio: " + precio + " stock: " + stock);
+                // Inicializo el objeto producto con los datos de la fila que ha sido selecionada en el datagridview.
+                producto = new Producto(idProducto, nombre, categoria, precio, stock, descripcion);
+
+                Console.WriteLine("Fila selecionada producto Id: " + idProducto + " nombre: " + nombre + " categoria: " + categoria + " descripcion: " + descripcion + " precio: " + precio + " stock: " + stock);
 
                 // Muestro botones de accion.
                 mostrarBotonesAccion();
@@ -71,24 +75,17 @@ namespace Tienda.UserControls
         private void pbMostraFormularioDetalleProducto_Click(object sender, EventArgs e)
         {
             // Muestro formulario para editar una poliza
-            mostrarFormulario("DetalleProducto");
-
-            /*
+            mostrarFormulario("DetalleProducto");    
 
             // Cargo la lista de clientes en el select
-            lbIdPolizaDetalle.Text = filaSelecionada.Id.ToString();
-            tbImporteDetalle.Text = filaSelecionada.Importe.ToString();
-            cbTipoDetalle.Text = filaSelecionada.Tipo;
-            cbEstadoDetalle.Text = filaSelecionada.Estado;
+            lbIdDetalle.Text = producto.Id.ToString();
+            tbNombreDetalle.Text = producto.Nombre;
+            cbCategoriaDetalle.Text = producto.Categoria;
+            tbPrecioDetalle.Text = producto.Precio.ToString();
+            tbStockDetalle.Text = producto.Stock.ToString();
+            tbDescripcionDetalle.Text = producto.Descripcion;
 
-            cbClientesDetalle.Text = filaSelecionada.IdCliente.ToString();
-
-            tbObservacionesDetalle.Text = filaSelecionada.Observaciones;
-            dtpFechaDetalle.Value = filaSelecionada.Fecha;
-
-            */
-
-            Console.WriteLine("Muestro formulario detalle poliza: ");
+            Console.WriteLine("Muestro formulario detalle producto ");
         }
 
         // Muestra el panel que contiene el formulario para editar una nueva poliza.
@@ -187,16 +184,13 @@ namespace Tienda.UserControls
             int stock = int.Parse(tbStock.Text.ToString());
             string descripcion = tbDescripcion.Text.ToString();
 
-            // Creo un objeto
+            // Creo un objeto de tipo producto
             Producto producto = new Producto( nombre, categoria, precio, stock, descripcion );
 
             // Si ha guardado el producto 
             if ( AdminModel.registrarProducto( producto) )
-            {
-
+            {   // Muestro mensaje 
                 lbMensajeCrearProducto.Text = "Acabas de crear un nuevo producto";
-
-
             }
 
 

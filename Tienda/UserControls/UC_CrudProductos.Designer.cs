@@ -104,28 +104,29 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panelDetalleProducto = new System.Windows.Forms.Panel();
-            this.label27 = new System.Windows.Forms.Label();
-            this.lbIdPolizaDetalle = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tbNombreDetalle = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.cbTipoDetalle = new System.Windows.Forms.ComboBox();
+            this.tbStockDetalle = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.tbObservacionesDetalle = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.dtpFechaDetalle = new System.Windows.Forms.DateTimePicker();
-            this.label40 = new System.Windows.Forms.Label();
+            this.cbCategoriaDetalle = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.cbEstadoDetalle = new System.Windows.Forms.ComboBox();
+            this.tbPrecioDetalle = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.lbIdDetalle = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.tbDescripcionDetalle = new System.Windows.Forms.TextBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.cbClientesDetalle = new System.Windows.Forms.ComboBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.tbImporteDetalle = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
@@ -153,12 +154,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.panelDetalleProducto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.SuspendLayout();
             // 
             // lbPagos
@@ -1051,28 +1051,29 @@
             this.panelDetalleProducto.BackColor = System.Drawing.Color.Transparent;
             this.panelDetalleProducto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelDetalleProducto.BackgroundImage")));
             this.panelDetalleProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelDetalleProducto.Controls.Add(this.label27);
-            this.panelDetalleProducto.Controls.Add(this.lbIdPolizaDetalle);
-            this.panelDetalleProducto.Controls.Add(this.label30);
-            this.panelDetalleProducto.Controls.Add(this.label32);
+            this.panelDetalleProducto.Controls.Add(this.label6);
+            this.panelDetalleProducto.Controls.Add(this.label9);
+            this.panelDetalleProducto.Controls.Add(this.pictureBox2);
+            this.panelDetalleProducto.Controls.Add(this.tbNombreDetalle);
+            this.panelDetalleProducto.Controls.Add(this.label28);
+            this.panelDetalleProducto.Controls.Add(this.label31);
             this.panelDetalleProducto.Controls.Add(this.pictureBox10);
-            this.panelDetalleProducto.Controls.Add(this.cbTipoDetalle);
+            this.panelDetalleProducto.Controls.Add(this.tbStockDetalle);
+            this.panelDetalleProducto.Controls.Add(this.label32);
+            this.panelDetalleProducto.Controls.Add(this.label33);
             this.panelDetalleProducto.Controls.Add(this.pictureBox11);
-            this.panelDetalleProducto.Controls.Add(this.label38);
-            this.panelDetalleProducto.Controls.Add(this.tbObservacionesDetalle);
-            this.panelDetalleProducto.Controls.Add(this.label39);
-            this.panelDetalleProducto.Controls.Add(this.dtpFechaDetalle);
-            this.panelDetalleProducto.Controls.Add(this.label40);
+            this.panelDetalleProducto.Controls.Add(this.cbCategoriaDetalle);
+            this.panelDetalleProducto.Controls.Add(this.label34);
+            this.panelDetalleProducto.Controls.Add(this.label35);
             this.panelDetalleProducto.Controls.Add(this.pictureBox12);
-            this.panelDetalleProducto.Controls.Add(this.cbEstadoDetalle);
+            this.panelDetalleProducto.Controls.Add(this.tbPrecioDetalle);
+            this.panelDetalleProducto.Controls.Add(this.label27);
+            this.panelDetalleProducto.Controls.Add(this.lbIdDetalle);
+            this.panelDetalleProducto.Controls.Add(this.label30);
+            this.panelDetalleProducto.Controls.Add(this.label38);
+            this.panelDetalleProducto.Controls.Add(this.tbDescripcionDetalle);
             this.panelDetalleProducto.Controls.Add(this.pictureBox13);
             this.panelDetalleProducto.Controls.Add(this.label42);
-            this.panelDetalleProducto.Controls.Add(this.label43);
-            this.panelDetalleProducto.Controls.Add(this.pictureBox14);
-            this.panelDetalleProducto.Controls.Add(this.cbClientesDetalle);
-            this.panelDetalleProducto.Controls.Add(this.label45);
-            this.panelDetalleProducto.Controls.Add(this.pictureBox15);
-            this.panelDetalleProducto.Controls.Add(this.tbImporteDetalle);
             this.panelDetalleProducto.Controls.Add(this.button3);
             this.panelDetalleProducto.Controls.Add(this.label46);
             this.panelDetalleProducto.Location = new System.Drawing.Point(0, 61);
@@ -1081,27 +1082,205 @@
             this.panelDetalleProducto.TabIndex = 143;
             this.panelDetalleProducto.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.ForeColor = System.Drawing.Color.Coral;
+            this.label6.Location = new System.Drawing.Point(78, 173);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(184, 13);
+            this.label6.TabIndex = 158;
+            this.label6.Text = "El nombre no puede estar vacio";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label9.Location = new System.Drawing.Point(44, 120);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 20);
+            this.label9.TabIndex = 157;
+            this.label9.Text = "Nombre";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(48, 140);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 28);
+            this.pictureBox2.TabIndex = 156;
+            this.pictureBox2.TabStop = false;
+            // 
+            // tbNombreDetalle
+            // 
+            this.tbNombreDetalle.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbNombreDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNombreDetalle.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.tbNombreDetalle.Location = new System.Drawing.Point(81, 142);
+            this.tbNombreDetalle.Name = "tbNombreDetalle";
+            this.tbNombreDetalle.Size = new System.Drawing.Size(416, 26);
+            this.tbNombreDetalle.TabIndex = 155;
+            this.tbNombreDetalle.Text = "Introduce el nombre del producto";
+            this.tbNombreDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.ForeColor = System.Drawing.Color.Coral;
+            this.label28.Location = new System.Drawing.Point(1007, 173);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(79, 13);
+            this.label28.TabIndex = 154;
+            this.label28.Text = "Solo numericos";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label31.Location = new System.Drawing.Point(967, 120);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(55, 20);
+            this.label31.TabIndex = 153;
+            this.label31.Text = "Stock";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox10.Location = new System.Drawing.Point(971, 142);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(29, 28);
+            this.pictureBox10.TabIndex = 152;
+            this.pictureBox10.TabStop = false;
+            // 
+            // tbStockDetalle
+            // 
+            this.tbStockDetalle.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbStockDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStockDetalle.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.tbStockDetalle.Location = new System.Drawing.Point(1005, 144);
+            this.tbStockDetalle.Name = "tbStockDetalle";
+            this.tbStockDetalle.Size = new System.Drawing.Size(76, 26);
+            this.tbStockDetalle.TabIndex = 151;
+            this.tbStockDetalle.Text = "0";
+            this.tbStockDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label32
+            // 
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.ForeColor = System.Drawing.Color.Coral;
+            this.label32.Location = new System.Drawing.Point(601, 170);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(109, 13);
+            this.label32.TabIndex = 150;
+            this.label32.Text = "No puede estar vacio";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label33.Location = new System.Drawing.Point(550, 118);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(87, 20);
+            this.label33.TabIndex = 149;
+            this.label33.Text = "Categoria";
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(554, 141);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(31, 27);
+            this.pictureBox11.TabIndex = 148;
+            this.pictureBox11.TabStop = false;
+            // 
+            // cbCategoriaDetalle
+            // 
+            this.cbCategoriaDetalle.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.cbCategoriaDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategoriaDetalle.ForeColor = System.Drawing.SystemColors.Info;
+            this.cbCategoriaDetalle.FormattingEnabled = true;
+            this.cbCategoriaDetalle.Items.AddRange(new object[] {
+            "Animales",
+            "Comida",
+            "Accesorios"});
+            this.cbCategoriaDetalle.Location = new System.Drawing.Point(591, 139);
+            this.cbCategoriaDetalle.Name = "cbCategoriaDetalle";
+            this.cbCategoriaDetalle.Size = new System.Drawing.Size(171, 28);
+            this.cbCategoriaDetalle.TabIndex = 147;
+            // 
+            // label34
+            // 
+            this.label34.BackColor = System.Drawing.Color.Transparent;
+            this.label34.ForeColor = System.Drawing.Color.Coral;
+            this.label34.Location = new System.Drawing.Point(844, 170);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(94, 13);
+            this.label34.TabIndex = 146;
+            this.label34.Text = "Solo numericos";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.Transparent;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label35.Location = new System.Drawing.Point(808, 120);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(59, 20);
+            this.label35.TabIndex = 145;
+            this.label35.Text = "Precio";
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(812, 141);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(29, 28);
+            this.pictureBox12.TabIndex = 144;
+            this.pictureBox12.TabStop = false;
+            // 
+            // tbPrecioDetalle
+            // 
+            this.tbPrecioDetalle.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbPrecioDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrecioDetalle.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.tbPrecioDetalle.Location = new System.Drawing.Point(847, 141);
+            this.tbPrecioDetalle.Name = "tbPrecioDetalle";
+            this.tbPrecioDetalle.Size = new System.Drawing.Size(76, 26);
+            this.tbPrecioDetalle.TabIndex = 143;
+            this.tbPrecioDetalle.Text = "0";
+            this.tbPrecioDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.Silver;
-            this.label27.Location = new System.Drawing.Point(506, 6);
+            this.label27.Location = new System.Drawing.Point(508, 6);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(87, 25);
+            this.label27.Size = new System.Drawing.Size(117, 25);
             this.label27.TabIndex = 142;
-            this.label27.Text = "Numero:";
+            this.label27.Text = "Identificador";
             // 
-            // lbIdPolizaDetalle
+            // lbIdDetalle
             // 
-            this.lbIdPolizaDetalle.AutoSize = true;
-            this.lbIdPolizaDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdPolizaDetalle.ForeColor = System.Drawing.Color.Silver;
-            this.lbIdPolizaDetalle.Location = new System.Drawing.Point(587, 6);
-            this.lbIdPolizaDetalle.Name = "lbIdPolizaDetalle";
-            this.lbIdPolizaDetalle.Size = new System.Drawing.Size(23, 25);
-            this.lbIdPolizaDetalle.TabIndex = 141;
-            this.lbIdPolizaDetalle.Text = "0";
+            this.lbIdDetalle.AutoSize = true;
+            this.lbIdDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdDetalle.ForeColor = System.Drawing.Color.Silver;
+            this.lbIdDetalle.Location = new System.Drawing.Point(628, 6);
+            this.lbIdDetalle.Name = "lbIdDetalle";
+            this.lbIdDetalle.Size = new System.Drawing.Size(23, 25);
+            this.lbIdDetalle.TabIndex = 141;
+            this.lbIdDetalle.Text = "0";
             // 
             // label30
             // 
@@ -1114,144 +1293,33 @@
             this.label30.Size = new System.Drawing.Size(0, 24);
             this.label30.TabIndex = 140;
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.Transparent;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label32.Location = new System.Drawing.Point(186, 106);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(103, 20);
-            this.label32.TabIndex = 138;
-            this.label32.Text = "Tipo seguro";
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(190, 129);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(31, 29);
-            this.pictureBox10.TabIndex = 137;
-            this.pictureBox10.TabStop = false;
-            // 
-            // cbTipoDetalle
-            // 
-            this.cbTipoDetalle.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.cbTipoDetalle.Enabled = false;
-            this.cbTipoDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoDetalle.ForeColor = System.Drawing.SystemColors.Info;
-            this.cbTipoDetalle.FormattingEnabled = true;
-            this.cbTipoDetalle.Items.AddRange(new object[] {
-            "Vida",
-            "Coche",
-            "Hogar",
-            "Salud"});
-            this.cbTipoDetalle.Location = new System.Drawing.Point(227, 129);
-            this.cbTipoDetalle.Name = "cbTipoDetalle";
-            this.cbTipoDetalle.Size = new System.Drawing.Size(108, 28);
-            this.cbTipoDetalle.TabIndex = 136;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(909, 135);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox11.TabIndex = 131;
-            this.pictureBox11.TabStop = false;
-            // 
             // label38
             // 
             this.label38.AutoSize = true;
             this.label38.BackColor = System.Drawing.Color.Transparent;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label38.Location = new System.Drawing.Point(57, 221);
+            this.label38.Location = new System.Drawing.Point(45, 221);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(127, 20);
+            this.label38.Size = new System.Drawing.Size(103, 20);
             this.label38.TabIndex = 130;
-            this.label38.Text = "Observaciones";
+            this.label38.Text = "Descripciòn";
             // 
-            // tbObservacionesDetalle
+            // tbDescripcionDetalle
             // 
-            this.tbObservacionesDetalle.BackColor = System.Drawing.Color.PapayaWhip;
-            this.tbObservacionesDetalle.Enabled = false;
-            this.tbObservacionesDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbObservacionesDetalle.ForeColor = System.Drawing.Color.Teal;
-            this.tbObservacionesDetalle.Location = new System.Drawing.Point(48, 244);
-            this.tbObservacionesDetalle.MaxLength = 5000;
-            this.tbObservacionesDetalle.Multiline = true;
-            this.tbObservacionesDetalle.Name = "tbObservacionesDetalle";
-            this.tbObservacionesDetalle.ReadOnly = true;
-            this.tbObservacionesDetalle.Size = new System.Drawing.Size(1034, 214);
-            this.tbObservacionesDetalle.TabIndex = 129;
-            this.tbObservacionesDetalle.Text = resources.GetString("tbObservacionesDetalle.Text");
-            this.tbObservacionesDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.BackColor = System.Drawing.Color.Transparent;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label39.Location = new System.Drawing.Point(905, 112);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(132, 20);
-            this.label39.TabIndex = 128;
-            this.label39.Text = "Fecha creación";
-            // 
-            // dtpFechaDetalle
-            // 
-            this.dtpFechaDetalle.CalendarMonthBackground = System.Drawing.SystemColors.HotTrack;
-            this.dtpFechaDetalle.Enabled = false;
-            this.dtpFechaDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaDetalle.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaDetalle.Location = new System.Drawing.Point(946, 134);
-            this.dtpFechaDetalle.Name = "dtpFechaDetalle";
-            this.dtpFechaDetalle.Size = new System.Drawing.Size(136, 27);
-            this.dtpFechaDetalle.TabIndex = 127;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.BackColor = System.Drawing.Color.Transparent;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label40.Location = new System.Drawing.Point(363, 106);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(75, 20);
-            this.label40.TabIndex = 126;
-            this.label40.Text = "Estados";
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(367, 131);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(31, 27);
-            this.pictureBox12.TabIndex = 125;
-            this.pictureBox12.TabStop = false;
-            // 
-            // cbEstadoDetalle
-            // 
-            this.cbEstadoDetalle.BackColor = System.Drawing.Color.CadetBlue;
-            this.cbEstadoDetalle.Enabled = false;
-            this.cbEstadoDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEstadoDetalle.ForeColor = System.Drawing.SystemColors.Info;
-            this.cbEstadoDetalle.FormattingEnabled = true;
-            this.cbEstadoDetalle.Items.AddRange(new object[] {
-            "Cobrada",
-            "A cuenta",
-            "Liquidada",
-            "Anulada"});
-            this.cbEstadoDetalle.Location = new System.Drawing.Point(404, 129);
-            this.cbEstadoDetalle.Name = "cbEstadoDetalle";
-            this.cbEstadoDetalle.Size = new System.Drawing.Size(155, 28);
-            this.cbEstadoDetalle.TabIndex = 124;
+            this.tbDescripcionDetalle.BackColor = System.Drawing.Color.PapayaWhip;
+            this.tbDescripcionDetalle.Enabled = false;
+            this.tbDescripcionDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDescripcionDetalle.ForeColor = System.Drawing.Color.Teal;
+            this.tbDescripcionDetalle.Location = new System.Drawing.Point(48, 244);
+            this.tbDescripcionDetalle.MaxLength = 5000;
+            this.tbDescripcionDetalle.Multiline = true;
+            this.tbDescripcionDetalle.Name = "tbDescripcionDetalle";
+            this.tbDescripcionDetalle.ReadOnly = true;
+            this.tbDescripcionDetalle.Size = new System.Drawing.Size(1034, 214);
+            this.tbDescripcionDetalle.TabIndex = 129;
+            this.tbDescripcionDetalle.Text = resources.GetString("tbDescripcionDetalle.Text");
+            this.tbDescripcionDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox13
             // 
@@ -1272,78 +1340,6 @@
             this.label42.Size = new System.Drawing.Size(0, 20);
             this.label42.TabIndex = 122;
             // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.BackColor = System.Drawing.Color.Transparent;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label43.Location = new System.Drawing.Point(588, 109);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(81, 20);
-            this.label43.TabIndex = 121;
-            this.label43.Text = "IdCliente";
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(592, 132);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox14.TabIndex = 120;
-            this.pictureBox14.TabStop = false;
-            // 
-            // cbClientesDetalle
-            // 
-            this.cbClientesDetalle.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.cbClientesDetalle.Enabled = false;
-            this.cbClientesDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbClientesDetalle.ForeColor = System.Drawing.SystemColors.Info;
-            this.cbClientesDetalle.FormattingEnabled = true;
-            this.cbClientesDetalle.Items.AddRange(new object[] {
-            "Particular",
-            "Autonomo"});
-            this.cbClientesDetalle.Location = new System.Drawing.Point(629, 131);
-            this.cbClientesDetalle.Name = "cbClientesDetalle";
-            this.cbClientesDetalle.Size = new System.Drawing.Size(249, 28);
-            this.cbClientesDetalle.TabIndex = 119;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.BackColor = System.Drawing.Color.Transparent;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label45.Location = new System.Drawing.Point(44, 107);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(71, 20);
-            this.label45.TabIndex = 117;
-            this.label45.Text = "Importe";
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(48, 130);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(29, 28);
-            this.pictureBox15.TabIndex = 116;
-            this.pictureBox15.TabStop = false;
-            // 
-            // tbImporteDetalle
-            // 
-            this.tbImporteDetalle.BackColor = System.Drawing.Color.AliceBlue;
-            this.tbImporteDetalle.Enabled = false;
-            this.tbImporteDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbImporteDetalle.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.tbImporteDetalle.Location = new System.Drawing.Point(82, 131);
-            this.tbImporteDetalle.Name = "tbImporteDetalle";
-            this.tbImporteDetalle.Size = new System.Drawing.Size(76, 26);
-            this.tbImporteDetalle.TabIndex = 115;
-            this.tbImporteDetalle.Text = "0";
-            this.tbImporteDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Violet;
@@ -1363,7 +1359,7 @@
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label46.Location = new System.Drawing.Point(500, 31);
+            this.label46.Location = new System.Drawing.Point(503, 31);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(265, 39);
             this.label46.TabIndex = 112;
@@ -1374,10 +1370,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.panelDetalleProducto);
+            this.Controls.Add(this.panelCrudProductos);
             this.Controls.Add(this.panelCrearProducto);
             this.Controls.Add(this.panelEditarProducto);
-            this.Controls.Add(this.panelCrudProductos);
-            this.Controls.Add(this.panelDetalleProducto);
             this.Controls.Add(this.panelNavegacionSuperior);
             this.Controls.Add(this.lbPagos);
             this.Name = "UC_CrudProductos";
@@ -1412,12 +1408,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.panelDetalleProducto.ResumeLayout(false);
             this.panelDetalleProducto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1486,27 +1481,12 @@
         private System.Windows.Forms.PictureBox pbMostraFormularioDetalleProducto;
         private System.Windows.Forms.Panel panelDetalleProducto;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label lbIdPolizaDetalle;
+        private System.Windows.Forms.Label lbIdDetalle;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.ComboBox cbTipoDetalle;
-        private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox tbObservacionesDetalle;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.DateTimePicker dtpFechaDetalle;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.ComboBox cbEstadoDetalle;
+        private System.Windows.Forms.TextBox tbDescripcionDetalle;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.ComboBox cbClientesDetalle;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.TextBox tbImporteDetalle;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label29;
@@ -1521,5 +1501,21 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox tbStock;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox tbNombreDetalle;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.TextBox tbStockDetalle;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.ComboBox cbCategoriaDetalle;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.TextBox tbPrecioDetalle;
     }
 }
