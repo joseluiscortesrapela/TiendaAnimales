@@ -218,8 +218,7 @@ namespace Tienda.Models
         public static DataTable buscarClientes(string texto)
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+       
             // Mi consulta 
             string sql = $"SELECT * FROM clientes WHERE nombre LIKE @texto OR apellidos LIKE @texto OR correo LIKE @texto";
 
@@ -241,6 +240,10 @@ namespace Tienda.Models
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                conexion.Close();
+            }
 
 
             return table;
@@ -250,8 +253,7 @@ namespace Tienda.Models
         public static DataTable buscarProductos(string texto)
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+ 
             // Mi consulta 
             string sql = $"SELECT * FROM productos WHERE nombre LIKE @texto OR categoria LIKE @texto";
 
@@ -273,7 +275,10 @@ namespace Tienda.Models
             {
                 MessageBox.Show(ex.Message);
             }
-
+            finally
+            {
+                conexion.Close();
+            }
 
             return table;
         }

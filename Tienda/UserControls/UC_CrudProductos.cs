@@ -75,7 +75,7 @@ namespace Tienda.UserControls
         private void pbMostraFormularioDetalleProducto_Click(object sender, EventArgs e)
         {
             // Muestro formulario para editar una poliza
-            mostrarFormulario("DetalleProducto");    
+            mostrarFormulario("DetalleProducto");
 
             // Cargo la lista de clientes en el select
             lbIdDetalle.Text = producto.Id.ToString();
@@ -149,7 +149,7 @@ namespace Tienda.UserControls
             if (result == DialogResult.Yes)
             {
                 // Si ha eliminado el producto
-                if ( AdminModel.eliminarProducto( idProducto ) )
+                if (AdminModel.eliminarProducto(idProducto))
                 {   // Muetro mensaje al usuario
                     lbMensajeCrudProductos.Text = "Acabas de eliminar el producto";
                     // Actualizo la lista de productos
@@ -180,12 +180,13 @@ namespace Tienda.UserControls
             string descripcion = tbDescripcion.Text.ToString();
 
             // Creo un objeto de tipo producto
-            Producto producto = new Producto( nombre, categoria, precio, stock, descripcion );
+            Producto producto = new Producto(nombre, categoria, precio, stock, descripcion);
 
             // Si ha guardado el producto 
-            if ( AdminModel.registrarProducto( producto) )
+            if (AdminModel.registrarProducto(producto))
             {   // Muestro mensaje 
                 lbMensajeCrearProducto.Text = "Acabas de crear un nuevo producto";
+                mostrarMensajeTimer();
             }
 
 
@@ -197,7 +198,7 @@ namespace Tienda.UserControls
         {
 
             // Obtengo el valor de los campos del formulario
-            int id = int.Parse( lbIdEditar.Text.ToString() );
+            int id = int.Parse(lbIdEditar.Text.ToString());
             string nombre = tbNombreEditar.Text.ToString();
             string categoria = cbCategoriaEditar.Text.ToString();
             decimal precio = decimal.Parse(tbPrecioEditar.Text.ToString());
@@ -208,7 +209,7 @@ namespace Tienda.UserControls
             Producto producto = new Producto(id, nombre, categoria, precio, stock, descripcion);
 
             // Si ha guardado el producto 
-            if (AdminModel.actualizarProducto(producto ))
+            if (AdminModel.actualizarProducto(producto))
             {   // Muestro mensaje 
                 lbMensajeEdtiarProducto.Text = "Acabas actualizar el producto";
             }
@@ -253,6 +254,51 @@ namespace Tienda.UserControls
         {
             Application.Exit();
         }
+
+        private void mostrarMensajeTimer()
+        {
+            timerOcultarMensaje.Start();
+        }
+
+        private void mostrarMensajeTimer(Label label)
+        {
+            label.Visible = true;
+            timerOcultarMensaje.Tag = label; // Almacena el label en la propiedad Tag del temporizador
+            timerOcultarMensaje.Start();
+        }
+
+        private void timerOcultarMensaje_Tick(object sender, EventArgs e)
+        {
+            Console.WriteLine("timer fin");
+            lbMensajeCrearProducto.Text = "";
+            timerOcultarMensaje.Stop();
+        }
+
+
+        // Muestra el buscador
+        private void mostrarBuscador(object sender, EventArgs e)
+        {
+            if (panelBuscador.Visible)
+            {
+                panelBuscador.Visible = false;
+            }
+            else
+            {
+                panelBuscador.Visible = true;
+            }
+        }
+
+        // Buscador de productos
+        private void buscarProductos(object sender, EventArgs e)
+        {
+            // Obtengo lo que ha escrito en el buscador
+            string texto = tbBuscar.Text;
+            // Obtengo los clientes que coincidan por los criterios de busqueda.
+            dgvProductos.DataSource = AdminModel.buscarProductos(texto);
+
+        }
+
+
     }
 
 

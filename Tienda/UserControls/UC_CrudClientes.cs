@@ -276,28 +276,11 @@ namespace Tienda.UserControls
             Console.WriteLine("off");
         }
 
-        private void pbMostrarBuscador_Click(object sender, EventArgs e)
+        private void pbMostrarBuscadorClientes_Click(object sender, EventArgs e)
         {
-
-            if (panelBuscador.Visible)
-            {
-                panelBuscador.Visible = false;
-            }
-            else
-            {
-                panelBuscador.Visible = true;
-            }
 
         }
 
-        // Realiza la busqueda un cliente  por nombre, apellidos o correo.
-        private void buscarClientes(object sender, EventArgs e)
-        {
-            // Obtengo lo que ha escrito en el buscador
-            string texto = tbBuscar.Text;
-            // Obtengo los clientes que coincidan por los criterios de busqueda.
-            dgvClientes.DataSource = AdminModel.buscarClientes( texto );
-        }
 
         // Limpia contendio del campo de texto del buscador, mensaje placeholder
         private void limpiaPlaceholderBuscador(object sender, EventArgs e)
@@ -344,10 +327,6 @@ namespace Tienda.UserControls
             int idProvincia = int.Parse(cbProvinciasCrear.SelectedValue.ToString());
             int idMunicipio = int.Parse(cbMunicipiosCrear.SelectedValue.ToString());
             string tipo = cbTipoCrear.Text;
-
-            Console.WriteLine("Crear cliente  nombre " + nombre + " apellidos: " + apellidos
-                + " dni: " + dni + " telefono: " + telefono + " correo:" + correo + " contraseña: " + contraseña +
-                " id provincia: " + idProvincia + " id municipio: " + idMunicipio + " tipo: " + tipo);
 
             // Instancio e inicializo un nuevo objeto de tipo Cliente
             Cliente cliente = new Cliente(nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, idMunicipio, tipo);
@@ -449,6 +428,30 @@ namespace Tienda.UserControls
             lbMensajeGeneral.Text = "";
             timerOcultarMensaje.Stop();
         }
+
+        // Muestra el buscador
+        private void mostrarBuscador(object sender, EventArgs e)
+        {
+            if (panelBuscador.Visible)
+            {
+                panelBuscador.Visible = false;
+            }
+            else
+            {
+                panelBuscador.Visible = true;
+            }
+        }
+
+        // Realiza la busqueda un cliente  por nombre, apellidos o correo.
+        private void buscarClientes(object sender, EventArgs e)
+        {
+            // Obtengo lo que ha escrito en el buscador
+            string texto = tbBuscar.Text;
+            // Obtengo los clientes que coincidan por los criterios de busqueda.
+            dgvClientes.DataSource = AdminModel.buscarClientes(texto);
+        }
+
+
     }
 
 

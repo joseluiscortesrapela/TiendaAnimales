@@ -414,7 +414,7 @@
             this.pbMostrarBuscador.Size = new System.Drawing.Size(36, 37);
             this.pbMostrarBuscador.TabIndex = 4;
             this.pbMostrarBuscador.TabStop = false;
-            this.pbMostrarBuscador.Click += new System.EventHandler(this.pbMostrarBuscador_Click);
+            this.pbMostrarBuscador.Click += new System.EventHandler(this.mostrarBuscador);
             // 
             // pbInicio
             // 
@@ -1048,16 +1048,16 @@
             this.label43.ForeColor = System.Drawing.Color.Silver;
             this.label43.Location = new System.Drawing.Point(490, 8);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(87, 25);
+            this.label43.Size = new System.Drawing.Size(117, 25);
             this.label43.TabIndex = 146;
-            this.label43.Text = "Numero:";
+            this.label43.Text = "Identificador";
             // 
             // lbIdDetalleCliente
             // 
             this.lbIdDetalleCliente.AutoSize = true;
             this.lbIdDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIdDetalleCliente.ForeColor = System.Drawing.Color.Silver;
-            this.lbIdDetalleCliente.Location = new System.Drawing.Point(571, 8);
+            this.lbIdDetalleCliente.Location = new System.Drawing.Point(616, 8);
             this.lbIdDetalleCliente.Name = "lbIdDetalleCliente";
             this.lbIdDetalleCliente.Size = new System.Drawing.Size(23, 25);
             this.lbIdDetalleCliente.TabIndex = 145;
@@ -1500,16 +1500,16 @@
             this.label42.ForeColor = System.Drawing.Color.Silver;
             this.label42.Location = new System.Drawing.Point(488, 9);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(87, 25);
+            this.label42.Size = new System.Drawing.Size(117, 25);
             this.label42.TabIndex = 144;
-            this.label42.Text = "Numero:";
+            this.label42.Text = "Identificador";
             // 
             // lbIdClienteEditar
             // 
             this.lbIdClienteEditar.AutoSize = true;
             this.lbIdClienteEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIdClienteEditar.ForeColor = System.Drawing.Color.Silver;
-            this.lbIdClienteEditar.Location = new System.Drawing.Point(569, 9);
+            this.lbIdClienteEditar.Location = new System.Drawing.Point(604, 9);
             this.lbIdClienteEditar.Name = "lbIdClienteEditar";
             this.lbIdClienteEditar.Size = new System.Drawing.Size(23, 25);
             this.lbIdClienteEditar.TabIndex = 143;
@@ -1985,9 +1985,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.Controls.Add(this.panelCrudClientes);
             this.Controls.Add(this.panelEditarCliente);
             this.Controls.Add(this.panelDetalleCliente);
+            this.Controls.Add(this.panelCrudClientes);
             this.Controls.Add(this.panelCrearCliente);
             this.Controls.Add(this.panelFlSuperior);
             this.Name = "UC_CrudClientes";

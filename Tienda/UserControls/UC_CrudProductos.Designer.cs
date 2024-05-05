@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CrudProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbPagos = new System.Windows.Forms.Label();
-            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelNavegacionSuperior = new System.Windows.Forms.Panel();
             this.pbExit = new System.Windows.Forms.PictureBox();
             this.pbInicio = new System.Windows.Forms.PictureBox();
@@ -119,7 +118,11 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tbPrecioEditar = new System.Windows.Forms.TextBox();
             this.lbMensajeCrudProductos = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
+            this.timerOcultarMensaje = new System.Windows.Forms.Timer(this.components);
+            this.panelBuscador = new System.Windows.Forms.Panel();
+            this.tbBuscar = new System.Windows.Forms.TextBox();
+            this.pbBuscador = new System.Windows.Forms.PictureBox();
+            this.pbMostrarBuscador = new System.Windows.Forms.PictureBox();
             this.panelNavegacionSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInicio)).BeginInit();
@@ -147,6 +150,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panelBuscador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBuscador)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarBuscador)).BeginInit();
             this.SuspendLayout();
             // 
             // lbPagos
@@ -158,14 +164,11 @@
             this.lbPagos.Size = new System.Drawing.Size(0, 17);
             this.lbPagos.TabIndex = 37;
             // 
-            // error
-            // 
-            this.error.ContainerControl = this;
-            this.error.Icon = ((System.Drawing.Icon)(resources.GetObject("error.Icon")));
-            // 
             // panelNavegacionSuperior
             // 
             this.panelNavegacionSuperior.BackColor = System.Drawing.Color.Snow;
+            this.panelNavegacionSuperior.Controls.Add(this.panelBuscador);
+            this.panelNavegacionSuperior.Controls.Add(this.pbMostrarBuscador);
             this.panelNavegacionSuperior.Controls.Add(this.pbExit);
             this.panelNavegacionSuperior.Controls.Add(this.pbInicio);
             this.panelNavegacionSuperior.Location = new System.Drawing.Point(31, 3);
@@ -204,9 +207,9 @@
             this.panelCrudProductos.Controls.Add(this.pbEliminarProducto);
             this.panelCrudProductos.Controls.Add(this.pbMostrarFormularioCrearProducto);
             this.panelCrudProductos.Controls.Add(this.dgvProductos);
-            this.panelCrudProductos.Location = new System.Drawing.Point(3, 61);
+            this.panelCrudProductos.Location = new System.Drawing.Point(0, 61);
             this.panelCrudProductos.Name = "panelCrudProductos";
-            this.panelCrudProductos.Size = new System.Drawing.Size(1124, 651);
+            this.panelCrudProductos.Size = new System.Drawing.Size(1127, 671);
             this.panelCrudProductos.TabIndex = 39;
             // 
             // pbMostraFormularioDetalleProducto
@@ -284,8 +287,8 @@
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(36, 31);
             this.dgvProductos.Name = "dgvProductos";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvProductos.Size = new System.Drawing.Size(1047, 414);
             this.dgvProductos.TabIndex = 37;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
@@ -334,7 +337,7 @@
             this.panelEditarProducto.Controls.Add(this.label25);
             this.panelEditarProducto.Location = new System.Drawing.Point(0, 61);
             this.panelEditarProducto.Name = "panelEditarProducto";
-            this.panelEditarProducto.Size = new System.Drawing.Size(1127, 648);
+            this.panelEditarProducto.Size = new System.Drawing.Size(1127, 671);
             this.panelEditarProducto.TabIndex = 46;
             this.panelEditarProducto.Visible = false;
             // 
@@ -788,7 +791,7 @@
             this.panelDetalleProducto.Controls.Add(this.label46);
             this.panelDetalleProducto.Location = new System.Drawing.Point(0, 61);
             this.panelDetalleProducto.Name = "panelDetalleProducto";
-            this.panelDetalleProducto.Size = new System.Drawing.Size(1127, 648);
+            this.panelDetalleProducto.Size = new System.Drawing.Size(1127, 671);
             this.panelDetalleProducto.TabIndex = 143;
             this.panelDetalleProducto.Visible = false;
             // 
@@ -1226,6 +1229,57 @@
             this.lbMensajeCrudProductos.Size = new System.Drawing.Size(0, 26);
             this.lbMensajeCrudProductos.TabIndex = 47;
             // 
+            // timerOcultarMensaje
+            // 
+            this.timerOcultarMensaje.Interval = 4000;
+            this.timerOcultarMensaje.Tick += new System.EventHandler(this.timerOcultarMensaje_Tick);
+            // 
+            // panelBuscador
+            // 
+            this.panelBuscador.BackColor = System.Drawing.Color.Transparent;
+            this.panelBuscador.Controls.Add(this.tbBuscar);
+            this.panelBuscador.Controls.Add(this.pbBuscador);
+            this.panelBuscador.Location = new System.Drawing.Point(322, 4);
+            this.panelBuscador.Name = "panelBuscador";
+            this.panelBuscador.Size = new System.Drawing.Size(431, 47);
+            this.panelBuscador.TabIndex = 9;
+            this.panelBuscador.Visible = false;
+            // 
+            // tbBuscar
+            // 
+            this.tbBuscar.BackColor = System.Drawing.Color.Snow;
+            this.tbBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuscar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tbBuscar.Location = new System.Drawing.Point(76, 14);
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(248, 19);
+            this.tbBuscar.TabIndex = 3;
+            this.tbBuscar.Text = "Buscar productos...";
+            this.tbBuscar.Click += new System.EventHandler(this.limpiarPlaceholder);
+            this.tbBuscar.TextChanged += new System.EventHandler(this.buscarProductos);
+            // 
+            // pbBuscador
+            // 
+            this.pbBuscador.Image = ((System.Drawing.Image)(resources.GetObject("pbBuscador.Image")));
+            this.pbBuscador.Location = new System.Drawing.Point(10, 5);
+            this.pbBuscador.Margin = new System.Windows.Forms.Padding(0);
+            this.pbBuscador.Name = "pbBuscador";
+            this.pbBuscador.Size = new System.Drawing.Size(409, 39);
+            this.pbBuscador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBuscador.TabIndex = 2;
+            this.pbBuscador.TabStop = false;
+            // 
+            // pbMostrarBuscador
+            // 
+            this.pbMostrarBuscador.Image = ((System.Drawing.Image)(resources.GetObject("pbMostrarBuscador.Image")));
+            this.pbMostrarBuscador.Location = new System.Drawing.Point(1015, 14);
+            this.pbMostrarBuscador.Name = "pbMostrarBuscador";
+            this.pbMostrarBuscador.Size = new System.Drawing.Size(36, 37);
+            this.pbMostrarBuscador.TabIndex = 8;
+            this.pbMostrarBuscador.TabStop = false;
+            this.pbMostrarBuscador.Click += new System.EventHandler(this.mostrarBuscador);
+            // 
             // UC_CrudProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1240,7 +1294,6 @@
             this.Name = "UC_CrudProductos";
             this.Size = new System.Drawing.Size(1127, 732);
             this.Load += new System.EventHandler(this.UC_CrudProductos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.panelNavegacionSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInicio)).EndInit();
@@ -1272,6 +1325,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panelBuscador.ResumeLayout(false);
+            this.panelBuscador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBuscador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarBuscador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1279,7 +1336,6 @@
 
         #endregion
         private System.Windows.Forms.Label lbPagos;
-        private System.Windows.Forms.ErrorProvider error;
         private System.Windows.Forms.Panel panelNavegacionSuperior;
         private System.Windows.Forms.PictureBox pbInicio;
         private System.Windows.Forms.PictureBox pbExit;
@@ -1366,5 +1422,10 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.TextBox tbPrecioEditar;
         private System.Windows.Forms.Label lbMensajeCrudProductos;
+        private System.Windows.Forms.Timer timerOcultarMensaje;
+        private System.Windows.Forms.Panel panelBuscador;
+        private System.Windows.Forms.TextBox tbBuscar;
+        private System.Windows.Forms.PictureBox pbBuscador;
+        private System.Windows.Forms.PictureBox pbMostrarBuscador;
     }
 }
