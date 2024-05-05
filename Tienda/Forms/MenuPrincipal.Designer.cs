@@ -133,7 +133,7 @@
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = true;
             this.btnInventario.Visible = false;
-            this.btnInventario.Click += new System.EventHandler(this.btnAdministradores_Click);
+            this.btnInventario.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // btnClientes
             // 
@@ -167,7 +167,7 @@
             this.btnVentas.Text = "Ventas";
             this.btnVentas.UseVisualStyleBackColor = true;
             this.btnVentas.Visible = false;
-            this.btnVentas.Click += new System.EventHandler(this.btnPolizas_Click);
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // btnInformes
             // 
@@ -237,7 +237,7 @@
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuAdministrador";
-            this.Load += new System.EventHandler(this.MenuAdministrador_Load);
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.paneLaterallNavegacion.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();

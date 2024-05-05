@@ -52,7 +52,7 @@ namespace Tienda.Forms
 
 
         // Auto load ventana
-        private void MenuAdministrador_Load(object sender, EventArgs e)
+        private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             // Muestro nombre usuario
             lbUsuario.Text = SesionUsuario.Nombre;
@@ -60,13 +60,13 @@ namespace Tienda.Forms
             lbTipo.Text = SesionUsuario.Tipo;
         }
 
-        // Muestra las polizas
-        private void btnPolizas_Click(object sender, EventArgs e)
+        // Muestra la ventana de ventas
+        private void btnVentas_Click(object sender, EventArgs e)
         {
             mostrarUserControl(new UC_CrudVentas());
         }
 
-        // Muestro los clietnes
+        // Muestro la ventana de los clientes
         private void btnClientes_Click(object sender, EventArgs e)
         {
             // Muestro la vengana 
@@ -74,11 +74,11 @@ namespace Tienda.Forms
         }
 
 
-        // Muestro la venana con los administradores
-        private void btnAdministradores_Click(object sender, EventArgs e)
+        // Muestro la venana del inventario de productos.
+        private void btnProductos_Click(object sender, EventArgs e)
         {          
             // Muestro la ventana 
-            mostrarUserControl(new UC_CrudInventario());
+            mostrarUserControl(new UC_CrudProductos());
         }
 
  
@@ -118,15 +118,10 @@ namespace Tienda.Forms
         // Muestra las polizas de un cliente
         private void btnMisPolizas_Click(object sender, EventArgs e)
         {
-            mostrarUserControl(new UC_CrudVentas(idUsuario));
+            mostrarUserControl(new UC_CrudProductos());
         }
 
-        // Muestro ventana clientes
-        private void btnMisClientes_Click(object sender, EventArgs e)
-        {
-            mostrarUserControl(new UC_CrudClientes(idUsuario));
-
-        }
+      
 
         // Cierro programa
         private void pbExit_Click_1(object sender, EventArgs e)
