@@ -1,6 +1,5 @@
 ﻿using MySqlX.XDevAPI;
 using Tienda.Entidades;
-using Tienda.Helper;
 using Tienda.Models;
 using System;
 using System.Data;

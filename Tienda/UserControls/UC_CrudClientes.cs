@@ -1,5 +1,4 @@
 ﻿using Tienda.Entidades;
-using Tienda.Helper;
 using Tienda.Models;
 using System;
 using System.Data;
@@ -71,16 +70,15 @@ namespace Tienda.UserControls
                 // si se ha habilitado
                 if (estado)
                 {
-                    // Obtengo las polizas de los clietnes
-                    DataTable tablaPolizas = AdminModel.getPolizasByClientID(idCliente);
+                    // Obtengo las compras del cliente
+                    DataTable tabla = AdminModel.getComprasByClientID(idCliente);
 
                     // Compruebo que no este vacio
-                    if (tablaPolizas.Rows.Count >= 1)
+                    if (tabla.Rows.Count >= 1)
                     {
-                        // Muestro las polizas del clietne en el dgv
-                        dgvVentas.DataSource = tablaPolizas;
-                        // Cambio color a las filas segun su estado
-                        GestorInterfaz.CambiarColorFilas(dgvVentas);
+                        // Muestro las compras del clietne en el dgv
+                        dgvVentas.DataSource = tabla;
+              
                         // Muestro nombre del cliente
                         lbClienteSelecionado.Text = "El cliente/a " +  nombre + ", " + apellidos + " tiene registradas " + dgvVentas.RowCount + " compras.";
                     }
@@ -255,22 +253,23 @@ namespace Tienda.UserControls
         }
 
         // Habilito la posibilidad de mostrar los pagos por poliza.
-        private void pbMostrarPolizasCliente_Click(object sender, EventArgs e)
+        private void pbMostrarComprasCliente_Click(object sender, EventArgs e)
         {
             estado = true;
             pbOn.Visible = false;
             pbOff.Visible = true;
+            panelComprasDelCliente.Visible = true;
             lbMensajeInterruptor.Text = "Habilitado! seleccione un cliente";
             Console.WriteLine("On");
         }
 
         // Desactivo la posibilidad de mostrar los pagos de cada poliza
-        private void pbOcultarPolizasCliente_Click(object sender, EventArgs e)
+        private void pbOcultarComprasCliente_Click(object sender, EventArgs e)
         {
             estado = false;
             pbOn.Visible = true;
             pbOff.Visible = false;
-            dgvVentas.DataSource = null;
+            panelComprasDelCliente.Visible = false;
             lbMensajeInterruptor.Text = "Deshabilitado";
             lbClienteSelecionado.Text = "";
             Console.WriteLine("off");

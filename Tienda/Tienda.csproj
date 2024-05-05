@@ -142,7 +142,6 @@
     <Compile Include="FormularioConexion.designer.cs">
       <DependentUpon>FormularioConexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\GestorInterfaz.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

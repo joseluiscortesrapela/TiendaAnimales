@@ -18,12 +18,13 @@ namespace Tienda.Forms
             InitializeComponent();
             // Obtengo el id
             idUsuario = SesionUsuario.Id;
+            // Nombre del usuario
+            lbUsuario.Text = SesionUsuario.Nombre;
             // Obtengo el tipo o rol
-            // tipo = SesionUsuario.Tipo;
-            string tipo = "administrador";
+            tipo = SesionUsuario.Tipo;
 
             // Muestro el menu principal segun tipo usuario.
-           prepararInterfazUsuario(tipo);
+            prepararInterfazUsuario(tipo);
 
         }
 
@@ -33,22 +34,27 @@ namespace Tienda.Forms
             // Tipo usuario
             switch (tipo)
             {
-                case "administrador":
+                case "Administrador":
+                    btnAdministradores.Visible = true;
+                    btnEmpleados.Visible = true;
+                    btnClientes.Visible = true;    
                     btnInventario.Visible = true;
-                    btnClientes.Visible = true;
+                    btnVentas.Visible = true;   
+                    btnInformes.Visible = true;
+                    break;
+                case "Empleado":
+                    btnInventario.Visible = true;
                     btnVentas.Visible = true;
+                    btnMisVentas.Visible = true;
                     btnInformes.Visible = true;
                     break;
-                case "empleado":
-                    btnInformes.Visible = true;
-                    break;
-                case "cliente":
+                case "Cliente":
                     break;
             }
 
         }
 
- 
+
 
 
         // Auto load ventana
@@ -57,7 +63,7 @@ namespace Tienda.Forms
             // Muestro nombre usuario
             lbUsuario.Text = SesionUsuario.Nombre;
             // Muestro tipo o rol del usuario.
-            lbTipo.Text = SesionUsuario.Tipo;
+            lbTipoUsuario.Text = SesionUsuario.Tipo;
         }
 
         // Muestra la ventana de ventas
@@ -76,23 +82,23 @@ namespace Tienda.Forms
 
         // Muestro la venana del inventario de productos.
         private void btnProductos_Click(object sender, EventArgs e)
-        {          
+        {
             // Muestro la ventana 
             mostrarUserControl(new UC_CrudProductos());
         }
 
- 
+
 
         // Regreso al inico o home
         private void pbInicio_Click(object sender, EventArgs e)
         {
             panelContenedor.Visible = false;
         }
- 
+
 
 
         // Método para mostrar un UserControl en el panel contenedor
-        private  void mostrarUserControl(UserControl userControl)
+        private void mostrarUserControl(UserControl userControl)
         {
             // Limpiar el panel contenedor antes de agregar un nuevo control
             panelContenedor.Controls.Clear();
@@ -121,7 +127,7 @@ namespace Tienda.Forms
             mostrarUserControl(new UC_CrudProductos());
         }
 
-      
+
 
         // Cierro programa
         private void pbExit_Click_1(object sender, EventArgs e)

@@ -17,12 +17,12 @@ namespace Tienda.Models
         private static bool estado;
 
     
-        public static DataTable getPolizasByClientID(int idCliente)
+        public static DataTable getComprasByClientID(int idCliente)
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
      
             // Consulta sql
-            string sql = "SELECT * FROM polizas WHERE idCliente = " + idCliente + " ORDER BY fecha DESC";
+            string sql = "SELECT * FROM ventas WHERE idCliente = " + idCliente + " ORDER BY fecha DESC";
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
             DataTable table = new DataTable();
