@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CrudProductos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbPagos = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelNavegacionSuperior = new System.Windows.Forms.Panel();
@@ -118,6 +118,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tbPrecioEditar = new System.Windows.Forms.TextBox();
+            this.lbMensajeCrudProductos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panelNavegacionSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
@@ -195,6 +196,7 @@
             // panelCrudProductos
             // 
             this.panelCrudProductos.BackColor = System.Drawing.Color.Snow;
+            this.panelCrudProductos.Controls.Add(this.lbMensajeCrudProductos);
             this.panelCrudProductos.Controls.Add(this.pbMostraFormularioDetalleProducto);
             this.panelCrudProductos.Controls.Add(this.lbPolizaSelecionada);
             this.panelCrudProductos.Controls.Add(this.label1);
@@ -279,12 +281,11 @@
             this.dgvProductos.AllowUserToResizeRows = false;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(36, 31);
             this.dgvProductos.Name = "dgvProductos";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductos.Size = new System.Drawing.Size(1047, 414);
             this.dgvProductos.TabIndex = 37;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
@@ -1214,15 +1215,26 @@
             this.tbPrecioEditar.Text = "0";
             this.tbPrecioEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // lbMensajeCrudProductos
+            // 
+            this.lbMensajeCrudProductos.AutoSize = true;
+            this.lbMensajeCrudProductos.BackColor = System.Drawing.Color.Transparent;
+            this.lbMensajeCrudProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeCrudProductos.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lbMensajeCrudProductos.Location = new System.Drawing.Point(419, 452);
+            this.lbMensajeCrudProductos.Name = "lbMensajeCrudProductos";
+            this.lbMensajeCrudProductos.Size = new System.Drawing.Size(0, 26);
+            this.lbMensajeCrudProductos.TabIndex = 47;
+            // 
             // UC_CrudProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.panelCrudProductos);
+            this.Controls.Add(this.panelCrearProducto);
             this.Controls.Add(this.panelDetalleProducto);
             this.Controls.Add(this.panelEditarProducto);
-            this.Controls.Add(this.panelCrearProducto);
-            this.Controls.Add(this.panelCrudProductos);
             this.Controls.Add(this.panelNavegacionSuperior);
             this.Controls.Add(this.lbPagos);
             this.Name = "UC_CrudProductos";
@@ -1353,5 +1365,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.TextBox tbPrecioEditar;
+        private System.Windows.Forms.Label lbMensajeCrudProductos;
     }
 }

@@ -21,6 +21,8 @@ namespace Tienda.Conexion
         public static MySqlConnection getConexion()
         {
             MySqlConnection conexion = new MySqlConnection(parameters);
+            // Abro la conexion
+            conexion.Open();
 
             return conexion;
         }

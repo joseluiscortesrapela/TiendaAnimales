@@ -139,7 +139,7 @@ namespace Tienda.UserControls
         private void pbEliminar_Click(object sender, EventArgs e)
         {
             // Mensaje que vera el usuario
-            String message = "Quieres eliminar  ..... ?";
+            String message = "Quieres eliminar el producto con id " + idProducto + " ?";
             // Titulo de la ventana emergente.
             String caption = "Eliminar";
             // Muestro mensaje y obtengo el boton que ha seleccionado
@@ -148,8 +148,13 @@ namespace Tienda.UserControls
             // Si quiere eliminar
             if (result == DialogResult.Yes)
             {
-
-                Console.WriteLine("Elimina el producto de la base de datos");
+                // Si ha eliminado el producto
+                if ( AdminModel.eliminarProducto( idProducto ) )
+                {   // Muetro mensaje al usuario
+                    lbMensajeCrudProductos.Text = "Acabas de eliminar el producto";
+                    // Actualizo la lista de productos
+                    cargarProductosDGV();
+                }
 
             }
 
@@ -187,7 +192,6 @@ namespace Tienda.UserControls
         }
 
 
-
         // Editar producto
         private void btnEditarProducto_Click(object sender, EventArgs e)
         {
@@ -210,8 +214,6 @@ namespace Tienda.UserControls
             }
 
         }
-
-
 
 
         // Limpia mensaje placeholder de los campos del formulario una vez que haces click sobre uno

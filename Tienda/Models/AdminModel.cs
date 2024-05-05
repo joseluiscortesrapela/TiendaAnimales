@@ -16,38 +16,11 @@ namespace Tienda.Models
     {
         private static bool estado;
 
-        // Obtengo todas las polizas
-        public static DataTable getPolizas()
-        {
-            MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-            // Consulta sql
-            string sql = "SELECT * FROM polizas ORDER BY fecha DESC";
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
-            DataTable table = new DataTable();
-
-            try
-            {
-                adapter.Fill(table);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-            return table;
-        }
-
-        // Obtengo las polias del cliente
+    
         public static DataTable getPolizasByClientID(int idCliente)
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+     
             // Consulta sql
             string sql = "SELECT * FROM polizas WHERE idCliente = " + idCliente + " ORDER BY fecha DESC";
 
@@ -72,35 +45,9 @@ namespace Tienda.Models
         public static DataTable getClientes()
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+         
             // Consulta sql
             string sql = "SELECT * FROM clientes";
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
-            DataTable table = new DataTable();
-
-            try
-            {
-                adapter.Fill(table);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-            return table;
-        }
-
-        public static DataTable getClienteById(int idCliente)
-        {
-            MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-            // Consulta sql
-            string sql = "SELECT * FROM clientes where idCliente = " + idCliente;
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
             DataTable table = new DataTable();
@@ -124,9 +71,7 @@ namespace Tienda.Models
         {
             // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-
+         
             // Consulta sql
             string sql = "INSERT INTO clientes ( nombre, apellidos, dni, telefono, correo, contraseña, provincia, municipio, tipo ) " +
                                       "VALUES ( @nombre, @apellidos, @dni, @telefono, @correo, @contraseña, @provincia, @municipio, @tipo )";
@@ -165,10 +110,7 @@ namespace Tienda.Models
         {
             // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-
-            // Consulta sql
+  
             // Consulta SQL para realizar un UPDATE en lugar de un INSERT
             string sql = "UPDATE clientes SET nombre = @nombre, apellidos = @apellidos, dni = @dni, telefono = @telefono, " +
                          "correo = @correo, contraseña = @contraseña, provincia = @provincia, municipio = @municipio, tipo = @tipo " +
@@ -273,7 +215,7 @@ namespace Tienda.Models
         }
 
         // Busca clientes
-        public static DataTable buscarClientes( string texto)
+        public static DataTable buscarClientes(string texto)
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
             // la abro.
@@ -337,13 +279,10 @@ namespace Tienda.Models
         }
 
 
-
-
         public static DataTable getProductos()
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+      
             // Consulta sql
             string sql = "SELECT * FROM productos";
 
@@ -363,58 +302,7 @@ namespace Tienda.Models
 
             return table;
         }
-
-        public static DataTable getAgentes()
-        {
-            MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-            // Consulta sql
-            string sql = "SELECT * FROM agentes";
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
-            DataTable table = new DataTable();
-
-            try
-            {
-                adapter.Fill(table);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-            return table;
-        }
-
-        // Obtengo los pagos efectuados para cada poliza.
-        public static DataTable getPagosByPoliza(int idPoliza)
-        {
-            MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-            // Consulta sql
-            string sql = "SELECT * FROM pagos WHERE idPoliza =" + idPoliza;
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
-            DataTable table = new DataTable();
-
-            try
-            {
-                adapter.Fill(table);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-            return table;
-        }
-
+ 
         // Obtengo las polias del cliente
         public static DataTable getCarteraClientes(int idAgente)
         {
@@ -442,16 +330,12 @@ namespace Tienda.Models
         }
 
 
-        
-
         // Registra un nuevo producto
         public static bool registrarProducto(Producto producto)
         {
             // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-
+      
             // Consulta sql
             string sql = "INSERT INTO productos (nombre, categoria, precio, stock, descripcion ) VALUES ( @nombre, @categoria, @precio, @stock, @descripcion)";
 
@@ -491,9 +375,7 @@ namespace Tienda.Models
         {
             // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-
+ 
             // Consulta sql
             string sql = "UPDATE productos SET nombre = @nombre, categoria = @categoria, precio = @precio, stock = @stock, descripcion = @descripcion WHERE idProducto = @idProducto";
 
@@ -529,70 +411,38 @@ namespace Tienda.Models
 
         }
 
-        /**
-
- 
-
         // Elimina un jugador y todas sus partidas
-        public static bool eliminarPoliza(int idPoliza)
+        public static bool eliminarProducto(int id)
         {
             // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-
+  
             bool eliminado;
-
-            // Inicio una transacción
-            MySqlTransaction transaccion = null;
 
             try
             {
-                // Mi transaccion
-                transaccion = conexion.BeginTransaction();
-
                 // Consulta sql para eliminar todas las polizas del cliente
-                string sql = "DELETE FROM pagos WHERE idPoliza = @idPoliza";
+                string sql = "DELETE FROM productos WHERE idProducto = @id";
                 // Mi sql y conexon
-                MySqlCommand comandoEliminarPago = new MySqlCommand(sql, conexion);
+                MySqlCommand comando = new MySqlCommand(sql, conexion);
                 // Le paso como parametro el id del cliente a eliminar
-                comandoEliminarPago.Parameters.AddWithValue("@idPoliza", idPoliza);
-                // Preparo la transaccion.
-                comandoEliminarPago.Transaction = transaccion;
-
-                // Ejecutar la transaccion.
-                comandoEliminarPago.ExecuteNonQuery();
-
-                // Consulta sql para eliminar al cliente
-                sql = "DELETE FROM polizas WHERE idPoliza = @idPoliza";
-                // Mi sql y conexon
-                MySqlCommand comandoEliminarPoliza = new MySqlCommand(sql, conexion);
-                // Le paso como parametros el id del cliente
-                comandoEliminarPoliza.Parameters.AddWithValue("@idPoliza", idPoliza);
-                // Preparo la transaccion.
-                comandoEliminarPoliza.Transaction = transaccion;
-
-                // Ejecutar la consulta para eliminar al jugador y obtengo un 1 si se ha realizado con exito y 0 en caso contrario
-                int estado = comandoEliminarPoliza.ExecuteNonQuery();
-
+                comando.Parameters.AddWithValue("@id", id);
+                // Ejecutar la consulta para eliminar, si obtengo un 1 si se ha realizado con exito y 0 en caso contrario
+                int estado = comando.ExecuteNonQuery();
                 // Convierto el int a bool
                 eliminado = (estado != 0);
+                // Cierro la conexion
+                conexion.Close();
 
-                // Confirmar la transacción
-                transaccion.Commit();
+
             }
             catch (Exception ex)
             {
-                // Si ocurre algún error, se realiza un rollback de la transacción
-                if (transaccion != null)
-                {
-                    transaccion.Rollback();
-                }
-                eliminado = false;
+
+                eliminado = false; // Cierro la conexión
             }
             finally
             {
-                // Cierro la conexión
                 conexion.Close();
             }
 
@@ -600,50 +450,11 @@ namespace Tienda.Models
 
         }
 
-
-       
-        // Actualiza estado de la poliza
-        public static int actualizarEstadoPoliza(int idPoliza, string estado)
-        {
-            // Creo la conexion con la base de datos.
-            MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-
-            // Consulta sql
-            string sql = "UPDATE polizas SET estado = @estado WHERE idPoliza = @idPoliza";
-            // Preparo la consulta
-            MySqlCommand comando = new MySqlCommand(sql, conexion);
-            // Estado de la poliza
-            comando.Parameters.AddWithValue("@estado", estado);
-            // Id de la poliza 
-            comando.Parameters.AddWithValue("@idPoliza", idPoliza);
-
-
-            int actualizado;
-
-            try
-            {
-                actualizado = comando.ExecuteNonQuery(); // Return value is the number of rows affected by the SQL statement.
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                actualizado = 0;
-            }
-
-            return actualizado;
-
-        }
-
-        */
-
         // Obtengo todos las provincias
         public static DataTable getProvincias()
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+       
             // Consulta sql
             string sql = "SELECT * FROM provincias";
 
@@ -668,8 +479,7 @@ namespace Tienda.Models
         public static DataTable getMunicipiosPorProvincia(int idProvincia)
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+        
             // Consulta sql
             string sql = "SELECT * FROM municipios WHERE provincia = " + idProvincia;
 
@@ -695,8 +505,7 @@ namespace Tienda.Models
         public static string getNombresProvincia(int idProvincia)
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+         ;
             // Consulta SQL para obtener el nombre de la provincia
             string sql = "SELECT provincia FROM provincias WHERE id = @idProvincia";
 
@@ -717,8 +526,7 @@ namespace Tienda.Models
         public static string getNombresMunicipio(int idMunicipio)
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+       
             // Consulta SQL 
             string sql = "SELECT municipio FROM municipios WHERE id = @idMunicipio";
 
@@ -735,13 +543,11 @@ namespace Tienda.Models
 
         }
 
-        public static DataTable generarInformes(int idClienteMin, int idClienteMax, DateTime fechaDesde, DateTime fechaHasta )
+        public static DataTable generarInformes(int idClienteMin, int idClienteMax, DateTime fechaDesde, DateTime fechaHasta)
         {
 
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-
+       
             DataTable dataTable = new DataTable();
 
             // Construir la consulta SQL
@@ -786,8 +592,7 @@ namespace Tienda.Models
         {
 
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+     
 
             DataTable dataTable = new DataTable();
 

@@ -13,8 +13,7 @@ namespace Tienda.Models
         {
             // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+  
             // Consulta sql
             string sql = @"SELECT * FROM usuarios WHERE correo = @correo AND contraseña = @contraseña ";
                            
@@ -46,8 +45,7 @@ namespace Tienda.Models
         {
             // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
+  
             // Consulta sql
             string sql = "SELECT * FROM clientes WHERE correo = @correo";
             // Preparo la consulta
@@ -69,9 +67,7 @@ namespace Tienda.Models
         {
             // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-
+    
             // Consulta sql
             string sql = "INSERT INTO clientes (  nombre, correo, contraseña ) VALUES ( @nombre, @correo, @contraseña  )";
             // Preparo la consulta
@@ -83,8 +79,6 @@ namespace Tienda.Models
             comando.Parameters.AddWithValue("@correo", correo);
             // Le como parametro la contraseña
             comando.Parameters.AddWithValue("@contraseña", contraseña);
-
-
 
             int creado;
 
