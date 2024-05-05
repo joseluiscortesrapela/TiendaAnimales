@@ -466,6 +466,7 @@ namespace Tienda.Models
             comando.Parameters.AddWithValue("@stock", producto.Stock);
             comando.Parameters.AddWithValue("@descripcion", producto.Descripcion);
 
+
             bool creado;
 
             try
@@ -485,6 +486,48 @@ namespace Tienda.Models
 
         }
 
+        // Actualiza un producto
+        public static bool actualizarProducto(Producto producto)
+        {
+            // Creo la conexion con la base de datos.
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            // la abro.
+            conexion.Open();
+
+            // Consulta sql
+            string sql = "UPDATE productos SET nombre = @nombre, categoria = @categoria, precio = @precio, stock = @stock, descripcion = @descripcion WHERE idProducto = @idProducto";
+
+            // Preparo la consulta
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            // Le paso el pago
+
+            // Agregar los parámetros para importe, estado, fecha y ID del cliente
+            comando.Parameters.AddWithValue("@nombre", producto.Nombre);
+            comando.Parameters.AddWithValue("@categoria", producto.Categoria);
+            comando.Parameters.AddWithValue("@precio", producto.Precio);
+            comando.Parameters.AddWithValue("@stock", producto.Stock);
+            comando.Parameters.AddWithValue("@descripcion", producto.Descripcion);
+            comando.Parameters.AddWithValue("@idProducto", producto.Id);
+
+
+            bool creado;
+
+            try
+            {
+                // Return value is the number of rows affected by the SQL statement.
+                int estado = comando.ExecuteNonQuery();
+                // Convierto el int a bool
+                creado = (estado != 0);
+            }
+            catch (Exception ex)
+            {
+                creado = false;
+                Console.WriteLine(ex.Message);
+            }
+
+            return creado;
+
+        }
 
         /**
 
@@ -645,27 +688,6 @@ namespace Tienda.Models
 
 
             return table;
-
-        }
-
-        public static string getNombresCliente(int idCliente)
-        {
-            MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-            // Consulta SQL 
-            string sql = "SELECT nombre FROM clientes WHERE idCliente = @idCliente";
-
-            MySqlCommand comando = new MySqlCommand(sql, conexion);
-            comando.Parameters.AddWithValue("@idCliente", idCliente);
-
-            // Ejecuta la consulta y obtiene el nombre de la provincia
-            object resultado = comando.ExecuteScalar();
-            // Obtengo nombre   
-            string nombreCliente = resultado.ToString();
-
-            // Devuelvo dato
-            return nombreCliente;
 
         }
 

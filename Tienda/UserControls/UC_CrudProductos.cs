@@ -85,7 +85,6 @@ namespace Tienda.UserControls
             tbStockDetalle.Text = producto.Stock.ToString();
             tbDescripcionDetalle.Text = producto.Descripcion;
 
-            Console.WriteLine("Muestro formulario detalle producto ");
         }
 
         // Muestra el panel que contiene el formulario para editar una nueva poliza.
@@ -94,23 +93,14 @@ namespace Tienda.UserControls
             // Muestro formulario para editar una poliza
             mostrarFormulario("EditarProducto");
 
-            /*
+            // Cargo la lista de clientes en el select
+            lbIdEditar.Text = producto.Id.ToString();
+            tbNombreEditar.Text = producto.Nombre;
+            cbCategoriaEditar.Text = producto.Categoria;
+            tbPrecioEditar.Text = producto.Precio.ToString();
+            tbStockEditar.Text = producto.Stock.ToString();
+            tbDescripcionsEdiitar.Text = producto.Descripcion;
 
-            // Relleno el formulario con los datos de la poliza.
-            lbIdPolizaEditar.Text = filaSelecionada.Id.ToString();
-            tbImporteEditar.Text = filaSelecionada.Importe.ToString();
-            cbTipoEditar.Text = filaSelecionada.Tipo;
-            cbEstadosEditar.Text = filaSelecionada.Estado;
-            dtpFechaEditar.Value = filaSelecionada.Fecha;
-            tbObservacionesEdiitar.Text = filaSelecionada.Observaciones;
-            tbIdCliente.Text = filaSelecionada.IdCliente.ToString();
-
-            string nombreCliente = AdminModel.getNombresCliente(filaSelecionada.IdCliente);
-            cbClientesEditar.Text = nombreCliente;
-
-            */
-
-            Console.WriteLine("Muestro formulario editar poliza");
         }
 
         // Muestra el panel y formulario que necesite
@@ -177,7 +167,7 @@ namespace Tienda.UserControls
         private void btnCrearProducto_Click(object sender, EventArgs e)
         {
 
-            // Obtengo datos del formulario
+            // Obtengo datos del formulario crear producto
             string nombre = tbNombre.Text.ToString();
             string categoria = cbCategoria.Text.ToString();
             decimal precio = decimal.Parse(tbPrecio.Text.ToString());
@@ -198,38 +188,27 @@ namespace Tienda.UserControls
 
 
 
-        // Editar los datos de una poliza
+        // Editar producto
         private void btnEditarProducto_Click(object sender, EventArgs e)
         {
 
-            /*
-            // El id de la poliza que quiero actualizar
-            int idPoliza = polizaSeleccinada.Id;
+            // Obtengo el valor de los campos del formulario
+            int id = int.Parse( lbIdEditar.Text.ToString() );
+            string nombre = tbNombreEditar.Text.ToString();
+            string categoria = cbCategoriaEditar.Text.ToString();
+            decimal precio = decimal.Parse(tbPrecioEditar.Text.ToString());
+            int stock = int.Parse(tbStockEditar.Text.ToString());
+            string descripcion = tbDescripcionsEdiitar.Text.ToString();
 
-            // Obtengo valor campos formulario editar
-            int importe = int.Parse(tbImporteEditar.Text);
-            string tipo = cbTipoEditar.Text;
-            string estado = cbEstadosEditar.Text;
-            DateTime fecha = dtpFechaEditar.Value;
-            string observaciones = tbObservacionesEdiitar.Text;
-            int idCliente = int.Parse(cbClientesEditar.SelectedValue.ToString());
+            // Creo un objeto de tipo producto
+            Producto producto = new Producto(id, nombre, categoria, precio, stock, descripcion);
 
-            // Encapsulo los datos en un objeto del tipo Poliza.
-            Poliza poliza = new Poliza(idPoliza, importe, tipo, estado, fecha, observaciones, idCliente);
-
-            // Si ha actualizado la poliza en la basde de datos
-            if (AdminModel.editarPoliza(poliza))
-            {
-                // Muestro mensaje
-                lbMensajeEdtiarPoliza.Text = "Acaba de actualizar la poliza";
+            // Si ha guardado el producto 
+            if (AdminModel.actualizarProducto(producto ))
+            {   // Muestro mensaje 
+                lbMensajeEdtiarProducto.Text = "Acabas actualizar el producto";
             }
 
-
-            Console.WriteLine("Editar poliza: idPoliza: " + poliza.Id + " importe: " + importe + " tipo: " + tipo + " estado: " + estado +
-                "idCliente: " + idCliente + " fecha " + fecha + " observaciones: " + observaciones);
-            */
-
-            Console.WriteLine("Editar un producto en la base de datos");
         }
 
 

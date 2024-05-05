@@ -46,37 +46,14 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.lbMensajeCrearProducto = new System.Windows.Forms.Label();
             this.panelEditarProducto = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.tbIdCliente = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.lbIdPolizaEditar = new System.Windows.Forms.Label();
-            this.lbMensajeEdtiarPoliza = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.cbTipoEditar = new System.Windows.Forms.ComboBox();
+            this.lbIdEditar = new System.Windows.Forms.Label();
+            this.lbMensajeEdtiarProducto = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.tbObservacionesEdiitar = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.dtpFechaEditar = new System.Windows.Forms.DateTimePicker();
-            this.label20 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.cbEstadosEditar = new System.Windows.Forms.ComboBox();
+            this.tbDescripcionsEdiitar = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.cbClientesEditar = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.tbImporteEditar = new System.Windows.Forms.TextBox();
-            this.btnEditarPoliza = new System.Windows.Forms.Button();
+            this.btnEditarProducto = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.panelCrearProducto = new System.Windows.Forms.Panel();
@@ -104,19 +81,15 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panelDetalleProducto = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tbNombreDetalle = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.tbStockDetalle = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.cbCategoriaDetalle = new System.Windows.Forms.ComboBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.tbPrecioDetalle = new System.Windows.Forms.TextBox();
@@ -129,6 +102,22 @@
             this.label42 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.tbNombreEditar = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.tbStockEditar = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.cbCategoriaEditar = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.tbPrecioEditar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panelNavegacionSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
@@ -140,13 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarFormularioCrearProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.panelEditarProducto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panelCrearProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -159,6 +142,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // lbPagos
@@ -318,37 +305,30 @@
             this.panelEditarProducto.BackColor = System.Drawing.Color.Snow;
             this.panelEditarProducto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelEditarProducto.BackgroundImage")));
             this.panelEditarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelEditarProducto.Controls.Add(this.label29);
-            this.panelEditarProducto.Controls.Add(this.pictureBox16);
-            this.panelEditarProducto.Controls.Add(this.tbIdCliente);
-            this.panelEditarProducto.Controls.Add(this.label26);
-            this.panelEditarProducto.Controls.Add(this.lbIdPolizaEditar);
-            this.panelEditarProducto.Controls.Add(this.lbMensajeEdtiarPoliza);
             this.panelEditarProducto.Controls.Add(this.label3);
             this.panelEditarProducto.Controls.Add(this.label13);
             this.panelEditarProducto.Controls.Add(this.pictureBox3);
-            this.panelEditarProducto.Controls.Add(this.cbTipoEditar);
-            this.panelEditarProducto.Controls.Add(this.label14);
+            this.panelEditarProducto.Controls.Add(this.tbNombreEditar);
             this.panelEditarProducto.Controls.Add(this.label15);
             this.panelEditarProducto.Controls.Add(this.label16);
-            this.panelEditarProducto.Controls.Add(this.label17);
             this.panelEditarProducto.Controls.Add(this.pictureBox5);
-            this.panelEditarProducto.Controls.Add(this.label18);
-            this.panelEditarProducto.Controls.Add(this.tbObservacionesEdiitar);
+            this.panelEditarProducto.Controls.Add(this.tbStockEditar);
+            this.panelEditarProducto.Controls.Add(this.label17);
             this.panelEditarProducto.Controls.Add(this.label19);
-            this.panelEditarProducto.Controls.Add(this.dtpFechaEditar);
-            this.panelEditarProducto.Controls.Add(this.label20);
             this.panelEditarProducto.Controls.Add(this.pictureBox6);
-            this.panelEditarProducto.Controls.Add(this.cbEstadosEditar);
-            this.panelEditarProducto.Controls.Add(this.pictureBox7);
+            this.panelEditarProducto.Controls.Add(this.cbCategoriaEditar);
+            this.panelEditarProducto.Controls.Add(this.label20);
             this.panelEditarProducto.Controls.Add(this.label22);
             this.panelEditarProducto.Controls.Add(this.pictureBox8);
-            this.panelEditarProducto.Controls.Add(this.cbClientesEditar);
-            this.panelEditarProducto.Controls.Add(this.label23);
-            this.panelEditarProducto.Controls.Add(this.label24);
-            this.panelEditarProducto.Controls.Add(this.pictureBox9);
-            this.panelEditarProducto.Controls.Add(this.tbImporteEditar);
-            this.panelEditarProducto.Controls.Add(this.btnEditarPoliza);
+            this.panelEditarProducto.Controls.Add(this.tbPrecioEditar);
+            this.panelEditarProducto.Controls.Add(this.label26);
+            this.panelEditarProducto.Controls.Add(this.lbIdEditar);
+            this.panelEditarProducto.Controls.Add(this.lbMensajeEdtiarProducto);
+            this.panelEditarProducto.Controls.Add(this.label14);
+            this.panelEditarProducto.Controls.Add(this.label18);
+            this.panelEditarProducto.Controls.Add(this.tbDescripcionsEdiitar);
+            this.panelEditarProducto.Controls.Add(this.pictureBox7);
+            this.panelEditarProducto.Controls.Add(this.btnEditarProducto);
             this.panelEditarProducto.Controls.Add(this.button2);
             this.panelEditarProducto.Controls.Add(this.label25);
             this.panelEditarProducto.Location = new System.Drawing.Point(0, 61);
@@ -357,41 +337,6 @@
             this.panelEditarProducto.TabIndex = 46;
             this.panelEditarProducto.Visible = false;
             // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label29.Location = new System.Drawing.Point(973, 11);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(81, 20);
-            this.label29.TabIndex = 145;
-            this.label29.Text = "IdCliente";
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(977, 34);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(29, 28);
-            this.pictureBox16.TabIndex = 144;
-            this.pictureBox16.TabStop = false;
-            // 
-            // tbIdCliente
-            // 
-            this.tbIdCliente.BackColor = System.Drawing.Color.AliceBlue;
-            this.tbIdCliente.Enabled = false;
-            this.tbIdCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIdCliente.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.tbIdCliente.Location = new System.Drawing.Point(1011, 35);
-            this.tbIdCliente.Name = "tbIdCliente";
-            this.tbIdCliente.Size = new System.Drawing.Size(76, 26);
-            this.tbIdCliente.TabIndex = 143;
-            this.tbIdCliente.Text = "0";
-            this.tbIdCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -399,80 +344,31 @@
             this.label26.ForeColor = System.Drawing.Color.Silver;
             this.label26.Location = new System.Drawing.Point(506, 6);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(87, 25);
+            this.label26.Size = new System.Drawing.Size(117, 25);
             this.label26.TabIndex = 142;
-            this.label26.Text = "Numero:";
+            this.label26.Text = "Identificador";
             // 
-            // lbIdPolizaEditar
+            // lbIdEditar
             // 
-            this.lbIdPolizaEditar.AutoSize = true;
-            this.lbIdPolizaEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdPolizaEditar.ForeColor = System.Drawing.Color.Silver;
-            this.lbIdPolizaEditar.Location = new System.Drawing.Point(587, 6);
-            this.lbIdPolizaEditar.Name = "lbIdPolizaEditar";
-            this.lbIdPolizaEditar.Size = new System.Drawing.Size(23, 25);
-            this.lbIdPolizaEditar.TabIndex = 141;
-            this.lbIdPolizaEditar.Text = "0";
+            this.lbIdEditar.AutoSize = true;
+            this.lbIdEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdEditar.ForeColor = System.Drawing.Color.Silver;
+            this.lbIdEditar.Location = new System.Drawing.Point(631, 6);
+            this.lbIdEditar.Name = "lbIdEditar";
+            this.lbIdEditar.Size = new System.Drawing.Size(23, 25);
+            this.lbIdEditar.TabIndex = 141;
+            this.lbIdEditar.Text = "0";
             // 
-            // lbMensajeEdtiarPoliza
+            // lbMensajeEdtiarProducto
             // 
-            this.lbMensajeEdtiarPoliza.AutoSize = true;
-            this.lbMensajeEdtiarPoliza.BackColor = System.Drawing.Color.Transparent;
-            this.lbMensajeEdtiarPoliza.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMensajeEdtiarPoliza.ForeColor = System.Drawing.Color.Teal;
-            this.lbMensajeEdtiarPoliza.Location = new System.Drawing.Point(445, 477);
-            this.lbMensajeEdtiarPoliza.Name = "lbMensajeEdtiarPoliza";
-            this.lbMensajeEdtiarPoliza.Size = new System.Drawing.Size(0, 26);
-            this.lbMensajeEdtiarPoliza.TabIndex = 140;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.Coral;
-            this.label3.Location = new System.Drawing.Point(226, 160);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 13);
-            this.label3.TabIndex = 139;
-            this.label3.Text = "No puede estar vacio";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label13.Location = new System.Drawing.Point(186, 106);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 20);
-            this.label13.TabIndex = 138;
-            this.label13.Text = "Categoria";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(190, 132);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(31, 29);
-            this.pictureBox3.TabIndex = 137;
-            this.pictureBox3.TabStop = false;
-            // 
-            // cbTipoEditar
-            // 
-            this.cbTipoEditar.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.cbTipoEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoEditar.ForeColor = System.Drawing.SystemColors.Info;
-            this.cbTipoEditar.FormattingEnabled = true;
-            this.cbTipoEditar.Items.AddRange(new object[] {
-            "Vida",
-            "Coche",
-            "Hogar",
-            "Salud"});
-            this.cbTipoEditar.Location = new System.Drawing.Point(227, 129);
-            this.cbTipoEditar.Name = "cbTipoEditar";
-            this.cbTipoEditar.Size = new System.Drawing.Size(108, 28);
-            this.cbTipoEditar.TabIndex = 136;
-            this.cbTipoEditar.Text = "Tipo";
+            this.lbMensajeEdtiarProducto.AutoSize = true;
+            this.lbMensajeEdtiarProducto.BackColor = System.Drawing.Color.Transparent;
+            this.lbMensajeEdtiarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeEdtiarProducto.ForeColor = System.Drawing.Color.Teal;
+            this.lbMensajeEdtiarProducto.Location = new System.Drawing.Point(445, 477);
+            this.lbMensajeEdtiarProducto.Name = "lbMensajeEdtiarProducto";
+            this.lbMensajeEdtiarProducto.Size = new System.Drawing.Size(0, 26);
+            this.lbMensajeEdtiarProducto.TabIndex = 140;
             // 
             // label14
             // 
@@ -485,133 +381,31 @@
             this.label14.TabIndex = 135;
             this.label14.Text = "Limite su comentario  a un máximo de 5000 caracteres";
             // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.ForeColor = System.Drawing.Color.Coral;
-            this.label15.Location = new System.Drawing.Point(945, 161);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(109, 13);
-            this.label15.TabIndex = 134;
-            this.label15.Text = "No puede estar vacio";
-            // 
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.ForeColor = System.Drawing.Color.Coral;
-            this.label16.Location = new System.Drawing.Point(628, 159);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(109, 13);
-            this.label16.TabIndex = 133;
-            this.label16.Text = "No puede estar vacio";
-            // 
-            // label17
-            // 
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.ForeColor = System.Drawing.Color.Coral;
-            this.label17.Location = new System.Drawing.Point(403, 160);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(116, 13);
-            this.label17.TabIndex = 132;
-            this.label17.Text = "No puede estar vacio";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(909, 135);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox5.TabIndex = 131;
-            this.pictureBox5.TabStop = false;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label18.Location = new System.Drawing.Point(57, 221);
+            this.label18.Location = new System.Drawing.Point(45, 221);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(127, 20);
+            this.label18.Size = new System.Drawing.Size(103, 20);
             this.label18.TabIndex = 130;
-            this.label18.Text = "Observaciones";
+            this.label18.Text = "Descripción";
             // 
-            // tbObservacionesEdiitar
+            // tbDescripcionsEdiitar
             // 
-            this.tbObservacionesEdiitar.BackColor = System.Drawing.Color.PapayaWhip;
-            this.tbObservacionesEdiitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbObservacionesEdiitar.ForeColor = System.Drawing.Color.Teal;
-            this.tbObservacionesEdiitar.Location = new System.Drawing.Point(48, 244);
-            this.tbObservacionesEdiitar.MaxLength = 5000;
-            this.tbObservacionesEdiitar.Multiline = true;
-            this.tbObservacionesEdiitar.Name = "tbObservacionesEdiitar";
-            this.tbObservacionesEdiitar.Size = new System.Drawing.Size(1034, 214);
-            this.tbObservacionesEdiitar.TabIndex = 129;
-            this.tbObservacionesEdiitar.Text = resources.GetString("tbObservacionesEdiitar.Text");
-            this.tbObservacionesEdiitar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbObservacionesEdiitar.Click += new System.EventHandler(this.limpiarPlaceholder);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label19.Location = new System.Drawing.Point(905, 112);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(132, 20);
-            this.label19.TabIndex = 128;
-            this.label19.Text = "Fecha creación";
-            // 
-            // dtpFechaEditar
-            // 
-            this.dtpFechaEditar.CalendarMonthBackground = System.Drawing.SystemColors.HotTrack;
-            this.dtpFechaEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaEditar.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEditar.Location = new System.Drawing.Point(946, 134);
-            this.dtpFechaEditar.Name = "dtpFechaEditar";
-            this.dtpFechaEditar.Size = new System.Drawing.Size(136, 27);
-            this.dtpFechaEditar.TabIndex = 127;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label20.Location = new System.Drawing.Point(363, 106);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(75, 20);
-            this.label20.TabIndex = 126;
-            this.label20.Text = "Estados";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(367, 132);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox6.TabIndex = 125;
-            this.pictureBox6.TabStop = false;
-            // 
-            // cbEstadosEditar
-            // 
-            this.cbEstadosEditar.BackColor = System.Drawing.Color.CadetBlue;
-            this.cbEstadosEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEstadosEditar.ForeColor = System.Drawing.SystemColors.Info;
-            this.cbEstadosEditar.FormattingEnabled = true;
-            this.cbEstadosEditar.Items.AddRange(new object[] {
-            "Cobrada",
-            "A cuenta",
-            "Liquidada",
-            "Anulada"});
-            this.cbEstadosEditar.Location = new System.Drawing.Point(404, 129);
-            this.cbEstadosEditar.Name = "cbEstadosEditar";
-            this.cbEstadosEditar.Size = new System.Drawing.Size(155, 28);
-            this.cbEstadosEditar.TabIndex = 124;
-            this.cbEstadosEditar.Text = "Selecciona estado";
+            this.tbDescripcionsEdiitar.BackColor = System.Drawing.Color.PapayaWhip;
+            this.tbDescripcionsEdiitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDescripcionsEdiitar.ForeColor = System.Drawing.Color.Teal;
+            this.tbDescripcionsEdiitar.Location = new System.Drawing.Point(48, 244);
+            this.tbDescripcionsEdiitar.MaxLength = 5000;
+            this.tbDescripcionsEdiitar.Multiline = true;
+            this.tbDescripcionsEdiitar.Name = "tbDescripcionsEdiitar";
+            this.tbDescripcionsEdiitar.Size = new System.Drawing.Size(1034, 214);
+            this.tbDescripcionsEdiitar.TabIndex = 129;
+            this.tbDescripcionsEdiitar.Text = resources.GetString("tbDescripcionsEdiitar.Text");
+            this.tbDescripcionsEdiitar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox7
             // 
@@ -622,100 +416,19 @@
             this.pictureBox7.TabIndex = 123;
             this.pictureBox7.TabStop = false;
             // 
-            // label22
+            // btnEditarProducto
             // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label22.Location = new System.Drawing.Point(588, 109);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(74, 20);
-            this.label22.TabIndex = 121;
-            this.label22.Text = "Clientes";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(592, 132);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox8.TabIndex = 120;
-            this.pictureBox8.TabStop = false;
-            // 
-            // cbClientesEditar
-            // 
-            this.cbClientesEditar.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.cbClientesEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbClientesEditar.ForeColor = System.Drawing.SystemColors.Info;
-            this.cbClientesEditar.FormattingEnabled = true;
-            this.cbClientesEditar.Items.AddRange(new object[] {
-            "Particular",
-            "Autonomo"});
-            this.cbClientesEditar.Location = new System.Drawing.Point(629, 131);
-            this.cbClientesEditar.Name = "cbClientesEditar";
-            this.cbClientesEditar.Size = new System.Drawing.Size(249, 28);
-            this.cbClientesEditar.TabIndex = 119;
-            this.cbClientesEditar.Text = "Selecciona un cliente";
-            // 
-            // label23
-            // 
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.ForeColor = System.Drawing.Color.Coral;
-            this.label23.Location = new System.Drawing.Point(79, 159);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(132, 13);
-            this.label23.TabIndex = 118;
-            this.label23.Text = "Solo numericos";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label24.Location = new System.Drawing.Point(44, 107);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(71, 20);
-            this.label24.TabIndex = 117;
-            this.label24.Text = "Importe";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(48, 130);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(29, 28);
-            this.pictureBox9.TabIndex = 116;
-            this.pictureBox9.TabStop = false;
-            // 
-            // tbImporteEditar
-            // 
-            this.tbImporteEditar.BackColor = System.Drawing.Color.AliceBlue;
-            this.tbImporteEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbImporteEditar.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.tbImporteEditar.Location = new System.Drawing.Point(82, 131);
-            this.tbImporteEditar.Name = "tbImporteEditar";
-            this.tbImporteEditar.Size = new System.Drawing.Size(76, 26);
-            this.tbImporteEditar.TabIndex = 115;
-            this.tbImporteEditar.Text = "0";
-            this.tbImporteEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnEditarPoliza
-            // 
-            this.btnEditarPoliza.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEditarPoliza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarPoliza.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarPoliza.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEditarPoliza.Location = new System.Drawing.Point(605, 541);
-            this.btnEditarPoliza.Name = "btnEditarPoliza";
-            this.btnEditarPoliza.Size = new System.Drawing.Size(192, 35);
-            this.btnEditarPoliza.TabIndex = 114;
-            this.btnEditarPoliza.Text = "Editar";
-            this.btnEditarPoliza.UseVisualStyleBackColor = false;
-            this.btnEditarPoliza.Click += new System.EventHandler(this.btnEditarProducto_Click);
+            this.btnEditarProducto.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEditarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEditarProducto.Location = new System.Drawing.Point(605, 541);
+            this.btnEditarProducto.Name = "btnEditarProducto";
+            this.btnEditarProducto.Size = new System.Drawing.Size(192, 35);
+            this.btnEditarProducto.TabIndex = 114;
+            this.btnEditarProducto.Text = "Editar";
+            this.btnEditarProducto.UseVisualStyleBackColor = false;
+            this.btnEditarProducto.Click += new System.EventHandler(this.btnEditarProducto_Click);
             // 
             // button2
             // 
@@ -906,7 +619,7 @@
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Items.AddRange(new object[] {
             "Animales",
-            "Comida",
+            "Alimentacion",
             "Accesorios"});
             this.cbCategoria.Location = new System.Drawing.Point(592, 139);
             this.cbCategoria.Name = "cbCategoria";
@@ -956,7 +669,7 @@
             // pictureBox30
             // 
             this.pictureBox30.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox30.Image")));
-            this.pictureBox30.Location = new System.Drawing.Point(395, 3);
+            this.pictureBox30.Location = new System.Drawing.Point(404, 4);
             this.pictureBox30.Name = "pictureBox30";
             this.pictureBox30.Size = new System.Drawing.Size(68, 67);
             this.pictureBox30.TabIndex = 95;
@@ -1051,19 +764,15 @@
             this.panelDetalleProducto.BackColor = System.Drawing.Color.Transparent;
             this.panelDetalleProducto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelDetalleProducto.BackgroundImage")));
             this.panelDetalleProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelDetalleProducto.Controls.Add(this.label6);
             this.panelDetalleProducto.Controls.Add(this.label9);
             this.panelDetalleProducto.Controls.Add(this.pictureBox2);
             this.panelDetalleProducto.Controls.Add(this.tbNombreDetalle);
-            this.panelDetalleProducto.Controls.Add(this.label28);
             this.panelDetalleProducto.Controls.Add(this.label31);
             this.panelDetalleProducto.Controls.Add(this.pictureBox10);
             this.panelDetalleProducto.Controls.Add(this.tbStockDetalle);
-            this.panelDetalleProducto.Controls.Add(this.label32);
             this.panelDetalleProducto.Controls.Add(this.label33);
             this.panelDetalleProducto.Controls.Add(this.pictureBox11);
             this.panelDetalleProducto.Controls.Add(this.cbCategoriaDetalle);
-            this.panelDetalleProducto.Controls.Add(this.label34);
             this.panelDetalleProducto.Controls.Add(this.label35);
             this.panelDetalleProducto.Controls.Add(this.pictureBox12);
             this.panelDetalleProducto.Controls.Add(this.tbPrecioDetalle);
@@ -1081,16 +790,6 @@
             this.panelDetalleProducto.Size = new System.Drawing.Size(1127, 648);
             this.panelDetalleProducto.TabIndex = 143;
             this.panelDetalleProducto.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.ForeColor = System.Drawing.Color.Coral;
-            this.label6.Location = new System.Drawing.Point(78, 173);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(184, 13);
-            this.label6.TabIndex = 158;
-            this.label6.Text = "El nombre no puede estar vacio";
             // 
             // label9
             // 
@@ -1117,24 +816,14 @@
             // tbNombreDetalle
             // 
             this.tbNombreDetalle.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbNombreDetalle.Enabled = false;
             this.tbNombreDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNombreDetalle.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.tbNombreDetalle.Location = new System.Drawing.Point(81, 142);
             this.tbNombreDetalle.Name = "tbNombreDetalle";
             this.tbNombreDetalle.Size = new System.Drawing.Size(416, 26);
             this.tbNombreDetalle.TabIndex = 155;
-            this.tbNombreDetalle.Text = "Introduce el nombre del producto";
             this.tbNombreDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label28
-            // 
-            this.label28.BackColor = System.Drawing.Color.Transparent;
-            this.label28.ForeColor = System.Drawing.Color.Coral;
-            this.label28.Location = new System.Drawing.Point(1007, 173);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(79, 13);
-            this.label28.TabIndex = 154;
-            this.label28.Text = "Solo numericos";
             // 
             // label31
             // 
@@ -1160,6 +849,7 @@
             // tbStockDetalle
             // 
             this.tbStockDetalle.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbStockDetalle.Enabled = false;
             this.tbStockDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbStockDetalle.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.tbStockDetalle.Location = new System.Drawing.Point(1005, 144);
@@ -1168,16 +858,6 @@
             this.tbStockDetalle.TabIndex = 151;
             this.tbStockDetalle.Text = "0";
             this.tbStockDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label32
-            // 
-            this.label32.BackColor = System.Drawing.Color.Transparent;
-            this.label32.ForeColor = System.Drawing.Color.Coral;
-            this.label32.Location = new System.Drawing.Point(601, 170);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(109, 13);
-            this.label32.TabIndex = 150;
-            this.label32.Text = "No puede estar vacio";
             // 
             // label33
             // 
@@ -1204,27 +884,18 @@
             // cbCategoriaDetalle
             // 
             this.cbCategoriaDetalle.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.cbCategoriaDetalle.Enabled = false;
             this.cbCategoriaDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategoriaDetalle.ForeColor = System.Drawing.SystemColors.Info;
             this.cbCategoriaDetalle.FormattingEnabled = true;
             this.cbCategoriaDetalle.Items.AddRange(new object[] {
             "Animales",
-            "Comida",
+            "Alimentacion",
             "Accesorios"});
             this.cbCategoriaDetalle.Location = new System.Drawing.Point(591, 139);
             this.cbCategoriaDetalle.Name = "cbCategoriaDetalle";
             this.cbCategoriaDetalle.Size = new System.Drawing.Size(171, 28);
             this.cbCategoriaDetalle.TabIndex = 147;
-            // 
-            // label34
-            // 
-            this.label34.BackColor = System.Drawing.Color.Transparent;
-            this.label34.ForeColor = System.Drawing.Color.Coral;
-            this.label34.Location = new System.Drawing.Point(844, 170);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(94, 13);
-            this.label34.TabIndex = 146;
-            this.label34.Text = "Solo numericos";
             // 
             // label35
             // 
@@ -1251,6 +922,7 @@
             // tbPrecioDetalle
             // 
             this.tbPrecioDetalle.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbPrecioDetalle.Enabled = false;
             this.tbPrecioDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPrecioDetalle.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.tbPrecioDetalle.Location = new System.Drawing.Point(847, 141);
@@ -1318,7 +990,6 @@
             this.tbDescripcionDetalle.ReadOnly = true;
             this.tbDescripcionDetalle.Size = new System.Drawing.Size(1034, 214);
             this.tbDescripcionDetalle.TabIndex = 129;
-            this.tbDescripcionDetalle.Text = resources.GetString("tbDescripcionDetalle.Text");
             this.tbDescripcionDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox13
@@ -1365,15 +1036,193 @@
             this.label46.TabIndex = 112;
             this.label46.Text = "Detalle producto";
             // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.Coral;
+            this.label3.Location = new System.Drawing.Point(78, 173);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(184, 13);
+            this.label3.TabIndex = 158;
+            this.label3.Text = "El nombre no puede estar vacio";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label13.Location = new System.Drawing.Point(44, 120);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(71, 20);
+            this.label13.TabIndex = 157;
+            this.label13.Text = "Nombre";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(48, 140);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(29, 28);
+            this.pictureBox3.TabIndex = 156;
+            this.pictureBox3.TabStop = false;
+            // 
+            // tbNombreEditar
+            // 
+            this.tbNombreEditar.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbNombreEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNombreEditar.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.tbNombreEditar.Location = new System.Drawing.Point(81, 142);
+            this.tbNombreEditar.Name = "tbNombreEditar";
+            this.tbNombreEditar.Size = new System.Drawing.Size(416, 26);
+            this.tbNombreEditar.TabIndex = 155;
+            this.tbNombreEditar.Text = "Introduce el nombre del producto";
+            this.tbNombreEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.ForeColor = System.Drawing.Color.Coral;
+            this.label15.Location = new System.Drawing.Point(1007, 173);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(79, 13);
+            this.label15.TabIndex = 154;
+            this.label15.Text = "Solo numericos";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label16.Location = new System.Drawing.Point(967, 120);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(55, 20);
+            this.label16.TabIndex = 153;
+            this.label16.Text = "Stock";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Location = new System.Drawing.Point(971, 142);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(29, 28);
+            this.pictureBox5.TabIndex = 152;
+            this.pictureBox5.TabStop = false;
+            // 
+            // tbStockEditar
+            // 
+            this.tbStockEditar.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbStockEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStockEditar.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.tbStockEditar.Location = new System.Drawing.Point(1005, 144);
+            this.tbStockEditar.Name = "tbStockEditar";
+            this.tbStockEditar.Size = new System.Drawing.Size(76, 26);
+            this.tbStockEditar.TabIndex = 151;
+            this.tbStockEditar.Text = "0";
+            this.tbStockEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.ForeColor = System.Drawing.Color.Coral;
+            this.label17.Location = new System.Drawing.Point(601, 170);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(109, 13);
+            this.label17.TabIndex = 150;
+            this.label17.Text = "No puede estar vacio";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label19.Location = new System.Drawing.Point(550, 118);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(87, 20);
+            this.label19.TabIndex = 149;
+            this.label19.Text = "Categoria";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(554, 141);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(31, 27);
+            this.pictureBox6.TabIndex = 148;
+            this.pictureBox6.TabStop = false;
+            // 
+            // cbCategoriaEditar
+            // 
+            this.cbCategoriaEditar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.cbCategoriaEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategoriaEditar.ForeColor = System.Drawing.SystemColors.Info;
+            this.cbCategoriaEditar.FormattingEnabled = true;
+            this.cbCategoriaEditar.Items.AddRange(new object[] {
+            "Animales",
+            "Alimentacion",
+            "Accesorios"});
+            this.cbCategoriaEditar.Location = new System.Drawing.Point(591, 139);
+            this.cbCategoriaEditar.Name = "cbCategoriaEditar";
+            this.cbCategoriaEditar.Size = new System.Drawing.Size(171, 28);
+            this.cbCategoriaEditar.TabIndex = 147;
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.ForeColor = System.Drawing.Color.Coral;
+            this.label20.Location = new System.Drawing.Point(844, 170);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(94, 13);
+            this.label20.TabIndex = 146;
+            this.label20.Text = "Solo numericos";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label22.Location = new System.Drawing.Point(808, 120);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(59, 20);
+            this.label22.TabIndex = 145;
+            this.label22.Text = "Precio";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(812, 141);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(29, 28);
+            this.pictureBox8.TabIndex = 144;
+            this.pictureBox8.TabStop = false;
+            // 
+            // tbPrecioEditar
+            // 
+            this.tbPrecioEditar.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbPrecioEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrecioEditar.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.tbPrecioEditar.Location = new System.Drawing.Point(847, 141);
+            this.tbPrecioEditar.Name = "tbPrecioEditar";
+            this.tbPrecioEditar.Size = new System.Drawing.Size(76, 26);
+            this.tbPrecioEditar.TabIndex = 143;
+            this.tbPrecioEditar.Text = "0";
+            this.tbPrecioEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // UC_CrudProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.Controls.Add(this.panelDetalleProducto);
-            this.Controls.Add(this.panelCrudProductos);
-            this.Controls.Add(this.panelCrearProducto);
             this.Controls.Add(this.panelEditarProducto);
+            this.Controls.Add(this.panelCrearProducto);
+            this.Controls.Add(this.panelCrudProductos);
             this.Controls.Add(this.panelNavegacionSuperior);
             this.Controls.Add(this.lbPagos);
             this.Name = "UC_CrudProductos";
@@ -1392,13 +1241,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.panelEditarProducto.ResumeLayout(false);
             this.panelEditarProducto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panelCrearProducto.ResumeLayout(false);
             this.panelCrearProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
@@ -1413,6 +1256,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1448,36 +1295,16 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.ComboBox cbCategoria;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ComboBox cbTipoEditar;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox tbObservacionesEdiitar;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.DateTimePicker dtpFechaEditar;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.ComboBox cbEstadosEditar;
+        private System.Windows.Forms.TextBox tbDescripcionsEdiitar;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.ComboBox cbClientesEditar;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.TextBox tbImporteEditar;
-        private System.Windows.Forms.Button btnEditarPoliza;
+        private System.Windows.Forms.Button btnEditarProducto;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label lbMensajeEdtiarPoliza;
+        private System.Windows.Forms.Label lbMensajeEdtiarProducto;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label lbIdPolizaEditar;
+        private System.Windows.Forms.Label lbIdEditar;
         private System.Windows.Forms.PictureBox pbMostraFormularioDetalleProducto;
         private System.Windows.Forms.Panel panelDetalleProducto;
         private System.Windows.Forms.Label label27;
@@ -1489,9 +1316,6 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.TextBox tbIdCliente;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.PictureBox pictureBox17;
@@ -1501,21 +1325,33 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox tbStock;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox tbNombreDetalle;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.TextBox tbStockDetalle;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.ComboBox cbCategoriaDetalle;
-        private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.TextBox tbPrecioDetalle;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.TextBox tbNombreEditar;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.TextBox tbStockEditar;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.ComboBox cbCategoriaEditar;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.TextBox tbPrecioEditar;
     }
 }
