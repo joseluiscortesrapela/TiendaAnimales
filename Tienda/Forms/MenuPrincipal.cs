@@ -121,14 +121,7 @@ namespace Tienda.Forms
             login.Show();
         }
 
-        // Muestra las polizas de un cliente
-        private void btnMisPolizas_Click(object sender, EventArgs e)
-        {
-            mostrarUserControl(new UC_CrudProductos());
-        }
-
-
-
+   
         // Cierro programa
         private void pbExit_Click_1(object sender, EventArgs e)
         {
@@ -144,6 +137,26 @@ namespace Tienda.Forms
         private void btnHome_Click(object sender, EventArgs e)
         {
             panelContenedor.Visible = false;
+        }
+
+        private void btnClientes_MouseHover(object sender, EventArgs e)
+        {
+            mostrarUserControl(new UC_CrudClientes());
+        }
+
+        private void btnInventario_MouseHover(object sender, EventArgs e)
+        {
+            mostrarUserControl(new UC_CrudProductos());
+        }
+
+        private void btnVentas_MouseHover(object sender, EventArgs e)
+        {
+            mostrarUserControl(new UC_Ventas());
+        }
+
+        private void btnInformes_MouseHover(object sender, EventArgs e)
+        {
+            mostrarUserControl(new UC_Informes());
         }
     }
 }

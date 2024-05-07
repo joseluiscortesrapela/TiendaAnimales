@@ -251,7 +251,7 @@
   <data name="btnInventario.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        qwAAAKsB1E2SqwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQ0SURBVEhLzVVp
+        qgAAAKoBBgpwTwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQ0SURBVEhLzVVp
         bFRVFP7cIm5Rgnvcfqm4xSVR45ZoxMQ1mhg1VnEjGjUgmHlVOmKmxPaJUI2dRlqhM0SmNYxBBnCmaAfH
         li6MTIukU6USnRGFaknnnjuF3+P37nszjgSF8Ee/5OSdc+6527nfOQ//D/xRuAbjajbG5Q1X1LPGVyod
         40UcBSYmTsUe8VHylG3Yo57HuL4Xe3UN7Qn8JgnKt9Qt5ErTvFlHiJ/VHcjJAHI8af7AecjLCtop+r/g
@@ -293,7 +293,7 @@
   <data name="btnMisVentas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        qwAAAKsB1E2SqwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAXMSURBVEhLpZVd
+        qgAAAKoBBgpwTwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAXMSURBVEhLpZVd
         TFNnGMfJYrJJZhBo6en56mlBwrZotnm1Oy+YBuamjFXBDz61CEyUL1tFsEWQKiiggqA4qkzRilXEHaPV
         lKmbMWqM24Xb1ZLN7ELp+T5tjyxhz2lP1n2Imuyf/G/OOXl+7/P+n/c9Ca8SW0LNZ4osbrbQfIwpNC/S
         Hv8/zTgT5nBfmvI5G2nlys3X2RJTGVtkymPWmB8yq9MLgl+YrcHPM3Dt81dLaMZKxCb8Km8n/HwDeCtx
@@ -324,7 +324,7 @@
   <data name="btnInformes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        qQAAAKkBq7NRIgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAARTSURBVEhLnZVt
+        qAAAAKgBefSzxgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAARTSURBVEhLnZVt
         TJV1GMafnAdGQMRhS8DI+RI1gSXDEkiDEjB08jaelAxiwjnq1M5BDp6DHs5OQHIYL8qhMbF0ExYQWq3c
         ECaut/Wlly8tP7DGVqs1s0UbWV/Mrq77Of+HQYAfvLbf7v99/6/7vh/OG9oifY5YbQKR2sdYqSoLBazQ
         PsHzvM9bhod5b9M+hZtkqy5NC59EMvksbBKzlmuwSQy7jjZtDOHKEtLXsFgmUUPsSxExgST2ThGEXYPX

@@ -41,9 +41,9 @@
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lbUsuario = new System.Windows.Forms.Label();
             this.lbTipoUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbUsuario = new System.Windows.Forms.Label();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pbExit = new System.Windows.Forms.PictureBox();
             this.paneLaterallNavegacion.SuspendLayout();
@@ -56,7 +56,7 @@
             // 
             // paneLaterallNavegacion
             // 
-            this.paneLaterallNavegacion.BackColor = System.Drawing.SystemColors.ControlText;
+            this.paneLaterallNavegacion.BackColor = System.Drawing.Color.AliceBlue;
             this.paneLaterallNavegacion.Controls.Add(this.btnHome);
             this.paneLaterallNavegacion.Controls.Add(this.btnAdministradores);
             this.paneLaterallNavegacion.Controls.Add(this.btnEmpleados);
@@ -95,9 +95,9 @@
             this.btnAdministradores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdministradores.Location = new System.Drawing.Point(3, 135);
             this.btnAdministradores.Name = "btnAdministradores";
-            this.btnAdministradores.Size = new System.Drawing.Size(239, 45);
+            this.btnAdministradores.Size = new System.Drawing.Size(46, 45);
             this.btnAdministradores.TabIndex = 18;
-            this.btnAdministradores.Text = "Administradores";
+            this.btnAdministradores.Tag = "Administradores";
             this.btnAdministradores.UseVisualStyleBackColor = true;
             this.btnAdministradores.Visible = false;
             // 
@@ -111,9 +111,9 @@
             this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmpleados.Location = new System.Drawing.Point(3, 186);
             this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(239, 45);
+            this.btnEmpleados.Size = new System.Drawing.Size(46, 45);
             this.btnEmpleados.TabIndex = 17;
-            this.btnEmpleados.Text = "Empleados";
+            this.btnEmpleados.Tag = "Empleados";
             this.btnEmpleados.UseVisualStyleBackColor = true;
             this.btnEmpleados.Visible = false;
             // 
@@ -127,12 +127,13 @@
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(3, 237);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(239, 45);
+            this.btnClientes.Size = new System.Drawing.Size(46, 45);
             this.btnClientes.TabIndex = 14;
-            this.btnClientes.Text = "Clientes";
+            this.btnClientes.Tag = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Visible = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            this.btnClientes.MouseHover += new System.EventHandler(this.btnClientes_MouseHover);
             // 
             // btnInventario
             // 
@@ -144,12 +145,13 @@
             this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventario.Location = new System.Drawing.Point(3, 288);
             this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(239, 45);
+            this.btnInventario.Size = new System.Drawing.Size(46, 45);
             this.btnInventario.TabIndex = 12;
-            this.btnInventario.Text = "Inventario";
+            this.btnInventario.Tag = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = true;
             this.btnInventario.Visible = false;
             this.btnInventario.Click += new System.EventHandler(this.btnProductos_Click);
+            this.btnInventario.MouseHover += new System.EventHandler(this.btnInventario_MouseHover);
             // 
             // btnVentas
             // 
@@ -161,12 +163,13 @@
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentas.Location = new System.Drawing.Point(3, 339);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(239, 45);
+            this.btnVentas.Size = new System.Drawing.Size(46, 45);
             this.btnVentas.TabIndex = 16;
-            this.btnVentas.Text = "Ventas";
+            this.btnVentas.Tag = "Ventas";
             this.btnVentas.UseVisualStyleBackColor = true;
             this.btnVentas.Visible = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            this.btnVentas.MouseHover += new System.EventHandler(this.btnVentas_MouseHover);
             // 
             // btnMisVentas
             // 
@@ -178,9 +181,9 @@
             this.btnMisVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMisVentas.Location = new System.Drawing.Point(3, 390);
             this.btnMisVentas.Name = "btnMisVentas";
-            this.btnMisVentas.Size = new System.Drawing.Size(239, 45);
+            this.btnMisVentas.Size = new System.Drawing.Size(46, 45);
             this.btnMisVentas.TabIndex = 17;
-            this.btnMisVentas.Text = "Mis ventas";
+            this.btnMisVentas.Tag = "Mis ventas";
             this.btnMisVentas.UseVisualStyleBackColor = true;
             this.btnMisVentas.Visible = false;
             // 
@@ -194,17 +197,18 @@
             this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInformes.Location = new System.Drawing.Point(3, 441);
             this.btnInformes.Name = "btnInformes";
-            this.btnInformes.Size = new System.Drawing.Size(239, 45);
+            this.btnInformes.Size = new System.Drawing.Size(46, 45);
             this.btnInformes.TabIndex = 15;
-            this.btnInformes.Text = "Informes";
+            this.btnInformes.Tag = "Informes";
             this.btnInformes.UseVisualStyleBackColor = true;
             this.btnInformes.Visible = false;
             this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
+            this.btnInformes.MouseHover += new System.EventHandler(this.btnInformes_MouseHover);
             // 
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCerrarSesion.BackColor = System.Drawing.Color.Black;
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,17 +245,6 @@
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
-            // lbUsuario
-            // 
-            this.lbUsuario.AutoSize = true;
-            this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbUsuario.Location = new System.Drawing.Point(63, 29);
-            this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(57, 17);
-            this.lbUsuario.TabIndex = 8;
-            this.lbUsuario.Text = "Usuario";
-            // 
             // lbTipoUsuario
             // 
             this.lbTipoUsuario.AutoSize = true;
@@ -274,6 +267,17 @@
             this.label1.Size = new System.Drawing.Size(126, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "Bienvenido/a";
+            // 
+            // lbUsuario
+            // 
+            this.lbUsuario.AutoSize = true;
+            this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsuario.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbUsuario.Location = new System.Drawing.Point(63, 29);
+            this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Size = new System.Drawing.Size(57, 17);
+            this.lbUsuario.TabIndex = 8;
+            this.lbUsuario.Text = "Usuario";
             // 
             // panelContenedor
             // 
