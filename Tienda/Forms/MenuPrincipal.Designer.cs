@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.paneLaterallNavegacion = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHome = new System.Windows.Forms.PictureBox();
@@ -46,6 +47,7 @@
             this.lbUsuario = new System.Windows.Forms.Label();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pbExit = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.paneLaterallNavegacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelLogo.SuspendLayout();
@@ -133,7 +135,6 @@
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Visible = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            this.btnClientes.MouseHover += new System.EventHandler(this.btnClientes_MouseHover);
             // 
             // btnInventario
             // 
@@ -150,8 +151,7 @@
             this.btnInventario.Tag = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = true;
             this.btnInventario.Visible = false;
-            this.btnInventario.Click += new System.EventHandler(this.btnProductos_Click);
-            this.btnInventario.MouseHover += new System.EventHandler(this.btnInventario_MouseHover);
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // btnVentas
             // 
@@ -169,7 +169,6 @@
             this.btnVentas.UseVisualStyleBackColor = true;
             this.btnVentas.Visible = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
-            this.btnVentas.MouseHover += new System.EventHandler(this.btnVentas_MouseHover);
             // 
             // btnMisVentas
             // 
@@ -203,7 +202,6 @@
             this.btnInformes.UseVisualStyleBackColor = true;
             this.btnInformes.Visible = false;
             this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
-            this.btnInformes.MouseHover += new System.EventHandler(this.btnInformes_MouseHover);
             // 
             // btnCerrarSesion
             // 
@@ -261,7 +259,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Snow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.label1.ForeColor = System.Drawing.Color.RosyBrown;
             this.label1.Location = new System.Drawing.Point(61, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 25);
@@ -344,5 +342,6 @@
         private System.Windows.Forms.Label lbTipoUsuario;
         private System.Windows.Forms.Button btnAdministradores;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

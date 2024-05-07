@@ -5,6 +5,7 @@ using Tienda.UserControls;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Tienda.Forms
 {
@@ -37,9 +38,9 @@ namespace Tienda.Forms
                 case "Administrador":
                     btnAdministradores.Visible = true;
                     btnEmpleados.Visible = true;
-                    btnClientes.Visible = true;    
+                    btnClientes.Visible = true;
                     btnInventario.Visible = true;
-                    btnVentas.Visible = true;   
+                    btnVentas.Visible = true;
                     btnInformes.Visible = true;
                     break;
                 case "Empleado":
@@ -62,37 +63,16 @@ namespace Tienda.Forms
         {
             // Muestro nombre usuario
             lbUsuario.Text = SesionUsuario.Nombre;
-            // Muestro tipo o rol del usuario.
             lbTipoUsuario.Text = SesionUsuario.Tipo;
-        }
 
-        // Muestra la ventana de ventas
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            mostrarUserControl(new UC_Ventas() );
-        }
-
-        // Muestro la ventana de los clientes
-        private void btnClientes_Click(object sender, EventArgs e)
-        {
-            // Muestro la vengana 
-            mostrarUserControl(new UC_CrudClientes());
-        }
+            // Asigna el texto del tooltip al botón btnClientes
+            toolTip.SetToolTip(btnClientes, "Clientes");
+            toolTip.SetToolTip(btnInventario, "Inventario");
+            toolTip.SetToolTip(btnVentas, "Ventas");
+            toolTip.SetToolTip(btnInformes, "Informes");
+            toolTip.SetToolTip(btnCerrarSesion, "Cerrar sesión");
 
 
-        // Muestro la venana del inventario de productos.
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            // Muestro la ventana 
-            mostrarUserControl(new UC_CrudProductos());
-        }
-
-
-
-        // Regreso al inico o home
-        private void pbInicio_Click(object sender, EventArgs e)
-        {
-            panelContenedor.Visible = false;
         }
 
 
@@ -121,42 +101,39 @@ namespace Tienda.Forms
             login.Show();
         }
 
-   
+
         // Cierro programa
         private void pbExit_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        // Muestro ventana informes
-        private void btnInformes_Click(object sender, EventArgs e)
-        {
-            mostrarUserControl(new UC_Informes());
-        }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             panelContenedor.Visible = false;
         }
 
-        private void btnClientes_MouseHover(object sender, EventArgs e)
+        
+
+        private void btnClientes_Click(object sender, EventArgs e)
         {
             mostrarUserControl(new UC_CrudClientes());
         }
 
-        private void btnInventario_MouseHover(object sender, EventArgs e)
+        private void btnInformes_Click(object sender, EventArgs e)
         {
-            mostrarUserControl(new UC_CrudProductos());
+            mostrarUserControl(new UC_Informes());
         }
 
-        private void btnVentas_MouseHover(object sender, EventArgs e)
+        private void btnVentas_Click(object sender, EventArgs e)
         {
             mostrarUserControl(new UC_Ventas());
         }
 
-        private void btnInformes_MouseHover(object sender, EventArgs e)
+        private void btnInventario_Click(object sender, EventArgs e)
         {
-            mostrarUserControl(new UC_Informes());
+            mostrarUserControl(new UC_CrudProductos());
         }
     }
 }
