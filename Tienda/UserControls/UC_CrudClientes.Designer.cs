@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CrudClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pbEditar = new System.Windows.Forms.PictureBox();
             this.pbEliminar = new System.Windows.Forms.PictureBox();
             this.pbCrear = new System.Windows.Forms.PictureBox();
@@ -48,7 +48,6 @@
             this.tbBuscar = new System.Windows.Forms.TextBox();
             this.pbBuscador = new System.Windows.Forms.PictureBox();
             this.pbMostrarBuscador = new System.Windows.Forms.PictureBox();
-            this.pbInicio = new System.Windows.Forms.PictureBox();
             this.panelCrudClientes = new System.Windows.Forms.Panel();
             this.panelComprasDelCliente = new System.Windows.Forms.Panel();
             this.btnCrearVenta = new System.Windows.Forms.PictureBox();
@@ -191,7 +190,6 @@
             this.panelBuscador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarBuscador)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbInicio)).BeginInit();
             this.panelCrudClientes.SuspendLayout();
             this.panelComprasDelCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCrearVenta)).BeginInit();
@@ -272,11 +270,12 @@
             this.dgvClientes.AllowUserToResizeRows = false;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(36, 32);
             this.dgvClientes.Name = "dgvClientes";
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClientes.Size = new System.Drawing.Size(1236, 341);
             this.dgvClientes.TabIndex = 8;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
@@ -294,8 +293,8 @@
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentas.Location = new System.Drawing.Point(45, 35);
             this.dgvVentas.Name = "dgvVentas";
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVentas.Size = new System.Drawing.Size(1235, 207);
             this.dgvVentas.TabIndex = 26;
             // 
@@ -335,7 +334,7 @@
             this.lbMensajeGeneral.AutoSize = true;
             this.lbMensajeGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensajeGeneral.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lbMensajeGeneral.Location = new System.Drawing.Point(468, 101);
+            this.lbMensajeGeneral.Location = new System.Drawing.Point(469, 103);
             this.lbMensajeGeneral.Name = "lbMensajeGeneral";
             this.lbMensajeGeneral.Size = new System.Drawing.Size(0, 20);
             this.lbMensajeGeneral.TabIndex = 31;
@@ -357,7 +356,6 @@
             this.panelNavegacionSuperior.Controls.Add(this.pbExit);
             this.panelNavegacionSuperior.Controls.Add(this.panelBuscador);
             this.panelNavegacionSuperior.Controls.Add(this.pbMostrarBuscador);
-            this.panelNavegacionSuperior.Controls.Add(this.pbInicio);
             this.panelNavegacionSuperior.Location = new System.Drawing.Point(13, 3);
             this.panelNavegacionSuperior.Name = "panelNavegacionSuperior";
             this.panelNavegacionSuperior.Size = new System.Drawing.Size(1308, 52);
@@ -419,16 +417,6 @@
             this.pbMostrarBuscador.TabStop = false;
             this.pbMostrarBuscador.Click += new System.EventHandler(this.mostrarBuscador);
             // 
-            // pbInicio
-            // 
-            this.pbInicio.Image = global::Tienda.Properties.Resources.inicio;
-            this.pbInicio.Location = new System.Drawing.Point(23, 13);
-            this.pbInicio.Margin = new System.Windows.Forms.Padding(3, 3, 400, 3);
-            this.pbInicio.Name = "pbInicio";
-            this.pbInicio.Size = new System.Drawing.Size(41, 36);
-            this.pbInicio.TabIndex = 1;
-            this.pbInicio.TabStop = false;
-            // 
             // panelCrudClientes
             // 
             this.panelCrudClientes.BackColor = System.Drawing.Color.Snow;
@@ -451,7 +439,6 @@
             // panelComprasDelCliente
             // 
             this.panelComprasDelCliente.BackColor = System.Drawing.Color.Transparent;
-            this.panelComprasDelCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelComprasDelCliente.Controls.Add(this.dgvVentas);
             this.panelComprasDelCliente.Controls.Add(this.btnCrearVenta);
             this.panelComprasDelCliente.Controls.Add(this.lbMensajeGeneral);
@@ -2013,10 +2000,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.panelCrudClientes);
             this.Controls.Add(this.panelDetalleCliente);
             this.Controls.Add(this.panelCrearCliente);
             this.Controls.Add(this.panelEditarCliente);
-            this.Controls.Add(this.panelCrudClientes);
             this.Controls.Add(this.panelFlSuperior);
             this.Name = "UC_CrudClientes";
             this.Size = new System.Drawing.Size(1324, 704);
@@ -2034,7 +2021,6 @@
             this.panelBuscador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarBuscador)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbInicio)).EndInit();
             this.panelCrudClientes.ResumeLayout(false);
             this.panelCrudClientes.PerformLayout();
             this.panelComprasDelCliente.ResumeLayout(false);
@@ -2097,7 +2083,6 @@
         private System.Windows.Forms.TextBox tbBuscar;
         private System.Windows.Forms.PictureBox pbBuscador;
         private System.Windows.Forms.PictureBox pbMostrarBuscador;
-        private System.Windows.Forms.PictureBox pbInicio;
         private System.Windows.Forms.PictureBox pbExit;
         private System.Windows.Forms.Panel panelCrudClientes;
         private System.Windows.Forms.Panel panelCrearCliente;

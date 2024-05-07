@@ -62,7 +62,7 @@
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(228, 128);
+            this.pictureBox11.Location = new System.Drawing.Point(328, 135);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(33, 34);
             this.pictureBox11.TabIndex = 136;
@@ -74,7 +74,7 @@
             this.label39.BackColor = System.Drawing.Color.Transparent;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label39.Location = new System.Drawing.Point(224, 105);
+            this.label39.Location = new System.Drawing.Point(324, 112);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(160, 20);
             this.label39.TabIndex = 135;
@@ -85,7 +85,7 @@
             this.dtpFechaDetalle.CalendarMonthBackground = System.Drawing.SystemColors.HotTrack;
             this.dtpFechaDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaDetalle.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaDetalle.Location = new System.Drawing.Point(267, 128);
+            this.dtpFechaDetalle.Location = new System.Drawing.Point(367, 135);
             this.dtpFechaDetalle.Name = "dtpFechaDetalle";
             this.dtpFechaDetalle.Size = new System.Drawing.Size(128, 27);
             this.dtpFechaDetalle.TabIndex = 134;
@@ -93,7 +93,7 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(445, 13);
+            this.pictureBox13.Location = new System.Drawing.Point(545, 20);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(66, 67);
             this.pictureBox13.TabIndex = 133;
@@ -104,7 +104,7 @@
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label46.Location = new System.Drawing.Point(506, 45);
+            this.label46.Location = new System.Drawing.Point(606, 52);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(149, 39);
             this.label46.TabIndex = 132;
@@ -114,7 +114,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(458, 125);
+            this.pictureBox1.Location = new System.Drawing.Point(558, 132);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(33, 34);
             this.pictureBox1.TabIndex = 139;
@@ -126,7 +126,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label1.Location = new System.Drawing.Point(454, 102);
+            this.label1.Location = new System.Drawing.Point(554, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 20);
             this.label1.TabIndex = 138;
@@ -137,7 +137,7 @@
             this.dtpFechaHasta.CalendarMonthBackground = System.Drawing.SystemColors.HotTrack;
             this.dtpFechaHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaHasta.Location = new System.Drawing.Point(497, 128);
+            this.dtpFechaHasta.Location = new System.Drawing.Point(597, 135);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(128, 27);
             this.dtpFechaHasta.TabIndex = 137;
@@ -147,7 +147,7 @@
             this.idCliente2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.idCliente2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idCliente2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.idCliente2.Location = new System.Drawing.Point(734, 128);
+            this.idCliente2.Location = new System.Drawing.Point(834, 135);
             this.idCliente2.Name = "idCliente2";
             this.idCliente2.Size = new System.Drawing.Size(103, 26);
             this.idCliente2.TabIndex = 140;
@@ -157,7 +157,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(703, 129);
+            this.pictureBox2.Location = new System.Drawing.Point(803, 136);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 26);
             this.pictureBox2.TabIndex = 141;
@@ -169,7 +169,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label2.Location = new System.Drawing.Point(699, 102);
+            this.label2.Location = new System.Drawing.Point(799, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 20);
             this.label2.TabIndex = 142;
@@ -181,7 +181,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label3.Location = new System.Drawing.Point(15, 108);
+            this.label3.Location = new System.Drawing.Point(115, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 20);
             this.label3.TabIndex = 145;
@@ -202,7 +202,7 @@
             this.idCliente1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.idCliente1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idCliente1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.idCliente1.Location = new System.Drawing.Point(47, 131);
+            this.idCliente1.Location = new System.Drawing.Point(147, 138);
             this.idCliente1.Name = "idCliente1";
             this.idCliente1.Size = new System.Drawing.Size(106, 26);
             this.idCliente1.TabIndex = 143;
@@ -219,7 +219,7 @@
             this.btnGenerarInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarInforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarInforme.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGenerarInforme.Location = new System.Drawing.Point(458, 623);
+            this.btnGenerarInforme.Location = new System.Drawing.Point(558, 630);
             this.btnGenerarInforme.Name = "btnGenerarInforme";
             this.btnGenerarInforme.Size = new System.Drawing.Size(192, 35);
             this.btnGenerarInforme.TabIndex = 148;
@@ -233,7 +233,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label5.Location = new System.Drawing.Point(908, 105);
+            this.label5.Location = new System.Drawing.Point(1008, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 20);
             this.label5.TabIndex = 151;
@@ -243,7 +243,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(912, 125);
+            this.pictureBox4.Location = new System.Drawing.Point(1012, 132);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 32);
             this.pictureBox4.TabIndex = 150;
@@ -261,7 +261,7 @@
             "A cuenta",
             "Liquidada",
             "Anulada"});
-            this.cbEstadosInforme.Location = new System.Drawing.Point(949, 128);
+            this.cbEstadosInforme.Location = new System.Drawing.Point(1049, 135);
             this.cbEstadosInforme.Name = "cbEstadosInforme";
             this.cbEstadosInforme.Size = new System.Drawing.Size(155, 28);
             this.cbEstadosInforme.TabIndex = 149;
@@ -274,7 +274,7 @@
             this.reportViewerInforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportViewerInforme.ForeColor = System.Drawing.Color.RoyalBlue;
             this.reportViewerInforme.LocalReport.ReportEmbeddedResource = "Tienda.ReportInforme.rdlc";
-            this.reportViewerInforme.Location = new System.Drawing.Point(19, 186);
+            this.reportViewerInforme.Location = new System.Drawing.Point(119, 193);
             this.reportViewerInforme.Name = "reportViewerInforme";
             this.reportViewerInforme.ServerReport.BearerToken = null;
             this.reportViewerInforme.Size = new System.Drawing.Size(1085, 350);
@@ -305,7 +305,7 @@
             this.Controls.Add(this.label46);
             this.Controls.Add(this.dtpFechaDetalle);
             this.Name = "UC_Informes";
-            this.Size = new System.Drawing.Size(1127, 713);
+            this.Size = new System.Drawing.Size(1324, 704);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

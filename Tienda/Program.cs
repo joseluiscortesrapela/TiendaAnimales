@@ -16,7 +16,7 @@ namespace Tienda
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormularioConexion() );
+            Application.Run(new Login() );
         }
     }
 }

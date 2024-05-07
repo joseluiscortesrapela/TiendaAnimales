@@ -24,20 +24,23 @@ namespace Tienda.UserControls
         }
 
 
-
-        private void ConfigurarComboBox()
+        private void autoCompleteNow()
         {
             cbClientes.DisplayMember = "nombre"; // Propiedad para mostrar en el ComboBox
             cbClientes.ValueMember = "IdCliente"; // Asigna el nombre del campo que contiene el ID del cliente
-           // cbClientes.DataSource = clientes;
-            // Configuración del autocompletado personalizado
+            cbClientes.DataSource = clientes;                 
+            
             AutoCompleteStringCollection colecciónAutocompletado = new AutoCompleteStringCollection();
 
             foreach (var cliente in clientes)
             {
                 colecciónAutocompletado.Add(cliente.Nombre);
             }
+
             cbClientes.AutoCompleteCustomSource = colecciónAutocompletado;
+            cbClientes.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbClientes.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            
         }
 
 
@@ -45,7 +48,8 @@ namespace Tienda.UserControls
         private void UC_Ventas_Load(object sender, EventArgs e)
         {
             clientes = AdminModel.getObjetosClientes();
-            ConfigurarComboBox();
+
+            autoCompleteNow();
         }
 
 
@@ -62,20 +66,27 @@ namespace Tienda.UserControls
 
             List<Cliente> clientesCoincidentes = new List<Cliente>();
 
-            foreach (var cliente in clientes)
-            {
-                if (cliente.Nombre.ToLower().Contains(textoBusqueda))
-                {
-                    clientesCoincidentes.Add(cliente);
-                }
-            }
+            clientesCoincidentes = clientes.Where(cliente => cliente.Nombre.Contains(textoBusqueda)).ToList();
+ 
+            // Asignar la lista filtrada al origen de datos del ComboBox
+           // cbClientes.DataSource = clientesCoincidentes;
+            
+   
+        }
 
-            // Actualizar el ComboBox con los resultados de la búsqueda
-            cbClientes.DataSource = null;
-            cbClientes.DataSource = clientesCoincidentes;
+        private void cbClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Console.WriteLine("Cliente selecionado");
+
+            int idCliente = int.Parse(cbClientes.SelectedValue.ToString());
+            string nombre = cbClientes.Text;
+
+            Console.WriteLine("Id: " + idCliente + " nombre: " + nombre);
+
 
         }
 
-
+       
     }
 }

@@ -136,12 +136,6 @@
     <Compile Include="Forms\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioConexion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormularioConexion.designer.cs">
-      <DependentUpon>FormularioConexion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,9 +175,6 @@
     </Compile>
     <EmbeddedResource Include="Forms\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormularioConexion.resx">
-      <DependentUpon>FormularioConexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
