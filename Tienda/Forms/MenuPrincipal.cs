@@ -140,5 +140,10 @@ namespace Tienda.Forms
         {
             mostrarUserControl(new UC_Informes());
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            panelContenedor.Visible = false;
+        }
     }
 }
