@@ -20,14 +20,7 @@ namespace Tienda.UserControls
             // Obtengo todos los clientes  y los guardo en el dgv
             actualizarDgvClientes();
         }
-
-        // Constructor que recibe el id del agente
-        public UC_CrudClientes(int idAgente)
-        {
-            InitializeComponent();
-            // Obtengo solo los clientes del agente de seguros
-            dgvClientes.DataSource = AdminModel.getCarteraClientes(idAgente);
-        }
+ 
 
         // Obtengo el cliente seleccionado.
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -52,9 +45,9 @@ namespace Tienda.UserControls
                 // Obtengo la contraseña 
                 string contraseña = filaCliente.Cells["contraseña"].Value.ToString();
                 // Obtengo el id de la provincia
-                int idProvincia = int.Parse(filaCliente.Cells["provincia"].Value.ToString());
+                int idProvincia = int.Parse(filaCliente.Cells["idProvincia"].Value.ToString());
                 // Obtengo el id del municipio
-                int idMunicipio = int.Parse(filaCliente.Cells["municipio"].Value.ToString());
+                int idMunicipio = int.Parse(filaCliente.Cells["idMunicipio"].Value.ToString());
                 // Obtengo el tipo 
                 string tipo = filaCliente.Cells["tipo"].Value.ToString();
 
@@ -307,10 +300,13 @@ namespace Tienda.UserControls
         // Vuelve al crud de clientes
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            actualizarDgvClientes();
             panelEditarCliente.Visible = false;
             panelCrearCliente.Visible = false;
             panelDetalleCliente.Visible = false;
+            // Muestro la ventana 
             panelCrudClientes.Visible = true;
+            // actualizo los clientes
         }
 
         // Creo un nuevo cliente
@@ -323,6 +319,9 @@ namespace Tienda.UserControls
             string telefono = tbTelefonoCrear.Text;
             string correo = tbCorreoCrear.Text;
             string contraseña = tbContraseñaCrear.Text;
+
+            Console.WriteLine("provincia: " + cbProvinciasCrear.SelectedValue);
+
             int idProvincia = int.Parse(cbProvinciasCrear.SelectedValue.ToString());
             int idMunicipio = int.Parse(cbMunicipiosCrear.SelectedValue.ToString());
             string tipo = cbTipoCrear.Text;

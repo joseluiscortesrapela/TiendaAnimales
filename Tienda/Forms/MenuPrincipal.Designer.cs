@@ -35,6 +35,7 @@
             this.lbUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbTipoUsuario = new System.Windows.Forms.Label();
+            this.btnAdministradores = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pbExit = new System.Windows.Forms.PictureBox();
-            this.btnAdministradores = new System.Windows.Forms.Button();
             this.paneLaterallNavegacion.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,6 +55,7 @@
             // paneLaterallNavegacion
             // 
             this.paneLaterallNavegacion.BackColor = System.Drawing.SystemColors.ControlText;
+            this.paneLaterallNavegacion.Controls.Add(this.pictureBox1);
             this.paneLaterallNavegacion.Controls.Add(this.panelLogo);
             this.paneLaterallNavegacion.Controls.Add(this.btnAdministradores);
             this.paneLaterallNavegacion.Controls.Add(this.btnEmpleados);
@@ -67,16 +68,15 @@
             this.paneLaterallNavegacion.Dock = System.Windows.Forms.DockStyle.Left;
             this.paneLaterallNavegacion.Location = new System.Drawing.Point(0, 0);
             this.paneLaterallNavegacion.Name = "paneLaterallNavegacion";
-            this.paneLaterallNavegacion.Size = new System.Drawing.Size(246, 704);
+            this.paneLaterallNavegacion.Size = new System.Drawing.Size(45, 704);
             this.paneLaterallNavegacion.TabIndex = 3;
             // 
             // panelLogo
             // 
-            this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Controls.Add(this.lbUsuario);
             this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Controls.Add(this.lbTipoUsuario);
-            this.panelLogo.Location = new System.Drawing.Point(3, 3);
+            this.panelLogo.Location = new System.Drawing.Point(3, 50);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(239, 113);
@@ -85,9 +85,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(28, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
@@ -124,6 +125,22 @@
             this.lbTipoUsuario.TabIndex = 10;
             this.lbTipoUsuario.Text = "Tipo: ";
             // 
+            // btnAdministradores
+            // 
+            this.btnAdministradores.FlatAppearance.BorderSize = 0;
+            this.btnAdministradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministradores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministradores.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnAdministradores.Image = ((System.Drawing.Image)(resources.GetObject("btnAdministradores.Image")));
+            this.btnAdministradores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdministradores.Location = new System.Drawing.Point(3, 196);
+            this.btnAdministradores.Name = "btnAdministradores";
+            this.btnAdministradores.Size = new System.Drawing.Size(239, 45);
+            this.btnAdministradores.TabIndex = 18;
+            this.btnAdministradores.Text = "Administradores";
+            this.btnAdministradores.UseVisualStyleBackColor = true;
+            this.btnAdministradores.Visible = false;
+            // 
             // btnEmpleados
             // 
             this.btnEmpleados.FlatAppearance.BorderSize = 0;
@@ -132,7 +149,7 @@
             this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
             this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(3, 200);
+            this.btnEmpleados.Location = new System.Drawing.Point(3, 247);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(239, 45);
             this.btnEmpleados.TabIndex = 17;
@@ -148,7 +165,7 @@
             this.btnClientes.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(3, 251);
+            this.btnClientes.Location = new System.Drawing.Point(3, 298);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(239, 45);
             this.btnClientes.TabIndex = 14;
@@ -165,7 +182,7 @@
             this.btnInventario.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnInventario.Image")));
             this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventario.Location = new System.Drawing.Point(3, 302);
+            this.btnInventario.Location = new System.Drawing.Point(3, 349);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(239, 45);
             this.btnInventario.TabIndex = 12;
@@ -182,7 +199,7 @@
             this.btnVentas.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(3, 353);
+            this.btnVentas.Location = new System.Drawing.Point(3, 400);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(239, 45);
             this.btnVentas.TabIndex = 16;
@@ -199,7 +216,7 @@
             this.btnMisVentas.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnMisVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnMisVentas.Image")));
             this.btnMisVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMisVentas.Location = new System.Drawing.Point(3, 404);
+            this.btnMisVentas.Location = new System.Drawing.Point(3, 451);
             this.btnMisVentas.Name = "btnMisVentas";
             this.btnMisVentas.Size = new System.Drawing.Size(239, 45);
             this.btnMisVentas.TabIndex = 17;
@@ -215,7 +232,7 @@
             this.btnInformes.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnInformes.Image = ((System.Drawing.Image)(resources.GetObject("btnInformes.Image")));
             this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformes.Location = new System.Drawing.Point(3, 455);
+            this.btnInformes.Location = new System.Drawing.Point(3, 502);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.Size = new System.Drawing.Size(239, 45);
             this.btnInformes.TabIndex = 15;
@@ -233,7 +250,7 @@
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.DarkGray;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 623);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 670);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 120, 3, 20);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(239, 82);
@@ -248,36 +265,20 @@
             this.panelContenedor.BackColor = System.Drawing.Color.Snow;
             this.panelContenedor.Controls.Add(this.pbExit);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(246, 0);
+            this.panelContenedor.Location = new System.Drawing.Point(45, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1127, 704);
+            this.panelContenedor.Size = new System.Drawing.Size(1328, 704);
             this.panelContenedor.TabIndex = 5;
             // 
             // pbExit
             // 
             this.pbExit.Image = ((System.Drawing.Image)(resources.GetObject("pbExit.Image")));
-            this.pbExit.Location = new System.Drawing.Point(1103, 3);
+            this.pbExit.Location = new System.Drawing.Point(1151, 3);
             this.pbExit.Name = "pbExit";
             this.pbExit.Size = new System.Drawing.Size(21, 21);
             this.pbExit.TabIndex = 6;
             this.pbExit.TabStop = false;
             this.pbExit.Click += new System.EventHandler(this.pbExit_Click_1);
-            // 
-            // btnAdministradores
-            // 
-            this.btnAdministradores.FlatAppearance.BorderSize = 0;
-            this.btnAdministradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdministradores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdministradores.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnAdministradores.Image = ((System.Drawing.Image)(resources.GetObject("btnAdministradores.Image")));
-            this.btnAdministradores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdministradores.Location = new System.Drawing.Point(3, 149);
-            this.btnAdministradores.Name = "btnAdministradores";
-            this.btnAdministradores.Size = new System.Drawing.Size(239, 45);
-            this.btnAdministradores.TabIndex = 18;
-            this.btnAdministradores.Text = "Administradores";
-            this.btnAdministradores.UseVisualStyleBackColor = true;
-            this.btnAdministradores.Visible = false;
             // 
             // MenuPrincipal
             // 
