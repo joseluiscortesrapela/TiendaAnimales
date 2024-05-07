@@ -69,7 +69,7 @@ namespace Tienda.Forms
         // Muestra la ventana de ventas
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            mostrarUserControl(new UC_CrudVentas());
+            mostrarUserControl(new UC_Ventas() );
         }
 
         // Muestro la ventana de los clientes

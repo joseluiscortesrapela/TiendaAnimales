@@ -303,11 +303,43 @@ namespace Tienda.Models
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                conexion.Close();
+            }
 
 
             return table;
         }
- 
+
+        public static DataTable getVentas()
+        {
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+
+            // Consulta sql
+            string sql = "SELECT * FROM ventas";
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
+            DataTable table = new DataTable();
+
+            try
+            {
+                adapter.Fill(table);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+
+            return table;
+        }
+
         // Obtengo las polias del cliente
         public static DataTable getCarteraClientes(int idAgente)
         {

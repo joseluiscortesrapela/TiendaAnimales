@@ -35,7 +35,6 @@
             this.lbUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbTipoUsuario = new System.Windows.Forms.Label();
-            this.btnAdministradores = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pbExit = new System.Windows.Forms.PictureBox();
+            this.btnAdministradores = new System.Windows.Forms.Button();
             this.paneLaterallNavegacion.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -123,22 +123,6 @@
             this.lbTipoUsuario.Size = new System.Drawing.Size(34, 13);
             this.lbTipoUsuario.TabIndex = 10;
             this.lbTipoUsuario.Text = "Tipo: ";
-            // 
-            // btnAdministradores
-            // 
-            this.btnAdministradores.FlatAppearance.BorderSize = 0;
-            this.btnAdministradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdministradores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdministradores.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnAdministradores.Image = ((System.Drawing.Image)(resources.GetObject("btnAdministradores.Image")));
-            this.btnAdministradores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdministradores.Location = new System.Drawing.Point(3, 149);
-            this.btnAdministradores.Name = "btnAdministradores";
-            this.btnAdministradores.Size = new System.Drawing.Size(239, 45);
-            this.btnAdministradores.TabIndex = 18;
-            this.btnAdministradores.Text = "Administradores";
-            this.btnAdministradores.UseVisualStyleBackColor = true;
-            this.btnAdministradores.Visible = false;
             // 
             // btnEmpleados
             // 
@@ -279,6 +263,22 @@
             this.pbExit.TabStop = false;
             this.pbExit.Click += new System.EventHandler(this.pbExit_Click_1);
             // 
+            // btnAdministradores
+            // 
+            this.btnAdministradores.FlatAppearance.BorderSize = 0;
+            this.btnAdministradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministradores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministradores.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnAdministradores.Image = ((System.Drawing.Image)(resources.GetObject("btnAdministradores.Image")));
+            this.btnAdministradores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdministradores.Location = new System.Drawing.Point(3, 149);
+            this.btnAdministradores.Name = "btnAdministradores";
+            this.btnAdministradores.Size = new System.Drawing.Size(239, 45);
+            this.btnAdministradores.TabIndex = 18;
+            this.btnAdministradores.Text = "Administradores";
+            this.btnAdministradores.UseVisualStyleBackColor = true;
+            this.btnAdministradores.Visible = false;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,7 +318,7 @@
         private System.Windows.Forms.Button btnInformes;
         private System.Windows.Forms.Button btnMisVentas;
         private System.Windows.Forms.Button btnEmpleados;
-        private System.Windows.Forms.Button btnAdministradores;
         private System.Windows.Forms.Label lbTipoUsuario;
+        private System.Windows.Forms.Button btnAdministradores;
     }
 }

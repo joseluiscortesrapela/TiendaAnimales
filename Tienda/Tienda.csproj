@@ -155,12 +155,6 @@
     <Compile Include="Sesion\SesionPrograma.cs" />
     <Compile Include="Sesion\SesionUsuario.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="UserControls\UC_CrudVentas.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UC_CrudVentas.Designer.cs">
-      <DependentUpon>UC_CrudVentas.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UC_CrudClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,6 +172,12 @@
     </Compile>
     <Compile Include="UserControls\UC_Informes.Designer.cs">
       <DependentUpon>UC_Informes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Ventas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Ventas.Designer.cs">
+      <DependentUpon>UC_Ventas.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
@@ -199,9 +199,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReportInforme.rdlc" />
-    <EmbeddedResource Include="UserControls\UC_CrudVentas.resx">
-      <DependentUpon>UC_CrudVentas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_CrudClientes.resx">
       <DependentUpon>UC_CrudClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Informes.resx">
       <DependentUpon>UC_Informes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Ventas.resx">
+      <DependentUpon>UC_Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSetInforme.xsc">
       <DependentUpon>DataSetInforme.xsd</DependentUpon>
