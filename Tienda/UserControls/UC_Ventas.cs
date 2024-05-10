@@ -52,8 +52,6 @@ namespace Tienda.UserControls
             autoCompleteNow();
         }
 
-
-
         private void limpiarPlaceholderCbCliente(object sender, EventArgs e)
         {
             cbClientes.Text = "";
@@ -102,11 +100,39 @@ namespace Tienda.UserControls
                 int descuento = 0;
                 decimal subtotal = cantidad * precio;
 
-                // Agregar el producto seleccionado al DataGridView venta
-                dgvVenta.Rows.Add(idProducto, nombre, cantidad, precio, impuesto, descuento, subtotal);
+                if (siProductoExiste(idProducto))
+                {
+                    Console.WriteLine("El producto exite, actualizaria la cantidad y resto de campos");
+                }
+                else
+                {
+                    Console.WriteLine("El producto es nuevo, lo añado por primera vez");
+                    // Agregar el producto seleccionado al DataGridView venta
+                    dgvVenta.Rows.Add(idProducto, nombre, cantidad, precio, impuesto, descuento, subtotal);
+                }
+
             }
 
         }
+
+        // Comprueba si el producto existe en el dgv
+        private bool siProductoExiste(string idNuevoProducto)
+        {
+            bool productoExiste = false;
+
+            foreach (DataGridViewRow fila in dgvVenta.Rows)
+            {
+                if (fila.Cells["idProducto"].Value.ToString() == idNuevoProducto)
+                {
+                    // El producto con el ID especificado ya existe en el DataGridView
+                    productoExiste = true;
+                }
+            }
+
+            return productoExiste;
+        }
+
+
 
         private void pbExit_Click(object sender, EventArgs e)
         {
