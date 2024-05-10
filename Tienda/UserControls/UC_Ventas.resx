@@ -117,29 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="IdProducto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Producto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Cantidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Precio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Subtotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnMostrarBuscadorProductosModal.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        6gAAAOoB+Ss1JgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJvSURBVFhHvZa9
+        bhNREIWHCoiADom0CGgQEV47kIiGl4DA46QBCSEkDHburgk8CwUQ0Sa8QFw5KXEkHApzznoSrzezP9d3
+        xUifbO+dOXf2/oxH6trjrtzoOHnZjmUQxfITn0fgVDlKnzlJOom8eLIr1zUs3B4lcg/iu5jkBExrctJO
+        5NNDJ3dVxt8238lVCL0FfzPCvpx2Ynnz9ItcUdl6xswRvJ8TWx4nP/C5qvLl1tmRFpy5v7bY8gyjgazp
+        NLbpm/tMzlU6yD0rY7jek1s63aLpnvss+3sNFezzR2PcBttxpyuXNXRuGOSBs4MMsJwbGiotJ5uWTyFO
+        tjV0ZrxqGPA97ZGGC5JpG+Nl/F7YCr3nlmMZIQmQfhrMCocfPkXmjNAExmnF1PJqOVQRmsA0crLFwzfI
+        D9QkOAHcHqjM/lhMhwqCE+CV5AocXxggiXR5vShuAZ8VnZ8aK5aPskGtBe05IwZPcg/Jvmo3ZtC0Kuaf
+        /5PAVC5B81duDpImYG4BzsaHJrYgrZJOelntDKOlDyHFdX4mEOXHa5EeQrRR5mAFTSSAl3fCHs4arKKR
+        FYjlmdzvyTV8GecGKmkggTHnngmggTQcSglOAFuv4eedENtr29kgMIHJel9ua/jM2L0ajoXwemmof0MS
+        y2sNnRtbZ14Lw9mEdYIFhvi0ZIj7ZrZkNDisgmE2oAKWV6vCFXFY2JSeGfZ2DY4+SdTlEDzQacqt9Vlu
+        Ylm/5gSWBlrfK988b9wnnIltCHjXiAwTaLwq3PM6xswh1Ac+iYzZ7Vy4aiHGqsUejvUbE+yBEeBfOeH3
+        PRS0nSiR5+cVrtJE/gEyLA7gPVVTNwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        5gAAAOYBIly6UQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAZASURBVFhHvVZr
+        5AAAAOQBXaJ52AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAZASURBVFhHvVZr
         TFNnGD7iBYrAFK20FDyKOEHYEBUBpQYRh9QLMi3IZt0miQZJlpkxN0AWsmwycAIuOkN1ksjcDydhWaZk
         1kaXzMssUW4W6IWbAhsCRWAUxOXde75zOO3pDCFs+iRPvvd9nvf7ztPTwymUI9LSauemp957kp5634xr
         F/IIZ/FATc/5bcifOJkHaueR7eMznDw5fLCnSpqhqr3O1Bl7axM+VFXnE8MOGXtrDMx6aG+1bHzWHh+p

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tienda.Entidades;
+using Tienda.Forms;
 using Tienda.Models;
 
 namespace Tienda.UserControls
@@ -87,6 +88,22 @@ namespace Tienda.UserControls
 
         }
 
-       
+        private void btnMostrarBuscadorProductosModal_Click(object sender, EventArgs e)
+        {
+            var modal = new BuscarProductosModal();
+
+            if (modal.ShowDialog() == DialogResult.OK)
+            {
+                // Acceder a los datos seleccionados por el usuario en la ventana modal
+                string idProducto = modal.idProducto;
+                string nombre = modal.nombre;
+                int cantidad = modal.cantidad;
+                decimal precio = modal.precio;
+                decimal subtotal = cantidad * precio;
+                // Agregar el producto seleccionado al DataGridView venta
+                dgvVenta.Rows.Add(idProducto, nombre, cantidad, precio, subtotal);
+            }
+
+        }
     }
 }
