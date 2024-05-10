@@ -36,14 +36,15 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.label41 = new System.Windows.Forms.Label();
             this.tbPrecio = new System.Windows.Forms.TextBox();
-            this.tbCantidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.tbCantidad = new System.Windows.Forms.NumericUpDown();
             this.panelBuscador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBuscador
@@ -66,7 +67,7 @@
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(248, 19);
             this.tbBuscar.TabIndex = 3;
-            this.tbBuscar.Text = "Buscar productos...";
+            this.tbBuscar.Text = "Buscar producto...";
             this.tbBuscar.TextChanged += new System.EventHandler(this.tbBuscar_TextChanged);
             // 
             // pbBuscador
@@ -123,18 +124,6 @@
             this.tbPrecio.Text = "0";
             this.tbPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbCantidad
-            // 
-            this.tbCantidad.BackColor = System.Drawing.Color.AliceBlue;
-            this.tbCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCantidad.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.tbCantidad.Location = new System.Drawing.Point(489, 86);
-            this.tbCantidad.Name = "tbCantidad";
-            this.tbCantidad.Size = new System.Drawing.Size(76, 26);
-            this.tbCantidad.TabIndex = 125;
-            this.tbCantidad.Text = "0";
-            this.tbCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -181,15 +170,30 @@
             this.label21.TabIndex = 124;
             this.label21.Text = "Nombre";
             // 
+            // tbCantidad
+            // 
+            this.tbCantidad.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCantidad.Location = new System.Drawing.Point(489, 87);
+            this.tbCantidad.Name = "tbCantidad";
+            this.tbCantidad.Size = new System.Drawing.Size(72, 26);
+            this.tbCantidad.TabIndex = 128;
+            this.tbCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // BuscarProductosModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(675, 465);
+            this.Controls.Add(this.tbCantidad);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbCantidad);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.label41);
@@ -203,6 +207,7 @@
             this.panelBuscador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,10 +221,10 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox tbPrecio;
-        private System.Windows.Forms.TextBox tbCantidad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.NumericUpDown tbCantidad;
     }
 }

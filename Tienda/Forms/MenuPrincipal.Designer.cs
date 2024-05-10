@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.paneLaterallNavegacion = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHome = new System.Windows.Forms.PictureBox();
-            this.btnAdministradores = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
@@ -48,6 +47,7 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pbExit = new System.Windows.Forms.PictureBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btnAdministradores = new System.Windows.Forms.Button();
             this.paneLaterallNavegacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelLogo.SuspendLayout();
@@ -87,22 +87,6 @@
             this.btnHome.TabStop = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // btnAdministradores
-            // 
-            this.btnAdministradores.FlatAppearance.BorderSize = 0;
-            this.btnAdministradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdministradores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdministradores.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnAdministradores.Image = ((System.Drawing.Image)(resources.GetObject("btnAdministradores.Image")));
-            this.btnAdministradores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdministradores.Location = new System.Drawing.Point(3, 135);
-            this.btnAdministradores.Name = "btnAdministradores";
-            this.btnAdministradores.Size = new System.Drawing.Size(46, 45);
-            this.btnAdministradores.TabIndex = 18;
-            this.btnAdministradores.Tag = "Administradores";
-            this.btnAdministradores.UseVisualStyleBackColor = true;
-            this.btnAdministradores.Visible = false;
-            // 
             // btnEmpleados
             // 
             this.btnEmpleados.FlatAppearance.BorderSize = 0;
@@ -133,7 +117,6 @@
             this.btnClientes.TabIndex = 14;
             this.btnClientes.Tag = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Visible = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnInventario
@@ -150,7 +133,6 @@
             this.btnInventario.TabIndex = 12;
             this.btnInventario.Tag = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = true;
-            this.btnInventario.Visible = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // btnVentas
@@ -167,7 +149,6 @@
             this.btnVentas.TabIndex = 16;
             this.btnVentas.Tag = "Ventas";
             this.btnVentas.UseVisualStyleBackColor = true;
-            this.btnVentas.Visible = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // btnMisVentas
@@ -287,6 +268,7 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1324, 704);
             this.panelContenedor.TabIndex = 5;
+            this.panelContenedor.Visible = false;
             // 
             // pbExit
             // 
@@ -298,6 +280,22 @@
             this.pbExit.TabIndex = 6;
             this.pbExit.TabStop = false;
             this.pbExit.Click += new System.EventHandler(this.pbExit_Click_1);
+            // 
+            // btnAdministradores
+            // 
+            this.btnAdministradores.FlatAppearance.BorderSize = 0;
+            this.btnAdministradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministradores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministradores.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnAdministradores.Image = ((System.Drawing.Image)(resources.GetObject("btnAdministradores.Image")));
+            this.btnAdministradores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdministradores.Location = new System.Drawing.Point(3, 135);
+            this.btnAdministradores.Name = "btnAdministradores";
+            this.btnAdministradores.Size = new System.Drawing.Size(46, 45);
+            this.btnAdministradores.TabIndex = 18;
+            this.btnAdministradores.Tag = "Administradores";
+            this.btnAdministradores.UseVisualStyleBackColor = true;
+            this.btnAdministradores.Visible = false;
             // 
             // MenuPrincipal
             // 
@@ -340,8 +338,8 @@
         private System.Windows.Forms.Button btnMisVentas;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Label lbTipoUsuario;
-        private System.Windows.Forms.Button btnAdministradores;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button btnAdministradores;
     }
 }

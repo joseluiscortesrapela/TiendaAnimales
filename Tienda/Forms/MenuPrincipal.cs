@@ -17,15 +17,16 @@ namespace Tienda.Forms
         public MenuPrincipal()
         {
             InitializeComponent();
+           
             // Obtengo el id
-            idUsuario = SesionUsuario.Id;
+            //idUsuario = SesionUsuario.Id;
             // Nombre del usuario
-            lbUsuario.Text = SesionUsuario.Nombre;
+            //lbUsuario.Text = SesionUsuario.Nombre;
             // Obtengo el tipo o rol
-            tipo = SesionUsuario.Tipo;
+            //tipo = SesionUsuario.Tipo;
 
             // Muestro el menu principal segun tipo usuario.
-            prepararInterfazUsuario(tipo);
+           // prepararInterfazUsuario(tipo);
 
         }
 

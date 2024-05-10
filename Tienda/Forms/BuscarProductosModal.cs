@@ -23,6 +23,14 @@ namespace Tienda.Forms
         public BuscarProductosModal()
         {
             InitializeComponent();
+            // Obtengo todos los productos de la base de datos y los muestro en el dgv
+            cargarProductosDGV();
+        }
+
+        // Carga todos los productos en el dgv
+        private void cargarProductosDGV()
+        {
+            dgvProductos.DataSource = AdminModel.getProductos();
         }
 
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -61,8 +69,8 @@ namespace Tienda.Forms
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
             // Obtengo campos del formulario
+            nombre = tbNombre.Text;
             precio = decimal.Parse(tbPrecio.Text);
             cantidad = int.Parse( tbCantidad.Text );
             

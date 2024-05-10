@@ -21,7 +21,6 @@ namespace Tienda.UserControls
         public UC_Ventas()
         {
             InitializeComponent();
-
         }
 
 
@@ -29,8 +28,8 @@ namespace Tienda.UserControls
         {
             cbClientes.DisplayMember = "nombre"; // Propiedad para mostrar en el ComboBox
             cbClientes.ValueMember = "IdCliente"; // Asigna el nombre del campo que contiene el ID del cliente
-            cbClientes.DataSource = clientes;                 
-            
+            cbClientes.DataSource = clientes;
+
             AutoCompleteStringCollection colecciónAutocompletado = new AutoCompleteStringCollection();
 
             foreach (var cliente in clientes)
@@ -41,7 +40,7 @@ namespace Tienda.UserControls
             cbClientes.AutoCompleteCustomSource = colecciónAutocompletado;
             cbClientes.AutoCompleteMode = AutoCompleteMode.Suggest;
             cbClientes.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            
+
         }
 
 
@@ -68,11 +67,11 @@ namespace Tienda.UserControls
             List<Cliente> clientesCoincidentes = new List<Cliente>();
 
             clientesCoincidentes = clientes.Where(cliente => cliente.Nombre.Contains(textoBusqueda)).ToList();
- 
+
             // Asignar la lista filtrada al origen de datos del ComboBox
-           // cbClientes.DataSource = clientesCoincidentes;
-            
-   
+            // cbClientes.DataSource = clientesCoincidentes;
+
+
         }
 
         private void cbClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,11 +98,19 @@ namespace Tienda.UserControls
                 string nombre = modal.nombre;
                 int cantidad = modal.cantidad;
                 decimal precio = modal.precio;
+                int impuesto = 0;
+                int descuento = 0;
                 decimal subtotal = cantidad * precio;
+
                 // Agregar el producto seleccionado al DataGridView venta
-                dgvVenta.Rows.Add(idProducto, nombre, cantidad, precio, subtotal);
+                dgvVenta.Rows.Add(idProducto, nombre, cantidad, precio, impuesto, descuento, subtotal);
             }
 
+        }
+
+        private void pbExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
