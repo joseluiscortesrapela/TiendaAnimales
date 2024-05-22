@@ -93,22 +93,23 @@ namespace Tienda.UserControls
             if (modal.ShowDialog() == DialogResult.OK)
             {
                 // Acceder a los datos seleccionados por el usuario en la ventana modal
-                int id = modal.idProducto;
-                string nombre = modal.nombre;
-                int cantidad = modal.cantidad;
-                decimal precio = modal.precio;
-        
+                Producto producto = modal.dameProducto();
+                // Por comodidad gaardo en variables el id y la cantadiad
+                int id = producto.Id;
+                int cantidad = producto.Cantidad;
 
                 // Si el producto ya estaba en la cesta de la compra
                 if (siProductoExiste(id))
                 {
+                    Console.WriteLine("El producto existe");
                     // Actualizo la cantidad
                     actualizarCantidad(id, cantidad);
                 }
                 else
                 {
+                    Console.WriteLine("El producto es nuevo, lo añado a la cesta de la compra");
                     // Agregar el producto seleccionado al DataGridView venta
-                    añadirProductoAlCarrito(id, nombre, cantidad, precio);
+                    añadirProductoAlCarrito(producto);
                 }
 
                 // Actualizo el subtotal, total, impuestos y despucuentos de la venta
@@ -116,7 +117,7 @@ namespace Tienda.UserControls
             }
 
         }
-        
+
         // Calcular venta
         private void calcularVenta()
         {
@@ -130,15 +131,15 @@ namespace Tienda.UserControls
                 // Calculo el subtotal
                 decimal subtotal = cantidad * precio;
                 // Muestro el subtotal en la tabla
-                fila.Cells["subtotal"].Value = subtotal;         
+                fila.Cells["subtotal"].Value = subtotal;
             }
         }
 
 
         // Añade un nuevo producto al dgv
-        private void añadirProductoAlCarrito( int id, string nombre, int cantidad, decimal precio)
+        private void añadirProductoAlCarrito(Producto p)
         {   // Añade una nueva fila al dgv
-            dgvVenta.Rows.Add(id, nombre, cantidad, precio);
+            dgvVenta.Rows.Add( p.Id, p.Nombre, p.Categoria, p.Iva, p.Cantidad, p.Descuento, p.Precio);
         }
 
 
@@ -152,7 +153,7 @@ namespace Tienda.UserControls
                 if (int.Parse(fila.Cells["idProducto"].Value.ToString()) == idNuevoProducto)
                 {
                     // El producto con el ID especificado ya existe en el DataGridView
-                    productoExiste = true;
+                    productoExiste = true;               
                 }
             }
 
