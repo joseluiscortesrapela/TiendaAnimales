@@ -92,37 +92,44 @@ namespace Tienda.UserControls
             if (modal.ShowDialog() == DialogResult.OK)
             {
                 // Acceder a los datos seleccionados por el usuario en la ventana modal
-                string idProducto = modal.idProducto;
+                int id = modal.idProducto;
                 string nombre = modal.nombre;
                 int cantidad = modal.cantidad;
                 decimal precio = modal.precio;
-                int impuesto = 0;
-                int descuento = 0;
+        
                 decimal subtotal = cantidad * precio;
 
-                if (siProductoExiste(idProducto))
+                // Si el producto ya estaba en la cesta de la compra
+                if (siProductoExiste(id))
                 {
-                    Console.WriteLine("El producto exite, actualizaria la cantidad y resto de campos");
+                    // Actualizo la cantidad
+                    actualizarCantidad(id, cantidad);
                 }
                 else
                 {
-                    Console.WriteLine("El producto es nuevo, lo añado por primera vez");
                     // Agregar el producto seleccionado al DataGridView venta
-                    dgvVenta.Rows.Add(idProducto, nombre, cantidad, precio, impuesto, descuento, subtotal);
+                    añadirProductoAlCarrito(id, nombre, cantidad, precio);
                 }
 
             }
 
         }
+        
+        // Añade un nuevo producto al dgv
+        private void añadirProductoAlCarrito( int id, string nombre, int cantidad, decimal precio)
+        {   // Añade una nueva fila al dgv
+            dgvVenta.Rows.Add(id, nombre, cantidad, precio);
+        }
+
 
         // Comprueba si el producto existe en el dgv
-        private bool siProductoExiste(string idNuevoProducto)
+        private bool siProductoExiste(int idNuevoProducto)
         {
             bool productoExiste = false;
 
             foreach (DataGridViewRow fila in dgvVenta.Rows)
             {
-                if (fila.Cells["idProducto"].Value.ToString() == idNuevoProducto)
+                if (int.Parse(fila.Cells["idProducto"].Value.ToString()) == idNuevoProducto)
                 {
                     // El producto con el ID especificado ya existe en el DataGridView
                     productoExiste = true;
@@ -132,6 +139,25 @@ namespace Tienda.UserControls
             return productoExiste;
         }
 
+        // Actualiza la cantidad de un producto en el carrito de compra.
+        private void actualizarCantidad(int idNuevoProducto, int cantidadNueva)
+        {
+            // Recorro la lista de productos
+            foreach (DataGridViewRow fila in dgvVenta.Rows)
+            {
+                // Si encuentras el producto x por su id
+                if (int.Parse(fila.Cells["idProducto"].Value.ToString()) == idNuevoProducto)
+                {
+                    // Obtengo la cantidad que tenia el producto en lista de la compra.
+                    int cantidadQueTenia = int.Parse(fila.Cells["cantidad"].Value.ToString());
+                    // Obtengo la cantidad total del producto
+                    int cantidadTotal = cantidadQueTenia + cantidadNueva;
+                    // Actualizo la cantidad de la fila columna cantidad del dgv
+                    fila.Cells["cantidad"].Value = cantidadTotal;
+                }
+            }
+
+        }
 
 
         private void pbExit_Click(object sender, EventArgs e)

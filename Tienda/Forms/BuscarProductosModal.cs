@@ -15,11 +15,11 @@ namespace Tienda.Forms
     public partial class BuscarProductosModal : Form
     {
 
-        public string idProducto;
+        public int idProducto;
         public string nombre;
         public int cantidad;
         public decimal precio;
-       
+
         public BuscarProductosModal()
         {
             InitializeComponent();
@@ -39,17 +39,17 @@ namespace Tienda.Forms
             if (e.RowIndex >= 0)
             {
                 // Obtengo la que ha sido seleccionada en el dgv
-                DataGridViewRow fila = dgvProductos.Rows[e.RowIndex];          
+                DataGridViewRow fila = dgvProductos.Rows[e.RowIndex];
                 // Obteno el id del producto y lo guardo en la variable global
-                idProducto = fila.Cells["idProducto"].Value.ToString();
+                idProducto = int.Parse(fila.Cells["idProducto"].Value.ToString());
 
                 // Inicializo campos formulario con la informacion del producto selecionado.
-               
+
                 // Nombre
-                tbNombre.Text = fila.Cells["nombre"].Value.ToString();           
+                tbNombre.Text = fila.Cells["nombre"].Value.ToString();
                 // Precio  
                 tbPrecio.Text = fila.Cells["precio"].Value.ToString();
-                
+
             }
         }
 
@@ -62,21 +62,18 @@ namespace Tienda.Forms
             dgvProductos.DataSource = AdminModel.buscarProductos(texto);
         }
 
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             // Obtengo campos del formulario
             nombre = tbNombre.Text;
             precio = decimal.Parse(tbPrecio.Text);
-            cantidad = int.Parse( tbCantidad.Text );
-            
+            cantidad = int.Parse(tbCantidad.Text);
+
             // Cerrar la ventana modal con DialogResult.OK
             DialogResult = DialogResult.OK;
-            // Close();
+
         }
     }
 }
