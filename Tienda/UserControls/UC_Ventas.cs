@@ -85,6 +85,7 @@ namespace Tienda.UserControls
 
         }
 
+        // Muestra ventana modal para elegir el producto que quiere añadir al la compra.
         private void btnMostrarBuscadorProductosModal_Click(object sender, EventArgs e)
         {
             var modal = new BuscarProductosModal();
@@ -97,7 +98,6 @@ namespace Tienda.UserControls
                 int cantidad = modal.cantidad;
                 decimal precio = modal.precio;
         
-                decimal subtotal = cantidad * precio;
 
                 // Si el producto ya estaba en la cesta de la compra
                 if (siProductoExiste(id))
@@ -111,10 +111,30 @@ namespace Tienda.UserControls
                     añadirProductoAlCarrito(id, nombre, cantidad, precio);
                 }
 
+                // Actualizo el subtotal, total, impuestos y despucuentos de la venta
+                calcularVenta();
             }
 
         }
         
+        // Calcular venta
+        private void calcularVenta()
+        {
+            // Recorro todos los profuctos del carrito de compra
+            foreach (DataGridViewRow fila in dgvVenta.Rows)
+            {
+                // Obtengo la cantidad
+                int cantidad = int.Parse(fila.Cells["cantidad"].Value.ToString());
+                // Obtengo el precio del pruducto
+                decimal precio = decimal.Parse(fila.Cells["precio"].Value.ToString());
+                // Calculo el subtotal
+                decimal subtotal = cantidad * precio;
+                // Muestro el subtotal en la tabla
+                fila.Cells["subtotal"].Value = subtotal;         
+            }
+        }
+
+
         // Añade un nuevo producto al dgv
         private void añadirProductoAlCarrito( int id, string nombre, int cantidad, decimal precio)
         {   // Añade una nueva fila al dgv
