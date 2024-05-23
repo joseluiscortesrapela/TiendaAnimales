@@ -94,16 +94,13 @@ namespace Tienda.UserControls
             {
                 // Acceder a los datos seleccionados por el usuario en la ventana modal
                 Producto producto = modal.dameProducto();
-                // Por comodidad gaardo en variables el id y la cantadiad
-                int id = producto.Id;
-                int cantidad = producto.Cantidad;
 
                 // Si el producto ya estaba en la cesta de la compra
-                if (siProductoExiste(id))
+                if (siProductoExiste(producto.Id))
                 {
                     Console.WriteLine("El producto existe");
                     // Actualizo la cantidad
-                    actualizarCantidad(id, cantidad);
+                    actualizarProductoCarrito(producto);
                 }
                 else
                 {
@@ -113,13 +110,13 @@ namespace Tienda.UserControls
                 }
 
                 // Actualizo el subtotal, total, impuestos y despucuentos de la venta
-                calcularVenta();
+                calcularFilaProducto();
             }
 
         }
 
         // Calcular venta
-        private void calcularVenta()
+        private void calcularFilaProducto()
         {
             // Recorro todos los profuctos del carrito de compra
             foreach (DataGridViewRow fila in dgvVenta.Rows)
@@ -128,10 +125,25 @@ namespace Tienda.UserControls
                 int cantidad = int.Parse(fila.Cells["cantidad"].Value.ToString());
                 // Obtengo el precio del pruducto
                 decimal precio = decimal.Parse(fila.Cells["precio"].Value.ToString());
+                // Obtengo el tipo de descuento que se aplicara
+                int tipoDescuento = int.Parse(fila.Cells["descuento"].Value.ToString());
+                // Obtengo el tipo de iva que se aplicara
+                int tipoIVA = int.Parse(fila.Cells["iva"].Value.ToString());
+
                 // Calculo el subtotal
                 decimal subtotal = cantidad * precio;
-                // Muestro el subtotal en la tabla
+                // Calculo el descuento
+                decimal descuento = (subtotal * tipoDescuento) / 100;
+                // Calculo los impuestos 
+                decimal impuestos = (subtotal * tipoIVA) / 100;
+                // Calculo total
+                decimal total = (subtotal - descuento) + impuestos;
+
+                // Muestro el subtotal 
                 fila.Cells["subtotal"].Value = subtotal;
+                // Muestro el total
+                fila.Cells["total"].Value = total;
+
             }
         }
 
@@ -139,7 +151,7 @@ namespace Tienda.UserControls
         // Añade un nuevo producto al dgv
         private void añadirProductoAlCarrito(Producto p)
         {   // Añade una nueva fila al dgv
-            dgvVenta.Rows.Add( p.Id, p.Nombre, p.Categoria, p.Iva, p.Cantidad, p.Descuento, p.Precio);
+            dgvVenta.Rows.Add(p.Id, p.Nombre, p.Categoria, p.Cantidad, p.Precio, p.Iva, p.Descuento);
         }
 
 
@@ -153,28 +165,34 @@ namespace Tienda.UserControls
                 if (int.Parse(fila.Cells["idProducto"].Value.ToString()) == idNuevoProducto)
                 {
                     // El producto con el ID especificado ya existe en el DataGridView
-                    productoExiste = true;               
+                    productoExiste = true;
                 }
             }
 
             return productoExiste;
         }
 
-        // Actualiza la cantidad de un producto en el carrito de compra.
-        private void actualizarCantidad(int idNuevoProducto, int cantidadNueva)
+        // Actualiza un producto en el carrito de compra
+        private void actualizarProductoCarrito(Producto producto)
         {
-            // Recorro la lista de productos
+            // Recorro los productos
             foreach (DataGridViewRow fila in dgvVenta.Rows)
             {
-                // Si encuentras el producto x por su id
-                if (int.Parse(fila.Cells["idProducto"].Value.ToString()) == idNuevoProducto)
+                // Si encuentras el producto por su id
+                if (int.Parse(fila.Cells["idProducto"].Value.ToString()) == producto.Id)
                 {
                     // Obtengo la cantidad que tenia el producto en lista de la compra.
                     int cantidadQueTenia = int.Parse(fila.Cells["cantidad"].Value.ToString());
                     // Obtengo la cantidad total del producto
-                    int cantidadTotal = cantidadQueTenia + cantidadNueva;
-                    // Actualizo la cantidad de la fila columna cantidad del dgv
+                    int cantidadTotal = cantidadQueTenia + producto.Cantidad;
+
+                    // Actualizo la fila con los nuevos datos.
+                    fila.Cells["producto"].Value = producto.Nombre;
                     fila.Cells["cantidad"].Value = cantidadTotal;
+                    fila.Cells["iva"].Value = producto.Iva;
+                    fila.Cells["descuento"].Value = producto.Descuento;
+                    fila.Cells["precio"].Value = producto.Precio;
+
                 }
             }
 
