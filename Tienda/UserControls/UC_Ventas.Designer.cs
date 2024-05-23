@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Ventas));
-            this.dgvVenta = new System.Windows.Forms.DataGridView();
+            this.dgvCarritoCompra = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.cbClientes = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,8 +44,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbExit = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbTotalAPagar = new System.Windows.Forms.Label();
-            this.lbSubtotal = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,32 +54,36 @@
             this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
+            this.lbTotalAPagar = new System.Windows.Forms.Label();
+            this.lbSubtotal = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCarritoCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostrarBuscadorProductosModal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvVenta
+            // dgvCarritoCompra
             // 
-            this.dgvVenta.AllowUserToAddRows = false;
-            this.dgvVenta.AllowUserToDeleteRows = false;
-            this.dgvVenta.AllowUserToResizeRows = false;
-            this.dgvVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvVenta.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvVenta.ColumnHeadersHeight = 35;
-            this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCarritoCompra.AllowUserToAddRows = false;
+            this.dgvCarritoCompra.AllowUserToDeleteRows = false;
+            this.dgvCarritoCompra.AllowUserToResizeRows = false;
+            this.dgvCarritoCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCarritoCompra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCarritoCompra.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvCarritoCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCarritoCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCarritoCompra.ColumnHeadersHeight = 35;
+            this.dgvCarritoCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCarritoCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
             this.Producto,
             this.Categoria,
@@ -91,38 +93,39 @@
             this.Descuento,
             this.Subtotal,
             this.Total});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVenta.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvVenta.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvVenta.Location = new System.Drawing.Point(31, 153);
-            this.dgvVenta.Name = "dgvVenta";
-            this.dgvVenta.ReadOnly = true;
-            this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvVenta.RowHeadersVisible = false;
-            this.dgvVenta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvVenta.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVenta.ShowCellErrors = false;
-            this.dgvVenta.ShowCellToolTips = false;
-            this.dgvVenta.ShowEditingIcon = false;
-            this.dgvVenta.ShowRowErrors = false;
-            this.dgvVenta.Size = new System.Drawing.Size(1258, 404);
-            this.dgvVenta.TabIndex = 10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCarritoCompra.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCarritoCompra.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvCarritoCompra.Location = new System.Drawing.Point(31, 153);
+            this.dgvCarritoCompra.Name = "dgvCarritoCompra";
+            this.dgvCarritoCompra.ReadOnly = true;
+            this.dgvCarritoCompra.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCarritoCompra.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCarritoCompra.RowHeadersVisible = false;
+            this.dgvCarritoCompra.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvCarritoCompra.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvCarritoCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCarritoCompra.ShowCellErrors = false;
+            this.dgvCarritoCompra.ShowCellToolTips = false;
+            this.dgvCarritoCompra.ShowEditingIcon = false;
+            this.dgvCarritoCompra.ShowRowErrors = false;
+            this.dgvCarritoCompra.Size = new System.Drawing.Size(1258, 404);
+            this.dgvCarritoCompra.TabIndex = 10;
+            this.dgvCarritoCompra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarritoCompra_CellClick);
             // 
             // label2
             // 
@@ -227,40 +230,18 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(1131, 653);
+            this.label5.Location = new System.Drawing.Point(1080, 653);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 20);
             this.label5.TabIndex = 23;
             this.label5.Text = "Total";
-            // 
-            // lbTotalAPagar
-            // 
-            this.lbTotalAPagar.AutoSize = true;
-            this.lbTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalAPagar.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lbTotalAPagar.Location = new System.Drawing.Point(1250, 653);
-            this.lbTotalAPagar.Name = "lbTotalAPagar";
-            this.lbTotalAPagar.Size = new System.Drawing.Size(19, 20);
-            this.lbTotalAPagar.TabIndex = 24;
-            this.lbTotalAPagar.Text = "0";
-            // 
-            // lbSubtotal
-            // 
-            this.lbSubtotal.AutoSize = true;
-            this.lbSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSubtotal.ForeColor = System.Drawing.Color.Violet;
-            this.lbSubtotal.Location = new System.Drawing.Point(1250, 618);
-            this.lbSubtotal.Name = "lbSubtotal";
-            this.lbSubtotal.Size = new System.Drawing.Size(18, 20);
-            this.lbSubtotal.TabIndex = 26;
-            this.lbSubtotal.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Violet;
-            this.label7.Location = new System.Drawing.Point(1131, 618);
+            this.label7.Location = new System.Drawing.Point(1080, 618);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 20);
             this.label7.TabIndex = 25;
@@ -338,14 +319,48 @@
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             // 
+            // lbTotalAPagar
+            // 
+            this.lbTotalAPagar.AutoSize = true;
+            this.lbTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalAPagar.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lbTotalAPagar.Location = new System.Drawing.Point(1228, 653);
+            this.lbTotalAPagar.Name = "lbTotalAPagar";
+            this.lbTotalAPagar.Size = new System.Drawing.Size(19, 20);
+            this.lbTotalAPagar.TabIndex = 26;
+            this.lbTotalAPagar.Text = "0";
+            // 
+            // lbSubtotal
+            // 
+            this.lbSubtotal.AutoSize = true;
+            this.lbSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSubtotal.ForeColor = System.Drawing.Color.Violet;
+            this.lbSubtotal.Location = new System.Drawing.Point(1228, 618);
+            this.lbSubtotal.Name = "lbSubtotal";
+            this.lbSubtotal.Size = new System.Drawing.Size(18, 20);
+            this.lbSubtotal.TabIndex = 27;
+            this.lbSubtotal.Text = "0";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(1290, 172);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(36, 36);
+            this.btnEliminar.TabIndex = 28;
+            this.btnEliminar.TabStop = false;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // UC_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lbSubtotal);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.lbTotalAPagar);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pbExit);
             this.Controls.Add(this.btnMostrarBuscadorProductosModal);
@@ -356,21 +371,22 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbClientes);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvVenta);
+            this.Controls.Add(this.dgvCarritoCompra);
             this.Name = "UC_Ventas";
             this.Size = new System.Drawing.Size(1324, 704);
             this.Load += new System.EventHandler(this.UC_Ventas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCarritoCompra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostrarBuscadorProductosModal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvVenta;
+        private System.Windows.Forms.DataGridView dgvCarritoCompra;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbClientes;
         private System.Windows.Forms.Label label3;
@@ -381,8 +397,6 @@
         private System.Windows.Forms.PictureBox btnMostrarBuscadorProductosModal;
         private System.Windows.Forms.PictureBox pbExit;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbTotalAPagar;
-        private System.Windows.Forms.Label lbSubtotal;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
@@ -393,5 +407,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Label lbTotalAPagar;
+        private System.Windows.Forms.Label lbSubtotal;
+        private System.Windows.Forms.PictureBox btnEliminar;
     }
 }

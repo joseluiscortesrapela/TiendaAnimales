@@ -16,13 +16,16 @@ namespace Tienda.UserControls
     public partial class UC_Ventas : UserControl
     {
         private List<Cliente> clientes;
+        // La fila selecionada
+        private DataGridViewRow fila;
+        // Identificador 
+        private int id;
 
         // Constructor
         public UC_Ventas()
         {
             InitializeComponent();
         }
-
 
         private void autoCompleteNow()
         {
@@ -42,7 +45,6 @@ namespace Tienda.UserControls
             cbClientes.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
         }
-
 
         // Autoload
         private void UC_Ventas_Load(object sender, EventArgs e)
@@ -119,7 +121,7 @@ namespace Tienda.UserControls
         private void calcularFilaProducto()
         {
             // Recorro todos los profuctos del carrito de compra
-            foreach (DataGridViewRow fila in dgvVenta.Rows)
+            foreach (DataGridViewRow fila in dgvCarritoCompra.Rows)
             {
                 // Obtengo la cantidad
                 int cantidad = int.Parse(fila.Cells["cantidad"].Value.ToString());
@@ -144,23 +146,78 @@ namespace Tienda.UserControls
                 // Muestro el total
                 fila.Cells["total"].Value = total;
 
+                // Recalcula 
+                recalcular();
             }
         }
 
+        private void recalcular()
+        {
+            //  Obtengo todos los subtotales
+            decimal subtotal = calcularSubtotales();
+            // Muestro el subtotal 
+            lbSubtotal.Text = subtotal.ToString();
+
+            // Obtengo el total a pagar
+            decimal total = calcularTotalAPagar();
+            // Muestro el total a pagar
+            lbTotalAPagar.Text = total.ToString();
+
+        }
+
+        // Calcula el subtotal del carrito de compra
+        private decimal calcularSubtotales()
+        {
+            decimal totalSubtotal = 0;
+
+            // Recorro todos los profuctos del carrito de compra
+            foreach (DataGridViewRow fila in dgvCarritoCompra.Rows)
+            {
+                if (fila.Cells["subtotal"].Value != null)
+                {
+                    // Obtengo el subtotal
+                    decimal subtotal = decimal.Parse(fila.Cells["subtotal"].Value.ToString());
+                    // Voy guardando los totales de cada producto
+                    totalSubtotal += subtotal;
+                }
+
+            }
+
+            return totalSubtotal;
+        }
+
+        private decimal calcularTotalAPagar()
+        {
+            decimal totalAPagar = 0;
+
+            // Recorro todos los profuctos del carrito de compra
+            foreach (DataGridViewRow fila in dgvCarritoCompra.Rows)
+            {
+                if (fila.Cells["total"].Value != null)
+                {
+                    // Obtengo el total
+                    decimal total = decimal.Parse(fila.Cells["total"].Value.ToString());
+                    // Voy guardando los totales de cada producto
+                    totalAPagar += total;
+                }
+
+            }
+
+            return totalAPagar;
+        }
 
         // Añade un nuevo producto al dgv
         private void añadirProductoAlCarrito(Producto p)
         {   // Añade una nueva fila al dgv
-            dgvVenta.Rows.Add(p.Id, p.Nombre, p.Categoria, p.Cantidad, p.Precio, p.Iva, p.Descuento);
+            dgvCarritoCompra.Rows.Add(p.Id, p.Nombre, p.Categoria, p.Cantidad, p.Precio, p.Iva, p.Descuento);
         }
-
 
         // Comprueba si el producto existe en el dgv
         private bool siProductoExiste(int idNuevoProducto)
         {
             bool productoExiste = false;
 
-            foreach (DataGridViewRow fila in dgvVenta.Rows)
+            foreach (DataGridViewRow fila in dgvCarritoCompra.Rows)
             {
                 if (int.Parse(fila.Cells["idProducto"].Value.ToString()) == idNuevoProducto)
                 {
@@ -176,7 +233,7 @@ namespace Tienda.UserControls
         private void actualizarProductoCarrito(Producto producto)
         {
             // Recorro los productos
-            foreach (DataGridViewRow fila in dgvVenta.Rows)
+            foreach (DataGridViewRow fila in dgvCarritoCompra.Rows)
             {
                 // Si encuentras el producto por su id
                 if (int.Parse(fila.Cells["idProducto"].Value.ToString()) == producto.Id)
@@ -203,5 +260,55 @@ namespace Tienda.UserControls
         {
             Application.Exit();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            // Mensaje que vera el usuario
+            String message = "Quieres eliminar " + fila.Cells["producto"].Value + " ?";
+            // Titulo de la ventana  
+            String caption = "Eliminar producto";
+            // Muestro mensaje y obtengo el boton que ha seleccionado
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            // Si quiere eliminar  
+            if (result == DialogResult.Yes)
+            {
+                // Eliminar la fila seleccionada
+                dgvCarritoCompra.Rows.Remove(fila);
+                // Actualizo 
+                recalcular();
+                // Oculto botones 
+                ocultarBotonesAccion();
+            }
+
+        }
+
+        // Oculta los botones de accion.
+        private void ocultarBotonesAccion()
+        {
+            btnEliminar.Visible = false;
+        }
+
+        // Obtengo la fila que ha sido selecionada en el dgv del carrito de compra
+        private void dgvCarritoCompra_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                //  Obtengo la fila  
+                fila = dgvCarritoCompra.Rows[e.RowIndex];
+                // Guardo el identificador del producto
+                id = int.Parse(fila.Cells[0].Value.ToString()); // El identificador
+                // Muestro botones de accion
+                mostrarBotonesAccion();
+            }
+        }
+
+        // Muestra los botones de accion
+        private void mostrarBotonesAccion()
+        {
+            btnEliminar.Visible = true;
+        }
+
     }
 }
