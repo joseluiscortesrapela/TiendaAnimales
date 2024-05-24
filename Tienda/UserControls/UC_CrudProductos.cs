@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Tienda.Utilizades;
 
 namespace Tienda.UserControls
 {
@@ -23,12 +24,10 @@ namespace Tienda.UserControls
             cargarProductosDGV();
         }
 
-
-
-        // Autoload ventana polizas
+        // Auto load ventana 
         private void UC_CrudProductos_Load(object sender, EventArgs e)
-        {   // Cambia color filas del dgv de polizas segun su estado
-            // CambiarColorFilas();
+        {
+            Util.CambiarColorFilasDependiendoDeSuStock( dgvProductos );
         }
 
         // Obtengo el producto que ha sido seleccionada en el dgv

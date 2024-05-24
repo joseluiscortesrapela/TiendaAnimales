@@ -412,6 +412,7 @@
             this.Name = "BuscarProductosModal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar producto";
+            this.Load += new System.EventHandler(this.BuscarProductosModal_Load);
             this.panelBuscador.ResumeLayout(false);
             this.panelBuscador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscador)).EndInit();

@@ -9,14 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tienda.Entidades;
 using Tienda.Models;
+using Tienda.Utilizades;
 
 namespace Tienda.Forms
 {
     public partial class BuscarProductosModal : Form
     {
-
+        // Variable clase objeto producto
         private Producto producto;
 
+        // Constructor
         public BuscarProductosModal()
         {
             InitializeComponent();
@@ -24,6 +26,11 @@ namespace Tienda.Forms
             cargarProductosDGV();
         }
 
+        // Auto load
+        private void BuscarProductosModal_Load(object sender, EventArgs e)
+        {
+            Util.CambiarColorFilasDependiendoDeSuStock(dgvProductos);
+        }
         // Carga todos los productos en el dgv
         private void cargarProductosDGV()
         {
@@ -45,14 +52,14 @@ namespace Tienda.Forms
                 tbCategoria.Text = categoria;
                 nudIva.Value = calcularTipoIva(categoria);
                 tbPrecio.Text = fila.Cells["precio"].Value.ToString();
-                int stock = int.Parse( fila.Cells["stock"].Value.ToString() );
+                int stock = int.Parse(fila.Cells["stock"].Value.ToString());
                 tbStock.Text = stock.ToString();
                 tbDescripcion.Text = fila.Cells["descripcion"].Value.ToString();
 
-                
+
                 // Si no tiene stock oculto el boton 
-                if ( stock == 0 )
-                {    
+                if (stock == 0)
+                {
                     // Oculto el boton
                     btnAceptar.Visible = false;
                 }
@@ -142,7 +149,7 @@ namespace Tienda.Forms
                 // Desactivo el boton aceptar
                 btnAceptar.Enabled = false;
             } // Si la cantidad es cero
-            else if ( cantidad == 0)
+            else if (cantidad == 0)
             {
                 // Muestro icono y mensaje al usaurio
                 error.SetError(nudCantidad, "La cantidad no puede ser 0");
@@ -157,5 +164,8 @@ namespace Tienda.Forms
             }
 
         }
+
+
     }
+
 }
