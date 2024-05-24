@@ -294,6 +294,7 @@ namespace Tienda.UserControls
             btnEliminar.Visible = true;
         }
 
+        // Registrar venta
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 

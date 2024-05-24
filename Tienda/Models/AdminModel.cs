@@ -748,65 +748,63 @@ namespace Tienda.Models
 
         }
 
-
-
-        // Registra una lista de detalles de venta
+        // Registra una lista de detalles de venta y actualiza el stock de los productos
         public static bool registrarDetalleVenta(List<DetalleVenta> detalleVenta)
         {
             // Creo la conexión con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
 
+            // Consulta SQL para insertar en detalleVenta
+            string sqlInsert = @"INSERT INTO detalleVenta 
+                         (idVenta, idProducto, idCliente, producto, categoria, precio, iva, descuento, subtotal, total, cantidad)
+                         VALUES
+                         (@idVenta, @idProducto, @idCliente, @producto, @categoria, @precio, @iva, @descuento, @subtotal, @total, @cantidad)";
 
-            // Consulta SQL
-            string sql = @"INSERT INTO detalleVenta  (idVenta, idProducto, idCliente, producto, categoria, precio, iva, descuento, subtotal, total, cantidad)       
-                                              VALUES  (@idVenta, @idProducto, @idCliente, @producto, @categoria, @precio, @iva, @descuento, @subtotal, @total, @cantidad)";
+            // Consulta SQL para actualizar el stock del producto
+            string sqlUpdateStock = @"UPDATE productos SET stock = stock - @cantidad WHERE idProducto = @idProducto";
 
-            // Preparo la consulta
-            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            // Preparo las consultas
+            MySqlCommand comandoInsert = new MySqlCommand(sqlInsert, conexion);
+            MySqlCommand comandoUpdateStock = new MySqlCommand(sqlUpdateStock, conexion);
 
             // Inicializo el estado de la operación
             bool creado = true;
 
-            // Itero sobre cada detalle de venta en la lista
+            // Recorro la lista del carrito de compra
             foreach (DetalleVenta detalle in detalleVenta)
             {
                 // Limpio los parámetros anteriores
-                comando.Parameters.Clear();
+                comandoInsert.Parameters.Clear();
+                comandoUpdateStock.Parameters.Clear();
 
-                // Agrega parámetros a la consulta SQL
-                comando.Parameters.AddWithValue("@idVenta", detalle.IdVenta);
-                comando.Parameters.AddWithValue("@idProducto", detalle.IdProducto);
-                comando.Parameters.AddWithValue("@idCliente", detalle.IdCliente);
-                comando.Parameters.AddWithValue("@producto", detalle.Producto);
-                comando.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
-                comando.Parameters.AddWithValue("@categoria", detalle.Categoria);
-                comando.Parameters.AddWithValue("@precio", detalle.Precio);
-                comando.Parameters.AddWithValue("@iva", detalle.Iva);
-                comando.Parameters.AddWithValue("@descuento", detalle.Descuento);
-                comando.Parameters.AddWithValue("@subtotal", detalle.Subtotal);
-                comando.Parameters.AddWithValue("@total", detalle.Total);
+                // Agrega parámetros a la consulta SQL para insertar detalleVenta
+                comandoInsert.Parameters.AddWithValue("@idVenta", detalle.IdVenta);
+                comandoInsert.Parameters.AddWithValue("@idProducto", detalle.IdProducto);
+                comandoInsert.Parameters.AddWithValue("@idCliente", detalle.IdCliente);
+                comandoInsert.Parameters.AddWithValue("@producto", detalle.Producto);
+                comandoInsert.Parameters.AddWithValue("@categoria", detalle.Categoria);
+                comandoInsert.Parameters.AddWithValue("@precio", detalle.Precio);
+                comandoInsert.Parameters.AddWithValue("@iva", detalle.Iva);
+                comandoInsert.Parameters.AddWithValue("@descuento", detalle.Descuento);
+                comandoInsert.Parameters.AddWithValue("@subtotal", detalle.Subtotal);
+                comandoInsert.Parameters.AddWithValue("@total", detalle.Total);
+                comandoInsert.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
 
-
-                try
+                // Ejecuta la consulta SQL para insertar el detalle de la venta
+                int estadoInsert = comandoInsert.ExecuteNonQuery();
+                if (estadoInsert == 0)
                 {
-                    // Ejecuta la consulta SQL para insertar el detalle de la venta
-                    int estado = comando.ExecuteNonQuery();
-                    if (estado == 0)
-                    {
-                        // Si alguna inserción falla, establezco creado a false
-                        creado = false;
-                    }
-                }
-                catch (MySqlException ex)
-                {
-                    // En caso de excepción, registro el error y establezco creado a false
-                    Console.WriteLine($"Error en SQL: {ex.Message}");
                     creado = false;
                 }
-                catch (Exception ex)
+
+                // Agrega parámetros a la consulta SQL para actualizar el stock
+                comandoUpdateStock.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
+                comandoUpdateStock.Parameters.AddWithValue("@idProducto", detalle.IdProducto);
+
+                // Ejecuta la consulta SQL para actualizar el stock del producto
+                int estadoUpdateStock = comandoUpdateStock.ExecuteNonQuery();
+                if (estadoUpdateStock == 0)
                 {
-                    // Captura cualquier otra excepción
-                    Console.WriteLine($"Error: {ex.Message}");
                     creado = false;
                 }
             }
@@ -817,8 +815,6 @@ namespace Tienda.Models
             // Retorno el estado final de la operación
             return creado;
         }
-
-
 
 
 
