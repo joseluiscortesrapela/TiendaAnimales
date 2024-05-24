@@ -41,23 +41,23 @@
             this.btnInformes = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.panelHome = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbTipoUsuario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbUsuario = new System.Windows.Forms.Label();
             this.pbExit = new System.Windows.Forms.PictureBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.lbUsuario = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbTipoUsuario = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelHome = new System.Windows.Forms.Panel();
             this.paneLaterallNavegacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
+            this.panelHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
             this.SuspendLayout();
             // 
             // paneLaterallNavegacion
@@ -234,15 +234,27 @@
             this.panelContenedor.Size = new System.Drawing.Size(1324, 704);
             this.panelContenedor.TabIndex = 5;
             // 
-            // pbExit
+            // panelHome
             // 
-            this.pbExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbExit.Location = new System.Drawing.Point(1291, 4);
-            this.pbExit.Name = "pbExit";
-            this.pbExit.Size = new System.Drawing.Size(21, 21);
-            this.pbExit.TabIndex = 6;
-            this.pbExit.TabStop = false;
-            this.pbExit.Click += new System.EventHandler(this.pbExit_Click_1);
+            this.panelHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelHome.BackgroundImage")));
+            this.panelHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelHome.Controls.Add(this.pictureBox1);
+            this.panelHome.Controls.Add(this.panelLogo);
+            this.panelHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelHome.Location = new System.Drawing.Point(0, 0);
+            this.panelHome.Name = "panelHome";
+            this.panelHome.Size = new System.Drawing.Size(1324, 704);
+            this.panelHome.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(695, 478);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(629, 203);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // panelLogo
             // 
@@ -250,22 +262,32 @@
             this.panelLogo.Controls.Add(this.lbTipoUsuario);
             this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Controls.Add(this.lbUsuario);
-            this.panelLogo.Location = new System.Drawing.Point(1077, 12);
+            this.panelLogo.Location = new System.Drawing.Point(1117, 22);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(208, 61);
+            this.panelLogo.Size = new System.Drawing.Size(195, 61);
             this.panelLogo.TabIndex = 0;
             // 
-            // lbUsuario
+            // pictureBox2
             // 
-            this.lbUsuario.AutoSize = true;
-            this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lbUsuario.Location = new System.Drawing.Point(63, 29);
-            this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(57, 17);
-            this.lbUsuario.TabIndex = 8;
-            this.lbUsuario.Text = "Usuario";
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(7, 11);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 51);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lbTipoUsuario
+            // 
+            this.lbTipoUsuario.AutoSize = true;
+            this.lbTipoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTipoUsuario.ForeColor = System.Drawing.Color.Orange;
+            this.lbTipoUsuario.Location = new System.Drawing.Point(64, 46);
+            this.lbTipoUsuario.Name = "lbTipoUsuario";
+            this.lbTipoUsuario.Size = new System.Drawing.Size(34, 13);
+            this.lbTipoUsuario.TabIndex = 10;
+            this.lbTipoUsuario.Text = "Tipo: ";
             // 
             // label1
             // 
@@ -279,48 +301,26 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Bienvenido/a";
             // 
-            // lbTipoUsuario
+            // lbUsuario
             // 
-            this.lbTipoUsuario.AutoSize = true;
-            this.lbTipoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTipoUsuario.ForeColor = System.Drawing.Color.Orange;
-            this.lbTipoUsuario.Location = new System.Drawing.Point(64, 46);
-            this.lbTipoUsuario.Name = "lbTipoUsuario";
-            this.lbTipoUsuario.Size = new System.Drawing.Size(34, 13);
-            this.lbTipoUsuario.TabIndex = 10;
-            this.lbTipoUsuario.Text = "Tipo: ";
+            this.lbUsuario.AutoSize = true;
+            this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsuario.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lbUsuario.Location = new System.Drawing.Point(63, 29);
+            this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Size = new System.Drawing.Size(57, 17);
+            this.lbUsuario.TabIndex = 8;
+            this.lbUsuario.Text = "Usuario";
             // 
-            // pictureBox2
+            // pbExit
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(7, 11);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 51);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(695, 498);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(629, 203);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panelHome
-            // 
-            this.panelHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelHome.BackgroundImage")));
-            this.panelHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelHome.Controls.Add(this.pictureBox1);
-            this.panelHome.Controls.Add(this.panelLogo);
-            this.panelHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelHome.Location = new System.Drawing.Point(0, 0);
-            this.panelHome.Name = "panelHome";
-            this.panelHome.Size = new System.Drawing.Size(1324, 704);
-            this.panelHome.TabIndex = 8;
+            this.pbExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbExit.Location = new System.Drawing.Point(1291, 4);
+            this.pbExit.Name = "pbExit";
+            this.pbExit.Size = new System.Drawing.Size(21, 21);
+            this.pbExit.TabIndex = 6;
+            this.pbExit.TabStop = false;
+            this.pbExit.Click += new System.EventHandler(this.pbExit_Click_1);
             // 
             // MenuPrincipal
             // 
@@ -338,12 +338,12 @@
             this.paneLaterallNavegacion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelContenedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
+            this.panelHome.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelHome.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
             this.ResumeLayout(false);
 
         }
