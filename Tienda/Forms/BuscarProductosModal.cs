@@ -45,8 +45,25 @@ namespace Tienda.Forms
                 tbCategoria.Text = categoria;
                 nudIva.Value = calcularTipoIva(categoria);
                 tbPrecio.Text = fila.Cells["precio"].Value.ToString();
-                tbStock.Text = fila.Cells["stock"].Value.ToString();
+                int stock = int.Parse( fila.Cells["stock"].Value.ToString() );
+                tbStock.Text = stock.ToString();
                 tbDescripcion.Text = fila.Cells["descripcion"].Value.ToString();
+
+                
+                // Si no tiene stock oculto el boton 
+                if ( stock == 0 )
+                {    
+                    // Oculto el boton
+                    btnAceptar.Visible = false;
+                }
+                else
+                {
+                    // Muestro  el boton
+                    btnAceptar.Visible = true;
+                }
+
+                // Quito alerta
+                error.SetError(nudCantidad, "");
 
             }
         }
@@ -73,7 +90,6 @@ namespace Tienda.Forms
             return iva;
         }
 
-
         // Busca productos por nombre
         private void tbBuscar_TextChanged(object sender, EventArgs e)
         {
@@ -89,6 +105,7 @@ namespace Tienda.Forms
             return producto;
         }
 
+        // Acepta el producto 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             // Obtengo datos formulario
@@ -118,13 +135,17 @@ namespace Tienda.Forms
             // Obtengo el stock del producto
             int stock = int.Parse(tbStock.Text.ToString());
 
-            Console.WriteLine("Cantidad: " + cantidad + " stock: " + stock);
-
-
             // Si la cantidad no supera el stock del producto
             if (cantidad > stock)
             {   // Muestro icono y mensaje al usaurio
                 error.SetError(nudCantidad, "La cantidad no puede superar el stock");
+                // Desactivo el boton aceptar
+                btnAceptar.Enabled = false;
+            } // Si la cantidad es cero
+            else if ( cantidad == 0)
+            {
+                // Muestro icono y mensaje al usaurio
+                error.SetError(nudCantidad, "La cantidad no puede ser 0");
                 // Desactivo el boton aceptar
                 btnAceptar.Enabled = false;
             }
