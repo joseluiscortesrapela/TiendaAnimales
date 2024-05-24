@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Management.Instrumentation;
 
 namespace Tienda.Models
 {
@@ -114,11 +115,9 @@ namespace Tienda.Models
             {
                 conexion.Close();
             }
-            
+
             return clientes;
         }
-
-
 
         // Registra un nuevo usuario
         public static int registrarCliente(Cliente cliente)
@@ -152,7 +151,7 @@ namespace Tienda.Models
             catch (Exception ex)
             {
                 creado = 0;
-                MessageBox.Show(ex.Message  +  " " + ex.InnerException );
+                MessageBox.Show(ex.Message + " " + ex.InnerException);
             }
 
             return creado;
@@ -722,6 +721,129 @@ namespace Tienda.Models
 
             return dataTable;
 
+        }
+
+        // Registra una nueva venta
+        public static bool registrarVenta(int idCliente, string fecha, decimal total)
+        {
+
+            // Creo la conexion con la base de datos.
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+
+            // Consulta sql
+            string sql = "INSERT INTO ventas ( idCliente, fecha, total ) VALUES ( @id, @fecha, @total )";
+            // Preparo la consulta
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            // Le paso el pago
+            comando.Parameters.AddWithValue("@id", idCliente);
+            comando.Parameters.AddWithValue("@fecha", fecha);
+            comando.Parameters.AddWithValue("@total", total);
+
+            // Return value is the number of rows affected by the SQL statement.
+            int estado = comando.ExecuteNonQuery();
+            bool registrado = estado != 0;
+
+
+            return registrado;
+
+        }
+
+
+
+        // Registra una lista de detalles de venta
+        public static bool registrarDetalleVenta(List<DetalleVenta> detalleVenta)
+        {
+            // Creo la conexión con la base de datos.
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+
+
+            // Consulta SQL
+            string sql = @"INSERT INTO detalleVenta  (idVenta, idProducto, idCliente, producto, categoria, precio, iva, descuento, subtotal, total, cantidad)       
+                                              VALUES  (@idVenta, @idProducto, @idCliente, @producto, @categoria, @precio, @iva, @descuento, @subtotal, @total, @cantidad)";
+
+            // Preparo la consulta
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+
+            // Inicializo el estado de la operación
+            bool creado = true;
+
+            // Itero sobre cada detalle de venta en la lista
+            foreach (DetalleVenta detalle in detalleVenta)
+            {
+                // Limpio los parámetros anteriores
+                comando.Parameters.Clear();
+
+                // Agrega parámetros a la consulta SQL
+                comando.Parameters.AddWithValue("@idVenta", detalle.IdVenta);
+                comando.Parameters.AddWithValue("@idProducto", detalle.IdProducto);
+                comando.Parameters.AddWithValue("@idCliente", detalle.IdCliente);
+                comando.Parameters.AddWithValue("@producto", detalle.Producto);
+                comando.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
+                comando.Parameters.AddWithValue("@categoria", detalle.Categoria);
+                comando.Parameters.AddWithValue("@precio", detalle.Precio);
+                comando.Parameters.AddWithValue("@iva", detalle.Iva);
+                comando.Parameters.AddWithValue("@descuento", detalle.Descuento);
+                comando.Parameters.AddWithValue("@subtotal", detalle.Subtotal);
+                comando.Parameters.AddWithValue("@total", detalle.Total);
+
+
+                try
+                {
+                    // Ejecuta la consulta SQL para insertar el detalle de la venta
+                    int estado = comando.ExecuteNonQuery();
+                    if (estado == 0)
+                    {
+                        // Si alguna inserción falla, establezco creado a false
+                        creado = false;
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    // En caso de excepción, registro el error y establezco creado a false
+                    Console.WriteLine($"Error en SQL: {ex.Message}");
+                    creado = false;
+                }
+                catch (Exception ex)
+                {
+                    // Captura cualquier otra excepción
+                    Console.WriteLine($"Error: {ex.Message}");
+                    creado = false;
+                }
+            }
+
+            // Cierro la conexión
+            conexion.Close();
+
+            // Retorno el estado final de la operación
+            return creado;
+        }
+
+
+
+
+
+
+        // Obtengo el id de la ultima venta que se realizo
+        public static int getUltimoIdVenta()
+        {
+            // Obtengo la conexion
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            // Consulta sql
+            string sql = "SELECT idVenta FROM ventas ORDER BY idVenta DESC LIMIT 1";
+            // Preparo el comando sql
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            // Ejecuto
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            int idVenta = -1;
+
+            if (reader.Read())
+            {
+                // Obtengo el ultimo id de lat abla ventas
+                idVenta = int.Parse(reader["idVenta"].ToString());
+            }
+
+            return idVenta;
         }
 
 
