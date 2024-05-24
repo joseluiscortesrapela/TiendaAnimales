@@ -1,11 +1,6 @@
-﻿using MySqlX.XDevAPI;
-using Tienda.Models;
-using Tienda.Sesion;
-using Tienda.UserControls;
+﻿using Tienda.UserControls;
 using System;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Tienda.Forms
 {
@@ -19,11 +14,11 @@ namespace Tienda.Forms
             InitializeComponent();
            
             // Obtengo el id
-            //idUsuario = SesionUsuario.Id;
+            idUsuario = SesionUsuario.Id;
             // Nombre del usuario
-            //lbUsuario.Text = SesionUsuario.Nombre;
+            lbUsuario.Text = SesionUsuario.Nombre;
             // Obtengo el tipo o rol
-            //tipo = SesionUsuario.Tipo;
+            tipo = SesionUsuario.Tipo;
 
             // Muestro el menu principal segun tipo usuario.
            // prepararInterfazUsuario(tipo);

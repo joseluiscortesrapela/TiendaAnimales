@@ -32,7 +32,7 @@ namespace Tienda.Models
             // Si existe el usuario
             if (existe)
             {
-               // crearSesion(reader); // Creo una sesion para el usuario, para mantener los datos en cache.
+                crearSesion(reader); // Creo una sesion para el usuario, para mantener los datos en cache.
             }
 
             // Devuelvo resultado 
