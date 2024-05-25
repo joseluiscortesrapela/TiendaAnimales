@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CrudClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pbEditar = new System.Windows.Forms.PictureBox();
             this.pbEliminar = new System.Windows.Forms.PictureBox();
             this.pbCrear = new System.Windows.Forms.PictureBox();
@@ -273,10 +273,11 @@
             this.dgvVentas.Location = new System.Drawing.Point(45, 35);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvVentas.Size = new System.Drawing.Size(1235, 207);
             this.dgvVentas.TabIndex = 26;
+            this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
             // 
             // lbMensajeGeneral
             // 
@@ -405,6 +406,7 @@
             this.btnDetallesVenta.Size = new System.Drawing.Size(34, 35);
             this.btnDetallesVenta.TabIndex = 42;
             this.btnDetallesVenta.TabStop = false;
+            this.btnDetallesVenta.Visible = false;
             this.btnDetallesVenta.WaitOnLoad = true;
             this.btnDetallesVenta.Click += new System.EventHandler(this.btnMostrarDetallesVenta_Click);
             // 
@@ -416,6 +418,7 @@
             this.btnEliminarVenta.Size = new System.Drawing.Size(34, 35);
             this.btnEliminarVenta.TabIndex = 41;
             this.btnEliminarVenta.TabStop = false;
+            this.btnEliminarVenta.Visible = false;
             this.btnEliminarVenta.WaitOnLoad = true;
             this.btnEliminarVenta.Click += new System.EventHandler(this.btnEliminarVenta_Click);
             // 
@@ -455,8 +458,8 @@
             this.dgvClientes.Location = new System.Drawing.Point(36, 32);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(1236, 341);
             this.dgvClientes.TabIndex = 8;

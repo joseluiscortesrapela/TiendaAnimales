@@ -135,6 +135,7 @@ namespace Tienda.Forms
             mostrarUserControl(new UC_CrudProductos());
         }
 
+        // Se cierra el programa
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();

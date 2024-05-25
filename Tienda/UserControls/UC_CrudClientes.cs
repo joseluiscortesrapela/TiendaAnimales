@@ -10,6 +10,7 @@ namespace Tienda.UserControls
     public partial class UC_CrudClientes : UserControl
     {
         private DataGridViewRow filaCliente;
+        private DataGridViewRow filaVenta;
         private Cliente cliente;
         private MenuPrincipal menuPrincipal;
 
@@ -59,6 +60,10 @@ namespace Tienda.UserControls
 
                 // Muestro botones de accion del crud clientes.
                 mostrarBotonesAccion();
+                // Muestro el panel que conteiene el crud de ventas del cliente
+                panelVentasDelCliente.Visible = true;
+                // Oculto botones de accion del dgv ventas
+                ocultarrBotonesAccionDGVVenta();
                 // Elimina mensajes general
                 ocultarMensaje();
 
@@ -80,7 +85,6 @@ namespace Tienda.UserControls
                     ocultarPanelVentas();
                 }
 
-                Console.WriteLine("idCliente: " + idCliente);
 
             }
 
@@ -265,6 +269,8 @@ namespace Tienda.UserControls
         private void limpiaPlaceholderBuscador(object sender, EventArgs e)
         {
             tbBuscar.Text = "";
+            // Oculto panel con el crud ventas cliente
+            panelVentasDelCliente.Visible = false;
         }
 
         private void pbExit_Click(object sender, EventArgs e)
@@ -455,13 +461,42 @@ namespace Tienda.UserControls
         // Pregunta si quiere eliminar la venta
         private void btnEliminarVenta_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Eliminar venta");
+            Console.WriteLine("Eliminar venta " + filaVenta.Cells[0].Value);
         }
 
         private void btnMostrarDetallesVenta_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("mostrar detalles de la venta " + filaVenta.Cells[0].Value );
+        }
+
+        // Obtengo fila selecionada en el dgv de ventas
+        private void dgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Si es una fila correcta
+            if (e.RowIndex >= 0)
+            {
+                // Obtengo la fila selecionada
+                filaVenta = dgvVentas.Rows[e.RowIndex];
+                // Muestro los botones de accion
+                mostrarBotonesAccionDGVVenta();
+            }
 
         }
+
+        // Muestro los botones de accion del crud ventas
+        private void mostrarBotonesAccionDGVVenta()
+        {
+            btnDetallesVenta.Visible = true;
+            btnEliminarVenta.Visible = true;
+        }
+
+        // Oculto los botones de accion del crud ventas
+        private void ocultarrBotonesAccionDGVVenta()
+        {
+            btnDetallesVenta.Visible = false;
+            btnEliminarVenta.Visible = false;
+        }
+
     }
 
 
