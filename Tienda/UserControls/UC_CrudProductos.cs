@@ -96,8 +96,8 @@ namespace Tienda.UserControls
             tbNombreEditar.Text = producto.Nombre;
             cbCategoriaEditar.Text = producto.Categoria;
             tbPrecioEditar.Text = producto.Precio.ToString();
-            tbStockEditar.Text = producto.Stock.ToString();
-            tbDescripcionsEdiitar.Text = producto.Descripcion;
+            nupStock.Value = producto.Stock;
+            tbDescripcionsEdiitar.Text = producto.Descripcion.Trim();
 
         }
 
@@ -171,11 +171,11 @@ namespace Tienda.UserControls
         {
 
             // Obtengo datos del formulario crear producto
-            string nombre = tbNombre.Text.ToString();
+            string nombre = tbNombre.Text;
             string categoria = cbCategoria.Text.ToString();
             decimal precio = decimal.Parse(tbPrecio.Text.ToString());
-            int stock = int.Parse(tbStock.Text.ToString());
-            string descripcion = tbDescripcion.Text.ToString();
+            int stock = int.Parse( nudStock.Value.ToString() );
+            string descripcion = tbDescripcion.Text.Trim();
 
             // Creo un objeto de tipo producto
             Producto producto = new Producto(nombre, categoria, precio, stock, descripcion);
@@ -197,11 +197,11 @@ namespace Tienda.UserControls
 
             // Obtengo el valor de los campos del formulario
             int id = int.Parse(lbIdEditar.Text.ToString());
-            string nombre = tbNombreEditar.Text.ToString();
-            string categoria = cbCategoriaEditar.Text.ToString();
+            string nombre = tbNombreEditar.Text;
+            string categoria = cbCategoriaEditar.Text;
             decimal precio = decimal.Parse(tbPrecioEditar.Text.ToString());
-            int stock = int.Parse(tbStockEditar.Text.ToString());
-            string descripcion = tbDescripcionsEdiitar.Text.ToString();
+            int stock = int.Parse( nupStock.Value.ToString() );
+            string descripcion = tbDescripcionsEdiitar.Text.Trim();
 
             // Creo un objeto de tipo producto
             Producto producto = new Producto(id, nombre, categoria, precio, stock, descripcion);

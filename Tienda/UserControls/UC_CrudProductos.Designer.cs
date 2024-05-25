@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CrudProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbPagos = new System.Windows.Forms.Label();
             this.panelNavegacionSuperior = new System.Windows.Forms.Panel();
             this.panelBuscador = new System.Windows.Forms.Panel();
@@ -56,7 +56,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tbStock = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -81,7 +80,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.tbStockEditar = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -122,6 +120,8 @@
             this.label42 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
+            this.nudStock = new System.Windows.Forms.NumericUpDown();
+            this.nupStock = new System.Windows.Forms.NumericUpDown();
             this.panelNavegacionSuperior.SuspendLayout();
             this.panelBuscador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscador)).BeginInit();
@@ -151,6 +151,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupStock)).BeginInit();
             this.SuspendLayout();
             // 
             // lbPagos
@@ -333,8 +335,8 @@
             this.dgvProductos.Location = new System.Drawing.Point(36, 31);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(1243, 414);
             this.dgvProductos.TabIndex = 37;
@@ -350,6 +352,7 @@
             this.panelCrearProducto.BackColor = System.Drawing.Color.Snow;
             this.panelCrearProducto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCrearProducto.BackgroundImage")));
             this.panelCrearProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCrearProducto.Controls.Add(this.nudStock);
             this.panelCrearProducto.Controls.Add(this.label8);
             this.panelCrearProducto.Controls.Add(this.label21);
             this.panelCrearProducto.Controls.Add(this.pictureBox17);
@@ -357,7 +360,6 @@
             this.panelCrearProducto.Controls.Add(this.label4);
             this.panelCrearProducto.Controls.Add(this.label5);
             this.panelCrearProducto.Controls.Add(this.pictureBox1);
-            this.panelCrearProducto.Controls.Add(this.tbStock);
             this.panelCrearProducto.Controls.Add(this.label11);
             this.panelCrearProducto.Controls.Add(this.label12);
             this.panelCrearProducto.Controls.Add(this.pictureBox4);
@@ -456,18 +458,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(29, 28);
             this.pictureBox1.TabIndex = 113;
             this.pictureBox1.TabStop = false;
-            // 
-            // tbStock
-            // 
-            this.tbStock.BackColor = System.Drawing.Color.AliceBlue;
-            this.tbStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbStock.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.tbStock.Location = new System.Drawing.Point(1096, 149);
-            this.tbStock.Name = "tbStock";
-            this.tbStock.Size = new System.Drawing.Size(76, 26);
-            this.tbStock.TabIndex = 112;
-            this.tbStock.Text = "0";
-            this.tbStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
@@ -627,7 +617,7 @@
             this.btnCrearProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCrearProducto.Location = new System.Drawing.Point(682, 563);
+            this.btnCrearProducto.Location = new System.Drawing.Point(686, 541);
             this.btnCrearProducto.Name = "btnCrearProducto";
             this.btnCrearProducto.Size = new System.Drawing.Size(192, 35);
             this.btnCrearProducto.TabIndex = 58;
@@ -641,7 +631,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnVolver.Location = new System.Drawing.Point(426, 563);
+            this.btnVolver.Location = new System.Drawing.Point(430, 541);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(192, 35);
             this.btnVolver.TabIndex = 57;
@@ -665,6 +655,7 @@
             this.panelEditarProducto.BackColor = System.Drawing.Color.Snow;
             this.panelEditarProducto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelEditarProducto.BackgroundImage")));
             this.panelEditarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelEditarProducto.Controls.Add(this.nupStock);
             this.panelEditarProducto.Controls.Add(this.label3);
             this.panelEditarProducto.Controls.Add(this.label13);
             this.panelEditarProducto.Controls.Add(this.pictureBox3);
@@ -672,7 +663,6 @@
             this.panelEditarProducto.Controls.Add(this.label15);
             this.panelEditarProducto.Controls.Add(this.label16);
             this.panelEditarProducto.Controls.Add(this.pictureBox5);
-            this.panelEditarProducto.Controls.Add(this.tbStockEditar);
             this.panelEditarProducto.Controls.Add(this.label17);
             this.panelEditarProducto.Controls.Add(this.label19);
             this.panelEditarProducto.Controls.Add(this.pictureBox6);
@@ -745,7 +735,7 @@
             // 
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.ForeColor = System.Drawing.Color.Coral;
-            this.label15.Location = new System.Drawing.Point(1088, 173);
+            this.label15.Location = new System.Drawing.Point(1088, 171);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(79, 13);
             this.label15.TabIndex = 154;
@@ -771,18 +761,6 @@
             this.pictureBox5.Size = new System.Drawing.Size(29, 28);
             this.pictureBox5.TabIndex = 152;
             this.pictureBox5.TabStop = false;
-            // 
-            // tbStockEditar
-            // 
-            this.tbStockEditar.BackColor = System.Drawing.Color.AliceBlue;
-            this.tbStockEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbStockEditar.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.tbStockEditar.Location = new System.Drawing.Point(1086, 144);
-            this.tbStockEditar.Name = "tbStockEditar";
-            this.tbStockEditar.Size = new System.Drawing.Size(76, 26);
-            this.tbStockEditar.TabIndex = 151;
-            this.tbStockEditar.Text = "0";
-            this.tbStockEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label17
             // 
@@ -1270,14 +1248,46 @@
             this.label46.TabIndex = 112;
             this.label46.Text = "Detalle producto";
             // 
+            // nudStock
+            // 
+            this.nudStock.BackColor = System.Drawing.Color.AliceBlue;
+            this.nudStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudStock.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.nudStock.Location = new System.Drawing.Point(1100, 148);
+            this.nudStock.Name = "nudStock";
+            this.nudStock.Size = new System.Drawing.Size(72, 26);
+            this.nudStock.TabIndex = 129;
+            this.nudStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudStock.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // nupStock
+            // 
+            this.nupStock.BackColor = System.Drawing.Color.AliceBlue;
+            this.nupStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nupStock.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.nupStock.Location = new System.Drawing.Point(1091, 142);
+            this.nupStock.Name = "nupStock";
+            this.nupStock.Size = new System.Drawing.Size(72, 26);
+            this.nupStock.TabIndex = 159;
+            this.nupStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nupStock.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // UC_CrudProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.Controls.Add(this.panelCrudProductos);
-            this.Controls.Add(this.panelCrearProducto);
             this.Controls.Add(this.panelEditarProducto);
+            this.Controls.Add(this.panelCrearProducto);
+            this.Controls.Add(this.panelCrudProductos);
             this.Controls.Add(this.panelDetalleProducto);
             this.Controls.Add(this.panelNavegacionSuperior);
             this.Controls.Add(this.lbPagos);
@@ -1318,6 +1328,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1379,7 +1391,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox tbStock;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1400,7 +1411,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox tbStockEditar;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -1415,5 +1425,7 @@
         private System.Windows.Forms.TextBox tbBuscar;
         private System.Windows.Forms.PictureBox pbBuscador;
         private System.Windows.Forms.PictureBox pbMostrarBuscador;
+        private System.Windows.Forms.NumericUpDown nudStock;
+        private System.Windows.Forms.NumericUpDown nupStock;
     }
 }
