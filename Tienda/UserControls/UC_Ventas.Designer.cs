@@ -404,7 +404,6 @@
             this.Controls.Add(this.dgvCarritoCompra);
             this.Name = "UC_Ventas";
             this.Size = new System.Drawing.Size(1324, 704);
-            this.Load += new System.EventHandler(this.UC_Ventas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarritoCompra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostrarBuscadorProductosModal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

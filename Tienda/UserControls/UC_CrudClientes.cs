@@ -3,6 +3,7 @@ using Tienda.Models;
 using System;
 using System.Data;
 using System.Windows.Forms;
+using Tienda.Forms;
 
 namespace Tienda.UserControls
 {
@@ -10,17 +11,19 @@ namespace Tienda.UserControls
     {
         private DataGridViewRow filaCliente;
         private Cliente cliente;
-        private bool estado;
+        private MenuPrincipal menuPrincipal;
 
 
         // Contruc por por defecto,
-        public UC_CrudClientes()
+        public UC_CrudClientes(MenuPrincipal menuPrincipal)
         {
             InitializeComponent();
+            // Guardo la referencia del formulario 
+            this.menuPrincipal = menuPrincipal;
             // Obtengo todos los clientes  y los guardo en el dgv
             actualizarDgvClientes();
         }
- 
+
 
         // Obtengo el cliente seleccionado.
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -59,27 +62,23 @@ namespace Tienda.UserControls
                 // Elimina mensajes general
                 ocultarMensaje();
 
+                // Obtengo las compras del cliente
+                DataTable tabla = AdminModel.getComprasByClientID(idCliente);
 
-                // si se ha habilitado
-                if (estado)
+                // Compruebo que no este vacio
+                if (tabla.Rows.Count >= 1)
                 {
-                    // Obtengo las compras del cliente
-                    DataTable tabla = AdminModel.getComprasByClientID(idCliente);
+                    // Muestro las compras del clietne en el dgv
+                    dgvVentas.DataSource = tabla;
 
-                    // Compruebo que no este vacio
-                    if (tabla.Rows.Count >= 1)
-                    {
-                        // Muestro las compras del clietne en el dgv
-                        dgvVentas.DataSource = tabla;
-              
-                        // Muestro nombre del cliente
-                        lbClienteSelecionado.Text = "El cliente/a " +  nombre + ", " + apellidos + " tiene registradas " + dgvVentas.RowCount + " compras.";
-                    }
-                    else
-                    {
-                        limpiarDgvPolizas();
-                    }
+                    // Muestro nombre del cliente
+                    lbClienteSelecionado.Text = "El cliente/a " + nombre + ", " + apellidos + " tiene registradas " + dgvVentas.RowCount + " compras.";
                 }
+                else
+                {
+                    limpiarDgvPolizas();
+                }
+
 
 
             }
@@ -176,7 +175,7 @@ namespace Tienda.UserControls
             tbContraseñaEditar.Text = cliente.Contraseña;
             cbTipoEditar.Text = cliente.Tipo;
 
- 
+
             // Añado las provincias al compbo que esta en el panel editar cliente.
             cargarProvincias(cbProvinciasEditar);
 
@@ -184,7 +183,7 @@ namespace Tienda.UserControls
             cbProvinciasEditar.Text = AdminModel.getNombresProvincia(cliente.IdProvincia);
             // Obtengo de la base de datos el nombre del municipio y lo guardo en el campo de texto
             cbMunicipiosEditar.Text = AdminModel.getNombresMunicipio(cliente.IdMuncipio);
-            
+
             // Quito mensaje
             lbMensajeEditar.Text = "";
 
@@ -245,33 +244,6 @@ namespace Tienda.UserControls
             pbEliminar.Visible = true;
         }
 
-        // Habilito la posibilidad de mostrar los pagos por poliza.
-        private void pbMostrarComprasCliente_Click(object sender, EventArgs e)
-        {
-            estado = true;
-            pbOn.Visible = false;
-            pbOff.Visible = true;
-            panelComprasDelCliente.Visible = true;
-            lbMensajeInterruptor.Text = "Habilitado! seleccione un cliente";
-            Console.WriteLine("On");
-        }
-
-        // Desactivo la posibilidad de mostrar los pagos de cada poliza
-        private void pbOcultarComprasCliente_Click(object sender, EventArgs e)
-        {
-            estado = false;
-            pbOn.Visible = true;
-            pbOff.Visible = false;
-            panelComprasDelCliente.Visible = false;
-            lbMensajeInterruptor.Text = "Deshabilitado";
-            lbClienteSelecionado.Text = "";
-            Console.WriteLine("off");
-        }
-
-        private void pbMostrarBuscadorClientes_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
         // Limpia contendio del campo de texto del buscador, mensaje placeholder
@@ -449,6 +421,17 @@ namespace Tienda.UserControls
             dgvClientes.DataSource = AdminModel.buscarClientes(texto);
         }
 
+        // Muestro la ventana para crear una nueva venta para el cliente slecionado
+        private void btnMostrarCrerVentaParaEsteCliente_Click(object sender, EventArgs e)
+        {
+
+            // Crear una instancia del UserControl de ventas
+            UC_Ventas ventas = new UC_Ventas(cliente);
+
+            // Llamar al método del formulario principal para cambiar el contenido del panel contenedor
+            menuPrincipal.mostrarUserControl(ventas);
+
+        }
 
     }
 

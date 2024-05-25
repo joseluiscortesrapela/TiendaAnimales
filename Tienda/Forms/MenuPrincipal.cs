@@ -74,7 +74,7 @@ namespace Tienda.Forms
 
 
         // Método para mostrar un UserControl en el panel contenedor
-        private void mostrarUserControl(UserControl userControl)
+        public void mostrarUserControl(UserControl userControl)
         {
             // Limpiar el panel contenedor antes de agregar un nuevo control
             panelContenedor.Controls.Clear();
@@ -84,7 +84,11 @@ namespace Tienda.Forms
             userControl.Dock = DockStyle.Fill;
             // Agregar el UserControl al panel contenedor
             panelContenedor.Controls.Add(userControl);
+
+            Console.WriteLine("Muestro user control");
         }
+
+      
 
         // Cierra la sesion actual
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -114,7 +118,7 @@ namespace Tienda.Forms
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            mostrarUserControl(new UC_CrudClientes());
+            mostrarUserControl(new UC_CrudClientes(this));
         }
 
         private void btnInformes_Click(object sender, EventArgs e)

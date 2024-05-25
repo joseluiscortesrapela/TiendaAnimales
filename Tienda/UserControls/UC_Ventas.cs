@@ -26,7 +26,26 @@ namespace Tienda.UserControls
         public UC_Ventas()
         {
             InitializeComponent();
+            // Inicializo datos base formulario
+            inicializarFormulario();
         }
+
+        public UC_Ventas(Cliente cliente)
+        {
+            InitializeComponent();
+            // Inicializo datos base formulario
+            inicializarFormulario();
+            // Seleciono el cliente en el combobx
+            cbClientes.SelectedValue = cliente.IdCliente;
+        }
+
+        // Carga inicial formulario
+        private void inicializarFormulario()
+        {
+            clientes = AdminModel.getObjetosClientes();
+            autoCompleteNow();
+        }
+
 
         private void autoCompleteNow()
         {
@@ -47,14 +66,7 @@ namespace Tienda.UserControls
 
         }
 
-        // Autoload
-        private void UC_Ventas_Load(object sender, EventArgs e)
-        {
-            clientes = AdminModel.getObjetosClientes();
-
-            autoCompleteNow();
-        }
-
+        // Obtengo lo que ha escirto en el select de clientes.
         private void cbClientes_TextChanged(object sender, EventArgs e)
         {
             // Realizar la búsqueda cada vez que el texto en el ComboBox cambie
@@ -66,6 +78,7 @@ namespace Tienda.UserControls
 
         }
 
+        // Obtengo el cliente que ha sido seleciodado en el combobo
         private void cbClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Obtengo el id del cliente que acaba de ser selecionado 
@@ -240,12 +253,7 @@ namespace Tienda.UserControls
 
         }
 
-
-        private void pbExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
+        // Elimina un venta
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
@@ -328,15 +336,15 @@ namespace Tienda.UserControls
                     decimal total = decimal.Parse(fila.Cells["total"].Value.ToString());
 
                     // Instancio e inicializo el objeto
-                    DetalleVenta venta = new DetalleVenta(0,idVenta, idCliente, idProducto, producto, categoria, precio, iva, cantidad, descuento, subtotal, total);
-           
+                    DetalleVenta venta = new DetalleVenta(0, idVenta, idCliente, idProducto, producto, categoria, precio, iva, cantidad, descuento, subtotal, total);
+
                     // Añado un producto al carrito
                     carritoCompra.Add(venta);
 
                 }
 
                 // Registro el detalle venta
-                if ( AdminModel.registrarDetalleVenta(carritoCompra) )
+                if (AdminModel.registrarDetalleVenta(carritoCompra))
                 {
                     Console.WriteLine("Detalle venta creado");
                 }
@@ -345,6 +353,10 @@ namespace Tienda.UserControls
 
         }
 
+        private void pbExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
 
     }
