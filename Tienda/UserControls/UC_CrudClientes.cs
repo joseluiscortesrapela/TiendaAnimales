@@ -66,24 +66,39 @@ namespace Tienda.UserControls
                 DataTable tabla = AdminModel.getComprasByClientID(idCliente);
 
                 // Compruebo que no este vacio
-                if (tabla.Rows.Count >= 1)
+                if (tabla.Rows.Count >= 0)
                 {
+                    mostrarPanelVentas();
                     // Muestro las compras del clietne en el dgv
                     dgvVentas.DataSource = tabla;
-
                     // Muestro nombre del cliente
                     lbClienteSelecionado.Text = "El cliente/a " + nombre + ", " + apellidos + " tiene registradas " + dgvVentas.RowCount + " compras.";
                 }
                 else
                 {
-                    limpiarDgvPolizas();
+                    limpiarDgvVentas();
+                    ocultarPanelVentas();
                 }
 
-
+                Console.WriteLine("idCliente: " + idCliente);
 
             }
 
         }
+
+        // Muestra panel con las compras que ha realizado el cliente
+        private void mostrarPanelVentas()
+        {
+            panelVentasDelCliente.Visible = true;
+        }
+
+        // Oculta panel con las compras que ha realizado el cliente
+        private void ocultarPanelVentas()
+        {
+            panelVentasDelCliente.Visible = false;
+        }
+
+
 
         private void ocultarMensaje()
         {
@@ -210,7 +225,7 @@ namespace Tienda.UserControls
                     // Actualizo el dgv
                     actualizarDgvClientes();
                     // Elimino las polizas del dgv
-                    resetearDgvPolizas();
+                    resetearDgvVentas();
                     // Muestro mensaje 
                     lbMensajeGeneral.Text = "Se acaba de eliminar al cliente junto con sus polizas";
                 }
@@ -225,12 +240,12 @@ namespace Tienda.UserControls
         }
 
         // Resetea los valores del dgv
-        private void resetearDgvPolizas()
+        private void resetearDgvVentas()
         {   // Elimina todo el contenido 
             dgvVentas.DataSource = null;
         }
 
-        private void limpiarDgvPolizas()
+        private void limpiarDgvVentas()
         {
             dgvVentas.DataSource = null;
             lbClienteSelecionado.Text = "";
@@ -421,18 +436,32 @@ namespace Tienda.UserControls
             dgvClientes.DataSource = AdminModel.buscarClientes(texto);
         }
 
-        // Muestro la ventana para crear una nueva venta para el cliente slecionado
-        private void btnMostrarCrerVentaParaEsteCliente_Click(object sender, EventArgs e)
-        {
 
+        private void btnMostrarCrearVenta_Click(object sender, EventArgs e)
+        {
             // Crear una instancia del UserControl de ventas
             UC_Ventas ventas = new UC_Ventas(cliente);
 
             // Llamar al método del formulario principal para cambiar el contenido del panel contenedor
             menuPrincipal.mostrarUserControl(ventas);
-
         }
 
+        private void btnMostrarDetallaVenta_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Mostrar detalle venta");
+        }
+
+
+        // Pregunta si quiere eliminar la venta
+        private void btnEliminarVenta_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Eliminar venta");
+        }
+
+        private void btnMostrarDetallesVenta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

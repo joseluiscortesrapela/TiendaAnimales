@@ -68,7 +68,6 @@ namespace Tienda.Forms
             toolTip.SetToolTip(btnInformes, "Informes");
             toolTip.SetToolTip(btnCerrarSesion, "Cerrar sesión");
 
-
         }
 
 

@@ -45,9 +45,12 @@
             this.pbBuscador = new System.Windows.Forms.PictureBox();
             this.pbMostrarBuscador = new System.Windows.Forms.PictureBox();
             this.panelCrudClientes = new System.Windows.Forms.Panel();
-            this.panelComprasDelCliente = new System.Windows.Forms.Panel();
-            this.btnMostrarFormularioVenta = new System.Windows.Forms.PictureBox();
+            this.panelVentasDelCliente = new System.Windows.Forms.Panel();
+            this.btnDetallesVenta = new System.Windows.Forms.PictureBox();
+            this.btnEliminarVenta = new System.Windows.Forms.PictureBox();
+            this.btnCrearVenta = new System.Windows.Forms.PictureBox();
             this.lbClienteSelecionado = new System.Windows.Forms.Label();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pbDetalle = new System.Windows.Forms.PictureBox();
             this.panelCrearCliente = new System.Windows.Forms.Panel();
@@ -172,7 +175,6 @@
             this.tbNombreEditar = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.timerOcultarMensaje = new System.Windows.Forms.Timer(this.components);
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCrear)).BeginInit();
@@ -184,8 +186,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarBuscador)).BeginInit();
             this.panelCrudClientes.SuspendLayout();
-            this.panelComprasDelCliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMostrarFormularioVenta)).BeginInit();
+            this.panelVentasDelCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetallesVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminarVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCrearVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDetalle)).BeginInit();
             this.panelCrearCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
@@ -220,7 +225,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // pbEditar
@@ -366,8 +370,7 @@
             // panelCrudClientes
             // 
             this.panelCrudClientes.BackColor = System.Drawing.Color.Snow;
-            this.panelCrudClientes.Controls.Add(this.panelComprasDelCliente);
-            this.panelCrudClientes.Controls.Add(this.btnMostrarFormularioVenta);
+            this.panelCrudClientes.Controls.Add(this.panelVentasDelCliente);
             this.panelCrudClientes.Controls.Add(this.dgvClientes);
             this.panelCrudClientes.Controls.Add(this.pbCrear);
             this.panelCrudClientes.Controls.Add(this.pbEliminar);
@@ -379,28 +382,53 @@
             this.panelCrudClientes.Size = new System.Drawing.Size(1324, 655);
             this.panelCrudClientes.TabIndex = 33;
             // 
-            // panelComprasDelCliente
+            // panelVentasDelCliente
             // 
-            this.panelComprasDelCliente.BackColor = System.Drawing.Color.Transparent;
-            this.panelComprasDelCliente.Controls.Add(this.dgvVentas);
-            this.panelComprasDelCliente.Controls.Add(this.lbMensajeGeneral);
-            this.panelComprasDelCliente.Controls.Add(this.lbClienteSelecionado);
-            this.panelComprasDelCliente.Location = new System.Drawing.Point(-9, 397);
-            this.panelComprasDelCliente.Name = "panelComprasDelCliente";
-            this.panelComprasDelCliente.Size = new System.Drawing.Size(1339, 255);
-            this.panelComprasDelCliente.TabIndex = 41;
-            this.panelComprasDelCliente.Visible = false;
+            this.panelVentasDelCliente.BackColor = System.Drawing.Color.Transparent;
+            this.panelVentasDelCliente.Controls.Add(this.btnDetallesVenta);
+            this.panelVentasDelCliente.Controls.Add(this.btnEliminarVenta);
+            this.panelVentasDelCliente.Controls.Add(this.dgvVentas);
+            this.panelVentasDelCliente.Controls.Add(this.btnCrearVenta);
+            this.panelVentasDelCliente.Controls.Add(this.lbMensajeGeneral);
+            this.panelVentasDelCliente.Controls.Add(this.lbClienteSelecionado);
+            this.panelVentasDelCliente.Location = new System.Drawing.Point(-9, 397);
+            this.panelVentasDelCliente.Name = "panelVentasDelCliente";
+            this.panelVentasDelCliente.Size = new System.Drawing.Size(1339, 255);
+            this.panelVentasDelCliente.TabIndex = 41;
+            this.panelVentasDelCliente.Visible = false;
             // 
-            // btnMostrarFormularioVenta
+            // btnDetallesVenta
             // 
-            this.btnMostrarFormularioVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarFormularioVenta.Image")));
-            this.btnMostrarFormularioVenta.Location = new System.Drawing.Point(1278, 206);
-            this.btnMostrarFormularioVenta.Name = "btnMostrarFormularioVenta";
-            this.btnMostrarFormularioVenta.Size = new System.Drawing.Size(34, 35);
-            this.btnMostrarFormularioVenta.TabIndex = 40;
-            this.btnMostrarFormularioVenta.TabStop = false;
-            this.btnMostrarFormularioVenta.WaitOnLoad = true;
-            this.btnMostrarFormularioVenta.Click += new System.EventHandler(this.btnMostrarCrerVentaParaEsteCliente_Click);
+            this.btnDetallesVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnDetallesVenta.Image")));
+            this.btnDetallesVenta.Location = new System.Drawing.Point(1287, 73);
+            this.btnDetallesVenta.Name = "btnDetallesVenta";
+            this.btnDetallesVenta.Size = new System.Drawing.Size(34, 35);
+            this.btnDetallesVenta.TabIndex = 42;
+            this.btnDetallesVenta.TabStop = false;
+            this.btnDetallesVenta.WaitOnLoad = true;
+            this.btnDetallesVenta.Click += new System.EventHandler(this.btnMostrarDetallesVenta_Click);
+            // 
+            // btnEliminarVenta
+            // 
+            this.btnEliminarVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarVenta.Image")));
+            this.btnEliminarVenta.Location = new System.Drawing.Point(1287, 114);
+            this.btnEliminarVenta.Name = "btnEliminarVenta";
+            this.btnEliminarVenta.Size = new System.Drawing.Size(34, 35);
+            this.btnEliminarVenta.TabIndex = 41;
+            this.btnEliminarVenta.TabStop = false;
+            this.btnEliminarVenta.WaitOnLoad = true;
+            this.btnEliminarVenta.Click += new System.EventHandler(this.btnEliminarVenta_Click);
+            // 
+            // btnCrearVenta
+            // 
+            this.btnCrearVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearVenta.Image")));
+            this.btnCrearVenta.Location = new System.Drawing.Point(1286, 30);
+            this.btnCrearVenta.Name = "btnCrearVenta";
+            this.btnCrearVenta.Size = new System.Drawing.Size(34, 35);
+            this.btnCrearVenta.TabIndex = 40;
+            this.btnCrearVenta.TabStop = false;
+            this.btnCrearVenta.WaitOnLoad = true;
+            this.btnCrearVenta.Click += new System.EventHandler(this.btnMostrarCrearVenta_Click);
             // 
             // lbClienteSelecionado
             // 
@@ -412,6 +440,27 @@
             this.lbClienteSelecionado.Name = "lbClienteSelecionado";
             this.lbClienteSelecionado.Size = new System.Drawing.Size(0, 24);
             this.lbClienteSelecionado.TabIndex = 38;
+            // 
+            // dgvClientes
+            // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.AllowUserToOrderColumns = true;
+            this.dgvClientes.AllowUserToResizeColumns = false;
+            this.dgvClientes.AllowUserToResizeRows = false;
+            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClientes.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(36, 32);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(1236, 341);
+            this.dgvClientes.TabIndex = 8;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
             // label1
             // 
@@ -1926,27 +1975,6 @@
             this.timerOcultarMensaje.Interval = 8000;
             this.timerOcultarMensaje.Tick += new System.EventHandler(this.timerOcultarMensaje_Tick);
             // 
-            // dgvClientes
-            // 
-            this.dgvClientes.AllowUserToAddRows = false;
-            this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.AllowUserToOrderColumns = true;
-            this.dgvClientes.AllowUserToResizeColumns = false;
-            this.dgvClientes.AllowUserToResizeRows = false;
-            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvClientes.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(36, 32);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1236, 341);
-            this.dgvClientes.TabIndex = 8;
-            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
-            // 
             // UC_CrudClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1972,9 +2000,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarBuscador)).EndInit();
             this.panelCrudClientes.ResumeLayout(false);
             this.panelCrudClientes.PerformLayout();
-            this.panelComprasDelCliente.ResumeLayout(false);
-            this.panelComprasDelCliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMostrarFormularioVenta)).EndInit();
+            this.panelVentasDelCliente.ResumeLayout(false);
+            this.panelVentasDelCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetallesVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminarVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCrearVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDetalle)).EndInit();
             this.panelCrearCliente.ResumeLayout(false);
             this.panelCrearCliente.PerformLayout();
@@ -2012,7 +2043,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2156,8 +2186,10 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label lbIdDetalleCliente;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox btnMostrarFormularioVenta;
-        private System.Windows.Forms.Panel panelComprasDelCliente;
+        private System.Windows.Forms.PictureBox btnCrearVenta;
+        private System.Windows.Forms.Panel panelVentasDelCliente;
         private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.PictureBox btnEliminarVenta;
+        private System.Windows.Forms.PictureBox btnDetallesVenta;
     }
 }
