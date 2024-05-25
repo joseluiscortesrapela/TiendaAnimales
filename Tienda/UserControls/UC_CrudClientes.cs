@@ -447,14 +447,21 @@ namespace Tienda.UserControls
         {
             // Crear una instancia del UserControl de ventas
             UC_Ventas ventas = new UC_Ventas(cliente);
-
             // Llamar al método del formulario principal para cambiar el contenido del panel contenedor
             menuPrincipal.mostrarUserControl(ventas);
         }
 
-        private void btnMostrarDetallaVenta_Click(object sender, EventArgs e)
+        // Muestro el detalle de la venta
+        private void btnMostrarDetallesVenta_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Mostrar detalle venta");
+            // Obtengo el id de la venta
+            int idVenta = int.Parse( filaVenta.Cells[0].Value.ToString() );
+            // Instancio objeto
+            UC_Ventas ventas = new UC_Ventas(cliente, idVenta);
+            // Llamar al método del formulario principal para cambiar el contenido del panel contenedor
+            menuPrincipal.mostrarUserControl(ventas);
+
+            Console.WriteLine("mostrar detalles de la venta " );
         }
 
 
@@ -462,11 +469,6 @@ namespace Tienda.UserControls
         private void btnEliminarVenta_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Eliminar venta " + filaVenta.Cells[0].Value);
-        }
-
-        private void btnMostrarDetallesVenta_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("mostrar detalles de la venta " + filaVenta.Cells[0].Value );
         }
 
         // Obtengo fila selecionada en el dgv de ventas

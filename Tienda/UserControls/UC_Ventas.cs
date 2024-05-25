@@ -22,7 +22,7 @@ namespace Tienda.UserControls
         // Identificador cliente
         private int idCliente;
 
-        // Constructor
+        // 1º Constructor
         public UC_Ventas()
         {
             InitializeComponent();
@@ -30,6 +30,7 @@ namespace Tienda.UserControls
             inicializarFormulario();
         }
 
+        // 2º Constructor para crear venta
         public UC_Ventas(Cliente cliente)
         {
             InitializeComponent();
@@ -37,6 +38,25 @@ namespace Tienda.UserControls
             inicializarFormulario();
             // Seleciono el cliente en el combobx
             cbClientes.SelectedValue = cliente.IdCliente;
+        }
+
+        // 3º Constructor para crear venta
+        public UC_Ventas(Cliente cliente, int idVenta)
+        {
+            InitializeComponent();
+            // Inicializo datos base formulario
+            inicializarFormulario();
+            // Seleciono el cliente en el combobx
+            cbClientes.SelectedValue = cliente.IdCliente;
+            // Elimino todas ls columnas que cree manualmente ya que ahora las genera solas de la bse de datos.
+            dgvVenta.Columns.Clear();
+            // Muestro la lista de productos del detalle de la venta
+            cargarDGVDetallesVenta(idVenta);
+        }
+
+        private void cargarDGVDetallesVenta(int idVenta)
+        {
+            dgvVenta.DataSource = AdminModel.getDetalleVenta(idVenta);
         }
 
         // Carga inicial formulario
@@ -119,7 +139,7 @@ namespace Tienda.UserControls
         private void calcularFilaProducto()
         {
             // Recorro todos los profuctos del carrito de compra
-            foreach (DataGridViewRow fila in dgvCarritoCompra.Rows)
+            foreach (DataGridViewRow fila in dgvVenta.Rows)
             {
                 // Obtengo la cantidad
                 int cantidad = int.Parse(fila.Cells["cantidad"].Value.ToString());
@@ -169,7 +189,7 @@ namespace Tienda.UserControls
             decimal totalSubtotal = 0;
 
             // Recorro todos los profuctos del carrito de compra
-            foreach (DataGridViewRow fila in dgvCarritoCompra.Rows)
+            foreach (DataGridViewRow fila in dgvVenta.Rows)
             {
                 if (fila.Cells["subtotal"].Value != null)
                 {
@@ -189,7 +209,7 @@ namespace Tienda.UserControls
             decimal totalAPagar = 0;
 
             // Recorro todos los profuctos del carrito de compra
-            foreach (DataGridViewRow fila in dgvCarritoCompra.Rows)
+            foreach (DataGridViewRow fila in dgvVenta.Rows)
             {
                 if (fila.Cells["total"].Value != null)
                 {
@@ -207,7 +227,7 @@ namespace Tienda.UserControls
         // Añade un nuevo producto al dgv
         private void añadirProductoAlCarrito(Producto p)
         {   // Añade una nueva fila al dgv
-            dgvCarritoCompra.Rows.Add(p.Id, p.Nombre, p.Categoria, p.Cantidad, p.Precio, p.Iva, p.Descuento);
+            dgvVenta.Rows.Add(p.Id, p.Nombre, p.Categoria, p.Cantidad, p.Precio, p.Iva, p.Descuento);
         }
 
         // Comprueba si el producto existe en el dgv
@@ -215,7 +235,7 @@ namespace Tienda.UserControls
         {
             bool productoExiste = false;
 
-            foreach (DataGridViewRow fila in dgvCarritoCompra.Rows)
+            foreach (DataGridViewRow fila in dgvVenta.Rows)
             {
                 if (int.Parse(fila.Cells["idProducto"].Value.ToString()) == idNuevoProducto)
                 {
@@ -231,7 +251,7 @@ namespace Tienda.UserControls
         private void actualizarProductoCarrito(Producto producto)
         {
             // Recorro los productos
-            foreach (DataGridViewRow fila in dgvCarritoCompra.Rows)
+            foreach (DataGridViewRow fila in dgvVenta.Rows)
             {
                 // Si encuentras el producto por su id
                 if (int.Parse(fila.Cells["idProducto"].Value.ToString()) == producto.Id)
@@ -268,7 +288,7 @@ namespace Tienda.UserControls
             if (result == DialogResult.Yes)
             {
                 // Eliminar la fila seleccionada
-                dgvCarritoCompra.Rows.Remove(fila);
+                dgvVenta.Rows.Remove(fila);
                 // Actualizo 
                 recalcular();
                 // Oculto botones 
@@ -281,19 +301,6 @@ namespace Tienda.UserControls
         private void ocultarBotonesAccion()
         {
             btnEliminar.Visible = false;
-        }
-
-        // Obtengo la fila que ha sido selecionada en el dgv del carrito de compra
-        private void dgvCarritoCompra_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                //  Obtengo la fila  
-                fila = dgvCarritoCompra.Rows[e.RowIndex];
-
-                // Muestro botones de accion
-                mostrarBotonesAccion();
-            }
         }
 
         // Muestra los botones de accion
@@ -322,7 +329,7 @@ namespace Tienda.UserControls
                 List<DetalleVenta> carritoCompra = new List<DetalleVenta>();
 
                 // Recorro los productos añadidos al carrito de compra
-                foreach (DataGridViewRow fila in dgvCarritoCompra.Rows)
+                foreach (DataGridViewRow fila in dgvVenta.Rows)
                 {
                     // Obtengo las celdas de la fila
                     int idProducto = int.Parse(fila.Cells["idProducto"].Value.ToString());
@@ -358,6 +365,20 @@ namespace Tienda.UserControls
             Application.Exit();
         }
 
+        // Obtengo la fila que ha sido selecionada en el dgv ventas
+        private void dgvVenta_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Si es una fila correcta
+            if (e.RowIndex >= 0)
+            {
+                // Obtengo la fila selecionada
+                fila = dgvVenta.Rows[e.RowIndex];
+                // Muestro los botones de accion
+                mostrarBotonesAccion();
 
+                Console.WriteLine("Fila venta id: " + fila.Cells[0].Value);
+            }
+
+        }
     }
 }

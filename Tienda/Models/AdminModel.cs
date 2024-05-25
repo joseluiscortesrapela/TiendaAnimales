@@ -843,5 +843,30 @@ namespace Tienda.Models
         }
 
 
+        public static DataTable getDetalleVenta(int idVenta)
+        {
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+
+            // Consulta sql
+            string sql = "SELECT * FROM detalleVenta WHERE idVenta = " + idVenta;
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
+            DataTable table = new DataTable();
+
+            try
+            {
+                adapter.Fill(table);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return table;
+        }
+
+
     }
 }

@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Ventas));
-            this.dgvCarritoCompra = new System.Windows.Forms.DataGridView();
+            this.dgvVenta = new System.Windows.Forms.DataGridView();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +59,7 @@
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAceptar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCarritoCompra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostrarBuscadorProductosModal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
@@ -67,15 +67,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvCarritoCompra
+            // dgvVenta
             // 
-            this.dgvCarritoCompra.AllowUserToAddRows = false;
-            this.dgvCarritoCompra.AllowUserToDeleteRows = false;
-            this.dgvCarritoCompra.AllowUserToResizeRows = false;
-            this.dgvCarritoCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCarritoCompra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvCarritoCompra.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvCarritoCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvVenta.AllowUserToAddRows = false;
+            this.dgvVenta.AllowUserToDeleteRows = false;
+            this.dgvVenta.AllowUserToResizeRows = false;
+            this.dgvVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvVenta.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,10 +83,10 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCarritoCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCarritoCompra.ColumnHeadersHeight = 35;
-            this.dgvCarritoCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCarritoCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvVenta.ColumnHeadersHeight = 35;
+            this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
             this.Producto,
             this.Categoria,
@@ -103,12 +103,12 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCarritoCompra.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCarritoCompra.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvCarritoCompra.Location = new System.Drawing.Point(31, 153);
-            this.dgvCarritoCompra.Name = "dgvCarritoCompra";
-            this.dgvCarritoCompra.ReadOnly = true;
-            this.dgvCarritoCompra.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvVenta.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvVenta.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvVenta.Location = new System.Drawing.Point(31, 153);
+            this.dgvVenta.Name = "dgvVenta";
+            this.dgvVenta.ReadOnly = true;
+            this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonShadow;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,19 +116,19 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCarritoCompra.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCarritoCompra.RowHeadersVisible = false;
-            this.dgvCarritoCompra.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvVenta.RowHeadersVisible = false;
+            this.dgvVenta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvCarritoCompra.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCarritoCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCarritoCompra.ShowCellErrors = false;
-            this.dgvCarritoCompra.ShowCellToolTips = false;
-            this.dgvCarritoCompra.ShowEditingIcon = false;
-            this.dgvCarritoCompra.ShowRowErrors = false;
-            this.dgvCarritoCompra.Size = new System.Drawing.Size(1258, 404);
-            this.dgvCarritoCompra.TabIndex = 10;
-            this.dgvCarritoCompra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarritoCompra_CellClick);
+            this.dgvVenta.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVenta.ShowCellErrors = false;
+            this.dgvVenta.ShowCellToolTips = false;
+            this.dgvVenta.ShowEditingIcon = false;
+            this.dgvVenta.ShowRowErrors = false;
+            this.dgvVenta.Size = new System.Drawing.Size(1258, 404);
+            this.dgvVenta.TabIndex = 10;
+            this.dgvVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellClick);
             // 
             // IdProducto
             // 
@@ -401,10 +401,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbClientes);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvCarritoCompra);
+            this.Controls.Add(this.dgvVenta);
             this.Name = "UC_Ventas";
             this.Size = new System.Drawing.Size(1324, 704);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCarritoCompra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostrarBuscadorProductosModal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
@@ -416,7 +416,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvCarritoCompra;
+        private System.Windows.Forms.DataGridView dgvVenta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbClientes;
         private System.Windows.Forms.Label label3;
