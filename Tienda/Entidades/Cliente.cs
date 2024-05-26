@@ -16,11 +16,13 @@ namespace Tienda.Entidades
         private string correo;
         private string contraseña;
         private int idProvincia;
+        private string nombreProvincia;
         private int idMuncipio;
-        private string tipo;
+        private string nombreMunicipio;
 
-        // Constructor con id cliente
-        public Cliente(int idCliente, string nombre, string apellidos, string dni, string telefono, string correo, string contraseña, int idProvincia, int idMuncipio, string tipo)
+
+
+        public Cliente(int idCliente, string nombre, string apellidos, string dni, string telefono, string correo, string contraseña, int idProvincia, string nombreProvincia, int idMuncipio, string nombreMunicipio)
         {
             this.idCliente = idCliente;
             this.nombre = nombre;
@@ -30,26 +32,15 @@ namespace Tienda.Entidades
             this.correo = correo;
             this.contraseña = contraseña;
             this.idProvincia = idProvincia;
+            this.nombreProvincia = nombreProvincia;
             this.idMuncipio = idMuncipio;
-            this.tipo = tipo;
+            this.nombreMunicipio = nombreMunicipio;
         }
 
-        // Constructor sin id cliente
-        public Cliente(string nombre, string apellidos, string dni, string telefono, string correo, string contraseña, int idProvincia, int idMuncipio, string tipo)
-        {
-            this.nombre = nombre;
-            this.apellidos = apellidos;
-            this.dni = dni;
-            this.telefono = telefono;
-            this.correo = correo;
-            this.contraseña = contraseña;
-            this.idProvincia = idProvincia;
-            this.idMuncipio = idMuncipio;
-            this.tipo = tipo;
-        }
+    
 
-   
 
+        public int IdCliente { get => idCliente; set => idCliente = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
         public string Dni { get => dni; set => dni = value; }
@@ -57,8 +48,8 @@ namespace Tienda.Entidades
         public string Correo { get => correo; set => correo = value; }
         public string Contraseña { get => contraseña; set => contraseña = value; }
         public int IdProvincia { get => idProvincia; set => idProvincia = value; }
+        public string NombreProvincia { get => nombreProvincia; set => nombreProvincia = value; }
         public int IdMuncipio { get => idMuncipio; set => idMuncipio = value; }
-        public string Tipo { get => tipo; set => tipo = value; }
-        public int IdCliente { get => idCliente; set => idCliente = value; }
+        public string NombreMunicipio { get => nombreMunicipio; set => nombreMunicipio = value; }
     }
 }

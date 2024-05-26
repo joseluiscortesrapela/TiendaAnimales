@@ -93,11 +93,13 @@ namespace Tienda.Models
                     string correo = reader["correo"].ToString();
                     string contraseña = reader["contraseña"].ToString();
                     int idProvincia = int.Parse(reader["idProvincia"].ToString());
+                    string nombreProvincia = reader["provincia"].ToString();
                     int idMunicipio = int.Parse(reader["idMunicipio"].ToString());
-                    string tipo = reader["tipo"].ToString();
+                    string nombreMunicipio = reader["municipio"].ToString();
+
 
                     // Creo e inicializo el objeto cliente con los datos del cliente
-                    Cliente cliente = new Cliente(id, nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, idMunicipio, tipo);
+                    Cliente cliente = new Cliente(id, nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, nombreProvincia, idMunicipio, nombreMunicipio);
 
                     // Añado el cliente al array
                     clientes.Add(cliente);
@@ -126,8 +128,8 @@ namespace Tienda.Models
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
 
             // Consulta sql
-            string sql = "INSERT INTO clientes ( nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, idMunicipio, tipo ) " +
-                                      "VALUES ( @nombre, @apellidos, @dni, @telefono, @correo, @contraseña, @idProvincia, @idMunicipio, @tipo )";
+            string sql = "INSERT INTO clientes (  nombre, apellidos, dni,  telefono,  correo,  contraseña,  idProvincia,  provincia,  idMunicipio,  municipio ) " +
+                                      "VALUES ( @nombre, @apellidos, @dni, @telefono, @correo, @contraseña, @idProvincia, @provincia, @idMunicipio, @municipio )";
             // Preparo la consulta
             MySqlCommand comando = new MySqlCommand(sql, conexion);
             // Le paso el pago
@@ -138,8 +140,10 @@ namespace Tienda.Models
             comando.Parameters.AddWithValue("@correo", cliente.Correo);
             comando.Parameters.AddWithValue("@contraseña", cliente.Contraseña);
             comando.Parameters.AddWithValue("@idProvincia", cliente.IdProvincia);
+            comando.Parameters.AddWithValue("@provincia", cliente.NombreProvincia);
             comando.Parameters.AddWithValue("@idMunicipio", cliente.IdMuncipio);
-            comando.Parameters.AddWithValue("@tipo", cliente.Tipo);
+            comando.Parameters.AddWithValue("@municipio", cliente.NombreMunicipio);
+
 
             int creado;
 
@@ -165,9 +169,19 @@ namespace Tienda.Models
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
 
             // Consulta SQL para realizar un UPDATE en lugar de un INSERT
-            string sql = "UPDATE clientes SET nombre = @nombre, apellidos = @apellidos, dni = @dni, telefono = @telefono, " +
-                         "correo = @correo, contraseña = @contraseña, idProvincia = @idProvincia, idMunicipio = @IdMunicipio, tipo = @tipo " +
-                         "WHERE idCliente = @idCliente"; // Ajusta la condición WHERE según la estructura de tu tabla y el nombre de la columna que identifica al cliente (id en este caso)
+            string sql = @" UPDATE clientes 
+                            SET nombre = @nombre,
+                                apellidos = @apellidos,
+                                dni = @dni,
+                                telefono = @telefono,
+                                correo = @correo,
+                                contraseña = @contraseña,
+                                idProvincia = @idProvincia,
+                                provincia = @provincia,
+                                idMunicipio = @IdMunicipio,
+                                municipio = @municipio 
+                            WHERE idCliente = @idCliente";
+
 
             // Preparo la consulta
             MySqlCommand comando = new MySqlCommand(sql, conexion);
@@ -179,8 +193,9 @@ namespace Tienda.Models
             comando.Parameters.AddWithValue("@correo", cliente.Correo);
             comando.Parameters.AddWithValue("@contraseña", cliente.Contraseña);
             comando.Parameters.AddWithValue("@idProvincia", cliente.IdProvincia);
+            comando.Parameters.AddWithValue("@provincia", cliente.NombreProvincia);
             comando.Parameters.AddWithValue("@idMunicipio", cliente.IdMuncipio);
-            comando.Parameters.AddWithValue("@tipo", cliente.Tipo);
+            comando.Parameters.AddWithValue("@municipio", cliente.NombreMunicipio);
             comando.Parameters.AddWithValue("@idCliente", cliente.IdCliente);
 
             int creado;
@@ -203,67 +218,58 @@ namespace Tienda.Models
         // Elimina un jugador y todas sus partidas
         public static bool eliminarCliente(int idCliente)
         {
-            // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-
-            bool eliminado;
-
-            // Inicio una transacción
+            bool eliminado = false;
             MySqlTransaction transaccion = null;
 
             try
             {
-                // Mi transaccion
                 transaccion = conexion.BeginTransaction();
 
-                // Consulta sql para eliminar todas las polizas del cliente
-                string sql = "DELETE FROM polizas WHERE idCliente = @idCliente";
-                // Mi sql y conexon
-                MySqlCommand comandoEliminarPolizas = new MySqlCommand(sql, conexion);
-                // Le paso como parametro el id del cliente a eliminar
-                comandoEliminarPolizas.Parameters.AddWithValue("@idCliente", idCliente);
-                // Preparo la transaccion.
-                comandoEliminarPolizas.Transaction = transaccion;
+                // Eliminar detalles de ventas relacionados con las ventas del cliente
+                string sqlDetalleVentas = @"DELETE FROM detalleventa 
+                                            WHERE idVenta IN (SELECT idVenta FROM ventas WHERE idCliente = @idCliente)";
+                MySqlCommand comandoEliminarDetalleVentas = new MySqlCommand(sqlDetalleVentas, conexion);
+                comandoEliminarDetalleVentas.Parameters.AddWithValue("@idCliente", idCliente);
+                comandoEliminarDetalleVentas.Transaction = transaccion;
+                comandoEliminarDetalleVentas.ExecuteNonQuery();
 
-                // Ejecutar la transaccion.
-                comandoEliminarPolizas.ExecuteNonQuery();
+                // Eliminar ventas del cliente
+                string sqlVentas = "DELETE FROM ventas WHERE idCliente = @idCliente";
+                MySqlCommand comandoEliminarVentas = new MySqlCommand(sqlVentas, conexion);
+                comandoEliminarVentas.Parameters.AddWithValue("@idCliente", idCliente);
+                comandoEliminarVentas.Transaction = transaccion;
+                comandoEliminarVentas.ExecuteNonQuery();
 
-                // Consulta sql para eliminar al cliente
-                sql = "DELETE FROM clientes WHERE idCliente = @idCliente";
-                // Mi sql y conexon
-                MySqlCommand comandoEliminarCliente = new MySqlCommand(sql, conexion);
-                // Le paso como parametros el id del cliente
+                // Eliminar al cliente
+                string sqlCliente = "DELETE FROM clientes WHERE idCliente = @idCliente";
+                MySqlCommand comandoEliminarCliente = new MySqlCommand(sqlCliente, conexion);
                 comandoEliminarCliente.Parameters.AddWithValue("@idCliente", idCliente);
-                // Preparo la transaccion.
                 comandoEliminarCliente.Transaction = transaccion;
 
-                // Ejecutar la consulta para eliminar al jugador y obtengo un 1 si se ha realizado con exito y 0 en caso contrario
-                int estado = comandoEliminarCliente.ExecuteNonQuery();
+                int filasAfectadas = comandoEliminarCliente.ExecuteNonQuery();
+                eliminado = (filasAfectadas > 0);
 
-                // Convierto el int a bool
-                eliminado = (estado != 0);
-
-                // Confirmar la transacción
                 transaccion.Commit();
             }
             catch (Exception ex)
             {
-                // Si ocurre algún error, se realiza un rollback de la transacción
                 if (transaccion != null)
                 {
                     transaccion.Rollback();
                 }
-                eliminado = false;
+
+                Console.WriteLine("Error al eliminar cliente: " + ex.Message);
             }
             finally
             {
-                // Cierro la conexión
                 conexion.Close();
             }
 
             return eliminado;
-
         }
+
+
 
         // Busca clientes
         public static DataTable buscarClientes(string texto)
@@ -756,9 +762,9 @@ namespace Tienda.Models
 
             // Consulta SQL para insertar en detalleVenta
             string sqlInsert = @"INSERT INTO detalleVenta 
-                         (idVenta, idProducto, idCliente, producto, categoria, precio, iva, descuento, subtotal, total, cantidad)
-                         VALUES
-                         (@idVenta, @idProducto, @idCliente, @producto, @categoria, @precio, @iva, @descuento, @subtotal, @total, @cantidad)";
+                                       (idVenta,  idCliente,  idProducto,   producto,  categoria,  precio,  iva,  descuento,  subtotal,  total,  cantidad)
+                                VALUES (@idVenta, @idCliente, @idProducto,  @producto, @categoria, @precio, @iva, @descuento, @subtotal, @total, @cantidad)";
+                         
 
             // Consulta SQL para actualizar el stock del producto
             string sqlUpdateStock = @"UPDATE productos SET stock = stock - @cantidad WHERE idProducto = @idProducto";
@@ -779,8 +785,8 @@ namespace Tienda.Models
 
                 // Agrega parámetros a la consulta SQL para insertar detalleVenta
                 comandoInsert.Parameters.AddWithValue("@idVenta", detalle.IdVenta);
-                comandoInsert.Parameters.AddWithValue("@idProducto", detalle.IdProducto);
                 comandoInsert.Parameters.AddWithValue("@idCliente", detalle.IdCliente);
+                comandoInsert.Parameters.AddWithValue("@idProducto", detalle.IdProducto);
                 comandoInsert.Parameters.AddWithValue("@producto", detalle.Producto);
                 comandoInsert.Parameters.AddWithValue("@categoria", detalle.Categoria);
                 comandoInsert.Parameters.AddWithValue("@precio", detalle.Precio);

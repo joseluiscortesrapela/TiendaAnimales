@@ -272,15 +272,17 @@
             // 
             // reportViewerGeneral
             // 
+            this.reportViewerGeneral.AutoSize = true;
             this.reportViewerGeneral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.reportViewerGeneral.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reportViewerGeneral.DocumentMapWidth = 1;
             this.reportViewerGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportViewerGeneral.ForeColor = System.Drawing.Color.RoyalBlue;
             this.reportViewerGeneral.LocalReport.ReportEmbeddedResource = "Tienda.ReportIProductos.rdlc";
-            this.reportViewerGeneral.Location = new System.Drawing.Point(36, 193);
+            this.reportViewerGeneral.Location = new System.Drawing.Point(19, 193);
             this.reportViewerGeneral.Name = "reportViewerGeneral";
             this.reportViewerGeneral.ServerReport.BearerToken = null;
-            this.reportViewerGeneral.Size = new System.Drawing.Size(1255, 411);
+            this.reportViewerGeneral.Size = new System.Drawing.Size(1289, 411);
             this.reportViewerGeneral.TabIndex = 152;
             // 
             // btnGenerarInformeProductos

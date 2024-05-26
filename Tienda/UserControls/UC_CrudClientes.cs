@@ -51,13 +51,15 @@ namespace Tienda.UserControls
                 string contraseña = filaCliente.Cells["contraseña"].Value.ToString();
                 // Obtengo el id de la provincia
                 int idProvincia = int.Parse(filaCliente.Cells["idProvincia"].Value.ToString());
+                // Nombre de la provincia
+                string nombreProvincia = filaCliente.Cells["provincia"].Value.ToString();
                 // Obtengo el id del municipio
                 int idMunicipio = int.Parse(filaCliente.Cells["idMunicipio"].Value.ToString());
-                // Obtengo el tipo 
-                string tipo = filaCliente.Cells["tipo"].Value.ToString();
+                // Nombre de la provincia
+                string nombreMunicipio = filaCliente.Cells["municipio"].Value.ToString();
 
                 // Instancio e inicializo un nuevo objeto de tipo Cliente
-                cliente = new Cliente(idCliente, nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, idMunicipio, tipo);
+                cliente = new Cliente(idCliente, nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, nombreProvincia, idMunicipio, nombreMunicipio);
 
                 // Muestro botones de accion del crud clientes.
                 mostrarBotonesAccion();
@@ -141,13 +143,12 @@ namespace Tienda.UserControls
             tbTelefonoDetalle.Text = cliente.Telefono;
             tbCorreoDetalle.Text = cliente.Correo;
             tbContraseñaDetalle.Text = cliente.Contraseña;
-            cbTipoDetalle.Text = cliente.Tipo;
+
             // Obtengo de la base de datos el nombre de la provincia y lo guardo en el campo de texto
             tbProvincia.Text = AdminModel.getNombresProvincia(cliente.IdProvincia);
             // Obtengo de la base de datos el nombre del municipio y lo guardo en el campo de texto
             tbMunicipio.Text = AdminModel.getNombresMunicipio(cliente.IdMuncipio);
 
-            Console.WriteLine("Muestro panel detalle cliente");
         }
 
         // Muestro la ventana que contiene el formulario crear, editar o detalle de un cliente.
@@ -193,8 +194,6 @@ namespace Tienda.UserControls
             tbTelefonoEditar.Text = cliente.Telefono;
             tbCorreoEditar.Text = cliente.Correo;
             tbContraseñaEditar.Text = cliente.Contraseña;
-            cbTipoEditar.Text = cliente.Tipo;
-
 
             // Añado las provincias al compbo que esta en el panel editar cliente.
             cargarProvincias(cbProvinciasEditar);
@@ -215,7 +214,7 @@ namespace Tienda.UserControls
 
             int idCliente = cliente.IdCliente;
             // Mensaje que vera el usuario
-            String message = "Quieres eliminar a " + cliente.Nombre + " con id " + cliente.IdCliente + " ?";
+            String message = "Quieres eliminar a " + cliente.Nombre + " con id " + cliente.IdCliente + " y todas sus ventas ?";
             // Titulo de la ventana emergente.
             String caption = "Eliminar cliente";
             // Muestro mensaje y obtengo el boton que ha seleccionado
@@ -313,15 +312,14 @@ namespace Tienda.UserControls
             string telefono = tbTelefonoCrear.Text;
             string correo = tbCorreoCrear.Text;
             string contraseña = tbContraseñaCrear.Text;
-
-            Console.WriteLine("provincia: " + cbProvinciasCrear.SelectedValue);
-
             int idProvincia = int.Parse(cbProvinciasCrear.SelectedValue.ToString());
+            string nombreProvincia = cbProvinciasCrear.Text;
             int idMunicipio = int.Parse(cbMunicipiosCrear.SelectedValue.ToString());
-            string tipo = cbTipoCrear.Text;
+            string nombreMunicipio = cbMunicipiosCrear.Text;
+
 
             // Instancio e inicializo un nuevo objeto de tipo Cliente
-            Cliente cliente = new Cliente(nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, idMunicipio, tipo);
+            Cliente cliente = new Cliente(0, nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, nombreProvincia, idMunicipio, nombreMunicipio);
 
             // Si consigie guardar al cliente en la base de datos
             if (AdminModel.registrarCliente(cliente) == 1)
@@ -389,11 +387,12 @@ namespace Tienda.UserControls
             string correo = tbCorreoEditar.Text;
             string contraseña = tbContraseñaEditar.Text;
             int idProvincia = int.Parse(cbProvinciasEditar.SelectedValue.ToString());
+            string nombreProvincia = cbProvinciasEditar.Text;
             int idMunicipio = int.Parse(cbMunicipiosEditar.SelectedValue.ToString());
-            string tipo = cbTipoEditar.Text;
+            string nombreMunicipio = cbMunicipiosEditar.Text;
 
             // Instancio e inicializo un nuevo objeto de tipo Cliente
-            Cliente nuevoCliente = new Cliente(idCliente, nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, idMunicipio, tipo);
+            Cliente nuevoCliente = new Cliente(idCliente, nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, nombreProvincia, idMunicipio, nombreMunicipio);
 
             // Actualizo datos base datos del cliente
             if (AdminModel.editarCliente(nuevoCliente) == 1)
@@ -404,7 +403,6 @@ namespace Tienda.UserControls
                 lbMensajeEditar.Text = "Acabas de actualizar datos cliente";
             }
 
-            Console.WriteLine("Editar cliente id : " + idCliente + " idProvincia: " + idProvincia + " idMunicipio " + idMunicipio);
         }
 
 
@@ -456,15 +454,15 @@ namespace Tienda.UserControls
         private void btnMostrarDetallesVenta_Click(object sender, EventArgs e)
         {
             // Obtengo el id de la venta
-            int idVenta = int.Parse( filaVenta.Cells[0].Value.ToString() );
+            int idVenta = int.Parse(filaVenta.Cells[0].Value.ToString());
             // Obtengo la fecha
             string fecha = filaVenta.Cells["fecha"].Value.ToString();
             // Instancio objeto
-            UC_Ventas ventas = new UC_Ventas(cliente, idVenta, fecha );
+            UC_Ventas ventas = new UC_Ventas(cliente, idVenta, fecha);
             // Llamar al método del formulario principal para cambiar el contenido del panel contenedor
             menuPrincipal.mostrarUserControl(ventas);
 
-            Console.WriteLine("mostrar detalles de la venta " );
+            Console.WriteLine("mostrar detalles de la venta ");
         }
 
 
