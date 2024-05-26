@@ -6,13 +6,13 @@ namespace Tienda
 {
 
 
-    public partial class DataSetInforme
+    public partial class DataSetProductos
     {
     }
 }
 namespace Tienda {
     
     
-    public partial class DataSetInforme {
+    public partial class DataSetProductos {
     }
 }

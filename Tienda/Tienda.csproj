@@ -128,13 +128,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetClientes.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetInforme.cs">
-      <DependentUpon>DataSetInforme.xsd</DependentUpon>
+    <Compile Include="DataSetProductos.cs">
+      <DependentUpon>DataSetProductos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetInforme.Designer.cs">
+    <Compile Include="DataSetProductos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetInforme.xsd</DependentUpon>
+      <DependentUpon>DataSetProductos.xsd</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\DetalleVenta.cs" />
@@ -208,7 +208,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReportClientes.rdlc" />
-    <EmbeddedResource Include="ReportInforme.rdlc" />
+    <EmbeddedResource Include="ReportIProductos.rdlc" />
     <EmbeddedResource Include="UserControls\UC_CrudClientes.resx">
       <DependentUpon>UC_CrudClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,16 +232,16 @@
     <None Include="DataSetClientes.xss">
       <DependentUpon>DataSetClientes.xsd</DependentUpon>
     </None>
-    <None Include="DataSetInforme.xsc">
-      <DependentUpon>DataSetInforme.xsd</DependentUpon>
+    <None Include="DataSetProductos.xsc">
+      <DependentUpon>DataSetProductos.xsd</DependentUpon>
     </None>
-    <None Include="DataSetInforme.xsd">
+    <None Include="DataSetProductos.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetInforme.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetProductos.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSetInforme.xss">
-      <DependentUpon>DataSetInforme.xsd</DependentUpon>
+    <None Include="DataSetProductos.xss">
+      <DependentUpon>DataSetProductos.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

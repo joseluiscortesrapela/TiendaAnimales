@@ -49,6 +49,7 @@
             this.cbEstadosInforme = new System.Windows.Forms.ComboBox();
             this.reportViewerInforme = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnGenerarInformeProductos = new System.Windows.Forms.Button();
+            this.pbExit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idCliente1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox11
@@ -274,7 +276,7 @@
             this.reportViewerInforme.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reportViewerInforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportViewerInforme.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.reportViewerInforme.LocalReport.ReportEmbeddedResource = "Tienda.ReportInforme.rdlc";
+            this.reportViewerInforme.LocalReport.ReportEmbeddedResource = "Tienda.ReportClientes.rdlc";
             this.reportViewerInforme.Location = new System.Drawing.Point(119, 193);
             this.reportViewerInforme.Name = "reportViewerInforme";
             this.reportViewerInforme.ServerReport.BearerToken = null;
@@ -295,11 +297,22 @@
             this.btnGenerarInformeProductos.UseVisualStyleBackColor = false;
             this.btnGenerarInformeProductos.Click += new System.EventHandler(this.btnGenerarInformeProductos_Click);
             // 
+            // pbExit
+            // 
+            this.pbExit.Image = ((System.Drawing.Image)(resources.GetObject("pbExit.Image")));
+            this.pbExit.Location = new System.Drawing.Point(1300, 3);
+            this.pbExit.Name = "pbExit";
+            this.pbExit.Size = new System.Drawing.Size(21, 21);
+            this.pbExit.TabIndex = 154;
+            this.pbExit.TabStop = false;
+            this.pbExit.Click += new System.EventHandler(this.pbExit_Click_1);
+            // 
             // UC_Informes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.pbExit);
             this.Controls.Add(this.btnGenerarInformeProductos);
             this.Controls.Add(this.reportViewerInforme);
             this.Controls.Add(this.label5);
@@ -330,6 +343,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.idCliente1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,5 +370,6 @@
         private System.Windows.Forms.ComboBox cbEstadosInforme;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerInforme;
         private System.Windows.Forms.Button btnGenerarInformeProductos;
+        private System.Windows.Forms.PictureBox pbExit;
     }
 }
