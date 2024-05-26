@@ -137,7 +137,7 @@ namespace Tienda.UserControls
         private void pbEliminar_Click(object sender, EventArgs e)
         {
             // Mensaje que vera el usuario
-            String message = "Quieres eliminar el producto con id " + idProducto + " ?";
+            String message = "Quieres eliminar el producto con id " + idProducto + " " + fila.Cells["nombre"].Value + " ?";
             // Titulo de la ventana emergente.
             String caption = "Eliminar";
             // Muestro mensaje y obtengo el boton que ha seleccionado

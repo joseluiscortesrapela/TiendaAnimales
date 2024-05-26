@@ -532,7 +532,7 @@ namespace Tienda.Models
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("Error al eliinar producto id: " + id + " mensaje: " + ex.Message + " " + ex.InnerException);
                 eliminado = false; // Cierro la conexión
             }
             finally

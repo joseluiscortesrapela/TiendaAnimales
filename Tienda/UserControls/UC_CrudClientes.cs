@@ -4,7 +4,6 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using Tienda.Forms;
-using System.Drawing;
 
 namespace Tienda.UserControls
 {
@@ -23,7 +22,12 @@ namespace Tienda.UserControls
             // Guardo la referencia del formulario 
             this.menuPrincipal = menuPrincipal;
             // Obtengo todos los clientes  y los guardo en el dgv
-            actualizarDgvClientes();
+            cargarrDgvClientes();
+            // Ahora oculto las columnas que no quiero mostrar
+            dgvClientes.Columns["idProvincia"].Visible = false;
+            dgvClientes.Columns["idMunicipio"].Visible = false;
+
+
         }
 
 
@@ -106,14 +110,13 @@ namespace Tienda.UserControls
         }
 
 
-
         private void ocultarMensaje()
         {
             timerOcultarMensaje.Start();
         }
 
         // Obtengo todos los clietnes de la base de datos y los guardo en el dgv
-        private void actualizarDgvClientes()
+        private void cargarrDgvClientes()
         {
             // Obtengo todos los clientes  y los guardo en el dgv
             dgvClientes.DataSource = AdminModel.getClientes();
@@ -227,7 +230,7 @@ namespace Tienda.UserControls
                 if (AdminModel.eliminarCliente(idCliente))
                 {
                     // Actualizo el dgv
-                    actualizarDgvClientes();
+                    cargarrDgvClientes();
                     // Elimino las polizas del dgv
                     resetearDgvVentas();
                     // Muestro mensaje 
@@ -293,7 +296,7 @@ namespace Tienda.UserControls
         // Vuelve al crud de clientes
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            actualizarDgvClientes();
+            cargarrDgvClientes();
             panelEditarCliente.Visible = false;
             panelCrearCliente.Visible = false;
             panelDetalleCliente.Visible = false;
@@ -398,7 +401,7 @@ namespace Tienda.UserControls
             if (AdminModel.editarCliente(nuevoCliente) == 1)
             {
                 // Actualizo el dgv de clientes con los nuevos cambios
-                actualizarDgvClientes();
+                cargarrDgvClientes();
                 // Muestro mensaje 
                 lbMensajeEditar.Text = "Acabas de actualizar datos cliente";
             }

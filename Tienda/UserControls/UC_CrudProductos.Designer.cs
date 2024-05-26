@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CrudProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbPagos = new System.Windows.Forms.Label();
             this.panelNavegacionSuperior = new System.Windows.Forms.Panel();
             this.panelBuscador = new System.Windows.Forms.Panel();
@@ -49,6 +49,7 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.timerOcultarMensaje = new System.Windows.Forms.Timer(this.components);
             this.panelCrearProducto = new System.Windows.Forms.Panel();
+            this.nudStock = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
@@ -73,6 +74,7 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panelEditarProducto = new System.Windows.Forms.Panel();
+            this.nupStock = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -120,8 +122,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
-            this.nudStock = new System.Windows.Forms.NumericUpDown();
-            this.nupStock = new System.Windows.Forms.NumericUpDown();
             this.panelNavegacionSuperior.SuspendLayout();
             this.panelBuscador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscador)).BeginInit();
@@ -134,12 +134,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarFormularioCrearProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.panelCrearProducto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.panelEditarProducto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -151,8 +153,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupStock)).BeginInit();
             this.SuspendLayout();
             // 
             // lbPagos
@@ -335,8 +335,8 @@
             this.dgvProductos.Location = new System.Drawing.Point(36, 31);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(1243, 414);
             this.dgvProductos.TabIndex = 37;
@@ -382,6 +382,22 @@
             this.panelCrearProducto.Size = new System.Drawing.Size(1324, 668);
             this.panelCrearProducto.TabIndex = 40;
             this.panelCrearProducto.Visible = false;
+            // 
+            // nudStock
+            // 
+            this.nudStock.BackColor = System.Drawing.Color.AliceBlue;
+            this.nudStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudStock.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.nudStock.Location = new System.Drawing.Point(1100, 148);
+            this.nudStock.Name = "nudStock";
+            this.nudStock.Size = new System.Drawing.Size(72, 26);
+            this.nudStock.TabIndex = 129;
+            this.nudStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudStock.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label8
             // 
@@ -686,6 +702,22 @@
             this.panelEditarProducto.Size = new System.Drawing.Size(1324, 671);
             this.panelEditarProducto.TabIndex = 46;
             this.panelEditarProducto.Visible = false;
+            // 
+            // nupStock
+            // 
+            this.nupStock.BackColor = System.Drawing.Color.AliceBlue;
+            this.nupStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nupStock.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.nupStock.Location = new System.Drawing.Point(1091, 142);
+            this.nupStock.Name = "nupStock";
+            this.nupStock.Size = new System.Drawing.Size(72, 26);
+            this.nupStock.TabIndex = 159;
+            this.nupStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nupStock.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label3
             // 
@@ -1248,46 +1280,14 @@
             this.label46.TabIndex = 112;
             this.label46.Text = "Detalle producto";
             // 
-            // nudStock
-            // 
-            this.nudStock.BackColor = System.Drawing.Color.AliceBlue;
-            this.nudStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudStock.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.nudStock.Location = new System.Drawing.Point(1100, 148);
-            this.nudStock.Name = "nudStock";
-            this.nudStock.Size = new System.Drawing.Size(72, 26);
-            this.nudStock.TabIndex = 129;
-            this.nudStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudStock.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // nupStock
-            // 
-            this.nupStock.BackColor = System.Drawing.Color.AliceBlue;
-            this.nupStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nupStock.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.nupStock.Location = new System.Drawing.Point(1091, 142);
-            this.nupStock.Name = "nupStock";
-            this.nupStock.Size = new System.Drawing.Size(72, 26);
-            this.nupStock.TabIndex = 159;
-            this.nupStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nupStock.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // UC_CrudProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.panelCrudProductos);
             this.Controls.Add(this.panelEditarProducto);
             this.Controls.Add(this.panelCrearProducto);
-            this.Controls.Add(this.panelCrudProductos);
             this.Controls.Add(this.panelDetalleProducto);
             this.Controls.Add(this.panelNavegacionSuperior);
             this.Controls.Add(this.lbPagos);
@@ -1309,6 +1309,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.panelCrearProducto.ResumeLayout(false);
             this.panelCrearProducto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1316,6 +1317,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.panelEditarProducto.ResumeLayout(false);
             this.panelEditarProducto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -1328,8 +1330,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
