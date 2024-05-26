@@ -123,6 +123,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\ConexionBaseDatos.cs" />
+    <Compile Include="DataSetClientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClientes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetInforme.cs">
       <DependentUpon>DataSetInforme.xsd</DependentUpon>
     </Compile>
@@ -202,6 +207,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportClientes.rdlc" />
     <EmbeddedResource Include="ReportInforme.rdlc" />
     <EmbeddedResource Include="UserControls\UC_CrudClientes.resx">
       <DependentUpon>UC_CrudClientes.cs</DependentUpon>
@@ -215,6 +221,17 @@
     <EmbeddedResource Include="UserControls\UC_Ventas.resx">
       <DependentUpon>UC_Ventas.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSetClientes.xsc">
+      <DependentUpon>DataSetClientes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetClientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetClientes.xss">
+      <DependentUpon>DataSetClientes.xsd</DependentUpon>
+    </None>
     <None Include="DataSetInforme.xsc">
       <DependentUpon>DataSetInforme.xsd</DependentUpon>
     </None>

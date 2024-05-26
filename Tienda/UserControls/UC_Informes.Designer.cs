@@ -43,11 +43,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.idCliente1 = new System.Windows.Forms.NumericUpDown();
-            this.btnGenerarInforme = new System.Windows.Forms.Button();
+            this.btnGenerarInformeClientes = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.cbEstadosInforme = new System.Windows.Forms.ComboBox();
             this.reportViewerInforme = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.btnGenerarInformeProductos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -213,19 +214,19 @@
             0,
             0});
             // 
-            // btnGenerarInforme
+            // btnGenerarInformeClientes
             // 
-            this.btnGenerarInforme.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnGenerarInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarInforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarInforme.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGenerarInforme.Location = new System.Drawing.Point(558, 630);
-            this.btnGenerarInforme.Name = "btnGenerarInforme";
-            this.btnGenerarInforme.Size = new System.Drawing.Size(192, 35);
-            this.btnGenerarInforme.TabIndex = 148;
-            this.btnGenerarInforme.Text = "Generar";
-            this.btnGenerarInforme.UseVisualStyleBackColor = false;
-            this.btnGenerarInforme.Click += new System.EventHandler(this.btnGenerarInforme_Click);
+            this.btnGenerarInformeClientes.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGenerarInformeClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarInformeClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarInformeClientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGenerarInformeClientes.Location = new System.Drawing.Point(690, 630);
+            this.btnGenerarInformeClientes.Name = "btnGenerarInformeClientes";
+            this.btnGenerarInformeClientes.Size = new System.Drawing.Size(287, 35);
+            this.btnGenerarInformeClientes.TabIndex = 148;
+            this.btnGenerarInformeClientes.Text = "Generar informe clientes";
+            this.btnGenerarInformeClientes.UseVisualStyleBackColor = false;
+            this.btnGenerarInformeClientes.Click += new System.EventHandler(this.btnGenerarInforme_Click);
             // 
             // label5
             // 
@@ -280,16 +281,31 @@
             this.reportViewerInforme.Size = new System.Drawing.Size(1085, 350);
             this.reportViewerInforme.TabIndex = 152;
             // 
+            // btnGenerarInformeProductos
+            // 
+            this.btnGenerarInformeProductos.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGenerarInformeProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarInformeProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarInformeProductos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGenerarInformeProductos.Location = new System.Drawing.Point(304, 630);
+            this.btnGenerarInformeProductos.Name = "btnGenerarInformeProductos";
+            this.btnGenerarInformeProductos.Size = new System.Drawing.Size(287, 35);
+            this.btnGenerarInformeProductos.TabIndex = 153;
+            this.btnGenerarInformeProductos.Text = "Generar informe productos";
+            this.btnGenerarInformeProductos.UseVisualStyleBackColor = false;
+            this.btnGenerarInformeProductos.Click += new System.EventHandler(this.btnGenerarInformeProductos_Click);
+            // 
             // UC_Informes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.btnGenerarInformeProductos);
             this.Controls.Add(this.reportViewerInforme);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.cbEstadosInforme);
-            this.Controls.Add(this.btnGenerarInforme);
+            this.Controls.Add(this.btnGenerarInformeClientes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.idCliente1);
@@ -334,10 +350,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.NumericUpDown idCliente1;
-        private System.Windows.Forms.Button btnGenerarInforme;
+        private System.Windows.Forms.Button btnGenerarInformeClientes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.ComboBox cbEstadosInforme;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerInforme;
+        private System.Windows.Forms.Button btnGenerarInformeProductos;
     }
 }

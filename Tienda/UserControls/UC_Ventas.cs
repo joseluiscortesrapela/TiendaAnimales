@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Mysqlx.Cursor;
+using MySqlX.XDevAPI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,53 +20,90 @@ namespace Tienda.UserControls
     {
         // Lista para los clientes
         private List<Cliente> clientes;
-        // La fila selecionada
-        private DataGridViewRow fila;
         // Identificador cliente
         private int idCliente;
+        // el cliente 
+        private Cliente cliente;
+        // La fila selecionada
+        private DataGridViewRow fila;
+ 
 
-        // 1º Constructor
+        // 1º Constructor: Crea una venta a cualquier cliente.
         public UC_Ventas()
         {
             InitializeComponent();
             // Inicializo datos base formulario
-            inicializarFormulario();
+            inicializarFormularioCrearUnaNuevaVentaAQuialiarCliente();
         }
 
-        // 2º Constructor para crear venta
+        // 2º Constructor: crea la venta a un cliente especifico.
         public UC_Ventas(Cliente cliente)
         {
             InitializeComponent();
+            // Guardo la referencia del cliente
+            this.cliente = cliente;
             // Inicializo datos base formulario
-            inicializarFormulario();
-            // Seleciono el cliente en el combobx
-            cbClientes.SelectedValue = cliente.IdCliente;
+            inicializarFormularioCrearVentaAUnClienteEspecifico();
+          
         }
 
-        // 3º Constructor para crear venta
-        public UC_Ventas(Cliente cliente, int idVenta)
+        // 3º Constructor:  Muestro el detalle de la compra de un cliente
+        public UC_Ventas(Cliente cliente, int idVenta, string fecha)
         {
             InitializeComponent();
+            // Guardo la referencia del cliente
+            this.cliente = cliente;
             // Inicializo datos base formulario
-            inicializarFormulario();
-            // Seleciono el cliente en el combobx
-            cbClientes.SelectedValue = cliente.IdCliente;
-            // Elimino todas ls columnas que cree manualmente ya que ahora las genera solas de la bse de datos.
-            dgvVenta.Columns.Clear();
-            // Muestro la lista de productos del detalle de la venta
-            cargarDGVDetallesVenta(idVenta);
+            inicializarFormularioDetalleVenta(idVenta, fecha);
         }
 
+        // Carga todos los productos qel detalle de venta en el dgv
         private void cargarDGVDetallesVenta(int idVenta)
         {
             dgvVenta.DataSource = AdminModel.getDetalleVenta(idVenta);
         }
 
+
         // Carga inicial formulario
-        private void inicializarFormulario()
+        private void inicializarFormularioCrearUnaNuevaVentaAQuialiarCliente()
         {
+            // Obtengo los clientes 
             clientes = AdminModel.getObjetosClientes();
+            // Configuro compbobox para autocompletado
             autoCompleteNow();
+        }
+
+        // Carga inicial formulario
+        private void inicializarFormularioCrearVentaAUnClienteEspecifico()
+        {
+            // Obtengo los clientes 
+            clientes = AdminModel.getObjetosClientes();
+            // Configuro compbobox para autocompletado
+            autoCompleteNow();
+            // Seleciono el cliente en el combobx
+            cbClientes.SelectedValue = cliente.IdCliente;
+
+        }
+
+        // Carga inicial formulario
+        private void inicializarFormularioDetalleVenta( int idVenta, string fecha)
+        {
+            // Obtengo los clientes 
+            clientes = AdminModel.getObjetosClientes();
+            // Configuro compbobox para autocompletado
+            autoCompleteNow();
+            // Seleciono el cliente en el combobx
+            cbClientes.SelectedValue = cliente.IdCliente;
+            // Muestro la fecha de la venta
+            dtpFecha.Text = fecha;
+            // Elimino todas ls columnas que cree manualmente ya que ahora las genera solas de la bse de datos.
+            dgvVenta.Columns.Clear();
+            // Muestro la lista de productos del detalle de la venta
+            cargarDGVDetallesVenta(idVenta);
+            // Oculto columna
+            dgvVenta.Columns["idProducto"].Visible = false;
+            // Muestrar el subtotal, total a pagar ...etc
+
         }
 
 

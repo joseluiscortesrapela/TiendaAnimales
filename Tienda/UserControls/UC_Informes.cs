@@ -22,6 +22,8 @@ namespace Tienda.UserControls
         // Realizo el informe
         private void btnGenerarInforme_Click(object sender, EventArgs e)
         {
+
+            /*
             // Obtegno datos formulario informe
             int desdeIdeCliente = int.Parse(idCliente1.Value.ToString());
             int hastaIdCliente = int.Parse(idCliente2.Value.ToString());
@@ -32,6 +34,7 @@ namespace Tienda.UserControls
             // Decalro una bariable del tipo DataTable donde guardare los resultado de mi consulta a la base de datos.
             DataTable dataTableResultados = new DataTable();
 
+            
             // Si quiere ver todas las polizas
             if (estado == "Todas")
             {   // Obtengo todas las polizas
@@ -45,11 +48,18 @@ namespace Tienda.UserControls
                 // Sino solo muestro las polizas por estado
                 Console.WriteLine("Muestro polizas por estado");
             }
+            */
 
+            Console.WriteLine("Generar informa de clientes");
+
+
+            DataTable dataTableResultados = new DataTable();
+            // Cargo resultados
+            dataTableResultados = AdminModel.getClientes();
             // Borra cualquier origen de datos existente del ReportViewer para limpiarlo
             reportViewerInforme.LocalReport.DataSources.Clear();
             // Crea un nuevo ReportDataSource utilizando el DataTable que contiene los resultados de la consulta
-            ReportDataSource reportDataSource = new ReportDataSource("DataSetInforme", dataTableResultados);
+            ReportDataSource reportDataSource = new ReportDataSource("DataSetClientes", dataTableResultados);
             // Agrega el nuevo ReportDataSource al ReportViewer para que los datos se muestren en el informe
             reportViewerInforme.LocalReport.DataSources.Add(reportDataSource);
             // Refresca el informe para que se actualicen los cambios y se muestren los nuevos datos
@@ -68,6 +78,23 @@ namespace Tienda.UserControls
         {
             Application.Exit();
 
+        }
+
+        private void btnGenerarInformeProductos_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Generar informa de productos");
+
+            DataTable dataTableResultados = new DataTable();
+            // Cargo resultados
+            dataTableResultados = AdminModel.getProductos();
+            // Borra cualquier origen de datos existente del ReportViewer para limpiarlo
+            reportViewerInforme.LocalReport.DataSources.Clear();
+            // Crea un nuevo ReportDataSource utilizando el DataTable que contiene los resultados de la consulta
+            ReportDataSource reportDataSource = new ReportDataSource("DataSetInforme", dataTableResultados);
+            // Agrega el nuevo ReportDataSource al ReportViewer para que los datos se muestren en el informe
+            reportViewerInforme.LocalReport.DataSources.Add(reportDataSource);
+            // Refresca el informe para que se actualicen los cambios y se muestren los nuevos datos
+            reportViewerInforme.RefreshReport();
         }
     }
 }

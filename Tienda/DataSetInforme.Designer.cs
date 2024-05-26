@@ -24,7 +24,7 @@ namespace Tienda {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSetInforme : global::System.Data.DataSet {
         
-        private PolizasDataTable tablePolizas;
+        private ProductosDataTable tableProductos;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace Tienda {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Polizas"] != null)) {
-                    base.Tables.Add(new PolizasDataTable(ds.Tables["Polizas"]));
+                if ((ds.Tables["Productos"] != null)) {
+                    base.Tables.Add(new ProductosDataTable(ds.Tables["Productos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Tienda {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PolizasDataTable Polizas {
+        public ProductosDataTable Productos {
             get {
-                return this.tablePolizas;
+                return this.tableProductos;
             }
         }
         
@@ -152,8 +152,8 @@ namespace Tienda {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Polizas"] != null)) {
-                    base.Tables.Add(new PolizasDataTable(ds.Tables["Polizas"]));
+                if ((ds.Tables["Productos"] != null)) {
+                    base.Tables.Add(new ProductosDataTable(ds.Tables["Productos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Tienda {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablePolizas = ((PolizasDataTable)(base.Tables["Polizas"]));
+            this.tableProductos = ((ProductosDataTable)(base.Tables["Productos"]));
             if ((initTable == true)) {
-                if ((this.tablePolizas != null)) {
-                    this.tablePolizas.InitVars();
+                if ((this.tableProductos != null)) {
+                    this.tableProductos.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace Tienda {
             this.Namespace = "http://tempuri.org/DataSetInforme.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablePolizas = new PolizasDataTable();
-            base.Tables.Add(this.tablePolizas);
+            this.tableProductos = new ProductosDataTable();
+            base.Tables.Add(this.tableProductos);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializePolizas() {
+        private bool ShouldSerializeProductos() {
             return false;
         }
         
@@ -270,33 +270,27 @@ namespace Tienda {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void PolizasRowChangeEventHandler(object sender, PolizasRowChangeEvent e);
+        public delegate void ProductosRowChangeEventHandler(object sender, ProductosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PolizasDataTable : global::System.Data.TypedTableBase<PolizasRow> {
+        public partial class ProductosDataTable : global::System.Data.TypedTableBase<ProductosRow> {
             
-            private global::System.Data.DataColumn columnidPoliza;
+            private global::System.Data.DataColumn columnnombre;
             
-            private global::System.Data.DataColumn columntipo;
+            private global::System.Data.DataColumn columndescripcion;
             
-            private global::System.Data.DataColumn columnimporte;
+            private global::System.Data.DataColumn columnprecio;
             
-            private global::System.Data.DataColumn columnestado;
-            
-            private global::System.Data.DataColumn columnfecha;
-            
-            private global::System.Data.DataColumn columnobservaciones;
-            
-            private global::System.Data.DataColumn columnidCliente;
+            private global::System.Data.DataColumn columnstock;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PolizasDataTable() {
-                this.TableName = "Polizas";
+            public ProductosDataTable() {
+                this.TableName = "Productos";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +298,7 @@ namespace Tienda {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal PolizasDataTable(global::System.Data.DataTable table) {
+            internal ProductosDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,64 +315,40 @@ namespace Tienda {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected PolizasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ProductosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn idPolizaColumn {
+            public global::System.Data.DataColumn nombreColumn {
                 get {
-                    return this.columnidPoliza;
+                    return this.columnnombre;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn tipoColumn {
+            public global::System.Data.DataColumn descripcionColumn {
                 get {
-                    return this.columntipo;
+                    return this.columndescripcion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn importeColumn {
+            public global::System.Data.DataColumn precioColumn {
                 get {
-                    return this.columnimporte;
+                    return this.columnprecio;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn estadoColumn {
+            public global::System.Data.DataColumn stockColumn {
                 get {
-                    return this.columnestado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn fechaColumn {
-                get {
-                    return this.columnfecha;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn observacionesColumn {
-                get {
-                    return this.columnobservaciones;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn idClienteColumn {
-                get {
-                    return this.columnidCliente;
+                    return this.columnstock;
                 }
             }
             
@@ -393,51 +363,48 @@ namespace Tienda {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PolizasRow this[int index] {
+            public ProductosRow this[int index] {
                 get {
-                    return ((PolizasRow)(this.Rows[index]));
+                    return ((ProductosRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PolizasRowChangeEventHandler PolizasRowChanging;
+            public event ProductosRowChangeEventHandler ProductosRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PolizasRowChangeEventHandler PolizasRowChanged;
+            public event ProductosRowChangeEventHandler ProductosRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PolizasRowChangeEventHandler PolizasRowDeleting;
+            public event ProductosRowChangeEventHandler ProductosRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PolizasRowChangeEventHandler PolizasRowDeleted;
+            public event ProductosRowChangeEventHandler ProductosRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddPolizasRow(PolizasRow row) {
+            public void AddProductosRow(ProductosRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PolizasRow AddPolizasRow(string idPoliza, string tipo, string importe, string estado, string fecha, string observaciones, string idCliente) {
-                PolizasRow rowPolizasRow = ((PolizasRow)(this.NewRow()));
+            public ProductosRow AddProductosRow(string nombre, string descripcion, string precio, string stock) {
+                ProductosRow rowProductosRow = ((ProductosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        idPoliza,
-                        tipo,
-                        importe,
-                        estado,
-                        fecha,
-                        observaciones,
-                        idCliente};
-                rowPolizasRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPolizasRow);
-                return rowPolizasRow;
+                        nombre,
+                        descripcion,
+                        precio,
+                        stock};
+                rowProductosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowProductosRow);
+                return rowProductosRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PolizasDataTable cln = ((PolizasDataTable)(base.Clone()));
+                ProductosDataTable cln = ((ProductosDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -445,64 +412,55 @@ namespace Tienda {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PolizasDataTable();
+                return new ProductosDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnidPoliza = base.Columns["idPoliza"];
-                this.columntipo = base.Columns["tipo"];
-                this.columnimporte = base.Columns["importe"];
-                this.columnestado = base.Columns["estado"];
-                this.columnfecha = base.Columns["fecha"];
-                this.columnobservaciones = base.Columns["observaciones"];
-                this.columnidCliente = base.Columns["idCliente"];
+                this.columnnombre = base.Columns["nombre"];
+                this.columndescripcion = base.Columns["descripcion"];
+                this.columnprecio = base.Columns["precio"];
+                this.columnstock = base.Columns["stock"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnidPoliza = new global::System.Data.DataColumn("idPoliza", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidPoliza);
-                this.columntipo = new global::System.Data.DataColumn("tipo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntipo);
-                this.columnimporte = new global::System.Data.DataColumn("importe", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnimporte);
-                this.columnestado = new global::System.Data.DataColumn("estado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnestado);
-                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha);
-                this.columnobservaciones = new global::System.Data.DataColumn("observaciones", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnobservaciones);
-                this.columnidCliente = new global::System.Data.DataColumn("idCliente", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidCliente);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
+                this.columnprecio = new global::System.Data.DataColumn("precio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprecio);
+                this.columnstock = new global::System.Data.DataColumn("stock", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstock);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PolizasRow NewPolizasRow() {
-                return ((PolizasRow)(this.NewRow()));
+            public ProductosRow NewProductosRow() {
+                return ((ProductosRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PolizasRow(builder);
+                return new ProductosRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PolizasRow);
+                return typeof(ProductosRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PolizasRowChanged != null)) {
-                    this.PolizasRowChanged(this, new PolizasRowChangeEvent(((PolizasRow)(e.Row)), e.Action));
+                if ((this.ProductosRowChanged != null)) {
+                    this.ProductosRowChanged(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -510,8 +468,8 @@ namespace Tienda {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PolizasRowChanging != null)) {
-                    this.PolizasRowChanging(this, new PolizasRowChangeEvent(((PolizasRow)(e.Row)), e.Action));
+                if ((this.ProductosRowChanging != null)) {
+                    this.ProductosRowChanging(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -519,8 +477,8 @@ namespace Tienda {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PolizasRowDeleted != null)) {
-                    this.PolizasRowDeleted(this, new PolizasRowChangeEvent(((PolizasRow)(e.Row)), e.Action));
+                if ((this.ProductosRowDeleted != null)) {
+                    this.ProductosRowDeleted(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -528,14 +486,14 @@ namespace Tienda {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PolizasRowDeleting != null)) {
-                    this.PolizasRowDeleting(this, new PolizasRowChangeEvent(((PolizasRow)(e.Row)), e.Action));
+                if ((this.ProductosRowDeleting != null)) {
+                    this.ProductosRowDeleting(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovePolizasRow(PolizasRow row) {
+            public void RemoveProductosRow(ProductosRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -562,7 +520,7 @@ namespace Tienda {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PolizasDataTable";
+                attribute2.FixedValue = "ProductosDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -606,211 +564,127 @@ namespace Tienda {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PolizasRow : global::System.Data.DataRow {
+        public partial class ProductosRow : global::System.Data.DataRow {
             
-            private PolizasDataTable tablePolizas;
+            private ProductosDataTable tableProductos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal PolizasRow(global::System.Data.DataRowBuilder rb) : 
+            internal ProductosRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePolizas = ((PolizasDataTable)(this.Table));
+                this.tableProductos = ((ProductosDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string idPoliza {
+            public string nombre {
                 get {
                     try {
-                        return ((string)(this[this.tablePolizas.idPolizaColumn]));
+                        return ((string)(this[this.tableProductos.nombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'idPoliza\' in table \'Polizas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'nombre\' in table \'Productos\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePolizas.idPolizaColumn] = value;
+                    this[this.tableProductos.nombreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string tipo {
+            public string descripcion {
                 get {
                     try {
-                        return ((string)(this[this.tablePolizas.tipoColumn]));
+                        return ((string)(this[this.tableProductos.descripcionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'tipo\' in table \'Polizas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'descripcion\' in table \'Productos\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePolizas.tipoColumn] = value;
+                    this[this.tableProductos.descripcionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string importe {
+            public string precio {
                 get {
                     try {
-                        return ((string)(this[this.tablePolizas.importeColumn]));
+                        return ((string)(this[this.tableProductos.precioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'importe\' in table \'Polizas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'precio\' in table \'Productos\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePolizas.importeColumn] = value;
+                    this[this.tableProductos.precioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string estado {
+            public string stock {
                 get {
                     try {
-                        return ((string)(this[this.tablePolizas.estadoColumn]));
+                        return ((string)(this[this.tableProductos.stockColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'estado\' in table \'Polizas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'stock\' in table \'Productos\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePolizas.estadoColumn] = value;
+                    this[this.tableProductos.stockColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string fecha {
-                get {
-                    try {
-                        return ((string)(this[this.tablePolizas.fechaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fecha\' in table \'Polizas\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePolizas.fechaColumn] = value;
-                }
+            public bool IsnombreNull() {
+                return this.IsNull(this.tableProductos.nombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string observaciones {
-                get {
-                    try {
-                        return ((string)(this[this.tablePolizas.observacionesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'observaciones\' in table \'Polizas\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePolizas.observacionesColumn] = value;
-                }
+            public void SetnombreNull() {
+                this[this.tableProductos.nombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string idCliente {
-                get {
-                    try {
-                        return ((string)(this[this.tablePolizas.idClienteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'idCliente\' in table \'Polizas\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePolizas.idClienteColumn] = value;
-                }
+            public bool IsdescripcionNull() {
+                return this.IsNull(this.tableProductos.descripcionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsidPolizaNull() {
-                return this.IsNull(this.tablePolizas.idPolizaColumn);
+            public void SetdescripcionNull() {
+                this[this.tableProductos.descripcionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetidPolizaNull() {
-                this[this.tablePolizas.idPolizaColumn] = global::System.Convert.DBNull;
+            public bool IsprecioNull() {
+                return this.IsNull(this.tableProductos.precioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IstipoNull() {
-                return this.IsNull(this.tablePolizas.tipoColumn);
+            public void SetprecioNull() {
+                this[this.tableProductos.precioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SettipoNull() {
-                this[this.tablePolizas.tipoColumn] = global::System.Convert.DBNull;
+            public bool IsstockNull() {
+                return this.IsNull(this.tableProductos.stockColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsimporteNull() {
-                return this.IsNull(this.tablePolizas.importeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetimporteNull() {
-                this[this.tablePolizas.importeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsestadoNull() {
-                return this.IsNull(this.tablePolizas.estadoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetestadoNull() {
-                this[this.tablePolizas.estadoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsfechaNull() {
-                return this.IsNull(this.tablePolizas.fechaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetfechaNull() {
-                this[this.tablePolizas.fechaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsobservacionesNull() {
-                return this.IsNull(this.tablePolizas.observacionesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetobservacionesNull() {
-                this[this.tablePolizas.observacionesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsidClienteNull() {
-                return this.IsNull(this.tablePolizas.idClienteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetidClienteNull() {
-                this[this.tablePolizas.idClienteColumn] = global::System.Convert.DBNull;
+            public void SetstockNull() {
+                this[this.tableProductos.stockColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -818,22 +692,22 @@ namespace Tienda {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class PolizasRowChangeEvent : global::System.EventArgs {
+        public class ProductosRowChangeEvent : global::System.EventArgs {
             
-            private PolizasRow eventRow;
+            private ProductosRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PolizasRowChangeEvent(PolizasRow row, global::System.Data.DataRowAction action) {
+            public ProductosRowChangeEvent(ProductosRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PolizasRow Row {
+            public ProductosRow Row {
                 get {
                     return this.eventRow;
                 }

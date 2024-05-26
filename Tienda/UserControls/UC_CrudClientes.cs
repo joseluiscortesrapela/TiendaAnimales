@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using Tienda.Forms;
+using System.Drawing;
 
 namespace Tienda.UserControls
 {
@@ -456,8 +457,10 @@ namespace Tienda.UserControls
         {
             // Obtengo el id de la venta
             int idVenta = int.Parse( filaVenta.Cells[0].Value.ToString() );
+            // Obtengo la fecha
+            string fecha = filaVenta.Cells["fecha"].Value.ToString();
             // Instancio objeto
-            UC_Ventas ventas = new UC_Ventas(cliente, idVenta);
+            UC_Ventas ventas = new UC_Ventas(cliente, idVenta, fecha );
             // Llamar al método del formulario principal para cambiar el contenido del panel contenedor
             menuPrincipal.mostrarUserControl(ventas);
 

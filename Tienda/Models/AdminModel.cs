@@ -848,7 +848,7 @@ namespace Tienda.Models
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
 
             // Consulta sql
-            string sql = "SELECT * FROM detalleVenta WHERE idVenta = " + idVenta;
+            string sql = "SELECT idProducto, producto, categoria, cantidad, precio, iva, descuento,subtotal, total FROM detalleVenta WHERE idVenta = " + idVenta;
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
             DataTable table = new DataTable();
