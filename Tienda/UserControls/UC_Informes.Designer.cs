@@ -47,7 +47,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.cbEstadosInforme = new System.Windows.Forms.ComboBox();
-            this.reportViewerInforme = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewerGeneral = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnGenerarInformeProductos = new System.Windows.Forms.Button();
             this.pbExit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -194,7 +194,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(16, 131);
+            this.pictureBox3.Location = new System.Drawing.Point(119, 138);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 26);
             this.pictureBox3.TabIndex = 144;
@@ -228,7 +228,7 @@
             this.btnGenerarInformeClientes.TabIndex = 148;
             this.btnGenerarInformeClientes.Text = "Generar informe clientes";
             this.btnGenerarInformeClientes.UseVisualStyleBackColor = false;
-            this.btnGenerarInformeClientes.Click += new System.EventHandler(this.btnGenerarInforme_Click);
+            this.btnGenerarInformeClientes.Click += new System.EventHandler(this.btnGenerarInformeClientes_Click);
             // 
             // label5
             // 
@@ -270,18 +270,18 @@
             this.cbEstadosInforme.TabIndex = 149;
             this.cbEstadosInforme.Text = "Todas";
             // 
-            // reportViewerInforme
+            // reportViewerGeneral
             // 
-            this.reportViewerInforme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.reportViewerInforme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.reportViewerInforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportViewerInforme.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.reportViewerInforme.LocalReport.ReportEmbeddedResource = "Tienda.ReportClientes.rdlc";
-            this.reportViewerInforme.Location = new System.Drawing.Point(119, 193);
-            this.reportViewerInforme.Name = "reportViewerInforme";
-            this.reportViewerInforme.ServerReport.BearerToken = null;
-            this.reportViewerInforme.Size = new System.Drawing.Size(1085, 350);
-            this.reportViewerInforme.TabIndex = 152;
+            this.reportViewerGeneral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.reportViewerGeneral.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reportViewerGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportViewerGeneral.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.reportViewerGeneral.LocalReport.ReportEmbeddedResource = "Tienda.ReportIProductos.rdlc";
+            this.reportViewerGeneral.Location = new System.Drawing.Point(36, 193);
+            this.reportViewerGeneral.Name = "reportViewerGeneral";
+            this.reportViewerGeneral.ServerReport.BearerToken = null;
+            this.reportViewerGeneral.Size = new System.Drawing.Size(1255, 411);
+            this.reportViewerGeneral.TabIndex = 152;
             // 
             // btnGenerarInformeProductos
             // 
@@ -314,7 +314,7 @@
             this.BackColor = System.Drawing.Color.Snow;
             this.Controls.Add(this.pbExit);
             this.Controls.Add(this.btnGenerarInformeProductos);
-            this.Controls.Add(this.reportViewerInforme);
+            this.Controls.Add(this.reportViewerGeneral);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.cbEstadosInforme);
@@ -368,7 +368,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.ComboBox cbEstadosInforme;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewerInforme;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerGeneral;
         private System.Windows.Forms.Button btnGenerarInformeProductos;
         private System.Windows.Forms.PictureBox pbExit;
     }

@@ -11,7 +11,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetInforme">
+    <DataSet Name="DataSetProductos">
       <Query>
         <DataSourceName>DataSetInforme</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -36,7 +36,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetInforme</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\jose\source\repos\Tienda\Tienda\DataSetInforme.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\jose\source\repos\Tienda\Tienda\DataSetProductos.xsd</rd:SchemaPath>
         <rd:TableName>Productos</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -357,7 +357,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSetInforme</DataSetName>
+            <DataSetName>DataSetProductos</DataSetName>
             <Top>3.65717cm</Top>
             <Left>0.98334cm</Left>
             <Height>2.12287cm</Height>
@@ -483,9 +483,9 @@
                 <TablixMember />
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSetInforme</DataSetName>
-            <Top>8.0137cm</Top>
-            <Left>6.7248cm</Left>
+            <DataSetName>DataSetProductos</DataSetName>
+            <Top>6.66433cm</Top>
+            <Left>3.48933cm</Left>
             <Height>1.02333cm</Height>
             <Width>3.93354cm</Width>
             <ZIndex>4</ZIndex>

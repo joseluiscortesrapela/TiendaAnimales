@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Tienda.UserControls
 {
@@ -20,37 +21,52 @@ namespace Tienda.UserControls
         }
 
         // Realizo el informe
-        private void btnGenerarInforme_Click(object sender, EventArgs e)
+        private void btnGenerarInformeClientes_Click(object sender, EventArgs e)
         {
 
             // Cargo resultados
             DataTable dataTableResultadosClientes = AdminModel.getClientes();
-            // Borra cualquier origen de datos existente del ReportViewer para limpiarlo
-            reportViewerInforme.LocalReport.DataSources.Clear();
-            // Crea un nuevo ReportDataSource utilizando el DataTable que contiene los resultados de la consulta
-            ReportDataSource reportDataSource = new ReportDataSource("DataSetClientes", dataTableResultadosClientes);
-            // Agrega el nuevo ReportDataSource al ReportViewer para que los datos se muestren en el informe
-            reportViewerInforme.LocalReport.DataSources.Add(reportDataSource);
-            // Refresca el informe para que se actualicen los cambios y se muestren los nuevos datos
-            reportViewerInforme.RefreshReport();
+            // Configura el ReportViewer con los datos de clientes y la ruta del informe de clientes
+            ConfigurarReportViewer(@"../../ReportClientes.rdlc", "DataSetClientes", dataTableResultadosClientes);
 
         }
 
-    
+       
 
         private void btnGenerarInformeProductos_Click(object sender, EventArgs e)
         {         
             // Cargo resultados
              DataTable dataTableResultadosProductos = AdminModel.getProductos();
-            // Borra cualquier origen de datos existente del ReportViewer para limpiarlo
-            reportViewerInforme.LocalReport.DataSources.Clear();
-            // Crea un nuevo ReportDataSource utilizando el DataTable que contiene los resultados de la consulta
-            ReportDataSource reportDataSource = new ReportDataSource("DataSetInforme", dataTableResultadosProductos);
-            // Agrega el nuevo ReportDataSource al ReportViewer para que los datos se muestren en el informe
-            reportViewerInforme.LocalReport.DataSources.Add(reportDataSource);
-            // Refresca el informe para que se actualicen los cambios y se muestren los nuevos datos
-            reportViewerInforme.RefreshReport();
+            // Configura el ReportViewer con los datos de productos y la ruta del informe de productos
+            ConfigurarReportViewer(@"../../ReportIProductos.rdlc", "DataSetProductos", dataTableResultadosProductos);
         }
+
+
+        private void ConfigurarReportViewer(string reportPath, string nombreDataSet, DataTable dataTable)
+        {
+            // Obtiene el directorio base de la aplicación
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+
+            // Construye la ruta completa del informe combinando el directorio base y la ruta relativa del informe
+            string reportFullPath = Path.Combine(basePath, reportPath);
+
+            // Establece la ruta del informe
+            reportViewerGeneral.LocalReport.ReportPath = reportFullPath;
+
+            // Borra cualquier origen de datos existente del ReportViewer para limpiarlo
+            reportViewerGeneral.LocalReport.DataSources.Clear();
+
+            // Crea un nuevo ReportDataSource utilizando el DataTable proporcionado
+            ReportDataSource reportDataSource = new ReportDataSource(nombreDataSet, dataTable);
+
+            // Agrega el nuevo ReportDataSource al ReportViewer para que los datos se muestren en el informe
+            reportViewerGeneral.LocalReport.DataSources.Add(reportDataSource);
+
+            // Refresca el informe para que se actualicen los cambios y se muestren los nuevos datos
+            reportViewerGeneral.RefreshReport();
+        }
+
+
 
         private void pbExit_Click_1(object sender, EventArgs e)
         {
