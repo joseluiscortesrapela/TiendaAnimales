@@ -152,7 +152,7 @@ namespace Tienda.UserControls
                     lbMensajeCrudProductos.Text = "Acabas de eliminar el producto";
                     // Actualizo la lista de productos
                     cargarProductosDGV();
-                }
+                }            
 
             }
 

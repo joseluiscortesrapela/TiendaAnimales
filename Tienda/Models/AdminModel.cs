@@ -270,7 +270,6 @@ namespace Tienda.Models
         }
 
 
-
         // Busca clientes
         public static DataTable buscarClientes(string texto)
         {
@@ -872,6 +871,53 @@ namespace Tienda.Models
 
             return table;
         }
+
+        // Elimina una venta y el detalle de la venta
+        public static bool eliminarVenta(int idVenta)
+        {
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            bool eliminado = false;
+            MySqlTransaction transaccion = null;
+
+            try
+            {
+                transaccion = conexion.BeginTransaction();
+
+                // Eliminar detalles de ventas relacionados con la venta
+                string sqlDetalleVentas = "DELETE FROM detalleventa WHERE idVenta = @idVenta";
+                MySqlCommand comandoEliminarDetalleVenta = new MySqlCommand(sqlDetalleVentas, conexion);
+                comandoEliminarDetalleVenta.Parameters.AddWithValue("@idVenta", idVenta);
+                comandoEliminarDetalleVenta.Transaction = transaccion;
+                comandoEliminarDetalleVenta.ExecuteNonQuery();
+
+                // Eliminar la venta
+                string sqlVentas = "DELETE FROM ventas WHERE idVenta = @idVenta";
+                MySqlCommand comandoEliminarVentas = new MySqlCommand(sqlVentas, conexion);
+                comandoEliminarVentas.Parameters.AddWithValue("@idVenta", idVenta);
+                comandoEliminarVentas.Transaction = transaccion;
+
+                int filasAfectadas = comandoEliminarVentas.ExecuteNonQuery();
+                eliminado = (filasAfectadas > 0);
+
+                transaccion.Commit();
+            }
+            catch (Exception ex)
+            {
+                if (transaccion != null)
+                {
+                    transaccion.Rollback();
+                }
+
+                Console.WriteLine("Error al eliminar venta id: " + idVenta + " mensaje: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return eliminado;
+        }
+
 
 
     }

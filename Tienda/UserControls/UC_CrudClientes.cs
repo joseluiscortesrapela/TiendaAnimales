@@ -122,6 +122,14 @@ namespace Tienda.UserControls
             dgvClientes.DataSource = AdminModel.getClientes();
         }
 
+        // Obtengo todos las ventas
+        private void cargarrDgvVenta()
+        {
+            // Obtengo todos los clientes  y los guardo en el dgv
+            dgvVentas.DataSource = AdminModel.getVentas();
+        }
+
+
         // Muestra formulario para crear un nuevo cliente.
         private void pbMostrarPanelCrear_Click(object sender, EventArgs e)
         {
@@ -265,8 +273,6 @@ namespace Tienda.UserControls
             pbEditar.Visible = true;
             pbEliminar.Visible = true;
         }
-
-
 
         // Limpia contendio del campo de texto del buscador, mensaje placeholder
         private void limpiaPlaceholderBuscador(object sender, EventArgs e)
@@ -472,7 +478,30 @@ namespace Tienda.UserControls
         // Pregunta si quiere eliminar la venta
         private void btnEliminarVenta_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Eliminar venta " + filaVenta.Cells[0].Value);
+
+            // Obtengo el identificador
+            int idVenta = int.Parse(filaVenta.Cells["idVenta"].Value.ToString());
+            // Mensaje que vera el usuario
+            String message = "Quieres eliminar la venta con nº: " + idVenta;
+            // Titulo de la ventana emergente.
+            String caption = "Eliminar cliente";
+            // Muestro mensaje y obtengo el boton que ha seleccionado
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            // Quiere eliminar cliente
+            if (result == DialogResult.Yes)
+            {
+                // Eliminar cliente en cascada con sus polizas.
+                if (AdminModel.eliminarVenta(idVenta))
+                {
+                    // Actualizo el dgv ventas
+                    cargarrDgvVenta();
+                    // Muestro mensaje 
+                    lbMensajeGeneral.Text = "La venta fue elimnada!";
+                }
+
+            }
+
         }
 
         // Obtengo fila selecionada en el dgv de ventas
