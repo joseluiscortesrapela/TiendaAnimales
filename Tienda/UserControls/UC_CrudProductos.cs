@@ -22,6 +22,9 @@ namespace Tienda.UserControls
             InitializeComponent();
             // Obtengo todas los productos y las muestro en el dgv
             cargarProductosDGV();
+            // Oculto columnas
+            dgvProductos.Columns["idProducto"].Visible = false;
+            dgvProductos.Columns["descripcion"].Visible = false;
         }
 
         // Auto load ventana 
@@ -149,7 +152,7 @@ namespace Tienda.UserControls
                 // Si ha eliminado el producto
                 if (AdminModel.eliminarProducto(idProducto))
                 {   // Muetro mensaje al usuario
-                    lbMensajeCrudProductos.Text = "Acabas de eliminar el producto";
+                    lbMensajeGeneral.Text = "Acabas de eliminar el producto";
                     // Actualizo la lista de productos
                     cargarProductosDGV();
                 }            

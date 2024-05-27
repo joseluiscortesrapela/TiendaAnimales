@@ -30,7 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CrudProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbPagos = new System.Windows.Forms.Label();
             this.panelNavegacionSuperior = new System.Windows.Forms.Panel();
             this.panelBuscador = new System.Windows.Forms.Panel();
@@ -39,15 +42,14 @@
             this.pbMostrarBuscador = new System.Windows.Forms.PictureBox();
             this.pbExit = new System.Windows.Forms.PictureBox();
             this.panelCrudProductos = new System.Windows.Forms.Panel();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.label23 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lbMensajeCrudProductos = new System.Windows.Forms.Label();
+            this.lbMensajeGeneral = new System.Windows.Forms.Label();
             this.pbMostraFormularioDetalleProducto = new System.Windows.Forms.PictureBox();
-            this.lbPolizaSelecionada = new System.Windows.Forms.Label();
             this.pbMostrarFormularioEditarProducto = new System.Windows.Forms.PictureBox();
             this.pbEliminarProducto = new System.Windows.Forms.PictureBox();
             this.pbMostrarFormularioCrearProducto = new System.Windows.Forms.PictureBox();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.timerOcultarMensaje = new System.Windows.Forms.Timer(this.components);
             this.panelCrearProducto = new System.Windows.Forms.Panel();
             this.nudStock = new System.Windows.Forms.NumericUpDown();
@@ -129,11 +131,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarBuscador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
             this.panelCrudProductos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostraFormularioDetalleProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarFormularioEditarProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarFormularioCrearProducto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.panelCrearProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
@@ -235,19 +237,62 @@
             // panelCrudProductos
             // 
             this.panelCrudProductos.BackColor = System.Drawing.Color.Snow;
+            this.panelCrudProductos.Controls.Add(this.dgvProductos);
             this.panelCrudProductos.Controls.Add(this.label23);
             this.panelCrudProductos.Controls.Add(this.label6);
-            this.panelCrudProductos.Controls.Add(this.lbMensajeCrudProductos);
+            this.panelCrudProductos.Controls.Add(this.lbMensajeGeneral);
             this.panelCrudProductos.Controls.Add(this.pbMostraFormularioDetalleProducto);
-            this.panelCrudProductos.Controls.Add(this.lbPolizaSelecionada);
             this.panelCrudProductos.Controls.Add(this.pbMostrarFormularioEditarProducto);
             this.panelCrudProductos.Controls.Add(this.pbEliminarProducto);
             this.panelCrudProductos.Controls.Add(this.pbMostrarFormularioCrearProducto);
-            this.panelCrudProductos.Controls.Add(this.dgvProductos);
             this.panelCrudProductos.Location = new System.Drawing.Point(0, 53);
             this.panelCrudProductos.Name = "panelCrudProductos";
             this.panelCrudProductos.Size = new System.Drawing.Size(1324, 679);
             this.panelCrudProductos.TabIndex = 39;
+            // 
+            // dgvProductos
+            // 
+            this.dgvProductos.AllowUserToAddRows = false;
+            this.dgvProductos.AllowUserToDeleteRows = false;
+            this.dgvProductos.AllowUserToOrderColumns = true;
+            this.dgvProductos.AllowUserToResizeColumns = false;
+            this.dgvProductos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductos.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProductos.ColumnHeadersHeight = 45;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProductos.EnableHeadersVisualStyles = false;
+            this.dgvProductos.Location = new System.Drawing.Point(37, 45);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
+            this.dgvProductos.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvProductos.RowTemplate.Height = 30;
+            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductos.Size = new System.Drawing.Size(1245, 539);
+            this.dgvProductos.TabIndex = 50;
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
             // label23
             // 
@@ -271,16 +316,16 @@
             this.label6.TabIndex = 48;
             this.label6.Text = "Agregar un producto";
             // 
-            // lbMensajeCrudProductos
+            // lbMensajeGeneral
             // 
-            this.lbMensajeCrudProductos.AutoSize = true;
-            this.lbMensajeCrudProductos.BackColor = System.Drawing.Color.Transparent;
-            this.lbMensajeCrudProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMensajeCrudProductos.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lbMensajeCrudProductos.Location = new System.Drawing.Point(419, 452);
-            this.lbMensajeCrudProductos.Name = "lbMensajeCrudProductos";
-            this.lbMensajeCrudProductos.Size = new System.Drawing.Size(0, 26);
-            this.lbMensajeCrudProductos.TabIndex = 47;
+            this.lbMensajeGeneral.AutoSize = true;
+            this.lbMensajeGeneral.BackColor = System.Drawing.Color.Transparent;
+            this.lbMensajeGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeGeneral.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lbMensajeGeneral.Location = new System.Drawing.Point(425, 488);
+            this.lbMensajeGeneral.Name = "lbMensajeGeneral";
+            this.lbMensajeGeneral.Size = new System.Drawing.Size(0, 26);
+            this.lbMensajeGeneral.TabIndex = 47;
             // 
             // pbMostraFormularioDetalleProducto
             // 
@@ -292,16 +337,6 @@
             this.pbMostraFormularioDetalleProducto.TabStop = false;
             this.pbMostraFormularioDetalleProducto.Visible = false;
             this.pbMostraFormularioDetalleProducto.Click += new System.EventHandler(this.pbMostraFormularioDetalleProducto_Click);
-            // 
-            // lbPolizaSelecionada
-            // 
-            this.lbPolizaSelecionada.AutoSize = true;
-            this.lbPolizaSelecionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPolizaSelecionada.ForeColor = System.Drawing.Color.SlateGray;
-            this.lbPolizaSelecionada.Location = new System.Drawing.Point(82, 461);
-            this.lbPolizaSelecionada.Name = "lbPolizaSelecionada";
-            this.lbPolizaSelecionada.Size = new System.Drawing.Size(0, 24);
-            this.lbPolizaSelecionada.TabIndex = 44;
             // 
             // pbMostrarFormularioEditarProducto
             // 
@@ -334,26 +369,6 @@
             this.pbMostrarFormularioCrearProducto.TabIndex = 38;
             this.pbMostrarFormularioCrearProducto.TabStop = false;
             this.pbMostrarFormularioCrearProducto.Click += new System.EventHandler(this.pbMostrarFormularioCrearProducto_Click);
-            // 
-            // dgvProductos
-            // 
-            this.dgvProductos.AllowUserToAddRows = false;
-            this.dgvProductos.AllowUserToDeleteRows = false;
-            this.dgvProductos.AllowUserToResizeColumns = false;
-            this.dgvProductos.AllowUserToResizeRows = false;
-            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProductos.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(36, 44);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(1248, 401);
-            this.dgvProductos.TabIndex = 37;
-            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
             // timerOcultarMensaje
             // 
@@ -1315,11 +1330,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
             this.panelCrudProductos.ResumeLayout(false);
             this.panelCrudProductos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostraFormularioDetalleProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarFormularioEditarProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarFormularioCrearProducto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.panelCrearProducto.ResumeLayout(false);
             this.panelCrearProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
@@ -1353,12 +1368,10 @@
         private System.Windows.Forms.Panel panelNavegacionSuperior;
         private System.Windows.Forms.PictureBox pbExit;
         private System.Windows.Forms.Panel panelCrudProductos;
-        private System.Windows.Forms.Label lbPolizaSelecionada;
         private System.Windows.Forms.Label lbMensajeCrearProducto;
         private System.Windows.Forms.PictureBox pbMostrarFormularioEditarProducto;
         private System.Windows.Forms.PictureBox pbEliminarProducto;
         private System.Windows.Forms.PictureBox pbMostrarFormularioCrearProducto;
-        private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Panel panelEditarProducto;
         private System.Windows.Forms.Panel panelCrearProducto;
         private System.Windows.Forms.Label label2;
@@ -1431,7 +1444,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.TextBox tbPrecioEditar;
-        private System.Windows.Forms.Label lbMensajeCrudProductos;
+        private System.Windows.Forms.Label lbMensajeGeneral;
         private System.Windows.Forms.Timer timerOcultarMensaje;
         private System.Windows.Forms.Panel panelBuscador;
         private System.Windows.Forms.TextBox tbBuscar;
@@ -1441,5 +1454,6 @@
         private System.Windows.Forms.NumericUpDown nupStock;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataGridView dgvProductos;
     }
 }
