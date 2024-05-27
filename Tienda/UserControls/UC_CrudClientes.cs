@@ -23,6 +23,7 @@ namespace Tienda.UserControls
             // Obtengo todos los clientes  y los guardo en el dgv
             cargarrDgvClientes();
             // Ahora oculto las columnas que no quiero mostrar
+            dgvClientes.Columns["idCliente"].Visible = false;
             dgvClientes.Columns["idProvincia"].Visible = false;
             dgvClientes.Columns["idMunicipio"].Visible = false;
 
