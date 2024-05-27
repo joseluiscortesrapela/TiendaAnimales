@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using Tienda.Forms;
+using Tienda.Sesion;
 
 namespace Tienda.UserControls
 {
@@ -16,20 +17,22 @@ namespace Tienda.UserControls
 
 
         // Contruc por por defecto,
-        public UC_CrudClientes(MenuPrincipal menuPrincipal)
+        public UC_CrudClientes()
         {
-            InitializeComponent();
-            // Guardo la referencia del formulario 
-            this.menuPrincipal = menuPrincipal;
+            InitializeComponent();   
             // Obtengo todos los clientes  y los guardo en el dgv
             cargarrDgvClientes();
             // Ahora oculto las columnas que no quiero mostrar
             dgvClientes.Columns["idProvincia"].Visible = false;
             dgvClientes.Columns["idMunicipio"].Visible = false;
 
-
         }
 
+        // Auto load ventana
+        private void UC_CrudClientes_Load(object sender, EventArgs e)
+        {   // Guardo referencia del menu principal.
+            this.menuPrincipal = SesionPrograma.ObtenerMenuPrincipal();
+        }
 
         // Obtengo el cliente seleccionado.
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -114,10 +114,11 @@ namespace Tienda.Forms
         }
 
         
-
+        // Se ha pulsado el boton clientes desde el menu principal
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            mostrarUserControl(new UC_CrudClientes(this));
+            // Muestro la ventana clientes
+            mostrarUserControl(new UC_CrudClientes());
         }
 
         private void btnInformes_Click(object sender, EventArgs e)

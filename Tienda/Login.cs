@@ -3,6 +3,7 @@ using Tienda.Forms;
 using Tienda.Models;
 using System;
 using System.Windows.Forms;
+using Tienda.Sesion;
 
 namespace Tienda
 {
@@ -38,8 +39,12 @@ namespace Tienda
                 {
                     // Oculto la ventana de login
                     this.Hide();
-                    var menuPrincipal = new MenuPrincipal();
-                    menuPrincipal.Show();
+                    // Instancio objeto
+                    var menu = new MenuPrincipal();
+                    // Gaurdo la referencia del objeto globalmente
+                    SesionPrograma.guardarReferenciaMenuPrincipal( menu );
+                    // Muestro la ventana
+                    menu.Show();
                 }
                 else
                 {

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CrudClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pbEditar = new System.Windows.Forms.PictureBox();
             this.pbEliminar = new System.Windows.Forms.PictureBox();
             this.pbCrear = new System.Windows.Forms.PictureBox();
@@ -51,7 +51,6 @@
             this.btnCrearVenta = new System.Windows.Forms.PictureBox();
             this.lbClienteSelecionado = new System.Windows.Forms.Label();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.pbDetalle = new System.Windows.Forms.PictureBox();
             this.panelDetalleCliente = new System.Windows.Forms.Panel();
             this.tbMunicipio = new System.Windows.Forms.TextBox();
@@ -166,6 +165,9 @@
             this.label47 = new System.Windows.Forms.Label();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.panelCrearCliente = new System.Windows.Forms.Panel();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCrear)).BeginInit();
@@ -218,9 +220,9 @@
             // pbEditar
             // 
             this.pbEditar.Image = ((System.Drawing.Image)(resources.GetObject("pbEditar.Image")));
-            this.pbEditar.Location = new System.Drawing.Point(1278, 120);
+            this.pbEditar.Location = new System.Drawing.Point(1288, 102);
             this.pbEditar.Name = "pbEditar";
-            this.pbEditar.Size = new System.Drawing.Size(34, 38);
+            this.pbEditar.Size = new System.Drawing.Size(34, 40);
             this.pbEditar.TabIndex = 11;
             this.pbEditar.TabStop = false;
             this.pbEditar.Visible = false;
@@ -229,9 +231,9 @@
             // pbEliminar
             // 
             this.pbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("pbEliminar.Image")));
-            this.pbEliminar.Location = new System.Drawing.Point(1278, 164);
+            this.pbEliminar.Location = new System.Drawing.Point(1288, 150);
             this.pbEliminar.Name = "pbEliminar";
-            this.pbEliminar.Size = new System.Drawing.Size(34, 36);
+            this.pbEliminar.Size = new System.Drawing.Size(34, 38);
             this.pbEliminar.TabIndex = 10;
             this.pbEliminar.TabStop = false;
             this.pbEliminar.Visible = false;
@@ -239,10 +241,11 @@
             // 
             // pbCrear
             // 
+            this.pbCrear.BackColor = System.Drawing.Color.Transparent;
             this.pbCrear.Image = ((System.Drawing.Image)(resources.GetObject("pbCrear.Image")));
-            this.pbCrear.Location = new System.Drawing.Point(1278, 38);
+            this.pbCrear.Location = new System.Drawing.Point(1250, 16);
             this.pbCrear.Name = "pbCrear";
-            this.pbCrear.Size = new System.Drawing.Size(34, 35);
+            this.pbCrear.Size = new System.Drawing.Size(34, 34);
             this.pbCrear.TabIndex = 9;
             this.pbCrear.TabStop = false;
             this.pbCrear.Click += new System.EventHandler(this.pbMostrarPanelCrear_Click);
@@ -257,12 +260,13 @@
             this.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVentas.BackgroundColor = System.Drawing.Color.Snow;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Location = new System.Drawing.Point(45, 30);
+            this.dgvVentas.Location = new System.Drawing.Point(46, 35);
             this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.ReadOnly = true;
             this.dgvVentas.RowHeadersVisible = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvVentas.Size = new System.Drawing.Size(1235, 160);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvVentas.Size = new System.Drawing.Size(1247, 160);
             this.dgvVentas.TabIndex = 26;
             this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
             // 
@@ -272,10 +276,11 @@
             this.lbMensajeGeneral.AutoSize = true;
             this.lbMensajeGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensajeGeneral.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lbMensajeGeneral.Location = new System.Drawing.Point(511, 372);
+            this.lbMensajeGeneral.Location = new System.Drawing.Point(556, 421);
             this.lbMensajeGeneral.Name = "lbMensajeGeneral";
-            this.lbMensajeGeneral.Size = new System.Drawing.Size(0, 24);
+            this.lbMensajeGeneral.Size = new System.Drawing.Size(151, 24);
             this.lbMensajeGeneral.TabIndex = 31;
+            this.lbMensajeGeneral.Text = "mensaje general";
             // 
             // panelFlSuperior
             // 
@@ -290,13 +295,13 @@
             // 
             // panelNavegacionSuperior
             // 
-            this.panelNavegacionSuperior.BackColor = System.Drawing.Color.Snow;
+            this.panelNavegacionSuperior.BackColor = System.Drawing.Color.Transparent;
             this.panelNavegacionSuperior.Controls.Add(this.pbExit);
             this.panelNavegacionSuperior.Controls.Add(this.panelBuscador);
             this.panelNavegacionSuperior.Controls.Add(this.pbMostrarBuscador);
             this.panelNavegacionSuperior.Location = new System.Drawing.Point(13, 3);
             this.panelNavegacionSuperior.Name = "panelNavegacionSuperior";
-            this.panelNavegacionSuperior.Size = new System.Drawing.Size(1308, 52);
+            this.panelNavegacionSuperior.Size = new System.Drawing.Size(1308, 49);
             this.panelNavegacionSuperior.TabIndex = 5;
             // 
             // pbExit
@@ -348,7 +353,7 @@
             // pbMostrarBuscador
             // 
             this.pbMostrarBuscador.Image = ((System.Drawing.Image)(resources.GetObject("pbMostrarBuscador.Image")));
-            this.pbMostrarBuscador.Location = new System.Drawing.Point(1223, 15);
+            this.pbMostrarBuscador.Location = new System.Drawing.Point(1183, 1);
             this.pbMostrarBuscador.Name = "pbMostrarBuscador";
             this.pbMostrarBuscador.Size = new System.Drawing.Size(36, 37);
             this.pbMostrarBuscador.TabIndex = 4;
@@ -358,37 +363,39 @@
             // panelCrudClientes
             // 
             this.panelCrudClientes.BackColor = System.Drawing.Color.Snow;
+            this.panelCrudClientes.Controls.Add(this.label40);
+            this.panelCrudClientes.Controls.Add(this.label38);
             this.panelCrudClientes.Controls.Add(this.panelVentasDelCliente);
             this.panelCrudClientes.Controls.Add(this.dgvClientes);
             this.panelCrudClientes.Controls.Add(this.pbCrear);
             this.panelCrudClientes.Controls.Add(this.pbEliminar);
             this.panelCrudClientes.Controls.Add(this.lbMensajeGeneral);
             this.panelCrudClientes.Controls.Add(this.pbEditar);
-            this.panelCrudClientes.Controls.Add(this.label1);
             this.panelCrudClientes.Controls.Add(this.pbDetalle);
-            this.panelCrudClientes.Location = new System.Drawing.Point(0, 55);
+            this.panelCrudClientes.Location = new System.Drawing.Point(0, 47);
             this.panelCrudClientes.Name = "panelCrudClientes";
-            this.panelCrudClientes.Size = new System.Drawing.Size(1324, 655);
+            this.panelCrudClientes.Size = new System.Drawing.Size(1324, 663);
             this.panelCrudClientes.TabIndex = 33;
             // 
             // panelVentasDelCliente
             // 
             this.panelVentasDelCliente.BackColor = System.Drawing.Color.Transparent;
+            this.panelVentasDelCliente.Controls.Add(this.label39);
             this.panelVentasDelCliente.Controls.Add(this.btnDetallesVenta);
             this.panelVentasDelCliente.Controls.Add(this.btnEliminarVenta);
             this.panelVentasDelCliente.Controls.Add(this.dgvVentas);
             this.panelVentasDelCliente.Controls.Add(this.btnCrearVenta);
             this.panelVentasDelCliente.Controls.Add(this.lbClienteSelecionado);
-            this.panelVentasDelCliente.Location = new System.Drawing.Point(-9, 397);
+            this.panelVentasDelCliente.Location = new System.Drawing.Point(-9, 448);
             this.panelVentasDelCliente.Name = "panelVentasDelCliente";
-            this.panelVentasDelCliente.Size = new System.Drawing.Size(1339, 255);
+            this.panelVentasDelCliente.Size = new System.Drawing.Size(1339, 204);
             this.panelVentasDelCliente.TabIndex = 41;
             this.panelVentasDelCliente.Visible = false;
             // 
             // btnDetallesVenta
             // 
             this.btnDetallesVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnDetallesVenta.Image")));
-            this.btnDetallesVenta.Location = new System.Drawing.Point(1287, 73);
+            this.btnDetallesVenta.Location = new System.Drawing.Point(1296, 54);
             this.btnDetallesVenta.Name = "btnDetallesVenta";
             this.btnDetallesVenta.Size = new System.Drawing.Size(34, 35);
             this.btnDetallesVenta.TabIndex = 42;
@@ -400,7 +407,7 @@
             // btnEliminarVenta
             // 
             this.btnEliminarVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarVenta.Image")));
-            this.btnEliminarVenta.Location = new System.Drawing.Point(1287, 114);
+            this.btnEliminarVenta.Location = new System.Drawing.Point(1296, 95);
             this.btnEliminarVenta.Name = "btnEliminarVenta";
             this.btnEliminarVenta.Size = new System.Drawing.Size(34, 35);
             this.btnEliminarVenta.TabIndex = 41;
@@ -412,7 +419,7 @@
             // btnCrearVenta
             // 
             this.btnCrearVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearVenta.Image")));
-            this.btnCrearVenta.Location = new System.Drawing.Point(1286, 30);
+            this.btnCrearVenta.Location = new System.Drawing.Point(1261, 2);
             this.btnCrearVenta.Name = "btnCrearVenta";
             this.btnCrearVenta.Size = new System.Drawing.Size(34, 35);
             this.btnCrearVenta.TabIndex = 40;
@@ -426,7 +433,7 @@
             this.lbClienteSelecionado.BackColor = System.Drawing.Color.Snow;
             this.lbClienteSelecionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbClienteSelecionado.ForeColor = System.Drawing.Color.SlateGray;
-            this.lbClienteSelecionado.Location = new System.Drawing.Point(41, 9);
+            this.lbClienteSelecionado.Location = new System.Drawing.Point(49, 3);
             this.lbClienteSelecionado.Name = "lbClienteSelecionado";
             this.lbClienteSelecionado.Size = new System.Drawing.Size(0, 24);
             this.lbClienteSelecionado.TabIndex = 38;
@@ -441,33 +448,23 @@
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.Color.Snow;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(36, 32);
+            this.dgvClientes.Location = new System.Drawing.Point(37, 51);
             this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1236, 341);
+            this.dgvClientes.Size = new System.Drawing.Size(1245, 376);
             this.dgvClientes.TabIndex = 8;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label1.Location = new System.Drawing.Point(30, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 31);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Clientes";
             // 
             // pbDetalle
             // 
             this.pbDetalle.Image = ((System.Drawing.Image)(resources.GetObject("pbDetalle.Image")));
-            this.pbDetalle.Location = new System.Drawing.Point(1278, 79);
+            this.pbDetalle.Location = new System.Drawing.Point(1288, 59);
             this.pbDetalle.Name = "pbDetalle";
-            this.pbDetalle.Size = new System.Drawing.Size(34, 35);
+            this.pbDetalle.Size = new System.Drawing.Size(34, 37);
             this.pbDetalle.TabIndex = 35;
             this.pbDetalle.TabStop = false;
             this.pbDetalle.Visible = false;
@@ -1828,6 +1825,39 @@
             this.panelCrearCliente.TabIndex = 32;
             this.panelCrearCliente.Visible = false;
             // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.DimGray;
+            this.label38.Location = new System.Drawing.Point(1106, 25);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(138, 20);
+            this.label38.TabIndex = 42;
+            this.label38.Text = "Agregar un cliente";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.SlateGray;
+            this.label39.Location = new System.Drawing.Point(1124, 10);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(131, 20);
+            this.label39.TabIndex = 43;
+            this.label39.Text = "Agregar un venta";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.Teal;
+            this.label40.Location = new System.Drawing.Point(32, 22);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(168, 26);
+            this.label40.TabIndex = 43;
+            this.label40.Text = "Lista de clientes";
+            // 
             // UC_CrudClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1840,6 +1870,7 @@
             this.Controls.Add(this.panelFlSuperior);
             this.Name = "UC_CrudClientes";
             this.Size = new System.Drawing.Size(1324, 704);
+            this.Load += new System.EventHandler(this.UC_CrudClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCrear)).EndInit();
@@ -1930,7 +1961,6 @@
         private System.Windows.Forms.Label lbIdClienteEditar;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label lbIdDetalleCliente;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnCrearVenta;
         private System.Windows.Forms.Panel panelVentasDelCliente;
         private System.Windows.Forms.DataGridView dgvClientes;
@@ -2032,5 +2062,8 @@
         private System.Windows.Forms.TextBox tbDniEditar;
         private System.Windows.Forms.TextBox tbApellidosEditar;
         private System.Windows.Forms.TextBox tbNombreEditar;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
     }
 }

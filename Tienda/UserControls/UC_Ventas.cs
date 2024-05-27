@@ -406,10 +406,12 @@ namespace Tienda.UserControls
 
                 }
 
-            } // Si el carrito esta vacio
+            } // Si el carrito esta vacio, sin productos
             else
-            {
+            {   // Muestro mensaje 
                 lbMensajeGeneral.Text = "No hay productos en el carrito de compra.";
+                // Cambia el color del texto a rojo
+                lbMensajeGeneral.ForeColor = Color.Red;
                 // Oculto mensaje transcurrido unos segundos
                 mostrarMensajeYOcultarloAutomaticamente();
             }
