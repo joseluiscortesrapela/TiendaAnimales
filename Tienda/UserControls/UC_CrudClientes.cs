@@ -72,7 +72,7 @@ namespace Tienda.UserControls
                 // Oculto botones de accion del dgv ventas
                 ocultarrBotonesAccionDGVVenta();
                 // Elimina mensajes general
-                ocultarMensaje();
+                mostrarMensajeYOcultarloAutomaticamente();
 
                 // Obtengo las compras del cliente
                 DataTable tabla = AdminModel.getComprasByClientID(idCliente);
@@ -110,7 +110,7 @@ namespace Tienda.UserControls
         }
 
 
-        private void ocultarMensaje()
+        private void mostrarMensajeYOcultarloAutomaticamente()
         {
             timerOcultarMensaje.Start();
         }
@@ -423,7 +423,6 @@ namespace Tienda.UserControls
 
         private void timerOcultarMensaje_Tick(object sender, EventArgs e)
         {
-            Console.WriteLine("timer fin");
             lbMensajeGeneral.Text = "";
             timerOcultarMensaje.Stop();
         }

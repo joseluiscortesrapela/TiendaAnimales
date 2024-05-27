@@ -26,7 +26,7 @@ namespace Tienda.UserControls
         private Cliente cliente;
         // La fila selecionada
         private DataGridViewRow fila;
- 
+
 
         // 1º Constructor: Crea una venta a cualquier cliente.
         public UC_Ventas()
@@ -44,7 +44,7 @@ namespace Tienda.UserControls
             this.cliente = cliente;
             // Inicializo datos base formulario
             inicializarFormularioCrearVentaAUnClienteEspecifico();
-          
+
         }
 
         // 3º Constructor:  Muestro el detalle de la compra de un cliente
@@ -86,22 +86,26 @@ namespace Tienda.UserControls
         }
 
         // Carga inicial formulario
-        private void inicializarFormularioDetalleVenta( int idVenta, string fecha)
+        private void inicializarFormularioDetalleVenta(int idVenta, string fecha)
         {
             // Obtengo los clientes 
             clientes = AdminModel.getObjetosClientes();
-            // Configuro compbobox para autocompletado
-            autoCompleteNow();
-            // Seleciono el cliente en el combobx
-            cbClientes.SelectedValue = cliente.IdCliente;
+            // Muestro nombre cliente
+            cbClientes.Text = cliente.Nombre;
+            // Desabilito combobox
+            cbClientes.Enabled = false;
             // Muestro la fecha de la venta
             dtpFecha.Text = fecha;
+            // Desactivo la fecha
+            dtpFecha.Enabled = false;
             // Elimino todas ls columnas que cree manualmente ya que ahora las genera solas de la bse de datos.
             dgvVenta.Columns.Clear();
             // Muestro la lista de productos del detalle de la venta
             cargarDGVDetallesVenta(idVenta);
             // Oculto columna
             dgvVenta.Columns["idProducto"].Visible = false;
+            // Muestro titulo
+            lbTitulo.Text = "Detalles de la venta";
             // Muestrar el subtotal, total a pagar ...etc
 
         }
@@ -352,50 +356,62 @@ namespace Tienda.UserControls
         // Registrar venta
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
-            // Obtener la fecha seleccionada por el usuario
-            DateTime fechaSeleccionada = dtpFecha.Value;
-            // Formatear la fecha en el formato YYYY-MM-DD
-            string fecha = fechaSeleccionada.ToString("yyyy-MM-dd");
-            // Obtengo el total
-            decimal totalAPagar = calcularTotalAPagar();
-
-            // Si ha registrado la venta en la base de datos
-            if (AdminModel.registrarVenta(idCliente, fecha, totalAPagar))
+            // Si el carrito no esta vacio
+            if (dgvVenta.RowCount > 0)
             {
-                // Obtengo el id de la venta
-                int idVenta = AdminModel.getUltimoIdVenta();
-                // Creo una lista vacia
-                List<DetalleVenta> carritoCompra = new List<DetalleVenta>();
+                // Obtener la fecha seleccionada por el usuario
+                DateTime fechaSeleccionada = dtpFecha.Value;
+                // Formatear la fecha en el formato YYYY-MM-DD
+                string fecha = fechaSeleccionada.ToString("yyyy-MM-dd");
+                // Obtengo el total
+                decimal totalAPagar = calcularTotalAPagar();
 
-                // Recorro los productos añadidos al carrito de compra
-                foreach (DataGridViewRow fila in dgvVenta.Rows)
+                // Si ha registrado la venta en la base de datos
+                if (AdminModel.registrarVenta(idCliente, fecha, totalAPagar))
                 {
-                    // Obtengo las celdas de la fila
-                    int idProducto = int.Parse(fila.Cells["idProducto"].Value.ToString());
-                    string producto = fila.Cells["producto"].Value.ToString();
-                    string categoria = fila.Cells["categoria"].Value.ToString();
-                    int cantidad = int.Parse(fila.Cells["cantidad"].Value.ToString());
-                    decimal precio = decimal.Parse(fila.Cells["precio"].Value.ToString());
-                    int iva = int.Parse(fila.Cells["iva"].Value.ToString());
-                    int descuento = int.Parse(fila.Cells["descuento"].Value.ToString());
-                    decimal subtotal = decimal.Parse(fila.Cells["subtotal"].Value.ToString());
-                    decimal total = decimal.Parse(fila.Cells["total"].Value.ToString());
+                    // Obtengo el id de la venta
+                    int idVenta = AdminModel.getUltimoIdVenta();
+                    // Creo una lista vacia
+                    List<DetalleVenta> carritoCompra = new List<DetalleVenta>();
 
-                    // Instancio e inicializo el objeto
-                    DetalleVenta venta = new DetalleVenta(0, idVenta, idCliente, idProducto, producto, categoria, precio, iva, cantidad, descuento, subtotal, total);
+                    // Recorro los productos añadidos al carrito de compra
+                    foreach (DataGridViewRow fila in dgvVenta.Rows)
+                    {
+                        // Obtengo las celdas de la fila
+                        int idProducto = int.Parse(fila.Cells["idProducto"].Value.ToString());
+                        string producto = fila.Cells["producto"].Value.ToString();
+                        string categoria = fila.Cells["categoria"].Value.ToString();
+                        int cantidad = int.Parse(fila.Cells["cantidad"].Value.ToString());
+                        decimal precio = decimal.Parse(fila.Cells["precio"].Value.ToString());
+                        int iva = int.Parse(fila.Cells["iva"].Value.ToString());
+                        int descuento = int.Parse(fila.Cells["descuento"].Value.ToString());
+                        decimal subtotal = decimal.Parse(fila.Cells["subtotal"].Value.ToString());
+                        decimal total = decimal.Parse(fila.Cells["total"].Value.ToString());
 
-                    // Añado un producto al carrito
-                    carritoCompra.Add(venta);
+                        // Instancio e inicializo el objeto
+                        DetalleVenta venta = new DetalleVenta(0, idVenta, idCliente, idProducto, producto, categoria, precio, iva, cantidad, descuento, subtotal, total);
+
+                        // Añado un producto al carrito
+                        carritoCompra.Add(venta);
+
+                    }
+
+                    // Registro el detalle venta
+                    if (AdminModel.registrarDetalleVenta(carritoCompra))
+                    {   // Muestro mensaje 
+                        lbMensajeGeneral.Text = "¡Venta Realizada con Éxito!";
+                        // Oculto mensaje transcurrido unos segundos
+                        mostrarMensajeYOcultarloAutomaticamente();
+                    }
 
                 }
 
-                // Registro el detalle venta
-                if (AdminModel.registrarDetalleVenta(carritoCompra))
-                {
-                    Console.WriteLine("Detalle venta creado");
-                }
-
+            } // Si el carrito esta vacio
+            else
+            {
+                lbMensajeGeneral.Text = "No hay productos en el carrito de compra.";
+                // Oculto mensaje transcurrido unos segundos
+                mostrarMensajeYOcultarloAutomaticamente();
             }
 
         }
@@ -419,6 +435,18 @@ namespace Tienda.UserControls
                 Console.WriteLine("Fila venta id: " + fila.Cells[0].Value);
             }
 
+        }
+
+        private void mostrarMensajeYOcultarloAutomaticamente()
+        {
+            timerMensaje.Start();
+        }
+
+        private void timerMensaje_Tick(object sender, EventArgs e)
+        {
+            lbMensajeGeneral.Text = "";
+            timerMensaje.Stop();
+            Console.WriteLine("termino temporaizdo");
         }
     }
 }
