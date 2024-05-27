@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CrudClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pbEditar = new System.Windows.Forms.PictureBox();
             this.pbEliminar = new System.Windows.Forms.PictureBox();
             this.pbCrear = new System.Windows.Forms.PictureBox();
@@ -45,7 +45,10 @@
             this.pbBuscador = new System.Windows.Forms.PictureBox();
             this.pbMostrarBuscador = new System.Windows.Forms.PictureBox();
             this.panelCrudClientes = new System.Windows.Forms.Panel();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
             this.panelVentasDelCliente = new System.Windows.Forms.Panel();
+            this.label39 = new System.Windows.Forms.Label();
             this.btnDetallesVenta = new System.Windows.Forms.PictureBox();
             this.btnEliminarVenta = new System.Windows.Forms.PictureBox();
             this.btnCrearVenta = new System.Windows.Forms.PictureBox();
@@ -165,9 +168,6 @@
             this.label47 = new System.Windows.Forms.Label();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.panelCrearCliente = new System.Windows.Forms.Panel();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCrear)).BeginInit();
@@ -264,8 +264,8 @@
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvVentas.Size = new System.Drawing.Size(1247, 160);
             this.dgvVentas.TabIndex = 26;
             this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
@@ -274,9 +274,10 @@
             // 
             this.lbMensajeGeneral.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbMensajeGeneral.AutoSize = true;
+            this.lbMensajeGeneral.BackColor = System.Drawing.Color.Transparent;
             this.lbMensajeGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensajeGeneral.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lbMensajeGeneral.Location = new System.Drawing.Point(556, 421);
+            this.lbMensajeGeneral.Location = new System.Drawing.Point(556, 423);
             this.lbMensajeGeneral.Name = "lbMensajeGeneral";
             this.lbMensajeGeneral.Size = new System.Drawing.Size(151, 24);
             this.lbMensajeGeneral.TabIndex = 31;
@@ -363,6 +364,8 @@
             // panelCrudClientes
             // 
             this.panelCrudClientes.BackColor = System.Drawing.Color.Snow;
+            this.panelCrudClientes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCrudClientes.BackgroundImage")));
+            this.panelCrudClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelCrudClientes.Controls.Add(this.label40);
             this.panelCrudClientes.Controls.Add(this.label38);
             this.panelCrudClientes.Controls.Add(this.panelVentasDelCliente);
@@ -376,6 +379,28 @@
             this.panelCrudClientes.Name = "panelCrudClientes";
             this.panelCrudClientes.Size = new System.Drawing.Size(1324, 663);
             this.panelCrudClientes.TabIndex = 33;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.Teal;
+            this.label40.Location = new System.Drawing.Point(32, 22);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(168, 26);
+            this.label40.TabIndex = 43;
+            this.label40.Text = "Lista de clientes";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.DimGray;
+            this.label38.Location = new System.Drawing.Point(1106, 25);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(138, 20);
+            this.label38.TabIndex = 42;
+            this.label38.Text = "Agregar un cliente";
             // 
             // panelVentasDelCliente
             // 
@@ -391,6 +416,17 @@
             this.panelVentasDelCliente.Size = new System.Drawing.Size(1339, 204);
             this.panelVentasDelCliente.TabIndex = 41;
             this.panelVentasDelCliente.Visible = false;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.SlateGray;
+            this.label39.Location = new System.Drawing.Point(1124, 10);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(131, 20);
+            this.label39.TabIndex = 43;
+            this.label39.Text = "Agregar un venta";
             // 
             // btnDetallesVenta
             // 
@@ -430,10 +466,10 @@
             // lbClienteSelecionado
             // 
             this.lbClienteSelecionado.AutoSize = true;
-            this.lbClienteSelecionado.BackColor = System.Drawing.Color.Snow;
+            this.lbClienteSelecionado.BackColor = System.Drawing.Color.Transparent;
             this.lbClienteSelecionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbClienteSelecionado.ForeColor = System.Drawing.Color.SlateGray;
-            this.lbClienteSelecionado.Location = new System.Drawing.Point(49, 3);
+            this.lbClienteSelecionado.Location = new System.Drawing.Point(44, 10);
             this.lbClienteSelecionado.Name = "lbClienteSelecionado";
             this.lbClienteSelecionado.Size = new System.Drawing.Size(0, 24);
             this.lbClienteSelecionado.TabIndex = 38;
@@ -452,8 +488,8 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(1245, 376);
             this.dgvClientes.TabIndex = 8;
@@ -1825,44 +1861,11 @@
             this.panelCrearCliente.TabIndex = 32;
             this.panelCrearCliente.Visible = false;
             // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.DimGray;
-            this.label38.Location = new System.Drawing.Point(1106, 25);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(138, 20);
-            this.label38.TabIndex = 42;
-            this.label38.Text = "Agregar un cliente";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.ForeColor = System.Drawing.Color.SlateGray;
-            this.label39.Location = new System.Drawing.Point(1124, 10);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(131, 20);
-            this.label39.TabIndex = 43;
-            this.label39.Text = "Agregar un venta";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.ForeColor = System.Drawing.Color.Teal;
-            this.label40.Location = new System.Drawing.Point(32, 22);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(168, 26);
-            this.label40.TabIndex = 43;
-            this.label40.Text = "Lista de clientes";
-            // 
             // UC_CrudClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Snow;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panelCrudClientes);
             this.Controls.Add(this.panelCrearCliente);
             this.Controls.Add(this.panelEditarCliente);
