@@ -5,6 +5,8 @@ using System.Data;
 using System.Windows.Forms;
 using Tienda.Forms;
 using Tienda.Sesion;
+using Tienda.Utilizades;
+using System.Drawing;
 
 namespace Tienda.UserControls
 {
@@ -16,22 +18,83 @@ namespace Tienda.UserControls
         private MenuPrincipal menuPrincipal;
 
 
-        // Contruc por por defecto,
+        // Contruc por por defecto, carga los datos de la base de datos.
         public UC_CrudClientes()
         {
-            InitializeComponent();   
+            InitializeComponent();
+            // Obtengo todos los clientes  y los guardo en el dgv
+            cargarrDgvClientes(); 
+        }
+
+        public UC_CrudClientes(int idCliente)
+        {
+            InitializeComponent();
             // Obtengo todos los clientes  y los guardo en el dgv
             cargarrDgvClientes();
-            // Ahora oculto las columnas que no quiero mostrar
+
+            Console.WriteLine("constructor clientes id: " + idCliente );
+
+            // Mostrar el dgv de ventas del cliente
+            seleccionarFilaDGVClientes( idCliente);
+        }
+
+
+        private void seleccionarFilaDGVClientes(int idCliente)
+        {
+
+
+            foreach (DataGridViewRow fila in dgvClientes.Rows)
+            {
+                // Verificar que el valor de la celda no sea nulo y convertir a entero
+                if (fila.Cells["idCliente"].Value != null && Convert.ToInt32(fila.Cells["idCliente"].Value) == idCliente)
+                {
+                    Console.WriteLine("Cliente encontrado: " + fila.Cells["nombre"].Value);
+
+                    // Simular el clic en la fila encontrada
+                    if (fila.Selected == false)
+                    {
+                        // Limpiar cualquier selección previa
+                        dgvClientes.ClearSelection();
+
+                        // Seleccionar la fila
+                        fila.Selected = true;
+
+                        fila.DefaultCellStyle.BackColor = Color.LightSalmon;
+
+                        // Cambiar el color de fondo de la fila seleccionada
+                        fila.DefaultCellStyle.BackColor = dgvClientes.DefaultCellStyle.SelectionBackColor;
+
+                        // Desplazar el DataGridView para que la fila seleccionada sea visible
+                        dgvClientes.FirstDisplayedScrollingRowIndex = fila.Index;
+
+                        // Crear argumentos para el evento CellClick
+                        DataGridViewCellEventArgs eventArgs = new DataGridViewCellEventArgs(0, fila.Index);
+
+                        // Llamar manualmente al evento CellClick
+                        dgvClientes_CellClick(dgvClientes, eventArgs);
+                    }
+
+                    // Salir del bucle una vez que se encuentra y selecciona la fila
+                    break;
+                }
+            }
+
+        }
+
+        private void personalizarDGVClientes()
+        {
+            // Oculto las siguientes columnas
             dgvClientes.Columns["idCliente"].Visible = false;
             dgvClientes.Columns["idProvincia"].Visible = false;
             dgvClientes.Columns["idMunicipio"].Visible = false;
-
         }
 
         // Auto load ventana
         private void UC_CrudClientes_Load(object sender, EventArgs e)
-        {   // Guardo referencia del menu principal.
+        {
+            // personalizo dgv
+            personalizarDGVClientes();
+            // Guardo referencia del menu principal.
             this.menuPrincipal = SesionPrograma.ObtenerMenuPrincipal();
         }
 
@@ -77,16 +140,13 @@ namespace Tienda.UserControls
                 ocultarrBotonesAccionDGVVenta();
                 // Elimina mensajes general
                 mostrarMensajeYOcultarloAutomaticamente();
-
                 // Obtengo las compras del cliente
-                DataTable tabla = AdminModel.getComprasByClientID(idCliente);
+                cargarDGVConLasVentasDelClientePorSuid(idCliente);
 
                 // Compruebo que no este vacio
-                if (tabla.Rows.Count >= 0)
+                if (dgvVentas.Rows.Count >= 0)
                 {
                     mostrarPanelVentas();
-                    // Muestro las compras del clietne en el dgv
-                    dgvVentas.DataSource = tabla;
                     // Muestro nombre del cliente
                     lbClienteSelecionado.Text = "El cliente/a " + nombre + ", " + apellidos + " tiene registradas " + dgvVentas.RowCount + " compras.";
                 }
@@ -96,9 +156,14 @@ namespace Tienda.UserControls
                     ocultarPanelVentas();
                 }
 
-
             }
 
+        }
+
+        // Carga las vetnas de un cliente en el dgv ventas/compras
+        private void cargarDGVConLasVentasDelClientePorSuid(int idCliente)
+        {   // Obtegno las ventas de un cliente
+            dgvVentas.DataSource = AdminModel.getVentasByIDCliente(idCliente);
         }
 
         // Muestra panel con las compras que ha realizado el cliente
@@ -125,6 +190,9 @@ namespace Tienda.UserControls
             // Obtengo todos los clientes  y los guardo en el dgv
             dgvClientes.DataSource = AdminModel.getClientes();
         }
+
+  
+
 
         // Obtengo todos las ventas
         private void cargarrDgvVenta()
@@ -177,6 +245,7 @@ namespace Tienda.UserControls
                     panelEditarCliente.Visible = false;
                     panelDetalleCliente.Visible = false;
                     panelCrearCliente.Visible = true;
+                    panelVentasDelCliente.Visible = false;
                     break;
                 case "Editar": // Muestra ventana para editar cliente
                     panelCrudClientes.Visible = false;
@@ -453,7 +522,7 @@ namespace Tienda.UserControls
             dgvClientes.DataSource = AdminModel.buscarClientes(texto);
         }
 
-
+        // Muestra la ventana ventas
         private void btnMostrarCrearVenta_Click(object sender, EventArgs e)
         {
             // Crear una instancia del UserControl de ventas
@@ -497,8 +566,8 @@ namespace Tienda.UserControls
                 // Eliminar cliente en cascada con sus polizas.
                 if (AdminModel.eliminarVenta(idVenta))
                 {
-                    // Actualizo el dgv ventas
-                    cargarrDgvVenta();
+                    // Actualizo el dgv  
+                    cargarDGVConLasVentasDelClientePorSuid(cliente.IdCliente);
                     // Muestro mensaje 
                     lbMensajeGeneral.Text = "La venta fue elimnada!";
                 }

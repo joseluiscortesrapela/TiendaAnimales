@@ -18,7 +18,7 @@ namespace Tienda.Models
         private static bool estado;
 
 
-        public static DataTable getComprasByClientID(int idCliente)
+        public static DataTable getVentasByIDCliente(int idCliente)
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
 

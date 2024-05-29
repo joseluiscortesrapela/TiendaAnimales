@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Tienda.Entidades;
 using Tienda.Forms;
 using Tienda.Models;
+using Tienda.Sesion;
 
 namespace Tienda.UserControls
 {
@@ -26,9 +27,11 @@ namespace Tienda.UserControls
         private Cliente cliente;
         // La fila selecionada
         private DataGridViewRow fila;
+        // Dasdboard
+        private MenuPrincipal menuPrincipal;
 
 
-        // 1º Constructor: Crea una venta a cualquier cliente.
+        // 1º Constructor: Crea una venta a cualquier cliente, vienes desde el menu principal
         public UC_Ventas()
         {
             InitializeComponent();
@@ -36,7 +39,7 @@ namespace Tienda.UserControls
             inicializarFormularioCrearUnaNuevaVentaAQuialiarCliente();
         }
 
-        // 2º Constructor: crea la venta a un cliente especifico.
+        // 2º Constructor: crea la venta a un cliente especifico, vienes desde la ventana ce clientes
         public UC_Ventas(Cliente cliente)
         {
             InitializeComponent();
@@ -47,7 +50,7 @@ namespace Tienda.UserControls
 
         }
 
-        // 3º Constructor:  Muestro el detalle de la compra de un cliente
+        // 3º Constructor:  Muestro el detalle de la compra de un cliente, vienes desde la ventana de clientes
         public UC_Ventas(Cliente cliente, int idVenta, string fecha)
         {
             InitializeComponent();
@@ -56,6 +59,14 @@ namespace Tienda.UserControls
             // Inicializo datos base formulario
             inicializarFormularioDetalleVenta(idVenta, fecha);
         }
+
+        // Autoload
+        private void UC_Ventas_Load(object sender, EventArgs e)
+        {
+            // Guardo referencia del menu principal.
+            this.menuPrincipal = SesionPrograma.ObtenerMenuPrincipal();
+        }
+
 
         // Carga todos los productos qel detalle de venta en el dgv
         private void cargarDGVDetallesVenta(int idVenta)
@@ -354,7 +365,7 @@ namespace Tienda.UserControls
         }
 
         // Registrar venta
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void btnAceptarVenta_Click(object sender, EventArgs e)
         {
             // Si el carrito no esta vacio
             if (dgvVenta.RowCount > 0)
@@ -398,10 +409,9 @@ namespace Tienda.UserControls
 
                     // Registro el detalle venta
                     if (AdminModel.registrarDetalleVenta(carritoCompra))
-                    {   // Muestro mensaje 
-                        lbMensajeGeneral.Text = "¡Venta Realizada con Éxito!";
-                        // Oculto mensaje transcurrido unos segundos
-                        mostrarMensajeYOcultarloAutomaticamente();
+                    {   
+                        Console.WriteLine("Registrada venta");
+                        mostrarVentanaClientes();
                     }
 
                 }
@@ -415,12 +425,6 @@ namespace Tienda.UserControls
                 // Oculto mensaje transcurrido unos segundos
                 mostrarMensajeYOcultarloAutomaticamente();
             }
-
-        }
-
-        private void pbExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         // Obtengo la fila que ha sido selecionada en el dgv ventas
@@ -449,6 +453,27 @@ namespace Tienda.UserControls
             lbMensajeGeneral.Text = "";
             timerMensaje.Stop();
             Console.WriteLine("termino temporaizdo");
+        }
+
+        private void mostrarVentanaClientes()
+        {
+            Console.WriteLine("Volver ventana clientes id: " + idCliente);
+            // Crear una instancia del UserControl de clientes
+            UC_CrudClientes ventanaClientes = new UC_CrudClientes( idCliente );
+            // Llamar al método del formulario principal para cambiar el contenido del panel contenedor
+            menuPrincipal.mostrarUserControl( ventanaClientes);
+        }
+
+
+        // Se cierra el programa
+        private void pbExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            mostrarVentanaClientes();
         }
     }
 }
