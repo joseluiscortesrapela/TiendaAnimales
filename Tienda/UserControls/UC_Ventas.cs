@@ -117,7 +117,10 @@ namespace Tienda.UserControls
             dgvVenta.Columns["idProducto"].Visible = false;
             // Muestro titulo
             lbTitulo.Text = "Detalles de la venta";
-            // Muestrar el subtotal, total a pagar ...etc
+            // Muestrar el subtotal, total a pagar
+            calcularFilasCarrito();
+            // Recalcula 
+            recalcular();
 
         }
 
@@ -187,7 +190,7 @@ namespace Tienda.UserControls
                 }
 
                 // Actualizo el subtotal, total, impuestos y despucuentos de la venta
-                calcularFilaProducto();
+                calcularFilasCarrito();
                 // Recalcula 
                 recalcular();
             }
@@ -195,7 +198,7 @@ namespace Tienda.UserControls
         }
 
         // Calcular venta
-        private void calcularFilaProducto()
+        private void calcularFilasCarrito()
         {
             // Recorro todos los profuctos del carrito de compra
             foreach (DataGridViewRow fila in dgvVenta.Rows)
