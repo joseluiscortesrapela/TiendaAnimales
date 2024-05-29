@@ -163,8 +163,10 @@ namespace Tienda.UserControls
         // Muestra ventana modal para elegir el producto que quiere añadir al la compra.
         private void btnMostrarBuscadorProductosModal_Click(object sender, EventArgs e)
         {
+            // Instancio objeto
             var modal = new BuscarProductosModal();
 
+            // Si le ha dado al boton aceptar
             if (modal.ShowDialog() == DialogResult.OK)
             {
                 // Acceder a los datos seleccionados por el usuario en la ventana modal
@@ -186,6 +188,8 @@ namespace Tienda.UserControls
 
                 // Actualizo el subtotal, total, impuestos y despucuentos de la venta
                 calcularFilaProducto();
+                // Recalcula 
+                recalcular();
             }
 
         }
@@ -219,27 +223,50 @@ namespace Tienda.UserControls
                 // Muestro el total
                 fila.Cells["total"].Value = total;
 
-                // Recalcula 
-                recalcular();
             }
         }
 
         private void recalcular()
         {
             //  Obtengo todos los subtotales
-            decimal subtotal = calcularSubtotales();
-            // Muestro el subtotal 
-            lbSubtotal.Text = subtotal.ToString();
-
+            decimal subtotales = obtenerSubtotal();
+            // Obtengo el total descuetos
+            int totalDescuentos = obtenerTotalDescuentos();
             // Obtengo el total a pagar
-            decimal total = calcularTotalAPagar();
-            // Muestro el total a pagar
-            lbTotalAPagar.Text = total.ToString();
+            decimal totalAPagar = ObtenerTotales();
+
+            // Muestro la suma de los subtotales
+            lbSubtotal.Text = subtotales.ToString();
+            // Muestro el descuetno 
+            lbDescuentos.Text = totalDescuentos.ToString();
+            // Muestro la suma de todos los totales
+            lbTotalAPagar.Text = totalAPagar.ToString();
 
         }
 
         // Calcula el subtotal del carrito de compra
-        private decimal calcularSubtotales()
+        private int obtenerTotalDescuentos()
+        {
+            int totalDescuento = 0;
+
+            // Recorro todos los profuctos del carrito de compra
+            foreach (DataGridViewRow fila in dgvVenta.Rows)
+            {   // Si es la columana que busco
+                if (fila.Cells["descuento"].Value != null)
+                {
+                    // Obtengo el valode la columna
+                    int descuento = int.Parse(fila.Cells["descuento"].Value.ToString());
+                    // Voy guardando los totales de cada producto
+                    totalDescuento += descuento;
+                }
+
+            }
+
+            return totalDescuento;
+        }
+
+        // Calcula el subtotal del carrito de compra
+        private decimal obtenerSubtotal()
         {
             decimal totalSubtotal = 0;
 
@@ -259,7 +286,7 @@ namespace Tienda.UserControls
             return totalSubtotal;
         }
 
-        private decimal calcularTotalAPagar()
+        private decimal ObtenerTotales()
         {
             decimal totalAPagar = 0;
 
@@ -375,7 +402,7 @@ namespace Tienda.UserControls
                 // Formatear la fecha en el formato YYYY-MM-DD
                 string fecha = fechaSeleccionada.ToString("yyyy-MM-dd");
                 // Obtengo el total
-                decimal totalAPagar = calcularTotalAPagar();
+                decimal totalAPagar = ObtenerTotales();
 
                 // Si ha registrado la venta en la base de datos
                 if (AdminModel.registrarVenta(idCliente, fecha, totalAPagar))
@@ -409,7 +436,7 @@ namespace Tienda.UserControls
 
                     // Registro el detalle venta
                     if (AdminModel.registrarDetalleVenta(carritoCompra))
-                    {   
+                    {
                         Console.WriteLine("Registrada venta");
                         mostrarVentanaClientes();
                     }
@@ -459,9 +486,9 @@ namespace Tienda.UserControls
         {
             Console.WriteLine("Volver ventana clientes id: " + idCliente);
             // Crear una instancia del UserControl de clientes
-            UC_CrudClientes ventanaClientes = new UC_CrudClientes( idCliente );
+            UC_CrudClientes ventanaClientes = new UC_CrudClientes(idCliente);
             // Llamar al método del formulario principal para cambiar el contenido del panel contenedor
-            menuPrincipal.mostrarUserControl( ventanaClientes);
+            menuPrincipal.mostrarUserControl(ventanaClientes);
         }
 
 

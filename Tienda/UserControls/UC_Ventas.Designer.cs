@@ -63,11 +63,17 @@
             this.timerMensaje = new System.Windows.Forms.Timer(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.lbDescuentos = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbImpuestos = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostrarBuscadorProductosModal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvVenta
@@ -78,7 +84,6 @@
             this.dgvVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvVenta.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -109,7 +114,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvVenta.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVenta.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvVenta.Location = new System.Drawing.Point(31, 153);
+            this.dgvVenta.Location = new System.Drawing.Point(30, 128);
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.ReadOnly = true;
             this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -210,7 +215,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 69);
+            this.label2.Location = new System.Drawing.Point(30, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 12;
@@ -225,7 +230,7 @@
             this.cbClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbClientes.ForeColor = System.Drawing.Color.SlateGray;
             this.cbClientes.FormattingEnabled = true;
-            this.cbClientes.Location = new System.Drawing.Point(97, 66);
+            this.cbClientes.Location = new System.Drawing.Point(100, 33);
             this.cbClientes.Name = "cbClientes";
             this.cbClientes.Size = new System.Drawing.Size(280, 28);
             this.cbClientes.TabIndex = 13;
@@ -237,7 +242,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label3.Location = new System.Drawing.Point(1093, 124);
+            this.label3.Location = new System.Drawing.Point(1092, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 20);
             this.label3.TabIndex = 14;
@@ -249,7 +254,7 @@
             this.dtpFecha.CustomFormat = "\"yyyy-MM-dd \"";
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(1174, 70);
+            this.dtpFecha.Location = new System.Drawing.Point(1173, 38);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(115, 26);
             this.dtpFecha.TabIndex = 17;
@@ -258,7 +263,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1170, 47);
+            this.label1.Location = new System.Drawing.Point(1173, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 18;
@@ -269,7 +274,7 @@
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.lbTitulo.Location = new System.Drawing.Point(25, 19);
+            this.lbTitulo.Location = new System.Drawing.Point(566, 4);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(101, 31);
             this.lbTitulo.TabIndex = 20;
@@ -278,7 +283,7 @@
             // btnMostrarBuscadorProductosModal
             // 
             this.btnMostrarBuscadorProductosModal.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarBuscadorProductosModal.Image")));
-            this.btnMostrarBuscadorProductosModal.Location = new System.Drawing.Point(1254, 116);
+            this.btnMostrarBuscadorProductosModal.Location = new System.Drawing.Point(1253, 91);
             this.btnMostrarBuscadorProductosModal.Name = "btnMostrarBuscadorProductosModal";
             this.btnMostrarBuscadorProductosModal.Size = new System.Drawing.Size(36, 36);
             this.btnMostrarBuscadorProductosModal.TabIndex = 21;
@@ -288,7 +293,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1140, 65);
+            this.pictureBox2.Location = new System.Drawing.Point(1143, 32);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(34, 32);
             this.pictureBox2.TabIndex = 19;
@@ -309,8 +314,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(1080, 653);
+            this.label5.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label5.Location = new System.Drawing.Point(1082, 653);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 20);
             this.label5.TabIndex = 23;
@@ -320,8 +325,8 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Violet;
-            this.label7.Location = new System.Drawing.Point(1080, 618);
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(1082, 535);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 20);
             this.label7.TabIndex = 25;
@@ -330,24 +335,28 @@
             // lbTotalAPagar
             // 
             this.lbTotalAPagar.AutoSize = true;
+            this.lbTotalAPagar.Enabled = false;
             this.lbTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalAPagar.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lbTotalAPagar.Location = new System.Drawing.Point(1228, 653);
+            this.lbTotalAPagar.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.lbTotalAPagar.Location = new System.Drawing.Point(1219, 653);
             this.lbTotalAPagar.Name = "lbTotalAPagar";
-            this.lbTotalAPagar.Size = new System.Drawing.Size(19, 20);
+            this.lbTotalAPagar.Size = new System.Drawing.Size(69, 20);
             this.lbTotalAPagar.TabIndex = 26;
-            this.lbTotalAPagar.Text = "0";
+            this.lbTotalAPagar.Text = "          0";
+            this.lbTotalAPagar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbSubtotal
             // 
             this.lbSubtotal.AutoSize = true;
+            this.lbSubtotal.Enabled = false;
             this.lbSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSubtotal.ForeColor = System.Drawing.Color.Violet;
-            this.lbSubtotal.Location = new System.Drawing.Point(1228, 618);
+            this.lbSubtotal.ForeColor = System.Drawing.Color.DimGray;
+            this.lbSubtotal.Location = new System.Drawing.Point(1230, 535);
             this.lbSubtotal.Name = "lbSubtotal";
-            this.lbSubtotal.Size = new System.Drawing.Size(18, 20);
+            this.lbSubtotal.Size = new System.Drawing.Size(58, 20);
             this.lbSubtotal.TabIndex = 27;
-            this.lbSubtotal.Text = "0";
+            this.lbSubtotal.Text = "          0";
+            this.lbSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnEliminar
             // 
@@ -366,7 +375,7 @@
             this.btnRealizarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRealizarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRealizarVenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRealizarVenta.Location = new System.Drawing.Point(621, 653);
+            this.btnRealizarVenta.Location = new System.Drawing.Point(665, 653);
             this.btnRealizarVenta.Name = "btnRealizarVenta";
             this.btnRealizarVenta.Size = new System.Drawing.Size(192, 35);
             this.btnRealizarVenta.TabIndex = 37;
@@ -395,7 +404,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SlateGray;
-            this.label4.Location = new System.Drawing.Point(27, 132);
+            this.label4.Location = new System.Drawing.Point(26, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(209, 20);
             this.label4.TabIndex = 39;
@@ -407,7 +416,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnVolver.Location = new System.Drawing.Point(374, 653);
+            this.btnVolver.Location = new System.Drawing.Point(418, 653);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(192, 35);
             this.btnVolver.TabIndex = 40;
@@ -415,11 +424,71 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // lbDescuentos
+            // 
+            this.lbDescuentos.AutoSize = true;
+            this.lbDescuentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDescuentos.ForeColor = System.Drawing.Color.DimGray;
+            this.lbDescuentos.Location = new System.Drawing.Point(1230, 555);
+            this.lbDescuentos.Name = "lbDescuentos";
+            this.lbDescuentos.Size = new System.Drawing.Size(58, 20);
+            this.lbDescuentos.TabIndex = 42;
+            this.lbDescuentos.Text = "          0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(1082, 555);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 20);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "Descuentos";
+            // 
+            // lbImpuestos
+            // 
+            this.lbImpuestos.AutoSize = true;
+            this.lbImpuestos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbImpuestos.ForeColor = System.Drawing.Color.DimGray;
+            this.lbImpuestos.Location = new System.Drawing.Point(1230, 575);
+            this.lbImpuestos.Name = "lbImpuestos";
+            this.lbImpuestos.Size = new System.Drawing.Size(58, 20);
+            this.lbImpuestos.TabIndex = 44;
+            this.lbImpuestos.Text = "          0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(1082, 575);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(84, 20);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Impuestos";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1078, 598);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(214, 55);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 45;
+            this.pictureBox1.TabStop = false;
+            // 
             // UC_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lbImpuestos);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lbDescuentos);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbMensajeGeneral);
@@ -447,6 +516,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -482,5 +552,10 @@
         private System.Windows.Forms.Timer timerMensaje;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label lbDescuentos;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbImpuestos;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
