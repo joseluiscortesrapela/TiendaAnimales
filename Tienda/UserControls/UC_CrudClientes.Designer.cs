@@ -265,9 +265,8 @@
             this.lbMensajeGeneral.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.lbMensajeGeneral.Location = new System.Drawing.Point(556, 427);
             this.lbMensajeGeneral.Name = "lbMensajeGeneral";
-            this.lbMensajeGeneral.Size = new System.Drawing.Size(151, 24);
+            this.lbMensajeGeneral.Size = new System.Drawing.Size(0, 24);
             this.lbMensajeGeneral.TabIndex = 31;
-            this.lbMensajeGeneral.Text = "mensaje general";
             // 
             // panelFlSuperior
             // 

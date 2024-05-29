@@ -44,7 +44,7 @@
             this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbNombreCliente = new System.Windows.Forms.Label();
             this.cbClientes = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -211,15 +211,15 @@
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             // 
-            // label2
+            // lbNombreCliente
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 20);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Cliente";
+            this.lbNombreCliente.AutoSize = true;
+            this.lbNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombreCliente.Location = new System.Drawing.Point(30, 36);
+            this.lbNombreCliente.Name = "lbNombreCliente";
+            this.lbNombreCliente.Size = new System.Drawing.Size(58, 20);
+            this.lbNombreCliente.TabIndex = 12;
+            this.lbNombreCliente.Text = "Cliente";
             // 
             // cbClientes
             // 
@@ -506,7 +506,7 @@
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbClientes);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbNombreCliente);
             this.Controls.Add(this.dgvVenta);
             this.Name = "UC_Ventas";
             this.Size = new System.Drawing.Size(1324, 704);
@@ -524,7 +524,7 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgvVenta;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbNombreCliente;
         private System.Windows.Forms.ComboBox cbClientes;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFecha;

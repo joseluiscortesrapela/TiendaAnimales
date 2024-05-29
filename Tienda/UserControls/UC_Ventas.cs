@@ -37,6 +37,8 @@ namespace Tienda.UserControls
             InitializeComponent();
             // Inicializo datos base formulario
             inicializarFormularioCrearUnaNuevaVentaAQuialiarCliente();
+            // Muestro tipo constructor
+            Console.WriteLine("Ventas: 1º consctructo");
         }
 
         // 2º Constructor: crea la venta a un cliente especifico, vienes desde la ventana ce clientes
@@ -45,8 +47,13 @@ namespace Tienda.UserControls
             InitializeComponent();
             // Guardo la referencia del cliente
             this.cliente = cliente;
+            // Guardo el id del cliente
+            idCliente = cliente.IdCliente;
+           
             // Inicializo datos base formulario
             inicializarFormularioCrearVentaAUnClienteEspecifico();
+         
+            Console.WriteLine("Ventas: 2º consctructo");
 
         }
 
@@ -56,8 +63,14 @@ namespace Tienda.UserControls
             InitializeComponent();
             // Guardo la referencia del cliente
             this.cliente = cliente;
+            // Guardo el id del cliente
+            idCliente = cliente.IdCliente;
+           
             // Inicializo datos base formulario
             inicializarFormularioDetalleVenta(idVenta, fecha);
+       
+            Console.WriteLine("Ventas: 3º consctructo");
+
         }
 
         // Autoload
@@ -87,24 +100,34 @@ namespace Tienda.UserControls
         // Carga inicial formulario
         private void inicializarFormularioCrearVentaAUnClienteEspecifico()
         {
+            // Oculto el combobx de clientes
+            cbClientes.Visible = false;
+            // Muestro el nombre del cliente
+            lbNombreCliente.Text =  "Cliente: " + cliente.Nombre;
             // Obtengo los clientes 
-            clientes = AdminModel.getObjetosClientes();
+            // clientes = AdminModel.getObjetosClientes();
             // Configuro compbobox para autocompletado
-            autoCompleteNow();
+            //autoCompleteNow();
             // Seleciono el cliente en el combobx
-            cbClientes.SelectedValue = cliente.IdCliente;
+            MessageBox.Show("VENTA A UN CLIENTE ESPECIFICO: nombre: " + cliente.Nombre + " id: " + cliente.IdCliente);
 
         }
 
-        // Carga inicial formulario
+        // Detalle venta
         private void inicializarFormularioDetalleVenta(int idVenta, string fecha)
         {
             // Obtengo los clientes 
-            clientes = AdminModel.getObjetosClientes();
+           // clientes = AdminModel.getObjetosClientes();
             // Muestro nombre cliente
-            cbClientes.Text = cliente.Nombre;
+            //cbClientes.Text = cliente.Nombre;
             // Desabilito combobox
-            cbClientes.Enabled = false;
+            //cbClientes.Enabled = false;
+           
+            MessageBox.Show("DETALLE VENTA: nombre: " + cliente.Nombre + " id: " + cliente.IdCliente);
+            // Oculto el combobx de clientes
+            cbClientes.Visible = false;
+            // Muestro el nombre del cliente
+            lbNombreCliente.Text = "Cliente: " + cliente.Nombre;
             // Muestro la fecha de la venta
             dtpFecha.Text = fecha;
             // Desactivo la fecha
@@ -397,6 +420,8 @@ namespace Tienda.UserControls
         // Registrar venta
         private void btnAceptarVenta_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("aceptar venta idCliente: " + idCliente);
+            
             // Si el carrito no esta vacio
             if (dgvVenta.RowCount > 0)
             {
@@ -501,6 +526,7 @@ namespace Tienda.UserControls
             Application.Exit();
         }
 
+        // Volver
         private void btnVolver_Click(object sender, EventArgs e)
         {
             mostrarVentanaClientes();
