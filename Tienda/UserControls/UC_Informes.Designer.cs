@@ -96,7 +96,7 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(545, 20);
+            this.pictureBox13.Location = new System.Drawing.Point(19, 0);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(66, 67);
             this.pictureBox13.TabIndex = 133;
@@ -107,7 +107,7 @@
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label46.Location = new System.Drawing.Point(606, 52);
+            this.label46.Location = new System.Drawing.Point(91, 28);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(149, 39);
             this.label46.TabIndex = 132;

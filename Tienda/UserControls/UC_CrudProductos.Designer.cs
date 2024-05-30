@@ -37,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbPagos = new System.Windows.Forms.Label();
             this.panelNavegacionSuperior = new System.Windows.Forms.Panel();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.panelBuscador = new System.Windows.Forms.Panel();
             this.tbBuscar = new System.Windows.Forms.TextBox();
             this.pbBuscador = new System.Windows.Forms.PictureBox();
@@ -125,7 +126,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
-            this.lbTitulo = new System.Windows.Forms.Label();
             this.panelNavegacionSuperior.SuspendLayout();
             this.panelBuscador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscador)).BeginInit();
@@ -180,6 +180,17 @@
             this.panelNavegacionSuperior.Size = new System.Drawing.Size(1318, 47);
             this.panelNavegacionSuperior.TabIndex = 38;
             // 
+            // lbTitulo
+            // 
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.ForeColor = System.Drawing.Color.DimGray;
+            this.lbTitulo.Location = new System.Drawing.Point(16, 4);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(170, 39);
+            this.lbTitulo.TabIndex = 45;
+            this.lbTitulo.Text = "Productos";
+            // 
             // panelBuscador
             // 
             this.panelBuscador.BackColor = System.Drawing.Color.Transparent;
@@ -219,7 +230,7 @@
             // pbMostrarBuscador
             // 
             this.pbMostrarBuscador.Image = ((System.Drawing.Image)(resources.GetObject("pbMostrarBuscador.Image")));
-            this.pbMostrarBuscador.Location = new System.Drawing.Point(1175, 3);
+            this.pbMostrarBuscador.Location = new System.Drawing.Point(1199, 3);
             this.pbMostrarBuscador.Name = "pbMostrarBuscador";
             this.pbMostrarBuscador.Size = new System.Drawing.Size(36, 37);
             this.pbMostrarBuscador.TabIndex = 8;
@@ -1307,17 +1318,6 @@
             this.label46.Size = new System.Drawing.Size(265, 39);
             this.label46.TabIndex = 112;
             this.label46.Text = "Detalle producto";
-            // 
-            // lbTitulo
-            // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.ForeColor = System.Drawing.Color.DimGray;
-            this.lbTitulo.Location = new System.Drawing.Point(16, 8);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(170, 39);
-            this.lbTitulo.TabIndex = 45;
-            this.lbTitulo.Text = "Productos";
             // 
             // UC_CrudProductos
             // 

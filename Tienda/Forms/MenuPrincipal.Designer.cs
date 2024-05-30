@@ -138,15 +138,16 @@
             // 
             // btnClientes
             // 
+            this.btnClientes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClientes.BackgroundImage")));
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(3, 237);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(46, 45);
+            this.btnClientes.Size = new System.Drawing.Size(40, 38);
             this.btnClientes.TabIndex = 14;
             this.btnClientes.Tag = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
@@ -154,13 +155,14 @@
             // 
             // btnInventario
             // 
+            this.btnInventario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInventario.BackgroundImage")));
+            this.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnInventario.FlatAppearance.BorderSize = 0;
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnInventario.Image")));
             this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventario.Location = new System.Drawing.Point(3, 288);
+            this.btnInventario.Location = new System.Drawing.Point(3, 281);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(46, 45);
             this.btnInventario.TabIndex = 12;
@@ -170,13 +172,14 @@
             // 
             // btnVentas
             // 
+            this.btnVentas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVentas.BackgroundImage")));
+            this.btnVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentas.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(3, 339);
+            this.btnVentas.Location = new System.Drawing.Point(3, 332);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(46, 45);
             this.btnVentas.TabIndex = 16;
@@ -192,7 +195,7 @@
             this.btnMisVentas.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnMisVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnMisVentas.Image")));
             this.btnMisVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMisVentas.Location = new System.Drawing.Point(3, 390);
+            this.btnMisVentas.Location = new System.Drawing.Point(3, 383);
             this.btnMisVentas.Name = "btnMisVentas";
             this.btnMisVentas.Size = new System.Drawing.Size(46, 45);
             this.btnMisVentas.TabIndex = 17;
@@ -208,7 +211,7 @@
             this.btnInformes.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnInformes.Image = ((System.Drawing.Image)(resources.GetObject("btnInformes.Image")));
             this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformes.Location = new System.Drawing.Point(3, 441);
+            this.btnInformes.Location = new System.Drawing.Point(3, 434);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.Size = new System.Drawing.Size(46, 45);
             this.btnInformes.TabIndex = 15;
@@ -224,7 +227,7 @@
             this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 774);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 767);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 285, 3, 3);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(46, 45);
