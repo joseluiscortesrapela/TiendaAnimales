@@ -4,6 +4,7 @@ using Tienda.Models;
 using System;
 using System.Windows.Forms;
 using Tienda.Sesion;
+using System.Drawing;
 
 namespace Tienda
 {
@@ -17,6 +18,11 @@ namespace Tienda
             InitializeComponent();
             // Intencio el modelo de datos que controlara las peticiones  con la base de datos.
             loginModel = new LoginModel();
+
+            // Configurar el formulario para ser transparente
+            this.FormBorderStyle = FormBorderStyle.None; // Eliminar el borde del formulario
+            this.BackColor = Color.Magenta; // Establecer un color clave como color de fondo (puede ser cualquier color que no esté en la imagen)
+            this.TransparencyKey = Color.Magenta; // Establecer la clave de transparencia al mismo color de fondo
         }
 
 
