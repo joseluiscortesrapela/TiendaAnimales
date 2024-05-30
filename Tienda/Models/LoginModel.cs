@@ -106,13 +106,15 @@ namespace Tienda.Models
                 // Obtengo datos usuario 
                 int id = reader.GetInt32("idUsuario");
                 string nombre = reader.GetString("nombre");
+                string apellidos = reader.GetString("apellidos");
                 string tipo = reader.GetString("tipo");
 
-                Console.WriteLine("Sesion creada para el usuario id: " + id + " nombre: " + nombre );
+                Console.WriteLine("Sesion creada para el usuario id: " + id + " nombre: " + nombre + " apellidos: " + apellidos  );
 
                 // Creo la sesion con los datos basico del usaurio que se acaba de logear con exito.
                 SesionUsuario.Id = id;
                 SesionUsuario.Nombre = nombre;
+                SesionUsuario.Apellidos = apellidos;
                 SesionUsuario.Tipo = tipo;
 
             }

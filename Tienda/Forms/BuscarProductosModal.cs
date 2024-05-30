@@ -109,7 +109,7 @@ namespace Tienda.Forms
         }
 
         // Devuelve el objeto 
-        public Producto dameProducto()
+        public Producto dameElProductoSeleccionado()
         {
             return producto;
         }

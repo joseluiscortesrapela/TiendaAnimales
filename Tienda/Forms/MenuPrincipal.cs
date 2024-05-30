@@ -12,17 +12,13 @@ namespace Tienda.Forms
         public MenuPrincipal()
         {
             InitializeComponent();
-           
-            // Obtengo el id
+
+            // Obtengo el id 
             idUsuario = SesionUsuario.Id;
-            // Nombre del usuario
-            lbUsuario.Text = SesionUsuario.Nombre;
             // Obtengo el tipo o rol
             tipo = SesionUsuario.Tipo;
-
-            // Muestro el menu principal segun tipo usuario.
-           // prepararInterfazUsuario(tipo);
-
+            // Muestro el nombre  
+            lbUsuario.Text = SesionUsuario.Nombre;
         }
 
         // Prepara interfaz del usuaqrio dependiendo del tipo o rol 
@@ -57,9 +53,6 @@ namespace Tienda.Forms
         // Auto load ventana
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            // Muestro nombre usuario
-            lbUsuario.Text = SesionUsuario.Nombre;
-            lbTipoUsuario.Text = SesionUsuario.Tipo;
 
             // Asigna el texto del tooltip al botón btnClientes
             toolTip.SetToolTip(btnClientes, "Clientes");
@@ -84,10 +77,9 @@ namespace Tienda.Forms
             // Agregar el UserControl al panel contenedor
             panelContenedor.Controls.Add(userControl);
 
-            Console.WriteLine("Muestro user control");
         }
 
-      
+
 
         // Cierra la sesion actual
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -113,7 +105,7 @@ namespace Tienda.Forms
             panelContenedor.Visible = false;
         }
 
-        
+
         // Se ha pulsado el boton clientes desde el menu principal
         private void btnClientes_Click(object sender, EventArgs e)
         {

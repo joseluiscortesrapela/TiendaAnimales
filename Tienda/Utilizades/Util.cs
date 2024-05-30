@@ -30,8 +30,12 @@ namespace Tienda.Utilizades
 
         }
 
-           
-      
+        // Redondea un numero con un maximo de dos decimales
+        public static decimal redondearADosDecimales(decimal numero)
+        {
+            return Math.Round(numero, 2);
+        }
+
 
     }
 }

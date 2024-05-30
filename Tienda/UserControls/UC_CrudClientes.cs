@@ -542,7 +542,7 @@ namespace Tienda.UserControls
             // Obtengo el identificador
             int idVenta = int.Parse(filaVenta.Cells["idVenta"].Value.ToString());
             // Mensaje que vera el usuario
-            String message = "Quieres eliminar la venta con nº: " + idVenta;
+            String message = "Quieres eliminar la venta con nº: " + idVenta + " del cliente " + cliente.Nombre + ", " + cliente.Apellidos;
             // Titulo de la ventana emergente.
             String caption = "Eliminar cliente";
             // Muestro mensaje y obtengo el boton que ha seleccionado

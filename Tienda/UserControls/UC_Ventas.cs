@@ -14,6 +14,7 @@ using Tienda.Entidades;
 using Tienda.Forms;
 using Tienda.Models;
 using Tienda.Sesion;
+using Tienda.Utilizades;
 
 namespace Tienda.UserControls
 {
@@ -187,7 +188,7 @@ namespace Tienda.UserControls
             Console.WriteLine("Cliente selecciionado: " + idCliente);
         }
 
-        // Muestra ventana modal para elegir el producto que quiere añadir al la compra.
+        // Añade un producto al carrito o actualiza uno existente
         private void btnMostrarBuscadorProductosModal_Click(object sender, EventArgs e)
         {
             // Instancio objeto
@@ -196,8 +197,8 @@ namespace Tienda.UserControls
             // Si le ha dado al boton aceptar
             if (modal.ShowDialog() == DialogResult.OK)
             {
-                // Acceder a los datos seleccionados por el usuario en la ventana modal
-                Producto producto = modal.dameProducto();
+                // Obtengo el producto que queire añadir al carrito
+                Producto producto = modal.dameElProductoSeleccionado();
 
                 // Si el producto ya estaba en la cesta de la compra
                 if (siProductoExiste(producto.Id))
@@ -245,10 +246,10 @@ namespace Tienda.UserControls
                 // Calculo total
                 decimal total = (subtotal - descuento) + impuestos;
 
-                // Muestro el subtotal 
-                fila.Cells["subtotal"].Value = subtotal;
-                // Muestro el total
-                fila.Cells["total"].Value = total;
+                // Muestro el subtotal, con su valor redondeado 
+                fila.Cells["subtotal"].Value = Util.redondearADosDecimales( subtotal );
+                // Muestro el total, con su valor redondeado
+                fila.Cells["total"].Value = Util.redondearADosDecimales( total );
 
             }
         }
@@ -261,7 +262,10 @@ namespace Tienda.UserControls
             int totalDescuentos = obtenerTotalDescuentos();
             // Obtengo el total a pagar
             decimal totalAPagar = ObtenerTotales();
-
+            // Redondeo el total a pagar a un maximo de dos decimales
+            totalAPagar = Util.redondearADosDecimales(totalAPagar);
+            // Redondeo el subtotal
+            subtotales = Util.redondearADosDecimales(subtotales);
             // Muestro la suma de los subtotales
             lbSubtotal.Text = subtotales.ToString();
             // Muestro la suma de todos los totales
@@ -354,7 +358,7 @@ namespace Tienda.UserControls
             return productoExiste;
         }
 
-        // Actualiza un producto en el carrito de compra
+        // Actualiza el producto dentro del carrito de compra, el producto ya existe, actuliza cantidad y total
         private void actualizarProductoCarrito(Producto producto)
         {
             // Recorro los productos
@@ -374,7 +378,6 @@ namespace Tienda.UserControls
                     fila.Cells["iva"].Value = producto.Iva;
                     fila.Cells["descuento"].Value = producto.Descuento;
                     fila.Cells["precio"].Value = producto.Precio;
-
                 }
             }
 

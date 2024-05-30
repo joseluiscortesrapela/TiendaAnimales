@@ -47,7 +47,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(257, 293);
+            this.label1.Location = new System.Drawing.Point(233, 293);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 44;
@@ -59,7 +59,7 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Uighur", 20F);
             this.buttonLogin.ForeColor = System.Drawing.Color.FloralWhite;
-            this.buttonLogin.Location = new System.Drawing.Point(243, 353);
+            this.buttonLogin.Location = new System.Drawing.Point(201, 343);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(125, 45);
             this.buttonLogin.TabIndex = 42;
@@ -73,7 +73,7 @@
             this.labelMensajeLogin.BackColor = System.Drawing.Color.Transparent;
             this.labelMensajeLogin.Font = new System.Drawing.Font("Microsoft Uighur", 20F);
             this.labelMensajeLogin.ForeColor = System.Drawing.Color.Snow;
-            this.labelMensajeLogin.Location = new System.Drawing.Point(196, 321);
+            this.labelMensajeLogin.Location = new System.Drawing.Point(172, 321);
             this.labelMensajeLogin.Name = "labelMensajeLogin";
             this.labelMensajeLogin.Size = new System.Drawing.Size(0, 36);
             this.labelMensajeLogin.TabIndex = 45;
@@ -85,7 +85,7 @@
             this.tbContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbContraseña.Font = new System.Drawing.Font("Microsoft Uighur", 25F);
             this.tbContraseña.ForeColor = System.Drawing.SystemColors.Menu;
-            this.tbContraseña.Location = new System.Drawing.Point(163, 269);
+            this.tbContraseña.Location = new System.Drawing.Point(139, 269);
             this.tbContraseña.MaxLength = 12;
             this.tbContraseña.Name = "tbContraseña";
             this.tbContraseña.Size = new System.Drawing.Size(259, 37);
@@ -101,7 +101,7 @@
             this.tbCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbCorreo.Font = new System.Drawing.Font("Microsoft Uighur", 25F);
             this.tbCorreo.ForeColor = System.Drawing.Color.White;
-            this.tbCorreo.Location = new System.Drawing.Point(163, 198);
+            this.tbCorreo.Location = new System.Drawing.Point(139, 198);
             this.tbCorreo.MaxLength = 50;
             this.tbCorreo.Name = "tbCorreo";
             this.tbCorreo.Size = new System.Drawing.Size(259, 37);
@@ -114,9 +114,9 @@
             // 
             this.pbExit.BackColor = System.Drawing.Color.Transparent;
             this.pbExit.Image = ((System.Drawing.Image)(resources.GetObject("pbExit.Image")));
-            this.pbExit.Location = new System.Drawing.Point(426, 27);
+            this.pbExit.Location = new System.Drawing.Point(305, 12);
             this.pbExit.Name = "pbExit";
-            this.pbExit.Size = new System.Drawing.Size(21, 21);
+            this.pbExit.Size = new System.Drawing.Size(30, 32);
             this.pbExit.TabIndex = 50;
             this.pbExit.TabStop = false;
             this.pbExit.Click += new System.EventHandler(this.pbExit_Click_1);
@@ -132,7 +132,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Uighur", 65F);
             this.label2.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label2.Location = new System.Drawing.Point(224, 9);
+            this.label2.Location = new System.Drawing.Point(224, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(189, 113);
             this.label2.TabIndex = 51;
