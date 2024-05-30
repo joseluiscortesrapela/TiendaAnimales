@@ -5,6 +5,7 @@ using System;
 using System.Windows.Forms;
 using Tienda.Sesion;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace Tienda
 {
@@ -25,6 +26,23 @@ namespace Tienda
             this.TransparencyKey = Color.Magenta; // Establecer la clave de transparencia al mismo color de fondo
         }
 
+
+        // Suaviza los bordes de la imagen
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Aplicar suavizado de bordes a la imagen de fondo
+            using (var path = new GraphicsPath())
+            {
+                path.AddEllipse(ClientRectangle); // Puedes usar cualquier forma aquí (por ejemplo, Rectangle)
+                using (var pen = new Pen(Color.Transparent))
+                {
+                    e.Graphics.DrawPath(pen, path);
+                }
+            }
+
+        }
 
         // Login usuario
         private void login_Click(object sender, EventArgs e)
@@ -48,7 +66,7 @@ namespace Tienda
                     // Instancio objeto
                     var menu = new MenuPrincipal();
                     // Gaurdo la referencia del objeto globalmente
-                    SesionPrograma.guardarReferenciaMenuPrincipal( menu );
+                    SesionPrograma.guardarReferenciaMenuPrincipal(menu);
                     // Muestro la ventana
                     menu.Show();
                 }
