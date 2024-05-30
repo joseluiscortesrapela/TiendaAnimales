@@ -112,6 +112,8 @@
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(16, 292);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
+            this.dgvProductos.RowHeadersVisible = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -220,6 +222,7 @@
             // tbCategoria
             // 
             this.tbCategoria.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbCategoria.Enabled = false;
             this.tbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCategoria.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.tbCategoria.Location = new System.Drawing.Point(361, 87);

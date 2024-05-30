@@ -121,16 +121,19 @@ namespace Tienda.Forms
             mostrarUserControl(new UC_CrudClientes());
         }
 
+        // Muestro la ventana de informes
         private void btnInformes_Click(object sender, EventArgs e)
         {
             mostrarUserControl(new UC_Informes());
         }
 
+        // Muestro la ventana de ventas
         private void btnVentas_Click(object sender, EventArgs e)
         {
             mostrarUserControl(new UC_Ventas());
         }
 
+        // Muestro la ventana de inventario con los productos
         private void btnInventario_Click(object sender, EventArgs e)
         {
             mostrarUserControl(new UC_CrudProductos());

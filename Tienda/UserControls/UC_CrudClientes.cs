@@ -23,32 +23,29 @@ namespace Tienda.UserControls
         {
             InitializeComponent();
             // Obtengo todos los clientes  y los guardo en el dgv
-            cargarrDgvClientes(); 
+            cargarrDgvClientes();
         }
 
-        public UC_CrudClientes(int idCliente)
+        public UC_CrudClientes( Cliente cliente)
         {
             InitializeComponent();
+            // Guardo cliente
+            this.cliente = cliente;
             // Obtengo todos los clientes  y los guardo en el dgv
             cargarrDgvClientes();
-
-            Console.WriteLine("constructor clientes id: " + idCliente );
-
             // Mostrar el dgv de ventas del cliente
-            seleccionarFilaDGVClientes( idCliente);
+            seleccionarFilaDGVClientes();
         }
 
 
-        private void seleccionarFilaDGVClientes(int idCliente)
+        private void seleccionarFilaDGVClientes()
         {
-
 
             foreach (DataGridViewRow fila in dgvClientes.Rows)
             {
                 // Verificar que el valor de la celda no sea nulo y convertir a entero
-                if (fila.Cells["idCliente"].Value != null && Convert.ToInt32(fila.Cells["idCliente"].Value) == idCliente)
+                if (fila.Cells["idCliente"].Value != null && Convert.ToInt32(fila.Cells["idCliente"].Value) == cliente.IdCliente)
                 {
-                    Console.WriteLine("Cliente encontrado: " + fila.Cells["nombre"].Value);
 
                     // Simular el clic en la fila encontrada
                     if (fila.Selected == false)
@@ -81,7 +78,7 @@ namespace Tienda.UserControls
 
         }
 
-        private void personalizarDGVClientes()
+        private void ocultarColumnasDelDGVClientes()
         {
             // Oculto las siguientes columnas
             dgvClientes.Columns["idCliente"].Visible = false;
@@ -93,7 +90,7 @@ namespace Tienda.UserControls
         private void UC_CrudClientes_Load(object sender, EventArgs e)
         {
             // personalizo dgv
-            personalizarDGVClientes();
+            ocultarColumnasDelDGVClientes();
             // Guardo referencia del menu principal.
             this.menuPrincipal = SesionPrograma.ObtenerMenuPrincipal();
         }
@@ -146,9 +143,10 @@ namespace Tienda.UserControls
                 // Compruebo que no este vacio
                 if (dgvVentas.Rows.Count >= 0)
                 {
-                    mostrarPanelVentas();
-                    // Muestro nombre del cliente
+                    // Muestro datos del clietne que acaba de ser selecionado.
                     lbClienteSelecionado.Text = "El cliente/a " + nombre + ", " + apellidos + " tiene registradas " + dgvVentas.RowCount + " compras.";
+                    // Muestro panel
+                    mostrarPanelVentas();
                 }
                 else
                 {
@@ -189,16 +187,6 @@ namespace Tienda.UserControls
         {
             // Obtengo todos los clientes  y los guardo en el dgv
             dgvClientes.DataSource = AdminModel.getClientes();
-        }
-
-  
-
-
-        // Obtengo todos las ventas
-        private void cargarrDgvVenta()
-        {
-            // Obtengo todos los clientes  y los guardo en el dgv
-            dgvVentas.DataSource = AdminModel.getVentas();
         }
 
 

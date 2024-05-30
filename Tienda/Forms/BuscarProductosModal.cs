@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tienda.Entidades;
 using Tienda.Models;
@@ -24,7 +17,16 @@ namespace Tienda.Forms
             InitializeComponent();
             // Obtengo todos los productos de la base de datos y los muestro en el dgv
             cargarProductosDGV();
+            // Ocutlo columnas del dgv
+            ocultarColumnasDelDGV();
         }
+
+        private void ocultarColumnasDelDGV()
+        {
+            dgvProductos.Columns["idProducto"].Visible = false;
+            dgvProductos.Columns["descripcion"].Visible = false;
+            dgvProductos.Columns["categoria"].Visible = false;
+       }
 
         // Auto load
         private void BuscarProductosModal_Load(object sender, EventArgs e)

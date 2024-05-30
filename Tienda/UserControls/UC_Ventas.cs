@@ -38,7 +38,7 @@ namespace Tienda.UserControls
             // Inicializo datos base formulario
             inicializarFormularioCrearUnaNuevaVentaAQuialiarCliente();
             // Muestro tipo constructor
-            Console.WriteLine("Ventas: 1º consctructo");
+            Console.WriteLine("Ventas: 1º consctructor");
         }
 
         // 2º Constructor: crea la venta a un cliente especifico, vienes desde la ventana ce clientes
@@ -49,11 +49,10 @@ namespace Tienda.UserControls
             this.cliente = cliente;
             // Guardo el id del cliente
             idCliente = cliente.IdCliente;
-           
             // Inicializo datos base formulario
             inicializarFormularioCrearVentaAUnClienteEspecifico();
-         
-            Console.WriteLine("Ventas: 2º consctructo");
+
+            Console.WriteLine("Ventas: 2º consctructor");
 
         }
 
@@ -65,11 +64,10 @@ namespace Tienda.UserControls
             this.cliente = cliente;
             // Guardo el id del cliente
             idCliente = cliente.IdCliente;
-           
             // Inicializo datos base formulario
             inicializarFormularioDetalleVenta(idVenta, fecha);
-       
-            Console.WriteLine("Ventas: 3º consctructo");
+
+            Console.WriteLine("Ventas: 3º consctructor");
 
         }
 
@@ -95,6 +93,8 @@ namespace Tienda.UserControls
             clientes = AdminModel.getObjetosClientes();
             // Configuro compbobox para autocompletado
             autoCompleteNow();
+            // Obtengo los clientes 
+            clientes = AdminModel.getObjetosClientes();
         }
 
         // Carga inicial formulario
@@ -103,27 +103,14 @@ namespace Tienda.UserControls
             // Oculto el combobx de clientes
             cbClientes.Visible = false;
             // Muestro el nombre del cliente
-            lbNombreCliente.Text =  "Cliente: " + cliente.Nombre;
-            // Obtengo los clientes 
-            // clientes = AdminModel.getObjetosClientes();
-            // Configuro compbobox para autocompletado
-            //autoCompleteNow();
-            // Seleciono el cliente en el combobx
-            MessageBox.Show("VENTA A UN CLIENTE ESPECIFICO: nombre: " + cliente.Nombre + " id: " + cliente.IdCliente);
+            lbNombreCliente.Text = "Cliente: " + cliente.Nombre;
 
         }
 
         // Detalle venta
         private void inicializarFormularioDetalleVenta(int idVenta, string fecha)
         {
-            // Obtengo los clientes 
-           // clientes = AdminModel.getObjetosClientes();
-            // Muestro nombre cliente
-            //cbClientes.Text = cliente.Nombre;
-            // Desabilito combobox
-            //cbClientes.Enabled = false;
-           
-            MessageBox.Show("DETALLE VENTA: nombre: " + cliente.Nombre + " id: " + cliente.IdCliente);
+
             // Oculto el combobx de clientes
             cbClientes.Visible = false;
             // Muestro el nombre del cliente
@@ -138,8 +125,20 @@ namespace Tienda.UserControls
             cargarDGVDetallesVenta(idVenta);
             // Oculto columna
             dgvVenta.Columns["idProducto"].Visible = false;
+            // Amplio el ancho de la columna nombre producto
+            dgvVenta.Columns["producto"].Width = 573;
+            // Amplio el ancho de la columna categoria
+            dgvVenta.Columns["categoria"].Width = 120;
+            // Centrar el contenido de la columna "cantidad"
+            dgvVenta.Columns["cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            // Centrar el contenido de la columna "descuento"
+            dgvVenta.Columns["descuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             // Muestro titulo
             lbTitulo.Text = "Detalles de la venta";
+            // Oculto boton para crear una venta
+            btnRealizarVenta.Visible = false;
+            // Muestro boton para realizar una devolucion
+            btnAceptarDevolucion.Visible = true;
             // Muestrar el subtotal, total a pagar
             calcularFilasCarrito();
             // Recalcula 
@@ -184,6 +183,8 @@ namespace Tienda.UserControls
         {
             // Obtengo el id del cliente que acaba de ser selecionado 
             idCliente = int.Parse(cbClientes.SelectedValue.ToString());
+            // Muestro por consola el id del cliente selecionado
+            Console.WriteLine("Cliente selecciionado: " + idCliente);
         }
 
         // Muestra ventana modal para elegir el producto que quiere añadir al la compra.
@@ -263,8 +264,6 @@ namespace Tienda.UserControls
 
             // Muestro la suma de los subtotales
             lbSubtotal.Text = subtotales.ToString();
-            // Muestro el descuetno 
-            lbDescuentos.Text = totalDescuentos.ToString();
             // Muestro la suma de todos los totales
             lbTotalAPagar.Text = totalAPagar.ToString();
 
@@ -417,11 +416,10 @@ namespace Tienda.UserControls
             btnEliminar.Visible = true;
         }
 
-        // Registrar venta
+        // Registrar una nueva venga
         private void btnAceptarVenta_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("aceptar venta idCliente: " + idCliente);
-            
+
             // Si el carrito no esta vacio
             if (dgvVenta.RowCount > 0)
             {
@@ -461,12 +459,23 @@ namespace Tienda.UserControls
                         carritoCompra.Add(venta);
 
                     }
-
-                    // Registro el detalle venta
+                    // Si la venta y el detalle venta se han creado con exito, hemos terminado.
                     if (AdminModel.registrarDetalleVenta(carritoCompra))
                     {
-                        Console.WriteLine("Registrada venta");
-                        mostrarVentanaClientes();
+                        Console.WriteLine("Registrada la venta");
+
+                        if (cliente == null)
+                        {
+                            lbMensajeGeneral.Text = "Venta realizada con exito!";
+                        }
+                        else
+                        {
+                            Console.WriteLine("no es nulo");
+                            mostrarVentanaClientes();
+                        }
+
+
+
                     }
 
                 }
@@ -480,6 +489,8 @@ namespace Tienda.UserControls
                 // Oculto mensaje transcurrido unos segundos
                 mostrarMensajeYOcultarloAutomaticamente();
             }
+
+
         }
 
         // Obtengo la fila que ha sido selecionada en el dgv ventas
@@ -512,13 +523,11 @@ namespace Tienda.UserControls
 
         private void mostrarVentanaClientes()
         {
-            Console.WriteLine("Volver ventana clientes id: " + idCliente);
             // Crear una instancia del UserControl de clientes
-            UC_CrudClientes ventanaClientes = new UC_CrudClientes(idCliente);
+            UC_CrudClientes ventanaClientes = new UC_CrudClientes(cliente);
             // Llamar al método del formulario principal para cambiar el contenido del panel contenedor
             menuPrincipal.mostrarUserControl(ventanaClientes);
         }
-
 
         // Se cierra el programa
         private void pbExit_Click(object sender, EventArgs e)
@@ -530,6 +539,12 @@ namespace Tienda.UserControls
         private void btnVolver_Click(object sender, EventArgs e)
         {
             mostrarVentanaClientes();
+        }
+
+        // Realizar devolucion, actualizar una venta
+        private void btnAceptarDevolucion_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Detalle venta, realizar devoucion, actualizar venta");
         }
     }
 }
