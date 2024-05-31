@@ -366,14 +366,14 @@
             this.panelLogo.Location = new System.Drawing.Point(911, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(410, 197);
+            this.panelLogo.Size = new System.Drawing.Size(410, 117);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(92, 89);
+            this.pictureBox2.Location = new System.Drawing.Point(48, 60);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 42);
             this.pictureBox2.TabIndex = 11;
@@ -395,7 +395,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Matura MT Script Capitals", 35F);
             this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label1.Location = new System.Drawing.Point(78, 32);
+            this.label1.Location = new System.Drawing.Point(34, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(299, 62);
             this.label1.TabIndex = 6;
@@ -407,7 +407,7 @@
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Font = new System.Drawing.Font("Matura MT Script Capitals", 25F);
             this.lbUsuario.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lbUsuario.Location = new System.Drawing.Point(128, 86);
+            this.lbUsuario.Location = new System.Drawing.Point(84, 57);
             this.lbUsuario.Name = "lbUsuario";
             this.lbUsuario.Size = new System.Drawing.Size(151, 45);
             this.lbUsuario.TabIndex = 8;

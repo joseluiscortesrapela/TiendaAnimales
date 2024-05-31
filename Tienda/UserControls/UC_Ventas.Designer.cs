@@ -70,6 +70,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAceptarDevolucion = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostrarBuscadorProductosModal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -88,7 +89,6 @@
             this.dgvVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvVenta.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvVenta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -295,9 +295,9 @@
             // btnMostrarBuscadorProductosModal
             // 
             this.btnMostrarBuscadorProductosModal.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarBuscadorProductosModal.Image")));
-            this.btnMostrarBuscadorProductosModal.Location = new System.Drawing.Point(1289, 128);
+            this.btnMostrarBuscadorProductosModal.Location = new System.Drawing.Point(1253, 94);
             this.btnMostrarBuscadorProductosModal.Name = "btnMostrarBuscadorProductosModal";
-            this.btnMostrarBuscadorProductosModal.Size = new System.Drawing.Size(36, 36);
+            this.btnMostrarBuscadorProductosModal.Size = new System.Drawing.Size(36, 33);
             this.btnMostrarBuscadorProductosModal.TabIndex = 21;
             this.btnMostrarBuscadorProductosModal.TabStop = false;
             this.btnMostrarBuscadorProductosModal.Click += new System.EventHandler(this.btnMostrarBuscadorProductosModal_Click);
@@ -403,7 +403,7 @@
             this.lbMensajeGeneral.AutoSize = true;
             this.lbMensajeGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensajeGeneral.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lbMensajeGeneral.Location = new System.Drawing.Point(530, 584);
+            this.lbMensajeGeneral.Location = new System.Drawing.Point(489, 538);
             this.lbMensajeGeneral.Name = "lbMensajeGeneral";
             this.lbMensajeGeneral.Size = new System.Drawing.Size(0, 24);
             this.lbMensajeGeneral.TabIndex = 38;
@@ -441,7 +441,7 @@
             this.btnAceptarDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptarDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptarDevolucion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAceptarDevolucion.Location = new System.Drawing.Point(571, 650);
+            this.btnAceptarDevolucion.Location = new System.Drawing.Point(571, 609);
             this.btnAceptarDevolucion.Name = "btnAceptarDevolucion";
             this.btnAceptarDevolucion.Size = new System.Drawing.Size(192, 35);
             this.btnAceptarDevolucion.TabIndex = 46;
@@ -450,11 +450,23 @@
             this.btnAceptarDevolucion.Visible = false;
             this.btnAceptarDevolucion.Click += new System.EventHandler(this.btnAceptarDevolucion_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.SlateGray;
+            this.label2.Location = new System.Drawing.Point(1114, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 20);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "Agregar producto";
+            // 
             // UC_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAceptarDevolucion);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
@@ -518,5 +530,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Label label2;
     }
 }

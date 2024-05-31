@@ -26,8 +26,12 @@ namespace Tienda.UserControls
         private int idCliente;
         // el cliente 
         private Cliente cliente;
+        // Identificador de la venta
+        private int idVenta;
         // La fila selecionada
         private DataGridViewRow fila;
+        // Lista de productos eliminados del carrito
+        private List<int> listaProductosEliminados;
         // Dasdboard
         private MenuPrincipal menuPrincipal;
 
@@ -64,7 +68,11 @@ namespace Tienda.UserControls
             // Guardo la referencia del cliente
             this.cliente = cliente;
             // Guardo el id del cliente
-            idCliente = cliente.IdCliente;
+            this.idCliente = cliente.IdCliente;
+            // Guardo el id de la venta que quiere hacer la devolucion.
+            this.idVenta = idVenta;
+            // Creo un array vacio para guardar los id de los productos eliminados del carrito de compra.
+            listaProductosEliminados = new List<int>();
             // Inicializo datos base formulario
             inicializarFormularioDetalleVenta(idVenta, fecha);
 
@@ -247,9 +255,9 @@ namespace Tienda.UserControls
                 decimal total = (subtotal - descuento) + impuestos;
 
                 // Muestro el subtotal, con su valor redondeado 
-                fila.Cells["subtotal"].Value = Util.redondearADosDecimales( subtotal );
+                fila.Cells["subtotal"].Value = Util.redondearADosDecimales(subtotal);
                 // Muestro el total, con su valor redondeado
-                fila.Cells["total"].Value = Util.redondearADosDecimales( total );
+                fila.Cells["total"].Value = Util.redondearADosDecimales(total);
 
             }
         }
@@ -383,12 +391,15 @@ namespace Tienda.UserControls
 
         }
 
-        // Elimina un venta
+        // Elimina un producto del carrtio de compra 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            // Su id
+            int idProducto = int.Parse( fila.Cells["idProducto"].Value.ToString() );
+            // Nombre del producto
+            string nombre = fila.Cells["producto"].Value.ToString();
             // Mensaje que vera el usuario
-            String message = "Quieres eliminar " + fila.Cells["producto"].Value + " ?";
+            String message = "Quieres eliminar producto id = " + idProducto + " " + nombre + " ?";
             // Titulo de la ventana  
             String caption = "Eliminar producto";
             // Muestro mensaje y obtengo el boton que ha seleccionado
@@ -397,9 +408,11 @@ namespace Tienda.UserControls
             // Si quiere eliminar  
             if (result == DialogResult.Yes)
             {
-                // Eliminar la fila seleccionada
+                // Eliminar la fila seleccionada del dgv
                 dgvVenta.Rows.Remove(fila);
-                // Actualizo 
+                // Guardo en el array el identificador del produto eiminado
+                listaProductosEliminados.Add( idProducto );
+                // Actualizo sutotal y total
                 recalcular();
                 // Oculto botones 
                 ocultarBotonesAccion();
@@ -423,7 +436,7 @@ namespace Tienda.UserControls
         private void btnAceptarVenta_Click(object sender, EventArgs e)
         {
 
-            // Si el carrito no esta vacio
+            // Si hay productos en el carrito de compra.
             if (dgvVenta.RowCount > 0)
             {
                 // Obtener la fecha seleccionada por el usuario
@@ -436,7 +449,7 @@ namespace Tienda.UserControls
                 // Si ha registrado la venta en la base de datos
                 if (AdminModel.registrarVenta(idCliente, fecha, totalAPagar))
                 {
-                    // Obtengo el id de la venta
+                    // Obtengo el id del ultimo registro que se creo de la tabla ventas
                     int idVenta = AdminModel.getUltimoIdVenta();
                     // Creo una lista vacia
                     List<DetalleVenta> carritoCompra = new List<DetalleVenta>();
@@ -467,17 +480,16 @@ namespace Tienda.UserControls
                     {
                         Console.WriteLine("Registrada la venta");
 
+                        // Si el valor del objeto es null, queiere decir que he entrado desde me menu principal y no requiere regresar
                         if (cliente == null)
-                        {
+                        {  // Muestro mensaje al usaruio en la misma venta de ventas
                             lbMensajeGeneral.Text = "Venta realizada con exito!";
                         }
                         else
                         {
-                            Console.WriteLine("no es nulo");
+                            // Regreso a la ventan de clientes
                             mostrarVentanaClientes();
                         }
-
-
 
                     }
 
@@ -485,15 +497,22 @@ namespace Tienda.UserControls
 
             } // Si el carrito esta vacio, sin productos
             else
-            {   // Muestro mensaje 
-                lbMensajeGeneral.Text = "No hay productos en el carrito de compra.";
-                // Cambia el color del texto a rojo
-                lbMensajeGeneral.ForeColor = Color.Red;
-                // Oculto mensaje transcurrido unos segundos
-                mostrarMensajeYOcultarloAutomaticamente();
+            {
+                mostrarMensajeGeneral("No hay productos en el carrito de compra.");
             }
 
 
+        }
+
+        // Muestra mensaje general en la ventan de ventas
+        private void mostrarMensajeGeneral(string mensaje)
+        {
+            // Muestro mensaje 
+            lbMensajeGeneral.Text = mensaje;
+            // Cambia el color del texto a rojo
+            lbMensajeGeneral.ForeColor = Color.Tomato;
+            // Oculto mensaje transcurrido unos segundos
+            mostrarMensajeYOcultarloAutomaticamente();
         }
 
         // Obtengo la fila que ha sido selecionada en el dgv ventas
@@ -547,7 +566,20 @@ namespace Tienda.UserControls
         // Realizar devolucion, actualizar una venta
         private void btnAceptarDevolucion_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Detalle venta, realizar devoucion, actualizar venta");
+            // Si hay productos en el carrito de compra
+            if (dgvVenta.RowCount > 0)
+            {
+                // Eliminar productos
+
+
+                
+
+            } // Sino esta vacio
+            else
+            {   // Muestro mensaje
+                mostrarMensajeGeneral("No hay productos en el carrito de compra.");
+            }
+
         }
     }
 }

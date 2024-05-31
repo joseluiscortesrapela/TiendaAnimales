@@ -30,7 +30,7 @@ namespace Tienda.UserControls
         // Auto load ventana 
         private void UC_CrudProductos_Load(object sender, EventArgs e)
         {
-            Util.CambiarColorFilasDependiendoDeSuStock( dgvProductos );
+            Util.CambiarColorFilasDependiendoDeSuStock(dgvProductos);
         }
 
         // Obtengo el producto que ha sido seleccionada en el dgv
@@ -133,6 +133,10 @@ namespace Tienda.UserControls
                     break;
 
             }
+
+            // Oculto el panel superior donde esta el buscador
+            panelNavegacionSuperior.Visible = false;
+
             Console.WriteLine("Muestro formulario: " + formulario);
         }
 
@@ -155,7 +159,7 @@ namespace Tienda.UserControls
                     lbMensajeGeneral.Text = "Acabas de eliminar el producto";
                     // Actualizo la lista de productos
                     cargarProductosDGV();
-                }            
+                }
 
             }
 
@@ -173,23 +177,123 @@ namespace Tienda.UserControls
         private void btnCrearProducto_Click(object sender, EventArgs e)
         {
 
-            // Obtengo datos del formulario crear producto
+            // Obtengo datos del formulario crear producto, primero los texto para evitar excepciones.
             string nombre = tbNombre.Text;
             string categoria = cbCategoria.Text.ToString();
-            decimal precio = decimal.Parse(tbPrecio.Text.ToString());
-            int stock = int.Parse( nudStock.Value.ToString() );
             string descripcion = tbDescripcion.Text.Trim();
 
-            // Creo un objeto de tipo producto
-            Producto producto = new Producto(nombre, categoria, precio, stock, descripcion);
+            // Si los los datos del formulario son correctos
+            if (validarFormulario(nombre, categoria, descripcion))
+            {
+                Console.WriteLine("Datos formulario validos");
+                // Obtengo resto de campos del formulario
+                int stock = int.Parse(nudStock.Value.ToString()); // El stock
+                decimal precio = 0;
+                decimal.TryParse( tbPrecio.Text, out precio);
+                     
+                // Creo un objeto de tipo producto
+                Producto producto = new Producto(nombre, categoria, precio, stock, descripcion);
 
-            // Si ha guardado el producto 
-            if (AdminModel.registrarProducto(producto))
-            {   // Muestro mensaje 
-                lbMensajeCrearProducto.Text = "Acabas de crear un nuevo producto";
-                mostrarMensajeTimer();
+                // Si ha guardado el producto 
+                if (AdminModel.registrarProducto(producto))
+                {   // Muestro mensaje 
+                    lbMensajeCrearProducto.Text = "Acabas de crear un nuevo producto";
+                    // Activo el timer
+                    mostrarMensajeTimer();
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Formulario incorrecto");
             }
 
+
+
+        }
+
+        // Valida datos del formulario
+        private bool validarFormulario(string nombre, string categoria, string descripcion)
+        {
+
+            bool estado = true;
+
+            // Si el nombre del producto esta vacio
+            if (Validacion.isEstaUnaVacia(nombre))
+            {
+                estado = false;
+                error.SetError(tbNombre, "Introduce el nombre del producto");
+            }
+            else
+            {
+                error.SetError(tbNombre, "");
+            }
+
+
+            // Si no se ha seleccionado una cateogira
+            if (Validacion.isEstaUnaVacia(categoria))
+            {
+                estado = false;
+                error.SetError(cbCategoria, "Selecciona una categoria");
+            }
+            else
+            {
+                error.SetError(cbCategoria, "");
+            }
+
+
+            // Si la decripcion esta vacia
+            if (Validacion.isEstaUnaVacia(descripcion))
+            {
+                estado = false;
+                error.SetError(tbDescripcion, "Introduce la descripción");
+            }
+            else
+            {
+                error.SetError(tbDescripcion, "");
+            }
+
+            // Si no ha selecionado ninguna categoria
+            if (cbCategoria.SelectedIndex == -1)
+            {
+                estado = false;
+                error.SetError(cbCategoria, "Selecciona una categoria");
+            }
+            else
+            {
+                error.SetError(cbCategoria, "");
+            }
+
+            // Obtengo el valor del stock
+            string valorNud = nudStock.Value.ToString().Trim();
+
+            // La cadena está vacía, es igual a "0" o no es un número entero válido
+            if (string.IsNullOrWhiteSpace(valorNud) || valorNud == "0" || !int.TryParse(valorNud, out _))
+            {
+                estado = false;
+                error.SetError(nudStock, "Introduce el stock");
+            }
+            else
+            {
+                error.SetError(nudStock, "");
+            }
+
+            string precioString = tbPrecio.Text;
+
+            // Sino es un numero decimal con un maximo de dos decimales
+            if (!Validacion.siEsNumeroDecimal(precioString))
+            {
+                estado = false;
+                error.SetError(tbPrecio, "Introduce un numero decimal con punto y maximo 2 decimales");
+            }
+            else
+            {
+                error.SetError(tbPrecio, "");
+            }
+
+
+
+            return estado;
 
         }
 
@@ -203,7 +307,7 @@ namespace Tienda.UserControls
             string nombre = tbNombreEditar.Text;
             string categoria = cbCategoriaEditar.Text;
             decimal precio = decimal.Parse(tbPrecioEditar.Text.ToString());
-            int stock = int.Parse( nupStock.Value.ToString() );
+            int stock = int.Parse(nupStock.Value.ToString());
             string descripcion = tbDescripcionsEdiitar.Text.Trim();
 
             // Creo un objeto de tipo producto
@@ -246,6 +350,8 @@ namespace Tienda.UserControls
             panelDetalleProducto.Visible = false;
             // Actualizo, me traigo todas las polizas de la base de datos.
             cargarProductosDGV();
+            // Muestro menu superior co nel buscador
+            panelNavegacionSuperior.Visible = true;
             // Muestro el contenedor 
             panelCrudProductos.Visible = true;
         }

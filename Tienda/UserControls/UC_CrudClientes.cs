@@ -523,15 +523,13 @@ namespace Tienda.UserControls
         private void btnMostrarDetallesVenta_Click(object sender, EventArgs e)
         {
             // Obtengo el id de la venta
-            int idVenta = int.Parse(filaVenta.Cells[0].Value.ToString());
+            int idVenta = int.Parse(filaVenta.Cells["idVenta"].Value.ToString());
             // Obtengo la fecha
             string fecha = filaVenta.Cells["fecha"].Value.ToString();
-            // Instancio objeto
+            // Instancio objeto y le paso los parametros al constructor
             UC_Ventas ventas = new UC_Ventas(cliente, idVenta, fecha);
             // Llamar al método del formulario principal para cambiar el contenido del panel contenedor
             menuPrincipal.mostrarUserControl(ventas);
-
-            Console.WriteLine("mostrar detalles de la venta ");
         }
 
 

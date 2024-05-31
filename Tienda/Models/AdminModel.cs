@@ -822,8 +822,6 @@ namespace Tienda.Models
         }
 
 
-
-
         // Obtengo el id de la ultima venta que se realizo
         public static int getUltimoIdVenta()
         {
@@ -917,6 +915,50 @@ namespace Tienda.Models
 
             return eliminado;
         }
+
+        public static bool eliminarProductosDetalleVenta(int idVenta, List<int> idProductosAEliminar)
+        {
+          
+            bool eliminado = true;
+
+            try
+            {
+                MySqlConnection conexion = ConexionBaseDatos.getConexion();
+                
+
+                string sql = "DELETE FROM detalleventa WHERE idVenta = @idVenta AND idProducto = @idProducto";
+
+                MySqlCommand comando = new MySqlCommand(sql, conexion);
+
+                comando.Parameters.AddWithValue("@idVenta", idVenta);
+
+
+                foreach (int idProducto in idProductosAEliminar)
+                {
+                    // Agregar el parámetro @idProducto al comando sin establecer su valor explícitamente
+                    comando.Parameters.AddWithValue("@idProducto", idProducto);
+
+                    if (comando.ExecuteNonQuery() == 0)
+                    {
+                        eliminado = false;
+                        break;
+                    }
+
+                    // Limpiar los parámetros para prepararlos para la próxima iteración
+                    comando.Parameters.Clear();
+                    comando.Parameters.Add("@idVenta", MySqlDbType.Int32).Value = idVenta;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al eliminar productos: " + ex.Message + " " + ex.InnerException);
+                eliminado = false;
+            } 
+            
+
+            return eliminado;
+        }
+
 
 
 

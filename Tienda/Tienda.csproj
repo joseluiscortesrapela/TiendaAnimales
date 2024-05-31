@@ -188,6 +188,7 @@
       <DependentUpon>UC_Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilizades\Util.cs" />
+    <Compile Include="Utilizades\Validacion.cs" />
     <EmbeddedResource Include="Forms\BuscarProductosModal.resx">
       <DependentUpon>BuscarProductosModal.cs</DependentUpon>
     </EmbeddedResource>
