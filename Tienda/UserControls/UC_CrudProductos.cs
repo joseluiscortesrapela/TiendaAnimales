@@ -197,16 +197,18 @@ namespace Tienda.UserControls
 
                 // Si ha guardado el producto 
                 if (AdminModel.registrarProducto(producto))
-                {   // Muestro mensaje 
-                    lbMensajeCrearProducto.Text = "Acabas de crear un nuevo producto";
-                    // Limpio el formulario
-                    resetearFormulario();
+                {  
+                    // Muestro la ventana crud productos
+                    regresarVentanaCrudProductos();
+                    // Quiero que meustre el siguiente mensaje
+                    lbMensajeGeneral.Text = "Acabas de crear un nuevo producto!";
+                    // Oculto mensaje transcurridos unos segundos
+                    mostrarMensajeTimer();
                 }
 
             }
             else
             {
-                Console.WriteLine("Formulario incorrecto");
                 // Muestro las alertas de los compos del formulario que son incorrectos
                 mostrarErrores();
             }
@@ -214,26 +216,7 @@ namespace Tienda.UserControls
 
         }
 
-        private void resetearFormulario()
-        {
-            // Activo el timer para mostrar el mensaje y ocultarlo automaticamente
-            mostrarMensajeTimer();
-            // Vacio el valor de los campos 
-            tbNombre.Text = "";
-            cbCategoria.Text = "";
-            tbPrecio.Text = "0";
-            nupStock.Value = 0;
-            tbDescripcion.Text = "";
-
-            // Oculto iconos
-            iconoNombre.Visible = false;
-            iconoCategoria.Visible = false;
-            iconoPrecio.Visible = false;
-            iconoStock.Visible = false;
-            iconoDescripcion.Visible = false;
-
-        }
-
+    
         private void mostrarErrores()
         {
             error.SetError(tbNombre, nombreValidado ? "" : "Introduce el nombre");
@@ -290,6 +273,11 @@ namespace Tienda.UserControls
         // Vuelve al crud principal de polizas, contenedor principal
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            regresarVentanaCrudProductos();
+        }
+
+        private void regresarVentanaCrudProductos()
+        {
             // Oculto los paneles  para editar y crear polizas.
             panelCrearProducto.Visible = false;
             panelEditarProducto.Visible = false;
@@ -302,8 +290,6 @@ namespace Tienda.UserControls
             panelCrudProductos.Visible = true;
         }
 
-       
-
         // Cierro la aplicacion
         private void pbExit_Click(object sender, EventArgs e)
         {
@@ -315,10 +301,10 @@ namespace Tienda.UserControls
             timerOcultarMensaje.Start();
         }
 
-
+        // Oculto mensajes 
         private void timerOcultarMensaje_Tick(object sender, EventArgs e)
         {
-            lbMensajeCrearProducto.Text = "";
+            lbMensajeGeneral.Text = "";
             timerOcultarMensaje.Stop();
         }
 

@@ -346,7 +346,7 @@
             this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProductos.RowTemplate.Height = 30;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(1257, 583);
+            this.dgvProductos.Size = new System.Drawing.Size(1257, 542);
             this.dgvProductos.TabIndex = 50;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
@@ -367,7 +367,7 @@
             this.lbMensajeGeneral.BackColor = System.Drawing.Color.Transparent;
             this.lbMensajeGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensajeGeneral.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lbMensajeGeneral.Location = new System.Drawing.Point(425, 488);
+            this.lbMensajeGeneral.Location = new System.Drawing.Point(465, 598);
             this.lbMensajeGeneral.Name = "lbMensajeGeneral";
             this.lbMensajeGeneral.Size = new System.Drawing.Size(0, 26);
             this.lbMensajeGeneral.TabIndex = 47;
@@ -1495,10 +1495,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.panelCrudProductos);
             this.Controls.Add(this.panelCrearProducto);
             this.Controls.Add(this.panelDetalleProducto);
             this.Controls.Add(this.panelEditarProducto);
-            this.Controls.Add(this.panelCrudProductos);
             this.Controls.Add(this.pbExit);
             this.Controls.Add(this.panelNavegacionSuperior);
             this.Controls.Add(this.lbPagos);
