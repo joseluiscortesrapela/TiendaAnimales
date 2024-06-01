@@ -15,6 +15,7 @@ namespace Tienda.UserControls
         private int idProducto;
         private Producto producto;
         private DataGridViewRow fila;
+        private bool nombreValidado, descripcionValidada, categoriaValidada, precioValidado, stockValidado;
 
         // Constructor
         public UC_CrudProductos()
@@ -183,7 +184,7 @@ namespace Tienda.UserControls
             string descripcion = tbDescripcion.Text.Trim();
 
             // Si los los datos del formulario son correctos
-            if (validarFormulario(nombre, categoria, descripcion))
+            if ( nombreValidado && categoriaValidada && precioValidado && stockValidado && descripcionValidada)
             {
                 Console.WriteLine("Datos formulario validos");
                 // Obtengo resto de campos del formulario
@@ -206,10 +207,65 @@ namespace Tienda.UserControls
             else
             {
                 Console.WriteLine("Formulario incorrecto");
+                // Muestro las alertas de los compos del formulario que son incorrectos
+                mostrarErrores();
+               
+
             }
 
 
 
+        }
+
+        private void mostrarErrores()
+        {
+            if (nombreValidado == false)
+            {
+                error.SetError(tbNombre, "Introduce el nombre");
+            }
+            else
+            {
+                error.SetError(tbNombre, "");
+            }
+
+
+            if (categoriaValidada == false)
+            {
+                error.SetError(cbCategoria, "Seleccione una categoria");
+            }
+            else
+            {
+                error.SetError(cbCategoria, "");
+            }
+
+
+            if (precioValidado == false)
+            {
+                error.SetError(tbPrecio, "Introduce el precio, maximo 2 decimales");
+            }
+            else
+            {
+                error.SetError(tbPrecio, "");
+            }
+
+
+            if (stockValidado == false)
+            {
+                error.SetError(nudStock, "Introduce el stock");
+            }
+            else
+            {
+                error.SetError(nudStock, "");
+           }
+
+            if (descripcionValidada == false)
+            {
+                error.SetError(tbDescripcion, "Introduce una descripcion de almenos 50 caracteres");
+            }
+            else
+            {
+                error.SetError(tbDescripcion, "");
+            }
         }
 
         // Valida datos del formulario
@@ -218,32 +274,12 @@ namespace Tienda.UserControls
 
             bool estado = true;
 
-            // Si el nombre del producto esta vacio
-            if (Validacion.isEstaUnaVacia(nombre))
-            {
-                estado = false;
-                error.SetError(tbNombre, "Introduce el nombre del producto");
-            }
-            else
-            {
-                error.SetError(tbNombre, "");
-            }
+           
 
-
-            // Si no se ha seleccionado una cateogira
-            if (Validacion.isEstaUnaVacia(categoria))
-            {
-                estado = false;
-                error.SetError(cbCategoria, "Selecciona una categoria");
-            }
-            else
-            {
-                error.SetError(cbCategoria, "");
-            }
-
+          
 
             // Si la decripcion esta vacia
-            if (Validacion.isEstaUnaVacia(descripcion))
+            if (Validacion.esUnaCadenaVacia(descripcion))
             {
                 estado = false;
                 error.SetError(tbDescripcion, "Introduce la descripción");
@@ -264,33 +300,9 @@ namespace Tienda.UserControls
                 error.SetError(cbCategoria, "");
             }
 
-            // Obtengo el valor del stock
-            string valorNud = nudStock.Value.ToString().Trim();
+           
 
-            // La cadena está vacía, es igual a "0" o no es un número entero válido
-            if (string.IsNullOrWhiteSpace(valorNud) || valorNud == "0" || !int.TryParse(valorNud, out _))
-            {
-                estado = false;
-                error.SetError(nudStock, "Introduce el stock");
-            }
-            else
-            {
-                error.SetError(nudStock, "");
-            }
-
-            string precioString = tbPrecio.Text;
-
-            // Sino es un numero decimal con un maximo de dos decimales
-            if (!Validacion.siEsNumeroDecimal(precioString))
-            {
-                estado = false;
-                error.SetError(tbPrecio, "Introduce un numero decimal con punto y maximo 2 decimales");
-            }
-            else
-            {
-                error.SetError(tbPrecio, "");
-            }
-
+          
 
 
             return estado;
@@ -381,7 +393,6 @@ namespace Tienda.UserControls
             timerOcultarMensaje.Stop();
         }
 
-
         // Muestra el buscador
         private void mostrarBuscador(object sender, EventArgs e)
         {
@@ -405,7 +416,102 @@ namespace Tienda.UserControls
 
         }
 
+        private void tbNombre_Leave(object sender, EventArgs e)
+        {
+          
+            // Si el nombre del producto esta vacio
+            if (Validacion.esUnaCadenaVacia( tbNombre.Text))
+            {
+                nombreValidado = false;
+                error.SetError(tbNombre, "Introduce el nombre del producto");
+                Console.WriteLine("Introdcue nombre producto");
 
+            }
+            else
+            {
+                nombreValidado = true;
+                error.SetError(tbNombre, "");
+                Console.WriteLine("nombre ok");
+            }
+
+        }
+
+        private void tbPrecio_Leave(object sender, EventArgs e)
+        {
+
+            string precioString = tbPrecio.Text;
+
+            // Sino es un numero decimal con un maximo de dos decimales
+            if (!Validacion.siEsNumeroDecimal(precioString))
+            {
+                precioValidado = false;
+                error.SetError(tbPrecio, "Introduce un numero decimal con punto y maximo 2 decimales");
+                Console.WriteLine("Precio incorrecto");
+            }
+            else
+            {
+                error.SetError(tbPrecio, "");
+                precioValidado = true;
+                Console.WriteLine("Precio ok");
+            }
+
+
+        }
+
+        private void nudStock_Leave(object sender, EventArgs e)
+        {
+            // Obtengo el valor del stock
+            string valorNud = nudStock.Value.ToString().Trim();
+
+            // La cadena está vacía, es igual a "0" o no es un número entero válido
+            if (string.IsNullOrWhiteSpace(valorNud) || valorNud == "0" || !int.TryParse(valorNud, out _))
+            {
+                stockValidado = false;
+                error.SetError(nudStock, "Introduce el stock");
+            }
+            else
+            {
+                error.SetError(nudStock, "");
+                stockValidado = true;
+                Console.WriteLine("stock ok");
+            }
+        }
+
+        private void tbDescripcion_Leave(object sender, EventArgs e)
+        {
+            if (tbDescripcion.Text.Length < 50)
+            {
+                descripcionValidada = false;
+                error.SetError(tbDescripcion, "Descripcion minima 50 caracteres");
+                Console.WriteLine("descripcion incorrecta");
+            }
+            else
+            {
+                error.SetError(tbDescripcion, "");
+                Console.WriteLine("descripcion ok");
+                descripcionValidada = true;
+
+            }
+
+        }
+
+        private void cbCategoria_Leave(object sender, EventArgs e)
+        {
+            // Si no se ha seleccionado una cateogira
+            if (Validacion.esUnaCadenaVacia( cbCategoria.Text))
+            {
+                categoriaValidada = false;
+                error.SetError(cbCategoria, "Selecciona una categoria");
+                Console.WriteLine("Categoria incorrecta");
+            }
+            else
+            {
+                error.SetError(cbCategoria, "");
+                categoriaValidada = true;
+                Console.WriteLine("categoria ok");
+            }
+
+        }
     }
 
 

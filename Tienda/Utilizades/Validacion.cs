@@ -11,7 +11,7 @@ namespace Tienda.Utilizades
     public class Validacion
     {
 
-        public static bool isEstaUnaVacia(string cadena)
+        public static bool esUnaCadenaVacia(string cadena)
         {
             // Verificar si la cadena está vacía
             return string.IsNullOrWhiteSpace(cadena);

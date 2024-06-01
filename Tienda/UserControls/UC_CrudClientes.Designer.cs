@@ -227,7 +227,7 @@
             // pbEditar
             // 
             this.pbEditar.Image = ((System.Drawing.Image)(resources.GetObject("pbEditar.Image")));
-            this.pbEditar.Location = new System.Drawing.Point(1291, 132);
+            this.pbEditar.Location = new System.Drawing.Point(1289, 94);
             this.pbEditar.Name = "pbEditar";
             this.pbEditar.Size = new System.Drawing.Size(34, 40);
             this.pbEditar.TabIndex = 11;
@@ -238,7 +238,7 @@
             // pbEliminar
             // 
             this.pbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("pbEliminar.Image")));
-            this.pbEliminar.Location = new System.Drawing.Point(1291, 180);
+            this.pbEliminar.Location = new System.Drawing.Point(1289, 142);
             this.pbEliminar.Name = "pbEliminar";
             this.pbEliminar.Size = new System.Drawing.Size(34, 38);
             this.pbEliminar.TabIndex = 10;
@@ -423,7 +423,6 @@
             this.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvVentas.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -469,7 +468,7 @@
             this.dgvVentas.ShowCellToolTips = false;
             this.dgvVentas.ShowEditingIcon = false;
             this.dgvVentas.ShowRowErrors = false;
-            this.dgvVentas.Size = new System.Drawing.Size(1253, 142);
+            this.dgvVentas.Size = new System.Drawing.Size(1258, 142);
             this.dgvVentas.TabIndex = 44;
             this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
             // 
@@ -535,7 +534,6 @@
             this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -566,14 +564,14 @@
             this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvClientes.RowTemplate.Height = 30;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1257, 376);
+            this.dgvClientes.Size = new System.Drawing.Size(1258, 376);
             this.dgvClientes.TabIndex = 8;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
             // pbDetalle
             // 
             this.pbDetalle.Image = ((System.Drawing.Image)(resources.GetObject("pbDetalle.Image")));
-            this.pbDetalle.Location = new System.Drawing.Point(1291, 89);
+            this.pbDetalle.Location = new System.Drawing.Point(1289, 51);
             this.pbDetalle.Name = "pbDetalle";
             this.pbDetalle.Size = new System.Drawing.Size(34, 37);
             this.pbDetalle.TabIndex = 35;
@@ -1941,8 +1939,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.panelCrearCliente);
             this.Controls.Add(this.panelCrudClientes);
+            this.Controls.Add(this.panelCrearCliente);
             this.Controls.Add(this.panelEditarCliente);
             this.Controls.Add(this.panelDetalleCliente);
             this.Controls.Add(this.panelFlSuperior);
