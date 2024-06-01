@@ -199,8 +199,8 @@ namespace Tienda.UserControls
                 if (AdminModel.registrarProducto(producto))
                 {   // Muestro mensaje 
                     lbMensajeCrearProducto.Text = "Acabas de crear un nuevo producto";
-                    // Activo el timer
-                    mostrarMensajeTimer();
+                    // Limpio el formulario
+                    resetearFormulario();
                 }
 
             }
@@ -209,10 +209,28 @@ namespace Tienda.UserControls
                 Console.WriteLine("Formulario incorrecto");
                 // Muestro las alertas de los compos del formulario que son incorrectos
                 mostrarErrores();
-
-
             }
 
+
+        }
+
+        private void resetearFormulario()
+        {
+            // Activo el timer para mostrar el mensaje y ocultarlo automaticamente
+            mostrarMensajeTimer();
+            // Vacio el valor de los campos 
+            tbNombre.Text = "";
+            cbCategoria.Text = "";
+            tbPrecio.Text = "0";
+            nupStock.Value = 0;
+            tbDescripcion.Text = "";
+
+            // Oculto iconos
+            iconoNombre.Visible = false;
+            iconoCategoria.Visible = false;
+            iconoPrecio.Visible = false;
+            iconoStock.Visible = false;
+            iconoDescripcion.Visible = false;
 
         }
 
@@ -284,6 +302,8 @@ namespace Tienda.UserControls
             panelCrudProductos.Visible = true;
         }
 
+       
+
         // Cierro la aplicacion
         private void pbExit_Click(object sender, EventArgs e)
         {
@@ -295,16 +315,9 @@ namespace Tienda.UserControls
             timerOcultarMensaje.Start();
         }
 
-        private void mostrarMensajeTimer(Label label)
-        {
-            label.Visible = true;
-            timerOcultarMensaje.Tag = label; // Almacena el label en la propiedad Tag del temporizador
-            timerOcultarMensaje.Start();
-        }
 
         private void timerOcultarMensaje_Tick(object sender, EventArgs e)
         {
-            Console.WriteLine("timer fin");
             lbMensajeCrearProducto.Text = "";
             timerOcultarMensaje.Stop();
         }
@@ -406,7 +419,6 @@ namespace Tienda.UserControls
                 error.SetError(tbDescripcion, "");
                 descripcionValidada = true;
                 iconoDescripcion.Visible = true;
-
             }
 
         }

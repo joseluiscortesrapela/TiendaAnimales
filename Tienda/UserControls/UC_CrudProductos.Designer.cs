@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CrudProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbPagos = new System.Windows.Forms.Label();
             this.panelNavegacionSuperior = new System.Windows.Forms.Panel();
             this.lbTitulo = new System.Windows.Forms.Label();
@@ -54,6 +54,11 @@
             this.pbMostrarFormularioCrearProducto = new System.Windows.Forms.PictureBox();
             this.timerOcultarMensaje = new System.Windows.Forms.Timer(this.components);
             this.panelCrearProducto = new System.Windows.Forms.Panel();
+            this.iconoDescripcion = new System.Windows.Forms.PictureBox();
+            this.iconoStock = new System.Windows.Forms.PictureBox();
+            this.iconoCategoria = new System.Windows.Forms.PictureBox();
+            this.iconoPrecio = new System.Windows.Forms.PictureBox();
+            this.iconoNombre = new System.Windows.Forms.PictureBox();
             this.nudStock = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -79,6 +84,14 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panelEditarProducto = new System.Windows.Forms.Panel();
+            this.iconoDescripcionEditar = new System.Windows.Forms.PictureBox();
+            this.iconoStockEditar = new System.Windows.Forms.PictureBox();
+            this.iconoCategoriaEditar = new System.Windows.Forms.PictureBox();
+            this.iconoPrecioEditar = new System.Windows.Forms.PictureBox();
+            this.iconoNombreEditar = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.nupStock = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -103,19 +116,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.iconoNombre = new System.Windows.Forms.PictureBox();
-            this.iconoPrecio = new System.Windows.Forms.PictureBox();
-            this.iconoCategoria = new System.Windows.Forms.PictureBox();
-            this.iconoStock = new System.Windows.Forms.PictureBox();
-            this.iconoDescripcion = new System.Windows.Forms.PictureBox();
-            this.iconoStockEditar = new System.Windows.Forms.PictureBox();
-            this.iconoCategoriaEditar = new System.Windows.Forms.PictureBox();
-            this.iconoPrecioEditar = new System.Windows.Forms.PictureBox();
-            this.iconoNombreEditar = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
-            this.iconoDescripcionEditar = new System.Windows.Forms.PictureBox();
             this.label46 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label42 = new System.Windows.Forms.Label();
@@ -150,6 +150,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarFormularioCrearProducto)).BeginInit();
             this.panelCrearProducto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoDescripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoCategoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoPrecio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -157,15 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.panelEditarProducto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoNombre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoPrecio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoCategoria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoDescripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoDescripcionEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoStockEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoCategoriaEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoPrecioEditar)).BeginInit();
@@ -173,7 +170,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoDescripcionEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -265,7 +265,7 @@
             this.pbExit.Location = new System.Drawing.Point(1305, 6);
             this.pbExit.Name = "pbExit";
             this.pbExit.Size = new System.Drawing.Size(16, 16);
-            this.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbExit.TabIndex = 7;
             this.pbExit.TabStop = false;
             this.pbExit.Click += new System.EventHandler(this.pbExit_Click);
@@ -304,46 +304,46 @@
             this.dgvProductos.AllowUserToOrderColumns = true;
             this.dgvProductos.AllowUserToResizeColumns = false;
             this.dgvProductos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.Snow;
             this.dgvProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvProductos.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvProductos.EnableHeadersVisualStyles = false;
             this.dgvProductos.Location = new System.Drawing.Point(27, 42);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DimGray;
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DimGray;
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProductos.RowTemplate.Height = 30;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(1257, 583);
@@ -461,6 +461,66 @@
             this.panelCrearProducto.TabIndex = 40;
             this.panelCrearProducto.Visible = false;
             // 
+            // iconoDescripcion
+            // 
+            this.iconoDescripcion.BackColor = System.Drawing.Color.Transparent;
+            this.iconoDescripcion.Image = ((System.Drawing.Image)(resources.GetObject("iconoDescripcion.Image")));
+            this.iconoDescripcion.Location = new System.Drawing.Point(250, 221);
+            this.iconoDescripcion.Name = "iconoDescripcion";
+            this.iconoDescripcion.Size = new System.Drawing.Size(28, 28);
+            this.iconoDescripcion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoDescripcion.TabIndex = 134;
+            this.iconoDescripcion.TabStop = false;
+            this.iconoDescripcion.Visible = false;
+            // 
+            // iconoStock
+            // 
+            this.iconoStock.BackColor = System.Drawing.Color.Transparent;
+            this.iconoStock.Image = ((System.Drawing.Image)(resources.GetObject("iconoStock.Image")));
+            this.iconoStock.Location = new System.Drawing.Point(1191, 148);
+            this.iconoStock.Name = "iconoStock";
+            this.iconoStock.Size = new System.Drawing.Size(28, 28);
+            this.iconoStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoStock.TabIndex = 133;
+            this.iconoStock.TabStop = false;
+            this.iconoStock.Visible = false;
+            // 
+            // iconoCategoria
+            // 
+            this.iconoCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.iconoCategoria.Image = ((System.Drawing.Image)(resources.GetObject("iconoCategoria.Image")));
+            this.iconoCategoria.Location = new System.Drawing.Point(783, 144);
+            this.iconoCategoria.Name = "iconoCategoria";
+            this.iconoCategoria.Size = new System.Drawing.Size(28, 28);
+            this.iconoCategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoCategoria.TabIndex = 132;
+            this.iconoCategoria.TabStop = false;
+            this.iconoCategoria.Visible = false;
+            // 
+            // iconoPrecio
+            // 
+            this.iconoPrecio.BackColor = System.Drawing.Color.Transparent;
+            this.iconoPrecio.Image = ((System.Drawing.Image)(resources.GetObject("iconoPrecio.Image")));
+            this.iconoPrecio.Location = new System.Drawing.Point(994, 144);
+            this.iconoPrecio.Name = "iconoPrecio";
+            this.iconoPrecio.Size = new System.Drawing.Size(28, 28);
+            this.iconoPrecio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoPrecio.TabIndex = 131;
+            this.iconoPrecio.TabStop = false;
+            this.iconoPrecio.Visible = false;
+            // 
+            // iconoNombre
+            // 
+            this.iconoNombre.BackColor = System.Drawing.Color.Transparent;
+            this.iconoNombre.Image = ((System.Drawing.Image)(resources.GetObject("iconoNombre.Image")));
+            this.iconoNombre.Location = new System.Drawing.Point(486, 145);
+            this.iconoNombre.Name = "iconoNombre";
+            this.iconoNombre.Size = new System.Drawing.Size(28, 28);
+            this.iconoNombre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoNombre.TabIndex = 130;
+            this.iconoNombre.TabStop = false;
+            this.iconoNombre.Visible = false;
+            // 
             // nudStock
             // 
             this.nudStock.BackColor = System.Drawing.Color.AliceBlue;
@@ -477,7 +537,7 @@
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.ForeColor = System.Drawing.Color.Coral;
-            this.label8.Location = new System.Drawing.Point(142, 177);
+            this.label8.Location = new System.Drawing.Point(171, 176);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(184, 13);
             this.label8.TabIndex = 119;
@@ -589,7 +649,7 @@
             this.lbMensajeCrearProducto.BackColor = System.Drawing.Color.Transparent;
             this.lbMensajeCrearProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensajeCrearProducto.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lbMensajeCrearProducto.Location = new System.Drawing.Point(557, 480);
+            this.lbMensajeCrearProducto.Location = new System.Drawing.Point(524, 480);
             this.lbMensajeCrearProducto.Name = "lbMensajeCrearProducto";
             this.lbMensajeCrearProducto.Size = new System.Drawing.Size(0, 26);
             this.lbMensajeCrearProducto.TabIndex = 42;
@@ -699,6 +759,7 @@
             this.tbPrecio.Name = "tbPrecio";
             this.tbPrecio.Size = new System.Drawing.Size(86, 26);
             this.tbPrecio.TabIndex = 87;
+            this.tbPrecio.Text = "0";
             this.tbPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbPrecio.Leave += new System.EventHandler(this.tbPrecio_Leave);
             // 
@@ -782,6 +843,97 @@
             this.panelEditarProducto.Size = new System.Drawing.Size(1324, 671);
             this.panelEditarProducto.TabIndex = 46;
             this.panelEditarProducto.Visible = false;
+            // 
+            // iconoDescripcionEditar
+            // 
+            this.iconoDescripcionEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoDescripcionEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoDescripcionEditar.Image")));
+            this.iconoDescripcionEditar.Location = new System.Drawing.Point(235, 216);
+            this.iconoDescripcionEditar.Name = "iconoDescripcionEditar";
+            this.iconoDescripcionEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoDescripcionEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoDescripcionEditar.TabIndex = 180;
+            this.iconoDescripcionEditar.TabStop = false;
+            this.iconoDescripcionEditar.Visible = false;
+            // 
+            // iconoStockEditar
+            // 
+            this.iconoStockEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoStockEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoStockEditar.Image")));
+            this.iconoStockEditar.Location = new System.Drawing.Point(1183, 143);
+            this.iconoStockEditar.Name = "iconoStockEditar";
+            this.iconoStockEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoStockEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoStockEditar.TabIndex = 179;
+            this.iconoStockEditar.TabStop = false;
+            this.iconoStockEditar.Visible = false;
+            // 
+            // iconoCategoriaEditar
+            // 
+            this.iconoCategoriaEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoCategoriaEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoCategoriaEditar.Image")));
+            this.iconoCategoriaEditar.Location = new System.Drawing.Point(759, 139);
+            this.iconoCategoriaEditar.Name = "iconoCategoriaEditar";
+            this.iconoCategoriaEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoCategoriaEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoCategoriaEditar.TabIndex = 178;
+            this.iconoCategoriaEditar.TabStop = false;
+            this.iconoCategoriaEditar.Visible = false;
+            // 
+            // iconoPrecioEditar
+            // 
+            this.iconoPrecioEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoPrecioEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoPrecioEditar.Image")));
+            this.iconoPrecioEditar.Location = new System.Drawing.Point(963, 141);
+            this.iconoPrecioEditar.Name = "iconoPrecioEditar";
+            this.iconoPrecioEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoPrecioEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoPrecioEditar.TabIndex = 177;
+            this.iconoPrecioEditar.TabStop = false;
+            this.iconoPrecioEditar.Visible = false;
+            // 
+            // iconoNombreEditar
+            // 
+            this.iconoNombreEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoNombreEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoNombreEditar.Image")));
+            this.iconoNombreEditar.Location = new System.Drawing.Point(471, 143);
+            this.iconoNombreEditar.Name = "iconoNombreEditar";
+            this.iconoNombreEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoNombreEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoNombreEditar.TabIndex = 176;
+            this.iconoNombreEditar.TabStop = false;
+            this.iconoNombreEditar.Visible = false;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
+            this.pictureBox18.Location = new System.Drawing.Point(131, 144);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox18.TabIndex = 172;
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
+            this.pictureBox19.Location = new System.Drawing.Point(1071, 143);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(29, 28);
+            this.pictureBox19.TabIndex = 168;
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
+            this.pictureBox21.Location = new System.Drawing.Point(850, 141);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(29, 28);
+            this.pictureBox21.TabIndex = 161;
+            this.pictureBox21.TabStop = false;
             // 
             // nupStock
             // 
@@ -1058,157 +1210,6 @@
             // 
             this.error.ContainerControl = this;
             this.error.Icon = ((System.Drawing.Icon)(resources.GetObject("error.Icon")));
-            // 
-            // iconoNombre
-            // 
-            this.iconoNombre.BackColor = System.Drawing.Color.Transparent;
-            this.iconoNombre.Image = ((System.Drawing.Image)(resources.GetObject("iconoNombre.Image")));
-            this.iconoNombre.Location = new System.Drawing.Point(486, 145);
-            this.iconoNombre.Name = "iconoNombre";
-            this.iconoNombre.Size = new System.Drawing.Size(28, 28);
-            this.iconoNombre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoNombre.TabIndex = 130;
-            this.iconoNombre.TabStop = false;
-            this.iconoNombre.Visible = false;
-            // 
-            // iconoPrecio
-            // 
-            this.iconoPrecio.BackColor = System.Drawing.Color.Transparent;
-            this.iconoPrecio.Image = ((System.Drawing.Image)(resources.GetObject("iconoPrecio.Image")));
-            this.iconoPrecio.Location = new System.Drawing.Point(994, 144);
-            this.iconoPrecio.Name = "iconoPrecio";
-            this.iconoPrecio.Size = new System.Drawing.Size(28, 28);
-            this.iconoPrecio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoPrecio.TabIndex = 131;
-            this.iconoPrecio.TabStop = false;
-            this.iconoPrecio.Visible = false;
-            // 
-            // iconoCategoria
-            // 
-            this.iconoCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.iconoCategoria.Image = ((System.Drawing.Image)(resources.GetObject("iconoCategoria.Image")));
-            this.iconoCategoria.Location = new System.Drawing.Point(783, 144);
-            this.iconoCategoria.Name = "iconoCategoria";
-            this.iconoCategoria.Size = new System.Drawing.Size(28, 28);
-            this.iconoCategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoCategoria.TabIndex = 132;
-            this.iconoCategoria.TabStop = false;
-            this.iconoCategoria.Visible = false;
-            // 
-            // iconoStock
-            // 
-            this.iconoStock.BackColor = System.Drawing.Color.Transparent;
-            this.iconoStock.Image = ((System.Drawing.Image)(resources.GetObject("iconoStock.Image")));
-            this.iconoStock.Location = new System.Drawing.Point(1191, 148);
-            this.iconoStock.Name = "iconoStock";
-            this.iconoStock.Size = new System.Drawing.Size(28, 28);
-            this.iconoStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoStock.TabIndex = 133;
-            this.iconoStock.TabStop = false;
-            this.iconoStock.Visible = false;
-            // 
-            // iconoDescripcion
-            // 
-            this.iconoDescripcion.BackColor = System.Drawing.Color.Transparent;
-            this.iconoDescripcion.Image = ((System.Drawing.Image)(resources.GetObject("iconoDescripcion.Image")));
-            this.iconoDescripcion.Location = new System.Drawing.Point(250, 221);
-            this.iconoDescripcion.Name = "iconoDescripcion";
-            this.iconoDescripcion.Size = new System.Drawing.Size(28, 28);
-            this.iconoDescripcion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoDescripcion.TabIndex = 134;
-            this.iconoDescripcion.TabStop = false;
-            this.iconoDescripcion.Visible = false;
-            // 
-            // iconoStockEditar
-            // 
-            this.iconoStockEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoStockEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoStockEditar.Image")));
-            this.iconoStockEditar.Location = new System.Drawing.Point(1183, 143);
-            this.iconoStockEditar.Name = "iconoStockEditar";
-            this.iconoStockEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoStockEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoStockEditar.TabIndex = 179;
-            this.iconoStockEditar.TabStop = false;
-            this.iconoStockEditar.Visible = false;
-            // 
-            // iconoCategoriaEditar
-            // 
-            this.iconoCategoriaEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoCategoriaEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoCategoriaEditar.Image")));
-            this.iconoCategoriaEditar.Location = new System.Drawing.Point(759, 139);
-            this.iconoCategoriaEditar.Name = "iconoCategoriaEditar";
-            this.iconoCategoriaEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoCategoriaEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoCategoriaEditar.TabIndex = 178;
-            this.iconoCategoriaEditar.TabStop = false;
-            this.iconoCategoriaEditar.Visible = false;
-            // 
-            // iconoPrecioEditar
-            // 
-            this.iconoPrecioEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoPrecioEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoPrecioEditar.Image")));
-            this.iconoPrecioEditar.Location = new System.Drawing.Point(963, 141);
-            this.iconoPrecioEditar.Name = "iconoPrecioEditar";
-            this.iconoPrecioEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoPrecioEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoPrecioEditar.TabIndex = 177;
-            this.iconoPrecioEditar.TabStop = false;
-            this.iconoPrecioEditar.Visible = false;
-            // 
-            // iconoNombreEditar
-            // 
-            this.iconoNombreEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoNombreEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoNombreEditar.Image")));
-            this.iconoNombreEditar.Location = new System.Drawing.Point(471, 143);
-            this.iconoNombreEditar.Name = "iconoNombreEditar";
-            this.iconoNombreEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoNombreEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoNombreEditar.TabIndex = 176;
-            this.iconoNombreEditar.TabStop = false;
-            this.iconoNombreEditar.Visible = false;
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-            this.pictureBox18.Location = new System.Drawing.Point(131, 144);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox18.TabIndex = 172;
-            this.pictureBox18.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
-            this.pictureBox19.Location = new System.Drawing.Point(1071, 143);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(29, 28);
-            this.pictureBox19.TabIndex = 168;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox21
-            // 
-            this.pictureBox21.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
-            this.pictureBox21.Location = new System.Drawing.Point(850, 141);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(29, 28);
-            this.pictureBox21.TabIndex = 161;
-            this.pictureBox21.TabStop = false;
-            // 
-            // iconoDescripcionEditar
-            // 
-            this.iconoDescripcionEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoDescripcionEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoDescripcionEditar.Image")));
-            this.iconoDescripcionEditar.Location = new System.Drawing.Point(235, 216);
-            this.iconoDescripcionEditar.Name = "iconoDescripcionEditar";
-            this.iconoDescripcionEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoDescripcionEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoDescripcionEditar.TabIndex = 180;
-            this.iconoDescripcionEditar.TabStop = false;
-            this.iconoDescripcionEditar.Visible = false;
             // 
             // label46
             // 
@@ -1494,9 +1495,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.panelCrearProducto);
             this.Controls.Add(this.panelDetalleProducto);
             this.Controls.Add(this.panelEditarProducto);
-            this.Controls.Add(this.panelCrearProducto);
             this.Controls.Add(this.panelCrudProductos);
             this.Controls.Add(this.pbExit);
             this.Controls.Add(this.panelNavegacionSuperior);
@@ -1520,6 +1521,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarFormularioCrearProducto)).EndInit();
             this.panelCrearProducto.ResumeLayout(false);
             this.panelCrearProducto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoDescripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoCategoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoPrecio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1528,15 +1534,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.panelEditarProducto.ResumeLayout(false);
             this.panelEditarProducto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoNombre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoPrecio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoCategoria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoDescripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoDescripcionEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoStockEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoCategoriaEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoPrecioEditar)).EndInit();
@@ -1544,7 +1542,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoDescripcionEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
