@@ -184,14 +184,14 @@ namespace Tienda.UserControls
             string descripcion = tbDescripcion.Text.Trim();
 
             // Si los los datos del formulario son correctos
-            if ( nombreValidado && categoriaValidada && precioValidado && stockValidado && descripcionValidada)
+            if (nombreValidado && categoriaValidada && precioValidado && stockValidado && descripcionValidada)
             {
                 Console.WriteLine("Datos formulario validos");
                 // Obtengo resto de campos del formulario
                 int stock = int.Parse(nudStock.Value.ToString()); // El stock
                 decimal precio = 0;
-                decimal.TryParse( tbPrecio.Text, out precio);
-                     
+                decimal.TryParse(tbPrecio.Text, out precio);
+
                 // Creo un objeto de tipo producto
                 Producto producto = new Producto(nombre, categoria, precio, stock, descripcion);
 
@@ -209,107 +209,23 @@ namespace Tienda.UserControls
                 Console.WriteLine("Formulario incorrecto");
                 // Muestro las alertas de los compos del formulario que son incorrectos
                 mostrarErrores();
-               
+
 
             }
-
 
 
         }
 
         private void mostrarErrores()
         {
-            if (nombreValidado == false)
-            {
-                error.SetError(tbNombre, "Introduce el nombre");
-            }
-            else
-            {
-                error.SetError(tbNombre, "");
-            }
-
-
-            if (categoriaValidada == false)
-            {
-                error.SetError(cbCategoria, "Seleccione una categoria");
-            }
-            else
-            {
-                error.SetError(cbCategoria, "");
-            }
-
-
-            if (precioValidado == false)
-            {
-                error.SetError(tbPrecio, "Introduce el precio, maximo 2 decimales");
-            }
-            else
-            {
-                error.SetError(tbPrecio, "");
-            }
-
-
-            if (stockValidado == false)
-            {
-                error.SetError(nudStock, "Introduce el stock");
-            }
-            else
-            {
-                error.SetError(nudStock, "");
-           }
-
-            if (descripcionValidada == false)
-            {
-                error.SetError(tbDescripcion, "Introduce una descripcion de almenos 50 caracteres");
-            }
-            else
-            {
-                error.SetError(tbDescripcion, "");
-            }
-        }
-
-        // Valida datos del formulario
-        private bool validarFormulario(string nombre, string categoria, string descripcion)
-        {
-
-            bool estado = true;
-
-           
-
-          
-
-            // Si la decripcion esta vacia
-            if (Validacion.esUnaCadenaVacia(descripcion))
-            {
-                estado = false;
-                error.SetError(tbDescripcion, "Introduce la descripción");
-            }
-            else
-            {
-                error.SetError(tbDescripcion, "");
-            }
-
-            // Si no ha selecionado ninguna categoria
-            if (cbCategoria.SelectedIndex == -1)
-            {
-                estado = false;
-                error.SetError(cbCategoria, "Selecciona una categoria");
-            }
-            else
-            {
-                error.SetError(cbCategoria, "");
-            }
-
-           
-
-          
-
-
-            return estado;
+            error.SetError(tbNombre, nombreValidado ? "" : "Introduce el nombre");
+            error.SetError(cbCategoria, categoriaValidada ? "" : "Seleccione una categoria");
+            error.SetError(tbPrecio, precioValidado ? "" : "Introduce el precio, maximo 2 decimales");
+            error.SetError(nudStock, stockValidado ? "" : "Introduce el stock");
+            error.SetError(tbDescripcion, descripcionValidada ? "" : "Introduce una descripcion de al menos 50 caracteres");
 
         }
-
-
+   
         // Editar producto
         private void btnEditarProducto_Click(object sender, EventArgs e)
         {
@@ -418,20 +334,19 @@ namespace Tienda.UserControls
 
         private void tbNombre_Leave(object sender, EventArgs e)
         {
-          
+
             // Si el nombre del producto esta vacio
-            if (Validacion.esUnaCadenaVacia( tbNombre.Text))
+            if (Validacion.esUnaCadenaVacia(tbNombre.Text))
             {
                 nombreValidado = false;
                 error.SetError(tbNombre, "Introduce el nombre del producto");
-                Console.WriteLine("Introdcue nombre producto");
-
+                iconoNombre.Visible = false;
             }
             else
             {
                 nombreValidado = true;
                 error.SetError(tbNombre, "");
-                Console.WriteLine("nombre ok");
+                iconoNombre.Visible = true;
             }
 
         }
@@ -446,13 +361,13 @@ namespace Tienda.UserControls
             {
                 precioValidado = false;
                 error.SetError(tbPrecio, "Introduce un numero decimal con punto y maximo 2 decimales");
-                Console.WriteLine("Precio incorrecto");
+                iconoPrecio.Visible = false;
             }
             else
             {
                 error.SetError(tbPrecio, "");
                 precioValidado = true;
-                Console.WriteLine("Precio ok");
+                iconoPrecio.Visible = true;
             }
 
 
@@ -468,12 +383,13 @@ namespace Tienda.UserControls
             {
                 stockValidado = false;
                 error.SetError(nudStock, "Introduce el stock");
+                iconoStock.Visible = false;
             }
             else
             {
                 error.SetError(nudStock, "");
                 stockValidado = true;
-                Console.WriteLine("stock ok");
+                iconoStock.Visible = true;
             }
         }
 
@@ -483,13 +399,13 @@ namespace Tienda.UserControls
             {
                 descripcionValidada = false;
                 error.SetError(tbDescripcion, "Descripcion minima 50 caracteres");
-                Console.WriteLine("descripcion incorrecta");
+                iconoDescripcion.Visible = false;
             }
             else
             {
                 error.SetError(tbDescripcion, "");
-                Console.WriteLine("descripcion ok");
                 descripcionValidada = true;
+                iconoDescripcion.Visible = true;
 
             }
 
@@ -498,17 +414,17 @@ namespace Tienda.UserControls
         private void cbCategoria_Leave(object sender, EventArgs e)
         {
             // Si no se ha seleccionado una cateogira
-            if (Validacion.esUnaCadenaVacia( cbCategoria.Text))
+            if (Validacion.esUnaCadenaVacia(cbCategoria.Text))
             {
                 categoriaValidada = false;
                 error.SetError(cbCategoria, "Selecciona una categoria");
-                Console.WriteLine("Categoria incorrecta");
+                iconoCategoria.Visible = false;
             }
             else
             {
                 error.SetError(cbCategoria, "");
                 categoriaValidada = true;
-                Console.WriteLine("categoria ok");
+                iconoCategoria.Visible = true;
             }
 
         }
