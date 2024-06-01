@@ -244,8 +244,13 @@ namespace Tienda.UserControls
 
             // Si ha guardado el producto 
             if (AdminModel.actualizarProducto(producto))
-            {   // Muestro mensaje 
-                lbMensajeEdtiarProducto.Text = "Acabas actualizar el producto";
+            {
+                // Muestro la ventana crud productos
+                regresarVentanaCrudProductos();
+                // Quiero que meustre el siguiente mensaje
+                lbMensajeGeneral.Text = "Acabas de actualizar el producto!";
+                // Oculto mensaje transcurridos unos segundos
+                mostrarMensajeTimer();
             }
 
         }

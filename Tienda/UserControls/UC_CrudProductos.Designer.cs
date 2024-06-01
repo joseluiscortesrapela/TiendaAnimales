@@ -1495,10 +1495,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.Controls.Add(this.panelEditarProducto);
             this.Controls.Add(this.panelCrudProductos);
             this.Controls.Add(this.panelCrearProducto);
             this.Controls.Add(this.panelDetalleProducto);
-            this.Controls.Add(this.panelEditarProducto);
             this.Controls.Add(this.pbExit);
             this.Controls.Add(this.panelNavegacionSuperior);
             this.Controls.Add(this.lbPagos);
