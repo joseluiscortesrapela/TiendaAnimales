@@ -7,6 +7,7 @@ using Tienda.Forms;
 using Tienda.Sesion;
 using Tienda.Utilizades;
 using System.Drawing;
+using Mysqlx;
 
 namespace Tienda.UserControls
 {
@@ -26,7 +27,7 @@ namespace Tienda.UserControls
             cargarrDgvClientes();
         }
 
-        public UC_CrudClientes( Cliente cliente)
+        public UC_CrudClientes(Cliente cliente)
         {
             InitializeComponent();
             // Guardo cliente
@@ -197,8 +198,6 @@ namespace Tienda.UserControls
             mostrarFormulario("Crear");
             // Añado las provincias al select
             cargarProvincias(cbProvinciasCrear);
-
-            Console.WriteLine("Muestro panel Crear cliente");
         }
 
         // Muestra formulario con los datos del cliente
@@ -247,9 +246,10 @@ namespace Tienda.UserControls
                     panelEditarCliente.Visible = false;
                     panelDetalleCliente.Visible = true;
                     break;
-
             }
 
+            // Ocuto buscador
+            panelFlSuperior.Visible = false;
         }
 
         // Muestra formulario para editar cliente
@@ -274,9 +274,6 @@ namespace Tienda.UserControls
             cbProvinciasEditar.Text = AdminModel.getNombresProvincia(cliente.IdProvincia);
             // Obtengo de la base de datos el nombre del municipio y lo guardo en el campo de texto
             cbMunicipiosEditar.Text = AdminModel.getNombresMunicipio(cliente.IdMuncipio);
-
-            // Quito mensaje
-            lbMensajeEditar.Text = "";
 
         }
 
@@ -352,12 +349,15 @@ namespace Tienda.UserControls
         // Lipia el place holder de los campos del formualario
         private void limpiarPlaceholder(object sender, EventArgs e)
         {
-            // Limpia el texto del TextBox que desencadenó el evento
+
+            // Obtengo el componente que ha lanzado evento
             TextBox textBox = sender as TextBox;
+
             if (textBox != null)
             {
                 textBox.Text = string.Empty;
             }
+
         }
 
         // Vuelve al crud de clientes
@@ -369,37 +369,55 @@ namespace Tienda.UserControls
             panelDetalleCliente.Visible = false;
             // Muestro la ventana 
             panelCrudClientes.Visible = true;
-            // actualizo los clientes
+            // Muestro panel superior del buscador
+            panelFlSuperior.Visible = true;
         }
 
         // Creo un nuevo cliente
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            // Recoje los datos del formulario
-            string nombre = tbNombreCrear.Text;
-            string apellidos = tbApellidosCrear.Text;
-            string dni = tbDniCrear.Text;
-            string telefono = tbTelefonoCrear.Text;
-            string correo = tbCorreoCrear.Text;
-            string contraseña = tbContraseñaCrear.Text;
-            int idProvincia = int.Parse(cbProvinciasCrear.SelectedValue.ToString());
-            string nombreProvincia = cbProvinciasCrear.Text;
-            int idMunicipio = int.Parse(cbMunicipiosCrear.SelectedValue.ToString());
-            string nombreMunicipio = cbMunicipiosCrear.Text;
+            if (validarFormularioCrearCliente())
+            {
+
+                Console.WriteLine("FORMULARIO CREAR CLIENTE VALIDO");
 
 
-            // Instancio e inicializo un nuevo objeto de tipo Cliente
-            Cliente cliente = new Cliente(0, nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, nombreProvincia, idMunicipio, nombreMunicipio);
+                /*
 
-            // Si consigie guardar al cliente en la base de datos
-            if (AdminModel.registrarCliente(cliente) == 1)
-            {   // Muestro mensaje
-                lbMensajeCrear.Text = "Acabas de crear un nuevo cliente";
+                // Recoje los datos del formulario
+                string nombre = tbNombreCrear.Text;
+                string apellidos = tbApellidosCrear.Text;
+                string dni = tbDniCrear.Text;
+                string telefono = tbTelefonoCrear.Text;
+                string correo = tbCorreoCrear.Text;
+                string contraseña = tbContraseñaCrear.Text;
+                int idProvincia = int.Parse(cbProvinciasCrear.SelectedValue.ToString());
+                string nombreProvincia = cbProvinciasCrear.Text;
+                int idMunicipio = int.Parse(cbMunicipiosCrear.SelectedValue.ToString());
+                string nombreMunicipio = cbMunicipiosCrear.Text;
+
+                // Instancio e inicializo un nuevo objeto de tipo Cliente
+                Cliente cliente = new Cliente(0, nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, nombreProvincia, idMunicipio, nombreMunicipio);
+
+                // Si consigie guardar al cliente en la base de datos
+                if (AdminModel.registrarCliente(cliente) == 1)
+                {   // Muestro mensaje
+                    lbMensajeCrear.Text = "Acabas de crear un nuevo cliente";
+                }
+                else
+                {   // En caso de error, muestro este mensaje
+                    lbMensajeCrear.Text = "Error al crear un nuevo cliente";
+                }
+
+                */
             }
             else
-            {   // En caso de error, muestro este mensaje
-                lbMensajeCrear.Text = "Error al crear un nuevo cliente";
+            {
+                Console.WriteLine("FORMULARIO CREAR CLIENTE INVALIDO");
+
             }
+
+
 
         }
 
@@ -414,21 +432,6 @@ namespace Tienda.UserControls
         private void cargarMunicipios(int idProvincia, ComboBox cbMunicipios)
         {
             DataTable tablaMunicipios = AdminModel.getMunicipiosPorProvincia(idProvincia);
-
-            // Recorre cada fila en el DataTable
-            foreach (DataRow row in tablaMunicipios.Rows)
-            {
-                // Accede a cada columna de la fila actual por su nombre o índice
-                // Por ejemplo, para acceder al nombre del municipio (columna "nombre"):
-                string nombreMunicipio = row["municipio"].ToString(); // Ajusta el nombre de la columna según la estructura de tu tabla
-                                                                      // Para acceder al ID del municipio (columna "id"):
-                int idMunicipio = Convert.ToInt32(row["id"]); // Ajusta el nombre de la columna según la estructura de tu tabla
-
-                // Aquí puedes hacer lo que necesites con los datos de cada municipio
-                // Por ejemplo, imprimirlos en la consola o mostrarlos en un MessageBox
-                Console.WriteLine("Nombre: " + nombreMunicipio + ", ID: " + idMunicipio);
-            }
-
 
             // Asignar los municipios al ComboBox cbMunicipios   
             cbMunicipios.DisplayMember = "municipio"; // Suponiendo que el nombre de los municipios está en una columna llamada "nombre"
@@ -468,9 +471,11 @@ namespace Tienda.UserControls
             if (AdminModel.editarCliente(nuevoCliente) == 1)
             {
                 // Actualizo el dgv de clientes con los nuevos cambios
-                cargarrDgvClientes();
-                // Muestro mensaje 
-                lbMensajeEditar.Text = "Acabas de actualizar datos cliente";
+                // cargarrDgvClientes();
+
+                // REgreso a la ventana crud clietnes y muestro mensaje y actualizo la lista de clientes
+
+ 
             }
 
         }
@@ -589,6 +594,118 @@ namespace Tienda.UserControls
             btnDetallesVenta.Visible = false;
             btnEliminarVenta.Visible = false;
         }
+
+
+        private bool validarFormularioCrearCliente()
+        {
+            bool resulatdo = true;
+
+            // Si el dni es incorrecto
+            if (!Validacion.esUnDNIValido(tbDniCrear.Text))
+            {
+                resulatdo = false;
+                error.SetError( tbDniCrear, "El DNI no es valido");
+                iconoDni.Visible = false; 
+            }
+            else
+            {
+                error.SetError( tbDniCrear, "");
+                iconoDni.Visible = true; ;
+            }
+
+
+            // Sino ha introducido el nombre
+            if (Validacion.esUnaCadenaVacia(tbNombreCrear.Text))
+            {
+                resulatdo = false;
+                error.SetError(tbNombreCrear, "Introduce el nombre");
+                iconoNombre.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbNombreCrear, "");
+                iconoNombre.Visible = true;
+            }
+
+
+            // Sino ha introducido los apellidos
+            if (Validacion.esUnaCadenaVacia(tbApellidosCrear.Text))
+            {
+                resulatdo = false;
+                error.SetError(tbApellidosCrear, "Introduce los apellidos");
+                iconoApellidos.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbApellidosCrear, "");
+                iconoApellidos.Visible = true;
+            }
+
+            // Si telefono no es valido
+
+
+            // Si correo no es valido
+            if ( !Validacion.esCorreoElectronicoValido( tbCorreoCrear.Text))
+            {
+                resulatdo = false;
+                error.SetError(tbCorreoCrear, "Introduce un correo electronico valido");
+                iconoCorreo.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbCorreoCrear, "");
+                iconoCorreo.Visible = true;
+            }
+
+
+            // Si la contraseña esta vacia 
+            if (Validacion.esUnaCadenaVacia(tbContraseñaCrear.Text))
+            {
+                resulatdo = false;
+                error.SetError(tbContraseñaCrear, "Introduce la contraseña");
+                iconoContraseña.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbContraseñaCrear, "");
+                iconoContraseña.Visible = true;
+            }
+
+            // Sino ha seleccionado una provincia
+            if (Validacion.esUnaCadenaVacia(cbProvinciasCrear.Text))
+            {
+                resulatdo = false;
+                error.SetError(cbProvinciasCrear, "Selecciona una provincia");
+                iconoProvincia.Visible = false;
+            }
+            else
+            {
+                error.SetError(cbProvinciasCrear, "");
+                iconoProvincia.Visible = true;
+            }
+
+
+
+            // Sino ha seleccionado un municipio
+            if (Validacion.esUnaCadenaVacia(cbMunicipiosCrear.Text))
+            {
+                resulatdo = false;
+                error.SetError(cbMunicipiosCrear, "Selecciona un municipio");
+                iconoMunicipio.Visible = false;
+            }
+            else
+            {
+                error.SetError(cbMunicipiosCrear, "");
+                iconoMunicipio.Visible = true;
+            }
+
+
+
+
+
+            return resulatdo;
+        }
+
 
     }
 
