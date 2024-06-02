@@ -99,7 +99,7 @@ namespace Tienda.UserControls
             tbNombreEditar.Text = producto.Nombre;
             cbCategoriaEditar.Text = producto.Categoria;
             tbPrecioEditar.Text = producto.Precio.ToString();
-            nupStock.Value = producto.Stock;
+            nupStockEditar.Value = producto.Stock;
             tbDescripcionsEdiitar.Text = producto.Descripcion.Trim();
 
         }
@@ -178,18 +178,16 @@ namespace Tienda.UserControls
         private void btnCrearProducto_Click(object sender, EventArgs e)
         {
 
-            // Obtengo datos del formulario crear producto, primero los texto para evitar excepciones.
-            string nombre = tbNombre.Text;
-            string categoria = cbCategoria.Text.ToString();
-            string descripcion = tbDescripcion.Text.Trim();
-
-            // Si los los datos del formulario son correctos
+            // Si los datos introducidos en el formulario son validos
             if (validarFormularioCrearProducto())
             {
-                // Obtengo resto de campos del formulario
-                int stock = int.Parse(nudStock.Value.ToString()); // El stock
-                decimal precio = decimal.Parse(tbPrecio.Text); // El precio
 
+                // Obtengo datos del formulario crear producto, primero los texto para evitar excepciones.
+                string nombre = tbNombre.Text;
+                string categoria = cbCategoria.Text.ToString();
+                string descripcion = tbDescripcion.Text.Trim();
+                int stock = int.Parse(nudStock.Value.ToString());
+                decimal precio = decimal.Parse(tbPrecio.Text);
 
                 // Creo un objeto de tipo producto
                 Producto producto = new Producto(nombre, categoria, precio, stock, descripcion);
@@ -210,29 +208,32 @@ namespace Tienda.UserControls
 
 
 
-
         // Editar producto
         private void btnEditarProducto_Click(object sender, EventArgs e)
         {
 
-            // Obtengo el valor de los campos del formulario
-            int id = int.Parse(lbIdEditar.Text.ToString());
-            string nombre = tbNombreEditar.Text;
-            string categoria = cbCategoriaEditar.Text;
-            decimal precio = decimal.Parse(tbPrecioEditar.Text.ToString());
-            int stock = int.Parse(nupStock.Value.ToString());
-            string descripcion = tbDescripcionsEdiitar.Text.Trim();
-
-            // Creo un objeto de tipo producto
-            Producto producto = new Producto(id, nombre, categoria, precio, stock, descripcion);
-
-            // Si ha guardado el producto 
-            if (AdminModel.actualizarProducto(producto))
+            // Si los datos introducidos en el formulario son validos
+            if (validarFormularioEditarProducto())
             {
-                // Muestro la ventana crud productos
-                regresarVentanaCrudProductos();
-                // Muestro mensaje
-                mostrarMensajeGeneral("Acabas de actualizar el producto!");
+                // Obtengo el valor de los campos del formulario
+                int id = int.Parse(lbIdEditar.Text.ToString());
+                string nombre = tbNombreEditar.Text;
+                string categoria = cbCategoriaEditar.Text;
+                decimal precio = decimal.Parse(tbPrecioEditar.Text.ToString());
+                int stock = int.Parse(nupStockEditar.Value.ToString());
+                string descripcion = tbDescripcionsEdiitar.Text.Trim();
+
+                // Creo un objeto de tipo producto
+                Producto producto = new Producto(id, nombre, categoria, precio, stock, descripcion);
+
+                // Si ha guardado el producto 
+                if (AdminModel.actualizarProducto(producto))
+                {
+                    // Muestro la ventana crud productos
+                    regresarVentanaCrudProductos();
+                    // Muestro mensaje
+                    mostrarMensajeGeneral("Acabas de actualizar el producto!");
+                }
             }
 
         }
@@ -323,7 +324,7 @@ namespace Tienda.UserControls
         }
 
 
-
+        // Valida el formulario para crear un producto nuevo
         private bool validarFormularioCrearProducto()
         {
             // Supngo que el formulario es correcto
@@ -408,6 +409,90 @@ namespace Tienda.UserControls
             return resulatdo;
         }
 
+
+        // Valida el formulario editar producto
+        private bool validarFormularioEditarProducto()
+        {
+            // Supngo que el formulario es correcto
+            bool resulatdo = true;
+
+            // Si el nombre del producto esta vacio
+            if (Validacion.esUnaCadenaVacia(tbNombreEditar.Text))
+            {
+                resulatdo = false;
+                error.SetError(tbNombreEditar, "Introduce el nombre del producto");
+                iconoNombreEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbNombreEditar, "");
+                iconoNombreEditar.Visible = true;
+            }
+
+
+            // Sino es un numero decimal con un maximo de dos decimales
+            if (!Validacion.siEsNumeroDecimal(tbPrecioEditar.Text))
+            {
+                resulatdo = false;
+                error.SetError(tbPrecioEditar, "Introduce un numero con un maximo 2 decimales Ej: 5,75");
+                iconoPrecioEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbPrecioEditar, "");
+                iconoPrecioEditar.Visible = true;
+            }
+
+
+            // Si no se ha seleccionado una cateogira
+            if (Validacion.esUnaCadenaVacia(cbCategoriaEditar.Text))
+            {
+                resulatdo = false;
+                error.SetError(cbCategoriaEditar, "Selecciona una categoria");
+                iconoCategoriaEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(cbCategoriaEditar, "");
+                iconoCategoriaEditar.Visible = true;
+            }
+
+
+
+            // Obtengo el valor del stock
+            string stock = nupStockEditar.Value.ToString().Trim();
+
+            // La cadena está vacía, es igual a "0" o no es un número entero válido
+            if (string.IsNullOrWhiteSpace(stock) || stock == "0" || !int.TryParse(stock, out _))
+            {
+                resulatdo = false;
+                error.SetError(nupStockEditar, "Introduce el stock");
+                iconoStockEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(nupStockEditar, "");
+                iconoStockEditar.Visible = true;
+            }
+
+
+            // Si la descripcion no tiene un minimo de caracteres
+            if (tbDescripcionsEdiitar.Text.Length < 20)
+            {
+                resulatdo = false;
+                error.SetError(tbDescripcionsEdiitar, "Descripcion minima 20 caracteres");
+                iconoDescripcionEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbDescripcionsEdiitar, "");
+                iconoDescripcionEditar.Visible = true;
+            }
+
+
+
+            return resulatdo;
+        }
 
     }
 
