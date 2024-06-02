@@ -606,7 +606,7 @@ namespace Tienda.UserControls
             btnEliminarVenta.Visible = false;
         }
 
-
+        // Comprueba que los datos introducidos en el formulario para crear un cliente sean correctos
         private bool validarFormularioCrearCliente()
         {
             bool resulatdo = true;
@@ -670,13 +670,30 @@ namespace Tienda.UserControls
             if (!Validacion.esCorreoElectronicoValido(tbCorreoCrear.Text))
             {
                 resulatdo = false;
-                error.SetError(tbCorreoCrear, "Introduce un correo electronico valido");
+                error.SetError(tbCorreoCrear, "Introduce el correo electronico");
                 iconoCorreo.Visible = false;
             }
             else
             {
                 error.SetError(tbCorreoCrear, "");
                 iconoCorreo.Visible = true;
+
+                // Instancio objeto            
+                LoginModel loginModel = new LoginModel();
+
+                // Si el correo existe
+                if (loginModel.isUserExist(tbCorreoCrear.Text))
+                {
+                    Console.WriteLine("Correo existe");
+                    error.SetError(tbCorreoCrear, "El correo existe");
+                    iconoCorreo.Visible = false;
+                }
+                else
+                {
+                    Console.WriteLine("correo libre");
+                    error.SetError(tbCorreoCrear, "");
+                    iconoCorreo.Visible = true;
+                }
             }
 
 
@@ -723,11 +740,17 @@ namespace Tienda.UserControls
 
 
 
-
-
             return resulatdo;
         }
 
+        // Comprueba que los datos introducidos en el formulario para editar un cliente sean correctos
+        private bool validarFormularioEditarCliente()
+        {
+            bool resultado = true;
+
+
+            return resultado;
+        }
 
     }
 
