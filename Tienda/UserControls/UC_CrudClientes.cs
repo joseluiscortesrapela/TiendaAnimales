@@ -363,6 +363,11 @@ namespace Tienda.UserControls
         // Vuelve al crud de clientes
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            regresarVentanaCrudClientes();
+        }
+
+        private void regresarVentanaCrudClientes()
+        {
             cargarrDgvClientes();
             panelEditarCliente.Visible = false;
             panelCrearCliente.Visible = false;
@@ -376,14 +381,9 @@ namespace Tienda.UserControls
         // Creo un nuevo cliente
         private void btnCrear_Click(object sender, EventArgs e)
         {
+            // Si formulario es correcto
             if (validarFormularioCrearCliente())
             {
-
-                Console.WriteLine("FORMULARIO CREAR CLIENTE VALIDO");
-
-
-                /*
-
                 // Recoje los datos del formulario
                 string nombre = tbNombreCrear.Text;
                 string apellidos = tbApellidosCrear.Text;
@@ -401,25 +401,27 @@ namespace Tienda.UserControls
 
                 // Si consigie guardar al cliente en la base de datos
                 if (AdminModel.registrarCliente(cliente) == 1)
-                {   // Muestro mensaje
-                    lbMensajeCrear.Text = "Acabas de crear un nuevo cliente";
+                {
+                    // Regreso al la ventana principal
+                    regresarVentanaCrudClientes();
+                    // Muestro mensaje
+                    mostrarMensajeGeneral("Acabas de crear un nuevo cliente");
+
                 }
                 else
                 {   // En caso de error, muestro este mensaje
-                    lbMensajeCrear.Text = "Error al crear un nuevo cliente";
+                    lbMensajeCrearCliente.Text = "Error al crear un nuevo cliente";
                 }
 
-                */
-            }
-            else
-            {
-                Console.WriteLine("FORMULARIO CREAR CLIENTE INVALIDO");
 
             }
 
 
 
         }
+
+
+
 
         // El usuario ha seleccionado una provinca desde el formulario crar nuevo cliente.
         private void cbProvinciasCrear_SelectedIndexChanged(object sender, EventArgs e)
@@ -475,7 +477,7 @@ namespace Tienda.UserControls
 
                 // REgreso a la ventana crud clietnes y muestro mensaje y actualizo la lista de clientes
 
- 
+
             }
 
         }
@@ -560,11 +562,20 @@ namespace Tienda.UserControls
                     // Actualizo el dgv  
                     cargarDGVConLasVentasDelClientePorSuid(cliente.IdCliente);
                     // Muestro mensaje 
-                    lbMensajeGeneral.Text = "La venta fue elimnada!";
+                    mostrarMensajeGeneral("La venta fue elimnada!");
                 }
 
             }
 
+        }
+
+        // Muetro mensaje general 
+        private void mostrarMensajeGeneral(string mensaje)
+        {
+            // Asigno el valor 
+            lbMensajeGeneral.Text = mensaje;
+            // Inicio el temporizador
+            timerOcultarMensaje.Start();
         }
 
         // Obtengo fila selecionada en el dgv de ventas
@@ -604,12 +615,12 @@ namespace Tienda.UserControls
             if (!Validacion.esUnDNIValido(tbDniCrear.Text))
             {
                 resulatdo = false;
-                error.SetError( tbDniCrear, "El DNI no es valido");
-                iconoDni.Visible = false; 
+                error.SetError(tbDniCrear, "El DNI no es valido");
+                iconoDni.Visible = false;
             }
             else
             {
-                error.SetError( tbDniCrear, "");
+                error.SetError(tbDniCrear, "");
                 iconoDni.Visible = true; ;
             }
 
@@ -642,10 +653,21 @@ namespace Tienda.UserControls
             }
 
             // Si telefono no es valido
+            if (!Validacion.esNumeroTelefonoValido(tbTelefonoCrear.Text))
+            {
+                resulatdo = false;
+                error.SetError(tbTelefonoCrear, "Introduce un telefono de 9 digitos");
+                iconoTelefono.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbTelefonoCrear, "");
+                iconoTelefono.Visible = true;
+            }
 
 
             // Si correo no es valido
-            if ( !Validacion.esCorreoElectronicoValido( tbCorreoCrear.Text))
+            if (!Validacion.esCorreoElectronicoValido(tbCorreoCrear.Text))
             {
                 resulatdo = false;
                 error.SetError(tbCorreoCrear, "Introduce un correo electronico valido");

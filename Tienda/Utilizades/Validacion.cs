@@ -72,6 +72,12 @@ namespace Tienda.Utilizades
         }
 
 
+        // Comprueba si el telefono es valido
+        public static bool esNumeroTelefonoValido(string cadena)
+        {
+            return cadena.Length == 9 && int.TryParse(cadena, out _);
+        }
+
     }
 
 
