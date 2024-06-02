@@ -163,11 +163,10 @@ namespace Tienda.Models
         }
 
         // Actualiza datos del cliente
-        public static int editarCliente(Cliente cliente)
+        public static bool editarCliente(Cliente cliente)
         {
             // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
-
             // Consulta SQL para realizar un UPDATE en lugar de un INSERT
             string sql = @" UPDATE clientes 
                             SET nombre = @nombre,
@@ -198,20 +197,24 @@ namespace Tienda.Models
             comando.Parameters.AddWithValue("@municipio", cliente.NombreMunicipio);
             comando.Parameters.AddWithValue("@idCliente", cliente.IdCliente);
 
-            int creado;
+            bool actualizado;
 
             try
             {
                 // Return value is the number of rows affected by the SQL statement.
-                creado = comando.ExecuteNonQuery();
+               int estado = comando.ExecuteNonQuery();
+            
+                // Convierto el int a bool
+                actualizado = (estado != 0);
+
             }
             catch (Exception ex)
             {
-                creado = 0;
-                MessageBox.Show(ex.Message);
+                actualizado = false;
+                MessageBox.Show(ex.Message );
             }
 
-            return creado;
+            return actualizado;
 
         }
 
@@ -421,7 +424,6 @@ namespace Tienda.Models
 
             return table;
         }
-
 
         // Registra un nuevo producto
         public static bool registrarProducto(Producto producto)

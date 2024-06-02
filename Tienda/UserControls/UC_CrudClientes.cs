@@ -269,7 +269,6 @@ namespace Tienda.UserControls
 
             // Añado las provincias al compbo que esta en el panel editar cliente.
             cargarProvincias(cbProvinciasEditar);
-
             // Obtengo de la base de datos el nombre de la provincia y lo guardo en el campo de texto
             cbProvinciasEditar.Text = AdminModel.getNombresProvincia(cliente.IdProvincia);
             // Obtengo de la base de datos el nombre del municipio y lo guardo en el campo de texto
@@ -300,7 +299,7 @@ namespace Tienda.UserControls
                     // Elimino las polizas del dgv
                     resetearDgvVentas();
                     // Muestro mensaje 
-                    lbMensajeGeneral.Text = "Se acaba de eliminar al cliente junto con sus polizas";
+                    lbMensajeGeneral.Text = "Cliente ha sido elimnado!";
                 }
                 else
                 {
@@ -421,8 +420,6 @@ namespace Tienda.UserControls
         }
 
 
-
-
         // El usuario ha seleccionado una provinca desde el formulario crar nuevo cliente.
         private void cbProvinciasCrear_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -453,32 +450,37 @@ namespace Tienda.UserControls
         // Editar datos del cliente
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            // Obtengo datos formulario
-            int idCliente = cliente.IdCliente;
-            string nombre = tbNombreEditar.Text;
-            string apellidos = tbApellidosEditar.Text;
-            string dni = tbDniEditar.Text;
-            string telefono = tbTelefonoEditar.Text;
-            string correo = tbCorreoEditar.Text;
-            string contraseña = tbContraseñaEditar.Text;
-            int idProvincia = int.Parse(cbProvinciasEditar.SelectedValue.ToString());
-            string nombreProvincia = cbProvinciasEditar.Text;
-            int idMunicipio = int.Parse(cbMunicipiosEditar.SelectedValue.ToString());
-            string nombreMunicipio = cbMunicipiosEditar.Text;
 
-            // Instancio e inicializo un nuevo objeto de tipo Cliente
-            Cliente nuevoCliente = new Cliente(idCliente, nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, nombreProvincia, idMunicipio, nombreMunicipio);
-
-            // Actualizo datos base datos del cliente
-            if (AdminModel.editarCliente(nuevoCliente) == 1)
+            // Si todos los campos del formulario son correctos
+            if (validarFormularioEditarCliente())
             {
-                // Actualizo el dgv de clientes con los nuevos cambios
-                // cargarrDgvClientes();
+                // Obtengo datos formulario
+                int idCliente = cliente.IdCliente;
+                string nombre = tbNombreEditar.Text;
+                string apellidos = tbApellidosEditar.Text;
+                string dni = tbDniEditar.Text;
+                string telefono = tbTelefonoEditar.Text;
+                string correo = tbCorreoEditar.Text;
+                string contraseña = tbContraseñaEditar.Text;
+                int idProvincia = int.Parse(cbProvinciasEditar.SelectedValue.ToString());
+                string nombreProvincia = cbProvinciasEditar.Text;
+                int idMunicipio = int.Parse(cbMunicipiosEditar.SelectedValue.ToString());
+                string nombreMunicipio = cbMunicipiosEditar.Text;
 
-                // REgreso a la ventana crud clietnes y muestro mensaje y actualizo la lista de clientes
+                // Instancio e inicializo un nuevo objeto de tipo Cliente
+                Cliente nuevoCliente = new Cliente(idCliente, nombre, apellidos, dni, telefono, correo, contraseña, idProvincia, nombreProvincia, idMunicipio, nombreMunicipio);
 
+                // Actualizo datos base datos del cliente
+                if (AdminModel.editarCliente(nuevoCliente))
+                {
+                    // Regreso a la ventana crud clientes
+                    regresarVentanaCrudClientes();
+                    // Muestro mensaje
+                    mostrarMensajeGeneral("El cliente ha sido actualizado!");
+                }
 
             }
+
 
         }
 
@@ -609,12 +611,12 @@ namespace Tienda.UserControls
         // Comprueba que los datos introducidos en el formulario para crear un cliente sean correctos
         private bool validarFormularioCrearCliente()
         {
-            bool resulatdo = true;
+            bool resultado = true;
 
             // Si el dni es incorrecto
             if (!Validacion.esUnDNIValido(tbDniCrear.Text))
             {
-                resulatdo = false;
+                resultado = false;
                 error.SetError(tbDniCrear, "El DNI no es valido");
                 iconoDni.Visible = false;
             }
@@ -628,7 +630,7 @@ namespace Tienda.UserControls
             // Sino ha introducido el nombre
             if (Validacion.esUnaCadenaVacia(tbNombreCrear.Text))
             {
-                resulatdo = false;
+                resultado = false;
                 error.SetError(tbNombreCrear, "Introduce el nombre");
                 iconoNombre.Visible = false;
             }
@@ -642,7 +644,7 @@ namespace Tienda.UserControls
             // Sino ha introducido los apellidos
             if (Validacion.esUnaCadenaVacia(tbApellidosCrear.Text))
             {
-                resulatdo = false;
+                resultado = false;
                 error.SetError(tbApellidosCrear, "Introduce los apellidos");
                 iconoApellidos.Visible = false;
             }
@@ -655,7 +657,7 @@ namespace Tienda.UserControls
             // Si telefono no es valido
             if (!Validacion.esNumeroTelefonoValido(tbTelefonoCrear.Text))
             {
-                resulatdo = false;
+                resultado = false;
                 error.SetError(tbTelefonoCrear, "Introduce un telefono de 9 digitos");
                 iconoTelefono.Visible = false;
             }
@@ -669,7 +671,7 @@ namespace Tienda.UserControls
             // Si correo no es valido
             if (!Validacion.esCorreoElectronicoValido(tbCorreoCrear.Text))
             {
-                resulatdo = false;
+                resultado = false;
                 error.SetError(tbCorreoCrear, "Introduce el correo electronico");
                 iconoCorreo.Visible = false;
             }
@@ -700,7 +702,7 @@ namespace Tienda.UserControls
             // Si la contraseña esta vacia 
             if (Validacion.esUnaCadenaVacia(tbContraseñaCrear.Text))
             {
-                resulatdo = false;
+                resultado = false;
                 error.SetError(tbContraseñaCrear, "Introduce la contraseña");
                 iconoContraseña.Visible = false;
             }
@@ -713,7 +715,7 @@ namespace Tienda.UserControls
             // Sino ha seleccionado una provincia
             if (Validacion.esUnaCadenaVacia(cbProvinciasCrear.Text))
             {
-                resulatdo = false;
+                resultado = false;
                 error.SetError(cbProvinciasCrear, "Selecciona una provincia");
                 iconoProvincia.Visible = false;
             }
@@ -728,7 +730,7 @@ namespace Tienda.UserControls
             // Sino ha seleccionado un municipio
             if (Validacion.esUnaCadenaVacia(cbMunicipiosCrear.Text))
             {
-                resulatdo = false;
+                resultado = false;
                 error.SetError(cbMunicipiosCrear, "Selecciona un municipio");
                 iconoMunicipio.Visible = false;
             }
@@ -740,13 +742,149 @@ namespace Tienda.UserControls
 
 
 
-            return resulatdo;
+            return resultado;
         }
 
         // Comprueba que los datos introducidos en el formulario para editar un cliente sean correctos
         private bool validarFormularioEditarCliente()
         {
             bool resultado = true;
+
+
+            // Si el dni es incorrecto
+            if (!Validacion.esUnDNIValido(tbDniEditar.Text))
+            {
+                resultado = false;
+                error.SetError(tbDniEditar, "El DNI no es valido");
+                iconoDniEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbDniEditar, "");
+                iconoDniEditar.Visible = true; ;
+            }
+
+
+            // Sino ha introducido el nombre
+            if (Validacion.esUnaCadenaVacia(tbNombreEditar.Text))
+            {
+                resultado = false;
+                error.SetError(tbNombreEditar, "Introduce el nombre");
+                iconoNombreEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbNombreEditar, "");
+                iconoNombreEditar.Visible = true;
+            }
+
+
+            // Sino ha introducido los apellidos
+            if (Validacion.esUnaCadenaVacia(tbApellidosEditar.Text))
+            {
+                resultado = false;
+                error.SetError(tbApellidosEditar, "Introduce los apellidos");
+                iconoApellidosEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbApellidosEditar, "");
+                iconoApellidosEditar.Visible = true;
+            }
+
+            // Si telefono no es valido
+            if (!Validacion.esNumeroTelefonoValido(tbTelefonoEditar.Text))
+            {
+                resultado = false;
+                error.SetError(tbTelefonoEditar, "Introduce un telefono de 9 digitos");
+                iconoTelefonoEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbTelefonoEditar, "");
+                iconoTelefonoEditar.Visible = true;
+            }
+
+
+            // Si correo no es valido
+            if (!Validacion.esCorreoElectronicoValido(tbCorreoEditar.Text))
+            {
+                resultado = false;
+                error.SetError(tbCorreoEditar, "Introduce el correo electronico");
+                iconoCorreoEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbCorreoEditar, "");
+                iconoCorreoEditar.Visible = true;
+
+                // Instancio objeto            
+                LoginModel loginModel = new LoginModel();
+
+                Console.WriteLine("correo "+ cliente.Correo);
+            
+                // Si quire cambiar de correo
+                if (cliente.Correo != tbCorreoEditar.Text)
+                {
+                    // Compruebo si existe el nuevo correo
+                    if (loginModel.isUserExist(tbCorreoEditar.Text))
+                    {
+                        resultado = false;
+                        error.SetError(tbCorreoEditar, "El correo existe");
+                        iconoCorreoEditar.Visible = false;
+                    }
+                    else
+                    {
+                        error.SetError(tbCorreoEditar, "");
+                        iconoCorreoEditar.Visible = true;
+                    }
+
+                }
+                
+
+            }
+
+
+            // Si la contraseña esta vacia 
+            if (Validacion.esUnaCadenaVacia(tbContraseñaEditar.Text))
+            {
+                resultado = false;
+                error.SetError(tbContraseñaEditar, "Introduce la contraseña");
+                iconoContraseñaEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbContraseñaEditar, "");
+                iconoContraseñaEditar.Visible = true;
+            }
+
+            // Sino ha seleccionado una provincia
+            if (Validacion.esUnaCadenaVacia(cbProvinciasEditar.Text))
+            {
+                resultado = false;
+                error.SetError(cbProvinciasEditar, "Selecciona una provincia");
+                iconoProvinciaEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(cbProvinciasEditar, "");
+                iconoProvinciaEditar.Visible = true;
+            }
+
+
+
+            // Sino ha seleccionado un municipio
+            if (Validacion.esUnaCadenaVacia(cbMunicipiosEditar.Text))
+            {
+                resultado = false;
+                error.SetError(cbMunicipiosEditar, "Selecciona un municipio");
+                iconoMunicipioEditar.Visible = false;
+            }
+            else
+            {
+                error.SetError(cbMunicipiosEditar, "");
+                iconoMunicipioEditar.Visible = true;
+            }
 
 
             return resultado;

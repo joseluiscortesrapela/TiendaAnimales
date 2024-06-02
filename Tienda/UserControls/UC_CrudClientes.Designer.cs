@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CrudClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pbEditar = new System.Windows.Forms.PictureBox();
             this.pbEliminar = new System.Windows.Forms.PictureBox();
             this.pbCrear = new System.Windows.Forms.PictureBox();
@@ -92,6 +92,14 @@
             this.btnRegresar = new System.Windows.Forms.Button();
             this.label55 = new System.Windows.Forms.Label();
             this.panelEditarCliente = new System.Windows.Forms.Panel();
+            this.iconoMunicipioEditar = new System.Windows.Forms.PictureBox();
+            this.iconoProvinciaEditar = new System.Windows.Forms.PictureBox();
+            this.iconoContraseñaEditar = new System.Windows.Forms.PictureBox();
+            this.iconoCorreoEditar = new System.Windows.Forms.PictureBox();
+            this.iconoTelefonoEditar = new System.Windows.Forms.PictureBox();
+            this.iconoDniEditar = new System.Windows.Forms.PictureBox();
+            this.iconoApellidosEditar = new System.Windows.Forms.PictureBox();
+            this.iconoNombreEditar = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbContraseñaEditar = new System.Windows.Forms.TextBox();
@@ -168,6 +176,7 @@
             this.label47 = new System.Windows.Forms.Label();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.panelCrearCliente = new System.Windows.Forms.Panel();
+            this.lbMensajeCrearCliente = new System.Windows.Forms.Label();
             this.iconoMunicipio = new System.Windows.Forms.PictureBox();
             this.iconoProvincia = new System.Windows.Forms.PictureBox();
             this.iconoContraseña = new System.Windows.Forms.PictureBox();
@@ -177,15 +186,6 @@
             this.iconoApellidos = new System.Windows.Forms.PictureBox();
             this.iconoNombre = new System.Windows.Forms.PictureBox();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lbMensajeCrearCliente = new System.Windows.Forms.Label();
-            this.iconoNombreEditar = new System.Windows.Forms.PictureBox();
-            this.iconoApellidosEditar = new System.Windows.Forms.PictureBox();
-            this.iconoDniEditar = new System.Windows.Forms.PictureBox();
-            this.iconoTelefonoEditar = new System.Windows.Forms.PictureBox();
-            this.iconoCorreoEditar = new System.Windows.Forms.PictureBox();
-            this.iconoContraseñaEditar = new System.Windows.Forms.PictureBox();
-            this.iconoProvinciaEditar = new System.Windows.Forms.PictureBox();
-            this.iconoMunicipioEditar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCrear)).BeginInit();
@@ -214,6 +214,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
             this.panelEditarCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoMunicipioEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoProvinciaEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoContraseñaEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoCorreoEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoTelefonoEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoDniEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoApellidosEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoNombreEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
@@ -242,14 +250,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconoApellidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoNombreEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoApellidosEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoDniEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoTelefonoEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoCorreoEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoContraseñaEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoProvinciaEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoMunicipioEditar)).BeginInit();
             this.SuspendLayout();
             // 
             // pbEditar
@@ -278,7 +278,7 @@
             // 
             this.pbCrear.BackColor = System.Drawing.Color.Transparent;
             this.pbCrear.Image = ((System.Drawing.Image)(resources.GetObject("pbCrear.Image")));
-            this.pbCrear.Location = new System.Drawing.Point(1252, 14);
+            this.pbCrear.Location = new System.Drawing.Point(1253, 14);
             this.pbCrear.Name = "pbCrear";
             this.pbCrear.Size = new System.Drawing.Size(33, 34);
             this.pbCrear.TabIndex = 9;
@@ -291,7 +291,7 @@
             this.lbMensajeGeneral.AutoSize = true;
             this.lbMensajeGeneral.BackColor = System.Drawing.Color.Transparent;
             this.lbMensajeGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMensajeGeneral.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.lbMensajeGeneral.ForeColor = System.Drawing.Color.SeaGreen;
             this.lbMensajeGeneral.Location = new System.Drawing.Point(556, 427);
             this.lbMensajeGeneral.Name = "lbMensajeGeneral";
             this.lbMensajeGeneral.Size = new System.Drawing.Size(0, 26);
@@ -380,7 +380,7 @@
             // pbMostrarBuscador
             // 
             this.pbMostrarBuscador.Image = ((System.Drawing.Image)(resources.GetObject("pbMostrarBuscador.Image")));
-            this.pbMostrarBuscador.Location = new System.Drawing.Point(1183, 1);
+            this.pbMostrarBuscador.Location = new System.Drawing.Point(1189, 4);
             this.pbMostrarBuscador.Name = "pbMostrarBuscador";
             this.pbMostrarBuscador.Size = new System.Drawing.Size(36, 37);
             this.pbMostrarBuscador.TabIndex = 4;
@@ -423,6 +423,7 @@
             this.panelVentasDelCliente.Controls.Add(this.btnEliminarVenta);
             this.panelVentasDelCliente.Controls.Add(this.btnCrearVenta);
             this.panelVentasDelCliente.Controls.Add(this.lbClienteSelecionado);
+            this.panelVentasDelCliente.ForeColor = System.Drawing.Color.SeaGreen;
             this.panelVentasDelCliente.Location = new System.Drawing.Point(-9, 456);
             this.panelVentasDelCliente.Name = "panelVentasDelCliente";
             this.panelVentasDelCliente.Size = new System.Drawing.Size(1339, 196);
@@ -434,49 +435,50 @@
             this.dgvVentas.AllowUserToAddRows = false;
             this.dgvVentas.AllowUserToDeleteRows = false;
             this.dgvVentas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.dgvVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.dgvVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvVentas.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvVentas.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVentas.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVentas.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgvVentas.EnableHeadersVisualStyles = false;
             this.dgvVentas.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvVentas.Location = new System.Drawing.Point(37, 35);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvVentas.RowHeadersVisible = false;
             this.dgvVentas.RowHeadersWidth = 35;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.DimGray;
-            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.DimGray;
+            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvVentas.RowTemplate.Height = 45;
             this.dgvVentas.RowTemplate.ReadOnly = true;
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -544,40 +546,41 @@
             this.dgvClientes.AllowUserToOrderColumns = true;
             this.dgvClientes.AllowUserToResizeColumns = false;
             this.dgvClientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Violet;
-            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Violet;
+            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.DarkViolet;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.DarkViolet;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DarkViolet;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DarkViolet;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvClientes.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvClientes.EnableHeadersVisualStyles = false;
             this.dgvClientes.Location = new System.Drawing.Point(28, 51);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersVisible = false;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.DimGray;
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.DimGray;
+            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvClientes.RowTemplate.Height = 30;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(1258, 376);
@@ -1023,6 +1026,94 @@
             this.panelEditarCliente.Size = new System.Drawing.Size(1324, 655);
             this.panelEditarCliente.TabIndex = 36;
             this.panelEditarCliente.Visible = false;
+            // 
+            // iconoMunicipioEditar
+            // 
+            this.iconoMunicipioEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoMunicipioEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoMunicipioEditar.Image")));
+            this.iconoMunicipioEditar.Location = new System.Drawing.Point(1116, 421);
+            this.iconoMunicipioEditar.Name = "iconoMunicipioEditar";
+            this.iconoMunicipioEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoMunicipioEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoMunicipioEditar.TabIndex = 185;
+            this.iconoMunicipioEditar.TabStop = false;
+            // 
+            // iconoProvinciaEditar
+            // 
+            this.iconoProvinciaEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoProvinciaEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoProvinciaEditar.Image")));
+            this.iconoProvinciaEditar.Location = new System.Drawing.Point(750, 419);
+            this.iconoProvinciaEditar.Name = "iconoProvinciaEditar";
+            this.iconoProvinciaEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoProvinciaEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoProvinciaEditar.TabIndex = 184;
+            this.iconoProvinciaEditar.TabStop = false;
+            // 
+            // iconoContraseñaEditar
+            // 
+            this.iconoContraseñaEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoContraseñaEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoContraseñaEditar.Image")));
+            this.iconoContraseñaEditar.Location = new System.Drawing.Point(428, 418);
+            this.iconoContraseñaEditar.Name = "iconoContraseñaEditar";
+            this.iconoContraseñaEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoContraseñaEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoContraseñaEditar.TabIndex = 183;
+            this.iconoContraseñaEditar.TabStop = false;
+            // 
+            // iconoCorreoEditar
+            // 
+            this.iconoCorreoEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoCorreoEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoCorreoEditar.Image")));
+            this.iconoCorreoEditar.Location = new System.Drawing.Point(1109, 291);
+            this.iconoCorreoEditar.Name = "iconoCorreoEditar";
+            this.iconoCorreoEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoCorreoEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoCorreoEditar.TabIndex = 182;
+            this.iconoCorreoEditar.TabStop = false;
+            // 
+            // iconoTelefonoEditar
+            // 
+            this.iconoTelefonoEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoTelefonoEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoTelefonoEditar.Image")));
+            this.iconoTelefonoEditar.Location = new System.Drawing.Point(661, 291);
+            this.iconoTelefonoEditar.Name = "iconoTelefonoEditar";
+            this.iconoTelefonoEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoTelefonoEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoTelefonoEditar.TabIndex = 181;
+            this.iconoTelefonoEditar.TabStop = false;
+            // 
+            // iconoDniEditar
+            // 
+            this.iconoDniEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoDniEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoDniEditar.Image")));
+            this.iconoDniEditar.Location = new System.Drawing.Point(429, 291);
+            this.iconoDniEditar.Name = "iconoDniEditar";
+            this.iconoDniEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoDniEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoDniEditar.TabIndex = 180;
+            this.iconoDniEditar.TabStop = false;
+            // 
+            // iconoApellidosEditar
+            // 
+            this.iconoApellidosEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoApellidosEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoApellidosEditar.Image")));
+            this.iconoApellidosEditar.Location = new System.Drawing.Point(1109, 179);
+            this.iconoApellidosEditar.Name = "iconoApellidosEditar";
+            this.iconoApellidosEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoApellidosEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoApellidosEditar.TabIndex = 179;
+            this.iconoApellidosEditar.TabStop = false;
+            // 
+            // iconoNombreEditar
+            // 
+            this.iconoNombreEditar.BackColor = System.Drawing.Color.Transparent;
+            this.iconoNombreEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoNombreEditar.Image")));
+            this.iconoNombreEditar.Location = new System.Drawing.Point(661, 179);
+            this.iconoNombreEditar.Name = "iconoNombreEditar";
+            this.iconoNombreEditar.Size = new System.Drawing.Size(28, 28);
+            this.iconoNombreEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoNombreEditar.TabIndex = 178;
+            this.iconoNombreEditar.TabStop = false;
             // 
             // label3
             // 
@@ -1537,9 +1628,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(251, 139);
+            this.pictureBox1.Location = new System.Drawing.Point(254, 140);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 26);
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
@@ -1547,9 +1639,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(712, 139);
+            this.pictureBox2.Location = new System.Drawing.Point(715, 139);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
@@ -1613,9 +1706,10 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(712, 251);
+            this.pictureBox5.Location = new System.Drawing.Point(716, 251);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox5.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox5.TabIndex = 16;
             this.pictureBox5.TabStop = false;
             // 
@@ -1731,9 +1825,10 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(460, 378);
+            this.pictureBox6.Location = new System.Drawing.Point(464, 378);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox6.TabIndex = 29;
             this.pictureBox6.TabStop = false;
             // 
@@ -1741,9 +1836,10 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(792, 382);
+            this.pictureBox7.Location = new System.Drawing.Point(794, 382);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox7.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox7.TabIndex = 30;
             this.pictureBox7.TabStop = false;
             // 
@@ -1914,6 +2010,18 @@
             this.panelCrearCliente.TabIndex = 32;
             this.panelCrearCliente.Visible = false;
             // 
+            // lbMensajeCrearCliente
+            // 
+            this.lbMensajeCrearCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbMensajeCrearCliente.AutoSize = true;
+            this.lbMensajeCrearCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lbMensajeCrearCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeCrearCliente.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.lbMensajeCrearCliente.Location = new System.Drawing.Point(503, 472);
+            this.lbMensajeCrearCliente.Name = "lbMensajeCrearCliente";
+            this.lbMensajeCrearCliente.Size = new System.Drawing.Size(0, 24);
+            this.lbMensajeCrearCliente.TabIndex = 139;
+            // 
             // iconoMunicipio
             // 
             this.iconoMunicipio.BackColor = System.Drawing.Color.Transparent;
@@ -2015,114 +2123,14 @@
             this.error.ContainerControl = this;
             this.error.Icon = ((System.Drawing.Icon)(resources.GetObject("error.Icon")));
             // 
-            // lbMensajeCrearCliente
-            // 
-            this.lbMensajeCrearCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lbMensajeCrearCliente.AutoSize = true;
-            this.lbMensajeCrearCliente.BackColor = System.Drawing.Color.Transparent;
-            this.lbMensajeCrearCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMensajeCrearCliente.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lbMensajeCrearCliente.Location = new System.Drawing.Point(503, 472);
-            this.lbMensajeCrearCliente.Name = "lbMensajeCrearCliente";
-            this.lbMensajeCrearCliente.Size = new System.Drawing.Size(0, 24);
-            this.lbMensajeCrearCliente.TabIndex = 139;
-            // 
-            // iconoNombreEditar
-            // 
-            this.iconoNombreEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoNombreEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoNombreEditar.Image")));
-            this.iconoNombreEditar.Location = new System.Drawing.Point(661, 179);
-            this.iconoNombreEditar.Name = "iconoNombreEditar";
-            this.iconoNombreEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoNombreEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoNombreEditar.TabIndex = 178;
-            this.iconoNombreEditar.TabStop = false;
-            // 
-            // iconoApellidosEditar
-            // 
-            this.iconoApellidosEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoApellidosEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoApellidosEditar.Image")));
-            this.iconoApellidosEditar.Location = new System.Drawing.Point(1109, 179);
-            this.iconoApellidosEditar.Name = "iconoApellidosEditar";
-            this.iconoApellidosEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoApellidosEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoApellidosEditar.TabIndex = 179;
-            this.iconoApellidosEditar.TabStop = false;
-            // 
-            // iconoDniEditar
-            // 
-            this.iconoDniEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoDniEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoDniEditar.Image")));
-            this.iconoDniEditar.Location = new System.Drawing.Point(429, 291);
-            this.iconoDniEditar.Name = "iconoDniEditar";
-            this.iconoDniEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoDniEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoDniEditar.TabIndex = 180;
-            this.iconoDniEditar.TabStop = false;
-            // 
-            // iconoTelefonoEditar
-            // 
-            this.iconoTelefonoEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoTelefonoEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoTelefonoEditar.Image")));
-            this.iconoTelefonoEditar.Location = new System.Drawing.Point(661, 291);
-            this.iconoTelefonoEditar.Name = "iconoTelefonoEditar";
-            this.iconoTelefonoEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoTelefonoEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoTelefonoEditar.TabIndex = 181;
-            this.iconoTelefonoEditar.TabStop = false;
-            // 
-            // iconoCorreoEditar
-            // 
-            this.iconoCorreoEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoCorreoEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoCorreoEditar.Image")));
-            this.iconoCorreoEditar.Location = new System.Drawing.Point(1109, 291);
-            this.iconoCorreoEditar.Name = "iconoCorreoEditar";
-            this.iconoCorreoEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoCorreoEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoCorreoEditar.TabIndex = 182;
-            this.iconoCorreoEditar.TabStop = false;
-            // 
-            // iconoContraseñaEditar
-            // 
-            this.iconoContraseñaEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoContraseñaEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoContraseñaEditar.Image")));
-            this.iconoContraseñaEditar.Location = new System.Drawing.Point(428, 418);
-            this.iconoContraseñaEditar.Name = "iconoContraseñaEditar";
-            this.iconoContraseñaEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoContraseñaEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoContraseñaEditar.TabIndex = 183;
-            this.iconoContraseñaEditar.TabStop = false;
-            // 
-            // iconoProvinciaEditar
-            // 
-            this.iconoProvinciaEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoProvinciaEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoProvinciaEditar.Image")));
-            this.iconoProvinciaEditar.Location = new System.Drawing.Point(750, 419);
-            this.iconoProvinciaEditar.Name = "iconoProvinciaEditar";
-            this.iconoProvinciaEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoProvinciaEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoProvinciaEditar.TabIndex = 184;
-            this.iconoProvinciaEditar.TabStop = false;
-            // 
-            // iconoMunicipioEditar
-            // 
-            this.iconoMunicipioEditar.BackColor = System.Drawing.Color.Transparent;
-            this.iconoMunicipioEditar.Image = ((System.Drawing.Image)(resources.GetObject("iconoMunicipioEditar.Image")));
-            this.iconoMunicipioEditar.Location = new System.Drawing.Point(1116, 421);
-            this.iconoMunicipioEditar.Name = "iconoMunicipioEditar";
-            this.iconoMunicipioEditar.Size = new System.Drawing.Size(28, 28);
-            this.iconoMunicipioEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoMunicipioEditar.TabIndex = 185;
-            this.iconoMunicipioEditar.TabStop = false;
-            // 
             // UC_CrudClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.panelCrudClientes);
             this.Controls.Add(this.panelCrearCliente);
             this.Controls.Add(this.panelEditarCliente);
-            this.Controls.Add(this.panelCrudClientes);
             this.Controls.Add(this.panelDetalleCliente);
             this.Controls.Add(this.panelFlSuperior);
             this.Name = "UC_CrudClientes";
@@ -2162,6 +2170,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
             this.panelEditarCliente.ResumeLayout(false);
             this.panelEditarCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoMunicipioEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoProvinciaEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoContraseñaEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoCorreoEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoTelefonoEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoDniEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoApellidosEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconoNombreEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
@@ -2191,14 +2207,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconoApellidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoNombreEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoApellidosEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoDniEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoTelefonoEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoCorreoEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoContraseñaEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoProvinciaEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoMunicipioEditar)).EndInit();
             this.ResumeLayout(false);
 
         }
