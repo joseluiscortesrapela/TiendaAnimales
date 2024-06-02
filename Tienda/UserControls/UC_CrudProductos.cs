@@ -15,7 +15,6 @@ namespace Tienda.UserControls
         private int idProducto;
         private Producto producto;
         private DataGridViewRow fila;
-        private bool nombreValidado, descripcionValidada, categoriaValidada, precioValidado, stockValidado;
 
         // Constructor
         public UC_CrudProductos()
@@ -156,8 +155,9 @@ namespace Tienda.UserControls
             {
                 // Si ha eliminado el producto
                 if (AdminModel.eliminarProducto(idProducto))
-                {   // Muetro mensaje al usuario
-                    lbMensajeGeneral.Text = "Acabas de eliminar el producto";
+                {
+                    // Muetro mensaje al usuario
+                    mostrarMensajeGeneral("Acabas de eliminar el producto");
                     // Actualizo la lista de productos
                     cargarProductosDGV();
                 }
@@ -184,49 +184,33 @@ namespace Tienda.UserControls
             string descripcion = tbDescripcion.Text.Trim();
 
             // Si los los datos del formulario son correctos
-            if (nombreValidado && categoriaValidada && precioValidado && stockValidado && descripcionValidada)
+            if (validarFormularioCrearProducto())
             {
-                Console.WriteLine("Datos formulario validos");
                 // Obtengo resto de campos del formulario
                 int stock = int.Parse(nudStock.Value.ToString()); // El stock
-                decimal precio = 0;
-                decimal.TryParse(tbPrecio.Text, out precio);
+                decimal precio = decimal.Parse(tbPrecio.Text); // El precio
+
 
                 // Creo un objeto de tipo producto
                 Producto producto = new Producto(nombre, categoria, precio, stock, descripcion);
 
                 // Si ha guardado el producto 
                 if (AdminModel.registrarProducto(producto))
-                {  
+                {
                     // Muestro la ventana crud productos
                     regresarVentanaCrudProductos();
-                    // Quiero que meustre el siguiente mensaje
-                    lbMensajeGeneral.Text = "Acabas de crear un nuevo producto!";
-                    // Oculto mensaje transcurridos unos segundos
-                    mostrarMensajeTimer();
+                    // Muestro mensaje
+                    mostrarMensajeGeneral("Acabas de crear un nuevo producto!");
                 }
 
             }
-            else
-            {
-                // Muestro las alertas de los compos del formulario que son incorrectos
-                mostrarErrores();
-            }
 
 
         }
 
-    
-        private void mostrarErrores()
-        {
-            error.SetError(tbNombre, nombreValidado ? "" : "Introduce el nombre");
-            error.SetError(cbCategoria, categoriaValidada ? "" : "Seleccione una categoria");
-            error.SetError(tbPrecio, precioValidado ? "" : "Introduce el precio, maximo 2 decimales");
-            error.SetError(nudStock, stockValidado ? "" : "Introduce el stock");
-            error.SetError(tbDescripcion, descripcionValidada ? "" : "Introduce una descripcion de al menos 50 caracteres");
 
-        }
-   
+
+
         // Editar producto
         private void btnEditarProducto_Click(object sender, EventArgs e)
         {
@@ -247,10 +231,8 @@ namespace Tienda.UserControls
             {
                 // Muestro la ventana crud productos
                 regresarVentanaCrudProductos();
-                // Quiero que meustre el siguiente mensaje
-                lbMensajeGeneral.Text = "Acabas de actualizar el producto!";
-                // Oculto mensaje transcurridos unos segundos
-                mostrarMensajeTimer();
+                // Muestro mensaje
+                mostrarMensajeGeneral("Acabas de actualizar el producto!");
             }
 
         }
@@ -301,8 +283,12 @@ namespace Tienda.UserControls
             Application.Exit();
         }
 
-        private void mostrarMensajeTimer()
+        // Muetro mensaje general 
+        private void mostrarMensajeGeneral(string mensaje)
         {
+            // Asigno el valor 
+            lbMensajeGeneral.Text = mensaje;
+            // Inicio el temporizador
             timerOcultarMensaje.Start();
         }
 
@@ -336,101 +322,93 @@ namespace Tienda.UserControls
 
         }
 
-        private void tbNombre_Leave(object sender, EventArgs e)
+
+
+        private bool validarFormularioCrearProducto()
         {
+            // Supngo que el formulario es correcto
+            bool resulatdo = true;
+
 
             // Si el nombre del producto esta vacio
             if (Validacion.esUnaCadenaVacia(tbNombre.Text))
             {
-                nombreValidado = false;
+                resulatdo = false;
                 error.SetError(tbNombre, "Introduce el nombre del producto");
                 iconoNombre.Visible = false;
             }
             else
             {
-                nombreValidado = true;
                 error.SetError(tbNombre, "");
                 iconoNombre.Visible = true;
             }
 
-        }
-
-        private void tbPrecio_Leave(object sender, EventArgs e)
-        {
-
-            string precioString = tbPrecio.Text;
 
             // Sino es un numero decimal con un maximo de dos decimales
-            if (!Validacion.siEsNumeroDecimal(precioString))
+            if (!Validacion.siEsNumeroDecimal(tbPrecio.Text))
             {
-                precioValidado = false;
-                error.SetError(tbPrecio, "Introduce un numero decimal con punto y maximo 2 decimales");
+                resulatdo = false;
+                error.SetError(tbPrecio, "Introduce un numero con un maximo 2 decimales Ej: 5,75");
                 iconoPrecio.Visible = false;
             }
             else
             {
                 error.SetError(tbPrecio, "");
-                precioValidado = true;
                 iconoPrecio.Visible = true;
             }
 
 
-        }
-
-        private void nudStock_Leave(object sender, EventArgs e)
-        {
-            // Obtengo el valor del stock
-            string valorNud = nudStock.Value.ToString().Trim();
-
-            // La cadena está vacía, es igual a "0" o no es un número entero válido
-            if (string.IsNullOrWhiteSpace(valorNud) || valorNud == "0" || !int.TryParse(valorNud, out _))
-            {
-                stockValidado = false;
-                error.SetError(nudStock, "Introduce el stock");
-                iconoStock.Visible = false;
-            }
-            else
-            {
-                error.SetError(nudStock, "");
-                stockValidado = true;
-                iconoStock.Visible = true;
-            }
-        }
-
-        private void tbDescripcion_Leave(object sender, EventArgs e)
-        {
-            if (tbDescripcion.Text.Length < 50)
-            {
-                descripcionValidada = false;
-                error.SetError(tbDescripcion, "Descripcion minima 50 caracteres");
-                iconoDescripcion.Visible = false;
-            }
-            else
-            {
-                error.SetError(tbDescripcion, "");
-                descripcionValidada = true;
-                iconoDescripcion.Visible = true;
-            }
-
-        }
-
-        private void cbCategoria_Leave(object sender, EventArgs e)
-        {
             // Si no se ha seleccionado una cateogira
             if (Validacion.esUnaCadenaVacia(cbCategoria.Text))
             {
-                categoriaValidada = false;
+                resulatdo = false;
                 error.SetError(cbCategoria, "Selecciona una categoria");
                 iconoCategoria.Visible = false;
             }
             else
             {
                 error.SetError(cbCategoria, "");
-                categoriaValidada = true;
                 iconoCategoria.Visible = true;
             }
 
+
+
+            // Obtengo el valor del stock
+            string stock = nudStock.Value.ToString().Trim();
+
+            // La cadena está vacía, es igual a "0" o no es un número entero válido
+            if (string.IsNullOrWhiteSpace(stock) || stock == "0" || !int.TryParse(stock, out _))
+            {
+                resulatdo = false;
+                error.SetError(nudStock, "Introduce el stock");
+                iconoStock.Visible = false;
+            }
+            else
+            {
+                error.SetError(nudStock, "");
+                iconoStock.Visible = true;
+            }
+
+
+            // Si la descripcion no tiene un minimo de caracteres
+            if (tbDescripcion.Text.Length < 20)
+            {
+                resulatdo = false;
+                error.SetError(tbDescripcion, "Descripcion minima 20 caracteres");
+                iconoDescripcion.Visible = false;
+            }
+            else
+            {
+                error.SetError(tbDescripcion, "");
+                iconoDescripcion.Visible = true;
+            }
+
+
+
+            return resulatdo;
         }
+
+
     }
 
 
