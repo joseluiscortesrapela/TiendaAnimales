@@ -180,7 +180,7 @@ namespace Tienda.UserControls
 
         private void mostrarMensajeYOcultarloAutomaticamente()
         {
-            timerOcultarMensaje.Start();
+            timerMensaje.Start();
         }
 
         // Obtengo todos los clietnes de la base de datos y los guardo en el dgv
@@ -299,12 +299,7 @@ namespace Tienda.UserControls
                     // Elimino las polizas del dgv
                     resetearDgvVentas();
                     // Muestro mensaje 
-                    lbMensajeGeneral.Text = "Cliente ha sido elimnado!";
-                }
-                else
-                {
-                    // Sino se ha podido elimianr muestro mensaje
-                    lbMensajeGeneral.Text = "Error al eliminar al cliente";
+                    mostrarMensajeGeneral("Cliente ha sido elimnado!");
                 }
 
             }
@@ -494,7 +489,7 @@ namespace Tienda.UserControls
         private void timerOcultarMensaje_Tick(object sender, EventArgs e)
         {
             lbMensajeGeneral.Text = "";
-            timerOcultarMensaje.Stop();
+            timerMensaje.Stop();
         }
 
         // Muestra el buscador
@@ -577,7 +572,7 @@ namespace Tienda.UserControls
             // Asigno el valor 
             lbMensajeGeneral.Text = mensaje;
             // Inicio el temporizador
-            timerOcultarMensaje.Start();
+            timerMensaje.Start();
         }
 
         // Obtengo fila selecionada en el dgv de ventas
@@ -821,8 +816,8 @@ namespace Tienda.UserControls
                 // Instancio objeto            
                 LoginModel loginModel = new LoginModel();
 
-                Console.WriteLine("correo "+ cliente.Correo);
-            
+                Console.WriteLine("correo " + cliente.Correo);
+
                 // Si quire cambiar de correo
                 if (cliente.Correo != tbCorreoEditar.Text)
                 {
@@ -840,7 +835,7 @@ namespace Tienda.UserControls
                     }
 
                 }
-                
+
 
             }
 

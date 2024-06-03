@@ -325,11 +325,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Snow;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label5.Location = new System.Drawing.Point(1054, 622);
+            this.label5.Location = new System.Drawing.Point(1034, 622);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 29);
+            this.label5.Size = new System.Drawing.Size(64, 26);
             this.label5.TabIndex = 23;
             this.label5.Text = "Total";
             // 
@@ -338,7 +338,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(1054, 536);
+            this.label7.Location = new System.Drawing.Point(1034, 535);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 26);
             this.label7.TabIndex = 25;
@@ -349,14 +349,14 @@
             this.lbTotalAPagar.AutoSize = true;
             this.lbTotalAPagar.BackColor = System.Drawing.Color.Snow;
             this.lbTotalAPagar.Enabled = false;
-            this.lbTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalAPagar.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbTotalAPagar.Location = new System.Drawing.Point(1191, 622);
+            this.lbTotalAPagar.Location = new System.Drawing.Point(1193, 622);
             this.lbTotalAPagar.Name = "lbTotalAPagar";
-            this.lbTotalAPagar.Size = new System.Drawing.Size(97, 29);
+            this.lbTotalAPagar.Size = new System.Drawing.Size(95, 26);
             this.lbTotalAPagar.TabIndex = 26;
             this.lbTotalAPagar.Text = "          0";
-            this.lbTotalAPagar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTotalAPagar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbSubtotal
             // 
@@ -364,12 +364,12 @@
             this.lbSubtotal.Enabled = false;
             this.lbSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSubtotal.ForeColor = System.Drawing.Color.Gray;
-            this.lbSubtotal.Location = new System.Drawing.Point(1202, 535);
+            this.lbSubtotal.Location = new System.Drawing.Point(1204, 535);
             this.lbSubtotal.Name = "lbSubtotal";
             this.lbSubtotal.Size = new System.Drawing.Size(84, 26);
             this.lbSubtotal.TabIndex = 27;
             this.lbSubtotal.Text = "          0";
-            this.lbSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnEliminar
             // 
@@ -400,16 +400,16 @@
             // 
             this.lbMensajeGeneral.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbMensajeGeneral.AutoSize = true;
-            this.lbMensajeGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensajeGeneral.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lbMensajeGeneral.Location = new System.Drawing.Point(489, 538);
+            this.lbMensajeGeneral.Location = new System.Drawing.Point(495, 543);
             this.lbMensajeGeneral.Name = "lbMensajeGeneral";
-            this.lbMensajeGeneral.Size = new System.Drawing.Size(0, 24);
+            this.lbMensajeGeneral.Size = new System.Drawing.Size(0, 26);
             this.lbMensajeGeneral.TabIndex = 38;
             // 
             // timerMensaje
             // 
-            this.timerMensaje.Interval = 5000;
+            this.timerMensaje.Interval = 6000;
             this.timerMensaje.Tick += new System.EventHandler(this.timerMensaje_Tick);
             // 
             // label4
@@ -440,7 +440,7 @@
             this.btnAceptarDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptarDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptarDevolucion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAceptarDevolucion.Location = new System.Drawing.Point(571, 609);
+            this.btnAceptarDevolucion.Location = new System.Drawing.Point(571, 650);
             this.btnAceptarDevolucion.Name = "btnAceptarDevolucion";
             this.btnAceptarDevolucion.Size = new System.Drawing.Size(192, 35);
             this.btnAceptarDevolucion.TabIndex = 46;

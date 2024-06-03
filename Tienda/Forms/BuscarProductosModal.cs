@@ -167,7 +167,10 @@ namespace Tienda.Forms
 
         }
 
-
+        private void limpiarPlaceHolder(object sender, EventArgs e)
+        {
+            tbBuscar.Text = "";
+        }
     }
 
 }

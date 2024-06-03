@@ -290,14 +290,14 @@ namespace Tienda.UserControls
             // Asigno el valor 
             lbMensajeGeneral.Text = mensaje;
             // Inicio el temporizador
-            timerOcultarMensaje.Start();
+            timerMensaje.Start();
         }
 
         // Oculto mensajes 
         private void timerOcultarMensaje_Tick(object sender, EventArgs e)
         {
             lbMensajeGeneral.Text = "";
-            timerOcultarMensaje.Stop();
+            timerMensaje.Stop();
         }
 
         // Muestra el buscador

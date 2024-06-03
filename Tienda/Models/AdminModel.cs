@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Management.Instrumentation;
+using Microsoft.ReportingServices.Diagnostics.Internal;
 
 namespace Tienda.Models
 {
@@ -202,8 +203,8 @@ namespace Tienda.Models
             try
             {
                 // Return value is the number of rows affected by the SQL statement.
-               int estado = comando.ExecuteNonQuery();
-            
+                int estado = comando.ExecuteNonQuery();
+
                 // Convierto el int a bool
                 actualizado = (estado != 0);
 
@@ -211,7 +212,7 @@ namespace Tienda.Models
             catch (Exception ex)
             {
                 actualizado = false;
-                MessageBox.Show(ex.Message );
+                MessageBox.Show(ex.Message);
             }
 
             return actualizado;
@@ -765,7 +766,7 @@ namespace Tienda.Models
             string sqlInsert = @"INSERT INTO detalleVenta 
                                        (idVenta,  idCliente,  idProducto,   producto,  categoria,  precio,  iva,  descuento,  subtotal,  total,  cantidad)
                                 VALUES (@idVenta, @idCliente, @idProducto,  @producto, @categoria, @precio, @iva, @descuento, @subtotal, @total, @cantidad)";
-                         
+
 
             // Consulta SQL para actualizar el stock del producto
             string sqlUpdateStock = @"UPDATE productos SET stock = stock - @cantidad WHERE idProducto = @idProducto";
@@ -918,49 +919,59 @@ namespace Tienda.Models
             return eliminado;
         }
 
-        public static bool eliminarProductosDetalleVenta(int idVenta, List<int> idProductosAEliminar)
+        // Realiza la devolucion
+        public static bool realizarDevolucion(List<Devolucion> devoluciones)
         {
-          
-            bool eliminado = true;
+
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            MySqlTransaction transaction = conexion.BeginTransaction();
+            bool exito = false;
 
             try
             {
-                MySqlConnection conexion = ConexionBaseDatos.getConexion();
-                
 
-                string sql = "DELETE FROM detalleventa WHERE idVenta = @idVenta AND idProducto = @idProducto";
-
-                MySqlCommand comando = new MySqlCommand(sql, conexion);
-
-                comando.Parameters.AddWithValue("@idVenta", idVenta);
-
-
-                foreach (int idProducto in idProductosAEliminar)
+                foreach (var devolucion in devoluciones)
                 {
-                    // Agregar el parámetro @idProducto al comando sin establecer su valor explícitamente
-                    comando.Parameters.AddWithValue("@idProducto", idProducto);
+                    // Eliminar productos de detalleventa
+                    string sql1 = "DELETE FROM detalleventa WHERE idVenta = @idVenta AND idProducto = @idProducto";
+                    MySqlCommand deleteCommand = new MySqlCommand(sql1, conexion);
+                    deleteCommand.Parameters.AddWithValue("@idVenta", devolucion.IdVenta);
+                    deleteCommand.Parameters.AddWithValue("@idProducto", devolucion.IdProducto);
+                    deleteCommand.Transaction = transaction;
+                    deleteCommand.ExecuteNonQuery();
 
-                    if (comando.ExecuteNonQuery() == 0)
-                    {
-                        eliminado = false;
-                        break;
-                    }
-
-                    // Limpiar los parámetros para prepararlos para la próxima iteración
-                    comando.Parameters.Clear();
-                    comando.Parameters.Add("@idVenta", MySqlDbType.Int32).Value = idVenta;
+                    // Actualizar la cantidad en productos
+                    string sql2 = "UPDATE productos SET stock = stock + @cantidad WHERE idProducto = @idProducto";
+                    MySqlCommand updateCommand = new MySqlCommand(sql2, conexion);
+                    updateCommand.Parameters.AddWithValue("@cantidad", devolucion.Cantidad);
+                    updateCommand.Parameters.AddWithValue("@idProducto", devolucion.IdProducto);
+                    updateCommand.Transaction = transaction;
+                    updateCommand.ExecuteNonQuery();
                 }
+
+                transaction.Commit();
+
+                exito = true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al eliminar productos: " + ex.Message + " " + ex.InnerException);
-                eliminado = false;
-            } 
-            
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                }
+                MessageBox.Show("Error durante la devolución: " + ex.Message + " " + ex.InnerException);
+                exito = false;
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
 
-            return eliminado;
+            return exito;
         }
-
 
 
 

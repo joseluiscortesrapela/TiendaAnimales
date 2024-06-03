@@ -33,7 +33,7 @@ namespace Tienda.UserControls
         // Dasdboard
         private MenuPrincipal menuPrincipal;
         // Declaro array 
-        private List<Devolucion> listaProductosDevolucion;
+        private List<Devolucion> devoluciones;
 
 
         // 1º Constructor: Crea una venta a cualquier cliente, vienes desde el menu principal
@@ -72,7 +72,7 @@ namespace Tienda.UserControls
             // Guardo el id de la venta que quiere hacer la devolucion.
             this.idVenta = idVenta;
             // Lista de productos que se quieren devolver.
-            listaProductosDevolucion = new List<Devolucion>();
+            devoluciones = new List<Devolucion>();
             // Inicializo datos base formulario
             inicializarFormularioDetalleVenta(idVenta, fecha);
 
@@ -160,7 +160,7 @@ namespace Tienda.UserControls
             // Centrar el contenido de la columna "descuento"
             dgvVenta.Columns["descuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             // Muestro titulo
-            lbTitulo.Text =  $"Detalles de la venta nº {idVenta}";
+            lbTitulo.Text = $"Detalles de la venta nº {idVenta}";
             // Oculto boton para crear una venta
             btnRealizarVenta.Visible = false;
             // Muestro boton para realizar una devolucion
@@ -207,10 +207,12 @@ namespace Tienda.UserControls
         // Obtengo el cliente que ha sido seleciodado en el combobo
         private void cbClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             // Obtengo el id del cliente que acaba de ser selecionado 
             idCliente = int.Parse(cbClientes.SelectedValue.ToString());
             // Muestro por consola el id del cliente selecionado
-            Console.WriteLine("Cliente selecciionado: " + idCliente);
+            Console.WriteLine("Combobox de cliente selecciionado id: " + idCliente);
+
         }
 
         // Añade un producto al carrito o actualiza uno existente
@@ -428,9 +430,9 @@ namespace Tienda.UserControls
             if (result == DialogResult.Yes)
             {
                 // Guardo en el array el produto a eliminar
-                listaProductosDevolucion.Add(new Devolucion(idVenta, idProducto, cantidad));
+                devoluciones.Add(new Devolucion(idVenta, idProducto, cantidad));
                 // Eliminar la fila  del dgv
-                dgvVenta.Rows.Remove(fila);        
+                dgvVenta.Rows.Remove(fila);
                 // Actualizo sutotal y total
                 recalcular();
                 // Oculto botones 
@@ -497,16 +499,17 @@ namespace Tienda.UserControls
                     // Si la venta y el detalle venta se han creado con exito, hemos terminado.
                     if (AdminModel.registrarDetalleVenta(carritoCompra))
                     {
-                        Console.WriteLine("Registrada la venta");
-
                         // Si el valor del objeto es null, queiere decir que he entrado desde me menu principal y no requiere regresar
                         if (cliente == null)
-                        {  // Muestro mensaje al usaruio en la misma venta de ventas
-                            lbMensajeGeneral.Text = "Venta realizada con exito!";
+                        {
+                            // Reseteo el formulario para una nueva venta.
+                            resetear();
+                            // Muestro mensaje
+                            mostrarMensajeGeneral("Venta finalizada con exito! puede serguir vendiendo");
                         }
                         else
                         {
-                            // Regreso a la ventan de clientes
+                            // Regreso de nuevo a la ventana de la que venia, el crud de clientes.
                             mostrarVentanaClientes();
                         }
 
@@ -520,7 +523,21 @@ namespace Tienda.UserControls
                 mostrarMensajeGeneral("No hay productos en el carrito de compra.");
             }
 
+        }
 
+        // Vacio el carrito de compra
+        private void resetear()
+        {
+            // Eliminar todas las filas 
+            dgvVenta.Rows.Clear();
+            // Quito el cliente seleccionado
+            cbClientes.Text = "Introduce el nombre";
+            // Pongo la fecha actual
+            dtpFecha.Value = DateTime.Now;
+            // Inicializo a cero
+            lbSubtotal.Text = "0";
+            // Inicializo a cero
+            lbTotalAPagar.Text = "0";
         }
 
         // Muestra mensaje general en la ventan de ventas
@@ -528,17 +545,11 @@ namespace Tienda.UserControls
         {
             // Muestro mensaje 
             lbMensajeGeneral.Text = mensaje;
-            // Cambia el color del texto a rojo
-            lbMensajeGeneral.ForeColor = Color.Tomato;
-            // Oculto mensaje transcurrido unos segundos
-            mostrarMensajeYOcultarloAutomaticamente();
-        }
-
-
-        private void mostrarMensajeYOcultarloAutomaticamente()
-        {
             timerMensaje.Start();
+
         }
+
+
 
         private void timerMensaje_Tick(object sender, EventArgs e)
         {
@@ -571,23 +582,33 @@ namespace Tienda.UserControls
         private void btnAceptarDevolucion_Click(object sender, EventArgs e)
         {
             // Si hay productos a devolver
-            if ( listaProductosDevolucion.Count > 0)
+            if (devoluciones.Count > 0)
             {
+                // Si se realiza correctamente la devolucion
+                if (AdminModel.realizarDevolucion(devoluciones))
+                {   // Muestro mensaje
+                    mostrarMensajeGeneral("Acabas de realizar una devolución!");
+                  
+                    // Si el carrito esta vacio, ha eliminado todos los productos elimino la venta
+                    if (dgvVenta.RowCount == 0)
+                    {   // Si la venta fue eliminada
+                        if (AdminModel.eliminarVenta(idVenta))
+                        {
+                            // Muestro mensaje
+                            mostrarMensajeGeneral("Devolucion realizada y venta cancelada");
+                            
+                        }
 
-               
+                    }
 
-                // Muestro la lista de productos a devovler
-                foreach (Devolucion item in listaProductosDevolucion)
-                {
-                    Console.WriteLine( "idVenta:"  + item.IdVenta  + " idProducto: " + item.IdProducto + " cantidad: " + item.Cantidad);
+
                 }
 
-            } // Sino esta vacio
-            else
-            {   // Muestro mensaje
-                mostrarMensajeGeneral("Seleccione los productos a debolver.");
             }
 
+
         }
+
+
     }
 }
