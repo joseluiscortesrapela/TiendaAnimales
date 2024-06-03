@@ -882,7 +882,7 @@ namespace Tienda.Models
             return exito;
         }
 
-
+        // Obtengo las ventas de un cliente
         public static DataTable getInformeVentasClienteById(int idCliente)
         {
 
@@ -925,9 +925,7 @@ namespace Tienda.Models
 
         }
 
-
-
-        // Obtengo todos las provincias
+        // Obtengo las ventas de todos los clientes
         public static DataTable getInformeVentasDeTodosLosCliente()
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();

@@ -866,7 +866,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetVentas</DataSetName>
-        <Top>2.96016cm</Top>
+        <Top>3.43641cm</Top>
         <Left>0.59152cm</Left>
         <Height>1.2cm</Height>
         <Width>31.39537cm</Width>
@@ -877,7 +877,7 @@
         </Style>
       </Tablix>
       <Line Name="Line1">
-        <Top>2.38583cm</Top>
+        <Top>2.86208cm</Top>
         <Left>0.29104cm</Left>
         <Height>0cm</Height>
         <Width>32.96585cm</Width>
@@ -895,7 +895,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Listado ventas del cliente</Value>
+                <Value>Listado ventas</Value>
                 <Style>
                   <FontSize>25pt</FontSize>
                   <Color>DimGray</Color>
@@ -906,7 +906,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>0.76271cm</Top>
+        <Top>1.23896cm</Top>
         <Left>2.43417cm</Left>
         <Height>1.02375cm</Height>
         <Width>10.79027cm</Width>
@@ -925,7 +925,7 @@
         <Source>Embedded</Source>
         <Value>analitica</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.28646cm</Top>
+        <Top>0.76271cm</Top>
         <Left>0.29104cm</Left>
         <Height>1.5cm</Height>
         <Width>1.5cm</Width>

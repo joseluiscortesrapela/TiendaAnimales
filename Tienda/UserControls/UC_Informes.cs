@@ -15,12 +15,22 @@ namespace Tienda.UserControls
 {
     public partial class UC_Informes : UserControl
     {
+        private int idCliente;
+
         public UC_Informes()
         {
             InitializeComponent();
         }
 
-        // Realizo el informe
+        public UC_Informes(int idCliente)
+        {
+            InitializeComponent();
+            this.idCliente = idCliente;
+            // Invoco funcion
+            generarInformeVentasDeUnCliente(idCliente);
+        }
+
+        // Muestra la lista de clientes
         private void btnGenerarInformeClientes_Click(object sender, EventArgs e)
         {
 
@@ -32,7 +42,7 @@ namespace Tienda.UserControls
         }
 
        
-
+        // Muestra la lista de productos
         private void btnGenerarInformeProductos_Click(object sender, EventArgs e)
         {         
             // Cargo resultados
@@ -75,14 +85,25 @@ namespace Tienda.UserControls
         }
 
 
-        // Muestra las ventas de todos los clientes
+        // Muestra la lista de ventas de todos los clientes
         private void btnGenerarInformeVentasDeTodosLosClientes_Click(object sender, EventArgs e)
         {           
             // Cargo resultados
             DataTable dataTableResultadosVentas = AdminModel.getInformeVentasDeTodosLosCliente();
             // Configura el ReportViewer con los datos de productos y la ruta del informe de productos
             ConfigurarReportViewer(@"../../ReportVentas.rdlc", "DataSetVentas", dataTableResultadosVentas);
-
         }
+
+
+        // Muestra la lista de ventas de todos los clientes
+        private void generarInformeVentasDeUnCliente( int idCliente)
+        {
+            // Cargo resultados
+            DataTable dataTableResultadosVentas = AdminModel.getInformeVentasClienteById( idCliente);
+            // Configura el ReportViewer con los datos de productos y la ruta del informe de productos
+            ConfigurarReportViewer(@"../../ReportVentas.rdlc", "DataSetVentas", dataTableResultadosVentas);
+        }
+
+
     }
 }

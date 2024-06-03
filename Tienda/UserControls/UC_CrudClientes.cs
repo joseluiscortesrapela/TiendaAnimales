@@ -46,7 +46,7 @@ namespace Tienda.UserControls
             // Guardo referencia del menu principal.
             this.menuPrincipal = SesionPrograma.ObtenerMenuPrincipal();
         }
-    
+
         // Obtengo el cliente seleccionado.
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -890,14 +890,17 @@ namespace Tienda.UserControls
 
         private void btnMostrarInformeVentasCliente_Click(object sender, EventArgs e)
         {
-           
-
-
+            Console.WriteLine("Muestro informe de las ventas del cliente idClinte: " + cliente.IdCliente);
+            // Crear una instancia del UserControl de informes
+            var informes = new UC_Informes( cliente.IdCliente );
+            // Llamar al método del formulario principal para cambiar el contenido del panel contenedor
+            menuPrincipal.mostrarUserControl(informes);
 
         }
+
+
+
     }
-
-
 
 
 }
