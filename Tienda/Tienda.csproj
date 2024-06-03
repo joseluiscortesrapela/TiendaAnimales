@@ -138,6 +138,7 @@
     </Compile>
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\DetalleVenta.cs" />
+    <Compile Include="Entidades\Devolucion.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Forms\BuscarProductosModal.cs">
       <SubType>Form</SubType>

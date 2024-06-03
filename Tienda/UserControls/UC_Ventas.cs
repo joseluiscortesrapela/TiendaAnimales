@@ -30,10 +30,10 @@ namespace Tienda.UserControls
         private int idVenta;
         // La fila selecionada
         private DataGridViewRow fila;
-        // Lista de productos eliminados del carrito
-        private List<int> listaProductosEliminados;
         // Dasdboard
         private MenuPrincipal menuPrincipal;
+        // Declaro array 
+        private List<Devolucion> listaProductosDevolucion;
 
 
         // 1º Constructor: Crea una venta a cualquier cliente, vienes desde el menu principal
@@ -71,8 +71,8 @@ namespace Tienda.UserControls
             this.idCliente = cliente.IdCliente;
             // Guardo el id de la venta que quiere hacer la devolucion.
             this.idVenta = idVenta;
-            // Creo un array vacio para guardar los id de los productos eliminados del carrito de compra.
-            listaProductosEliminados = new List<int>();
+            // Lista de productos que se quieren devolver.
+            listaProductosDevolucion = new List<Devolucion>();
             // Inicializo datos base formulario
             inicializarFormularioDetalleVenta(idVenta, fecha);
 
@@ -86,6 +86,23 @@ namespace Tienda.UserControls
             // Guardo referencia del menu principal.
             this.menuPrincipal = SesionPrograma.ObtenerMenuPrincipal();
         }
+
+        // Obtengo la fila que ha sido selecionada en el dgv ventas
+        private void dgvVenta_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Si es una fila correcta
+            if (e.RowIndex >= 0)
+            {
+                // Obtengo la fila selecionada
+                fila = dgvVenta.Rows[e.RowIndex];
+                // Muestro los botones de accion
+                mostrarBotonesAccion();
+                // Muestro por consola la fila seleccionada
+                Console.WriteLine("Fila seleccionada " + fila.Cells["producto"].Value);
+            }
+
+        }
+
 
 
         // Carga todos los productos qel detalle de venta en el dgv
@@ -394,12 +411,14 @@ namespace Tienda.UserControls
         // Elimina un producto del carrtio de compra 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            // Su id
-            int idProducto = int.Parse( fila.Cells["idProducto"].Value.ToString() );
+            // Obtengo el identificador del producto 
+            int idProducto = int.Parse(fila.Cells["idProducto"].Value.ToString());
             // Nombre del producto
             string nombre = fila.Cells["producto"].Value.ToString();
+            // Obtengo la cantidad
+            int cantidad = int.Parse(fila.Cells["cantidad"].Value.ToString());
             // Mensaje que vera el usuario
-            String message = "Quieres eliminar producto id = " + idProducto + " " + nombre + " ?";
+            String message = "¿Quieres eliminar " + nombre + " ?";
             // Titulo de la ventana  
             String caption = "Eliminar producto";
             // Muestro mensaje y obtengo el boton que ha seleccionado
@@ -408,10 +427,10 @@ namespace Tienda.UserControls
             // Si quiere eliminar  
             if (result == DialogResult.Yes)
             {
-                // Eliminar la fila seleccionada del dgv
-                dgvVenta.Rows.Remove(fila);
-                // Guardo en el array el identificador del produto eiminado
-                listaProductosEliminados.Add( idProducto );
+                // Guardo en el array el produto a eliminar
+                listaProductosDevolucion.Add(new Devolucion(idProducto, cantidad));
+                // Eliminar la fila  del dgv
+                dgvVenta.Rows.Remove(fila);        
                 // Actualizo sutotal y total
                 recalcular();
                 // Oculto botones 
@@ -515,21 +534,6 @@ namespace Tienda.UserControls
             mostrarMensajeYOcultarloAutomaticamente();
         }
 
-        // Obtengo la fila que ha sido selecionada en el dgv ventas
-        private void dgvVenta_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Si es una fila correcta
-            if (e.RowIndex >= 0)
-            {
-                // Obtengo la fila selecionada
-                fila = dgvVenta.Rows[e.RowIndex];
-                // Muestro los botones de accion
-                mostrarBotonesAccion();
-
-                Console.WriteLine("Fila venta id: " + fila.Cells[0].Value);
-            }
-
-        }
 
         private void mostrarMensajeYOcultarloAutomaticamente()
         {
@@ -566,18 +570,22 @@ namespace Tienda.UserControls
         // Realizar devolucion, actualizar una venta
         private void btnAceptarDevolucion_Click(object sender, EventArgs e)
         {
-            // Si hay productos en el carrito de compra
-            if (dgvVenta.RowCount > 0)
+            // Si hay productos a devolver
+            if ( listaProductosDevolucion.Count > 0)
             {
-                // Eliminar productos
 
+                Console.WriteLine("VENTA ID: " + idVenta);
 
-                
+                // Muestro la lista de productos a devovler
+                foreach (Devolucion item in listaProductosDevolucion)
+                {
+                    Console.WriteLine("idProducto: " + item.IdProducto + " cantidad: " + item.Cantidad);
+                }
 
             } // Sino esta vacio
             else
             {   // Muestro mensaje
-                mostrarMensajeGeneral("No hay productos en el carrito de compra.");
+                mostrarMensajeGeneral("Seleccione almenos un producto a devolver.");
             }
 
         }
