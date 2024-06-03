@@ -891,6 +891,7 @@ namespace Tienda.Models
             // Construir la consulta SQL
             string sql = @"SELECT 
                                 v.idVenta, 
+                                v.idCliente,
                                 v.fecha,
                                 dv.idProducto,
                                 dv.producto,

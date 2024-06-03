@@ -15,7 +15,7 @@ namespace Tienda.UserControls
 {
     public partial class UC_Informes : UserControl
     {
-         
+
 
         public UC_Informes()
         {
@@ -40,12 +40,12 @@ namespace Tienda.UserControls
 
         }
 
-       
+
         // Muestra la lista de productos
         private void btnGenerarInformeProductos_Click(object sender, EventArgs e)
-        {         
+        {
             // Cargo resultados
-             DataTable dataTableResultadosProductos = AdminModel.getProductos();
+            DataTable dataTableResultadosProductos = AdminModel.getProductos();
             // Configura el ReportViewer con los datos de productos y la ruta del informe de productos
             ConfigurarReportViewer(@"../../ReportIProductos.rdlc", "DataSetProductos", dataTableResultadosProductos);
         }
@@ -75,18 +75,9 @@ namespace Tienda.UserControls
             reportViewerGeneral.RefreshReport();
         }
 
-
-
-        private void pbExit_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-
-        }
-
-
         // Muestra la lista de ventas de todos los clientes
         private void btnGenerarInformeVentasDeTodosLosClientes_Click(object sender, EventArgs e)
-        {           
+        {
             // Cargo resultados
             DataTable dataTableResultadosVentas = AdminModel.getInformeVentasDeTodosLosCliente();
             // Configura el ReportViewer con los datos de productos y la ruta del informe de productos
@@ -95,13 +86,22 @@ namespace Tienda.UserControls
 
 
         // Muestra la lista de ventas de todos los clientes
-        private void generarInformeVentasDeUnCliente( int idCliente)
+        private void generarInformeVentasDeUnCliente(int idCliente)
         {
             // Cargo resultados
-            DataTable dataTableResultadosVentas = AdminModel.getInformeVentasClienteById( idCliente);
+            DataTable dataTableResultadosVentas = AdminModel.getInformeVentasClienteById(idCliente);
             // Configura el ReportViewer con los datos de productos y la ruta del informe de productos
             ConfigurarReportViewer(@"../../ReportVentas.rdlc", "DataSetVentas", dataTableResultadosVentas);
         }
+
+
+        // Cierra el programa
+        private void pbExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
+
 
 
     }
