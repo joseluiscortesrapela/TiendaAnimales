@@ -32,7 +32,6 @@
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.label39 = new System.Windows.Forms.Label();
             this.dtpFechaDetalle = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.label46 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             this.btnGenerarInformeProductos = new System.Windows.Forms.Button();
             this.pbExit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idCliente2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,7 +65,8 @@
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
             this.pictureBox11.Location = new System.Drawing.Point(328, 135);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox11.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox11.TabIndex = 136;
             this.pictureBox11.TabStop = false;
             // 
@@ -79,9 +78,9 @@
             this.label39.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label39.Location = new System.Drawing.Point(324, 112);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(160, 20);
+            this.label39.Size = new System.Drawing.Size(182, 20);
             this.label39.TabIndex = 135;
-            this.label39.Text = "desde fecha poliza";
+            this.label39.Text = "desde fecha de venta";
             // 
             // dtpFechaDetalle
             // 
@@ -90,24 +89,15 @@
             this.dtpFechaDetalle.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaDetalle.Location = new System.Drawing.Point(367, 135);
             this.dtpFechaDetalle.Name = "dtpFechaDetalle";
-            this.dtpFechaDetalle.Size = new System.Drawing.Size(128, 27);
+            this.dtpFechaDetalle.Size = new System.Drawing.Size(139, 27);
             this.dtpFechaDetalle.TabIndex = 134;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(19, 0);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(66, 67);
-            this.pictureBox13.TabIndex = 133;
-            this.pictureBox13.TabStop = false;
             // 
             // label46
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label46.Location = new System.Drawing.Point(91, 28);
+            this.label46.Location = new System.Drawing.Point(22, 15);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(149, 39);
             this.label46.TabIndex = 132;
@@ -117,7 +107,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(558, 132);
+            this.pictureBox1.Location = new System.Drawing.Point(565, 133);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(33, 34);
             this.pictureBox1.TabIndex = 139;
@@ -129,20 +119,20 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label1.Location = new System.Drawing.Point(554, 109);
+            this.label1.Location = new System.Drawing.Point(561, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 20);
+            this.label1.Size = new System.Drawing.Size(178, 20);
             this.label1.TabIndex = 138;
-            this.label1.Text = "hasta fecha poliza";
+            this.label1.Text = "hasta fecha de venta";
             // 
             // dtpFechaHasta
             // 
             this.dtpFechaHasta.CalendarMonthBackground = System.Drawing.SystemColors.HotTrack;
             this.dtpFechaHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaHasta.Location = new System.Drawing.Point(597, 135);
+            this.dtpFechaHasta.Location = new System.Drawing.Point(604, 136);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(128, 27);
+            this.dtpFechaHasta.Size = new System.Drawing.Size(135, 27);
             this.dtpFechaHasta.TabIndex = 137;
             // 
             // idCliente2
@@ -218,7 +208,7 @@
             // 
             // btnGenerarInformeClientes
             // 
-            this.btnGenerarInformeClientes.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGenerarInformeClientes.BackColor = System.Drawing.Color.DimGray;
             this.btnGenerarInformeClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarInformeClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarInformeClientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -258,12 +248,6 @@
             this.cbEstadosInforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEstadosInforme.ForeColor = System.Drawing.SystemColors.Info;
             this.cbEstadosInforme.FormattingEnabled = true;
-            this.cbEstadosInforme.Items.AddRange(new object[] {
-            "Todas",
-            "Cobrada",
-            "A cuenta",
-            "Liquidada",
-            "Anulada"});
             this.cbEstadosInforme.Location = new System.Drawing.Point(1049, 135);
             this.cbEstadosInforme.Name = "cbEstadosInforme";
             this.cbEstadosInforme.Size = new System.Drawing.Size(155, 28);
@@ -272,7 +256,6 @@
             // 
             // reportViewerGeneral
             // 
-            this.reportViewerGeneral.AutoSize = true;
             this.reportViewerGeneral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.reportViewerGeneral.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reportViewerGeneral.DocumentMapWidth = 1;
@@ -287,7 +270,7 @@
             // 
             // btnGenerarInformeProductos
             // 
-            this.btnGenerarInformeProductos.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGenerarInformeProductos.BackColor = System.Drawing.Color.DimGray;
             this.btnGenerarInformeProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarInformeProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarInformeProductos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -331,14 +314,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox13);
             this.Controls.Add(this.label39);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.dtpFechaDetalle);
             this.Name = "UC_Informes";
             this.Size = new System.Drawing.Size(1324, 704);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.idCliente2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -355,7 +336,6 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.DateTimePicker dtpFechaDetalle;
-        private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;

@@ -596,7 +596,9 @@ namespace Tienda.UserControls
                         {
                             // Muestro mensaje
                             mostrarMensajeGeneral("Devolucion realizada y venta cancelada");
-                            
+                            // Oculto boton para aceptar una devolucion, hemos descambiado todos los productos del carrito de compra.
+                            btnAceptarDevolucion.Visible = false;
+                                              
                         }
 
                     }

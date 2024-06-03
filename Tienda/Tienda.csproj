@@ -123,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\ConexionBaseDatos.cs" />
+    <Compile Include="DataSetClientes.cs">
+      <DependentUpon>DataSetClientes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetClientes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
