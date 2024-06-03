@@ -38,55 +38,6 @@ namespace Tienda.UserControls
             seleccionarFilaDGVClientes();
         }
 
-
-        private void seleccionarFilaDGVClientes()
-        {
-
-            foreach (DataGridViewRow fila in dgvClientes.Rows)
-            {
-                // Verificar que el valor de la celda no sea nulo y convertir a entero
-                if (fila.Cells["idCliente"].Value != null && Convert.ToInt32(fila.Cells["idCliente"].Value) == cliente.IdCliente)
-                {
-
-                    // Simular el clic en la fila encontrada
-                    if (fila.Selected == false)
-                    {
-                        // Limpiar cualquier selección previa
-                        dgvClientes.ClearSelection();
-
-                        // Seleccionar la fila
-                        fila.Selected = true;
-
-                        fila.DefaultCellStyle.BackColor = Color.LightSalmon;
-
-                        // Cambiar el color de fondo de la fila seleccionada
-                        fila.DefaultCellStyle.BackColor = dgvClientes.DefaultCellStyle.SelectionBackColor;
-
-                        // Desplazar el DataGridView para que la fila seleccionada sea visible
-                        dgvClientes.FirstDisplayedScrollingRowIndex = fila.Index;
-
-                        // Crear argumentos para el evento CellClick
-                        DataGridViewCellEventArgs eventArgs = new DataGridViewCellEventArgs(0, fila.Index);
-
-                        // Llamar manualmente al evento CellClick
-                        dgvClientes_CellClick(dgvClientes, eventArgs);
-                    }
-
-                    // Salir del bucle una vez que se encuentra y selecciona la fila
-                    break;
-                }
-            }
-
-        }
-
-        private void ocultarColumnasDelDGVClientes()
-        {
-            // Oculto las siguientes columnas
-            dgvClientes.Columns["idCliente"].Visible = false;
-            dgvClientes.Columns["idProvincia"].Visible = false;
-            dgvClientes.Columns["idMunicipio"].Visible = false;
-        }
-
         // Auto load ventana
         private void UC_CrudClientes_Load(object sender, EventArgs e)
         {
@@ -95,7 +46,7 @@ namespace Tienda.UserControls
             // Guardo referencia del menu principal.
             this.menuPrincipal = SesionPrograma.ObtenerMenuPrincipal();
         }
-
+    
         // Obtengo el cliente seleccionado.
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -158,6 +109,57 @@ namespace Tienda.UserControls
             }
 
         }
+
+
+        private void seleccionarFilaDGVClientes()
+        {
+
+            foreach (DataGridViewRow fila in dgvClientes.Rows)
+            {
+                // Verificar que el valor de la celda no sea nulo y convertir a entero
+                if (fila.Cells["idCliente"].Value != null && Convert.ToInt32(fila.Cells["idCliente"].Value) == cliente.IdCliente)
+                {
+
+                    // Simular el clic en la fila encontrada
+                    if (fila.Selected == false)
+                    {
+                        // Limpiar cualquier selección previa
+                        dgvClientes.ClearSelection();
+
+                        // Seleccionar la fila
+                        fila.Selected = true;
+
+                        fila.DefaultCellStyle.BackColor = Color.LightSalmon;
+
+                        // Cambiar el color de fondo de la fila seleccionada
+                        fila.DefaultCellStyle.BackColor = dgvClientes.DefaultCellStyle.SelectionBackColor;
+
+                        // Desplazar el DataGridView para que la fila seleccionada sea visible
+                        dgvClientes.FirstDisplayedScrollingRowIndex = fila.Index;
+
+                        // Crear argumentos para el evento CellClick
+                        DataGridViewCellEventArgs eventArgs = new DataGridViewCellEventArgs(0, fila.Index);
+
+                        // Llamar manualmente al evento CellClick
+                        dgvClientes_CellClick(dgvClientes, eventArgs);
+                    }
+
+                    // Salir del bucle una vez que se encuentra y selecciona la fila
+                    break;
+                }
+            }
+
+        }
+
+        // Oculto algunas columnas del dgv
+        private void ocultarColumnasDelDGVClientes()
+        {
+            // Oculto las siguientes columnas
+            dgvClientes.Columns["contraseña"].Visible = false;
+            dgvClientes.Columns["idProvincia"].Visible = false;
+            dgvClientes.Columns["idMunicipio"].Visible = false;
+        }
+
 
         // Carga las vetnas de un cliente en el dgv ventas/compras
         private void cargarDGVConLasVentasDelClientePorSuid(int idCliente)
@@ -318,12 +320,13 @@ namespace Tienda.UserControls
             lbClienteSelecionado.Text = "";
         }
 
-        // Muestra botones de accion ver, editar y elimianr
+        // Muestra botones de accion ver, editar, elimianr y informes
         private void mostrarBotonesAccion()
         {
             pbDetalle.Visible = true;
             pbEditar.Visible = true;
             pbEliminar.Visible = true;
+            btnMostrarInformeVentasCliente.Visible = true;
         }
 
         // Limpia contendio del campo de texto del buscador, mensaje placeholder
@@ -885,6 +888,13 @@ namespace Tienda.UserControls
             return resultado;
         }
 
+        private void btnMostrarInformeVentasCliente_Click(object sender, EventArgs e)
+        {
+           
+
+
+
+        }
     }
 
 

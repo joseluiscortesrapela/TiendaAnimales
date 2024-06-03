@@ -23,7 +23,7 @@ namespace Tienda.UserControls
             // Obtengo todas los productos y las muestro en el dgv
             cargarProductosDGV();
             // Oculto columnas
-            dgvProductos.Columns["idProducto"].Visible = false;
+           // dgvProductos.Columns["idProducto"].Visible = false;
             dgvProductos.Columns["descripcion"].Visible = false;
         }
 

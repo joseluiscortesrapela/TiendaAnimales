@@ -186,6 +186,7 @@
             this.iconoApellidos = new System.Windows.Forms.PictureBox();
             this.iconoNombre = new System.Windows.Forms.PictureBox();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnMostrarInformeVentasCliente = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCrear)).BeginInit();
@@ -250,6 +251,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconoApellidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMostrarInformeVentasCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // pbEditar
@@ -391,6 +393,7 @@
             // 
             this.panelCrudClientes.BackColor = System.Drawing.Color.Snow;
             this.panelCrudClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCrudClientes.Controls.Add(this.btnMostrarInformeVentasCliente);
             this.panelCrudClientes.Controls.Add(this.label1);
             this.panelCrudClientes.Controls.Add(this.panelVentasDelCliente);
             this.panelCrudClientes.Controls.Add(this.dgvClientes);
@@ -2123,6 +2126,18 @@
             this.error.ContainerControl = this;
             this.error.Icon = ((System.Drawing.Icon)(resources.GetObject("error.Icon")));
             // 
+            // btnMostrarInformeVentasCliente
+            // 
+            this.btnMostrarInformeVentasCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarInformeVentasCliente.Image")));
+            this.btnMostrarInformeVentasCliente.Location = new System.Drawing.Point(1291, 186);
+            this.btnMostrarInformeVentasCliente.Name = "btnMostrarInformeVentasCliente";
+            this.btnMostrarInformeVentasCliente.Size = new System.Drawing.Size(32, 32);
+            this.btnMostrarInformeVentasCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnMostrarInformeVentasCliente.TabIndex = 51;
+            this.btnMostrarInformeVentasCliente.TabStop = false;
+            this.btnMostrarInformeVentasCliente.Visible = false;
+            this.btnMostrarInformeVentasCliente.Click += new System.EventHandler(this.btnMostrarInformeVentasCliente_Click);
+            // 
             // UC_CrudClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2207,6 +2222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconoApellidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMostrarInformeVentasCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2359,5 +2375,6 @@
         private System.Windows.Forms.PictureBox iconoDniEditar;
         private System.Windows.Forms.PictureBox iconoApellidosEditar;
         private System.Windows.Forms.PictureBox iconoNombreEditar;
+        private System.Windows.Forms.PictureBox btnMostrarInformeVentasCliente;
     }
 }

@@ -73,5 +73,16 @@ namespace Tienda.UserControls
             Application.Exit();
 
         }
+
+
+        // Muestra las ventas de todos los clientes
+        private void btnGenerarInformeVentasDeTodosLosClientes_Click(object sender, EventArgs e)
+        {           
+            // Cargo resultados
+            DataTable dataTableResultadosVentas = AdminModel.getInformeVentasDeTodosLosCliente();
+            // Configura el ReportViewer con los datos de productos y la ruta del informe de productos
+            ConfigurarReportViewer(@"../../ReportVentas.rdlc", "DataSetVentas", dataTableResultadosVentas);
+
+        }
     }
 }

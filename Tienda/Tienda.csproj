@@ -139,6 +139,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProductos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetVentas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\DetalleVenta.cs" />
     <Compile Include="Entidades\Devolucion.cs" />
@@ -214,6 +219,7 @@
     </Compile>
     <EmbeddedResource Include="ReportClientes.rdlc" />
     <EmbeddedResource Include="ReportIProductos.rdlc" />
+    <EmbeddedResource Include="ReportVentas.rdlc" />
     <EmbeddedResource Include="UserControls\UC_CrudClientes.resx">
       <DependentUpon>UC_CrudClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +253,17 @@
     </None>
     <None Include="DataSetProductos.xss">
       <DependentUpon>DataSetProductos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetVentas.xsc">
+      <DependentUpon>DataSetVentas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetVentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVentas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetVentas.xss">
+      <DependentUpon>DataSetVentas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

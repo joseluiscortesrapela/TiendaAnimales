@@ -639,97 +639,6 @@ namespace Tienda.Models
 
         }
 
-        public static DataTable generarInformes(int idClienteMin, int idClienteMax, DateTime fechaDesde, DateTime fechaHasta)
-        {
-
-            MySqlConnection conexion = ConexionBaseDatos.getConexion();
-
-            DataTable dataTable = new DataTable();
-
-            // Construir la consulta SQL
-            string sql = @"
-                            SELECT 
-                                c.idCliente,
-                                c.nombre AS nombreCliente,
-                                p.idPoliza,
-                                p.importe,
-                                p.tipo,
-                                p.observaciones,
-                                p.fecha,
-                                p.estado
-                            FROM 
-                                clientes c
-                            INNER JOIN 
-                                polizas p ON c.idCliente = p.idCliente
-                            WHERE 
-                                c.idCliente BETWEEN @idClienteMin AND @idClienteMax
-                                AND p.fecha BETWEEN @fechaDesde AND @fechaHasta";
-
-
-            MySqlCommand comando = new MySqlCommand(sql, conexion);
-            comando.Parameters.AddWithValue("@idClienteMin", idClienteMin);
-            comando.Parameters.AddWithValue("@idClienteMax", idClienteMax);
-            comando.Parameters.AddWithValue("@fechaDesde", fechaDesde);
-            comando.Parameters.AddWithValue("@fechaHasta", fechaHasta);
-
-            // Creo el adapatador
-            MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
-            adapter.Fill(dataTable);
-
-            // Cerrar la conexión manualmente
-            conexion.Close();
-
-            return dataTable;
-
-        }
-
-        // Genera informa por id clientes, fecha y ademas el esatdo de la poliza.
-        public static DataTable generarInformePorEstado(int idClienteMin, int idClienteMax, DateTime fechaDesde, DateTime fechaHasta, string estado)
-        {
-
-            MySqlConnection conexion = ConexionBaseDatos.getConexion();
-
-
-            DataTable dataTable = new DataTable();
-
-            // Construir la consulta SQL
-            string sql = @"
-                            SELECT 
-                                c.idCliente,
-                                c.nombre AS nombreCliente,
-                                p.idPoliza,
-                                p.importe,
-                                p.tipo,
-                                p.observaciones,
-                                p.fecha,
-                                p.estado
-                            FROM 
-                                clientes c
-                            INNER JOIN 
-                                polizas p ON c.idCliente = p.idCliente
-                            WHERE 
-                                c.idCliente BETWEEN @idClienteMin AND @idClienteMax
-                                AND p.fecha BETWEEN @fechaDesde AND @fechaHasta
-                                AND p.estado = @estadoPoliza";
-
-
-            MySqlCommand comando = new MySqlCommand(sql, conexion);
-            comando.Parameters.AddWithValue("@idClienteMin", idClienteMin);
-            comando.Parameters.AddWithValue("@idClienteMax", idClienteMax);
-            comando.Parameters.AddWithValue("@fechaDesde", fechaDesde);
-            comando.Parameters.AddWithValue("@fechaHasta", fechaHasta);
-            comando.Parameters.AddWithValue("@estadoPoliza", estado);
-
-            // Creo el adapatador
-            MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
-            adapter.Fill(dataTable);
-
-            // Cerrar la conexión manualmente
-            conexion.Close();
-
-            return dataTable;
-
-        }
 
         // Registra una nueva venta
         public static bool registrarVenta(int idCliente, string fecha, decimal total)
@@ -974,6 +883,91 @@ namespace Tienda.Models
         }
 
 
+        public static DataTable getInformeVentasClienteById(int idCliente)
+        {
 
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+
+            // Construir la consulta SQL
+            string sql = @"SELECT 
+                                v.idVenta, 
+                                v.fecha,
+                                dv.idProducto,
+                                dv.producto,
+                                dv.categoria, 
+                                dv.cantidad, 
+                                dv.precio, 
+                                dv.iva, 
+                                dv.descuento, 
+                                dv.subtotal, 
+                                dv.total as importe,
+                                v.total as totalAPagar
+                            FROM 
+                                ventas v
+                            JOIN 
+                                detalleventa dv ON v.idVenta = dv.idVenta
+                            WHERE 
+                                v.idCliente = @idCliente;";
+
+
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@idCliente", idCliente);
+
+            // Creo el adapatador
+            MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            // Cerrar la conexión manualmente
+            conexion.Close();
+
+            return dataTable;
+
+        }
+
+
+
+        // Obtengo todos las provincias
+        public static DataTable getInformeVentasDeTodosLosCliente()
+        {
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+
+            // Consulta sql
+            string sql = @"SELECT 
+                                v.idVenta, 
+                                v.idCliente,
+                                v.fecha,
+                                dv.idProducto,
+                                dv.producto,
+                                dv.categoria, 
+                                dv.cantidad, 
+                                dv.precio, 
+                                dv.iva, 
+                                dv.descuento, 
+                                dv.subtotal, 
+                                dv.total as importe,
+                                v.total as totalAPagar
+                            FROM 
+                                ventas v
+                            JOIN 
+                                detalleventa dv ON v.idVenta = dv.idVenta;
+                            ";
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
+            DataTable table = new DataTable();
+
+            try
+            {
+                adapter.Fill(table);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return table;
+        }
     }
 }
