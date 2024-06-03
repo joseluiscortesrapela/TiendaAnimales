@@ -15,7 +15,7 @@ namespace Tienda.UserControls
 {
     public partial class UC_Informes : UserControl
     {
-        private int idCliente;
+         
 
         public UC_Informes()
         {
@@ -25,8 +25,7 @@ namespace Tienda.UserControls
         public UC_Informes(int idCliente)
         {
             InitializeComponent();
-            this.idCliente = idCliente;
-            // Invoco funcion
+            // Invoco funcion 
             generarInformeVentasDeUnCliente(idCliente);
         }
 
