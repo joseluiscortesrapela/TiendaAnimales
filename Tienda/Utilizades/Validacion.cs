@@ -65,8 +65,7 @@ namespace Tienda.Utilizades
         public static bool esCorreoElectronicoValido(string correo)
         {
             // Expresión regular para validar un correo electrónico
-            string patronCorreo = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
+            string patronCorreo = @"^[a-zA-Z0-9._%+ñÑ-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             // Verificar si el correo coincide con el patrón de la expresión regular
             return Regex.IsMatch(correo, patronCorreo);
         }

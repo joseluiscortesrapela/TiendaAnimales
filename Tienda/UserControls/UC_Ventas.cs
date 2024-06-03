@@ -160,7 +160,7 @@ namespace Tienda.UserControls
             // Centrar el contenido de la columna "descuento"
             dgvVenta.Columns["descuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             // Muestro titulo
-            lbTitulo.Text = "Detalles de la venta";
+            lbTitulo.Text =  $"Detalles de la venta nº {idVenta}";
             // Oculto boton para crear una venta
             btnRealizarVenta.Visible = false;
             // Muestro boton para realizar una devolucion
@@ -428,7 +428,7 @@ namespace Tienda.UserControls
             if (result == DialogResult.Yes)
             {
                 // Guardo en el array el produto a eliminar
-                listaProductosDevolucion.Add(new Devolucion(idProducto, cantidad));
+                listaProductosDevolucion.Add(new Devolucion(idVenta, idProducto, cantidad));
                 // Eliminar la fila  del dgv
                 dgvVenta.Rows.Remove(fila);        
                 // Actualizo sutotal y total
@@ -574,18 +574,18 @@ namespace Tienda.UserControls
             if ( listaProductosDevolucion.Count > 0)
             {
 
-                Console.WriteLine("VENTA ID: " + idVenta);
+               
 
                 // Muestro la lista de productos a devovler
                 foreach (Devolucion item in listaProductosDevolucion)
                 {
-                    Console.WriteLine("idProducto: " + item.IdProducto + " cantidad: " + item.Cantidad);
+                    Console.WriteLine( "idVenta:"  + item.IdVenta  + " idProducto: " + item.IdProducto + " cantidad: " + item.Cantidad);
                 }
 
             } // Sino esta vacio
             else
             {   // Muestro mensaje
-                mostrarMensajeGeneral("Seleccione almenos un producto a devolver.");
+                mostrarMensajeGeneral("Seleccione los productos a debolver.");
             }
 
         }
