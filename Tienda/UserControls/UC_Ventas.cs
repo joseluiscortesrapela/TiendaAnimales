@@ -163,6 +163,8 @@ namespace Tienda.UserControls
             lbTitulo.Text = $"Detalles de la venta nº {idVenta}";
             // Oculto boton para crear una venta
             btnRealizarVenta.Visible = false;
+            // Oculto boton añadir producto
+            btnMostrarBuscadorProductosModal.Visible = false;
             // Muestro boton para realizar una devolucion
             btnAceptarDevolucion.Visible = true;
             // Muestrar el subtotal, total a pagar
@@ -588,7 +590,7 @@ namespace Tienda.UserControls
                 if (AdminModel.realizarDevolucion(devoluciones))
                 {   // Muestro mensaje
                     mostrarMensajeGeneral("Acabas de realizar una devolución!");
-                  
+
                     // Si el carrito esta vacio, ha eliminado todos los productos elimino la venta
                     if (dgvVenta.RowCount == 0)
                     {   // Si la venta fue eliminada
@@ -598,11 +600,12 @@ namespace Tienda.UserControls
                             mostrarMensajeGeneral("Devolucion realizada y venta cancelada");
                             // Oculto boton para aceptar una devolucion, hemos descambiado todos los productos del carrito de compra.
                             btnAceptarDevolucion.Visible = false;
-                                              
                         }
 
                     }
 
+                    // Oculto boton tras realizar la devolucion
+                    btnAceptarDevolucion.Visible = false;
 
                 }
 

@@ -21,35 +21,7 @@ namespace Tienda.Forms
             lbUsuario.Text = SesionUsuario.Nombre;
         }
 
-        // Prepara interfaz del usuaqrio dependiendo del tipo o rol 
-        private void prepararInterfazUsuario(string tipo)
-        {
-            // Tipo usuario
-            switch (tipo)
-            {
-                case "Administrador":
-                    btnAdministradores.Visible = true;
-                    btnEmpleados.Visible = true;
-                    btnClientes.Visible = true;
-                    btnInventario.Visible = true;
-                    btnVentas.Visible = true;
-                    btnInformes.Visible = true;
-                    break;
-                case "Empleado":
-                    btnInventario.Visible = true;
-                    btnVentas.Visible = true;
-                    btnMisVentas.Visible = true;
-                    btnInformes.Visible = true;
-                    break;
-                case "Cliente":
-                    break;
-            }
-
-        }
-
-
-
-
+      
         // Auto load ventana
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {

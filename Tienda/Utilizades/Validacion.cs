@@ -24,13 +24,12 @@ namespace Tienda.Utilizades
             return int.TryParse(cadena, out _);
         }
 
-
         // Comprueba si es un numero decimal
         public static bool siEsNumeroDecimal(string cadena)
         {
             // Utilizamos una expresión regular para validar que el texto sea un número decimal
             // con una parte entera mayor que 0 o un número decimal con una parte decimal de hasta dos dígitos.
-            Regex regex = new Regex(@"^(0|[1-9]\d*)\,\d{1,2}$");
+            Regex regex = new Regex(@"^(0|[1-9]\d*)(\,\d{1,2})?$");
 
             // Verificamos si el texto coincide con el patrón de la expresión regular.
             return regex.IsMatch(cadena);
