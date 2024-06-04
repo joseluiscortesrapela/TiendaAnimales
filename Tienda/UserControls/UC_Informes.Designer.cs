@@ -96,13 +96,14 @@
             // label46
             // 
             this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.Transparent;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label46.Location = new System.Drawing.Point(22, 15);
+            this.label46.ForeColor = System.Drawing.Color.Snow;
+            this.label46.Location = new System.Drawing.Point(854, 12);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(149, 39);
+            this.label46.Size = new System.Drawing.Size(280, 39);
             this.label46.TabIndex = 132;
-            this.label46.Text = "Informes";
+            this.label46.Text = "Generar informes";
             // 
             // pictureBox1
             // 
@@ -257,6 +258,7 @@
             // 
             // reportViewerGeneral
             // 
+            this.reportViewerGeneral.BackColor = System.Drawing.Color.Snow;
             this.reportViewerGeneral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.reportViewerGeneral.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reportViewerGeneral.DocumentMapWidth = 1;
@@ -266,7 +268,7 @@
             this.reportViewerGeneral.Location = new System.Drawing.Point(19, 193);
             this.reportViewerGeneral.Name = "reportViewerGeneral";
             this.reportViewerGeneral.ServerReport.BearerToken = null;
-            this.reportViewerGeneral.Size = new System.Drawing.Size(1289, 439);
+            this.reportViewerGeneral.Size = new System.Drawing.Size(1289, 393);
             this.reportViewerGeneral.TabIndex = 152;
             // 
             // btnGenerarInformeProductos
@@ -285,6 +287,7 @@
             // 
             // pbExit
             // 
+            this.pbExit.BackColor = System.Drawing.Color.Transparent;
             this.pbExit.Image = ((System.Drawing.Image)(resources.GetObject("pbExit.Image")));
             this.pbExit.Location = new System.Drawing.Point(1300, 3);
             this.pbExit.Name = "pbExit";
@@ -312,6 +315,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnGenerarInformeVentasDeTodosLosClientes);
             this.Controls.Add(this.pbExit);
             this.Controls.Add(this.btnGenerarInformeProductos);
@@ -333,6 +338,7 @@
             this.Controls.Add(this.label39);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.dtpFechaDetalle);
+            this.DoubleBuffered = true;
             this.Name = "UC_Informes";
             this.Size = new System.Drawing.Size(1324, 704);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();

@@ -273,6 +273,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(1173, 31);
             this.label1.Name = "label1";
@@ -283,6 +284,7 @@
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
+            this.lbTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.ForeColor = System.Drawing.Color.DimGray;
             this.lbTitulo.Location = new System.Drawing.Point(23, 12);
@@ -324,7 +326,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Snow;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SeaGreen;
             this.label5.Location = new System.Drawing.Point(1034, 622);
@@ -347,7 +349,7 @@
             // lbTotalAPagar
             // 
             this.lbTotalAPagar.AutoSize = true;
-            this.lbTotalAPagar.BackColor = System.Drawing.Color.Snow;
+            this.lbTotalAPagar.BackColor = System.Drawing.Color.Transparent;
             this.lbTotalAPagar.Enabled = false;
             this.lbTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalAPagar.ForeColor = System.Drawing.Color.SeaGreen;
@@ -454,6 +456,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnAceptarDevolucion);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
@@ -473,6 +476,7 @@
             this.Controls.Add(this.cbClientes);
             this.Controls.Add(this.lbNombreCliente);
             this.Controls.Add(this.dgvVenta);
+            this.DoubleBuffered = true;
             this.Name = "UC_Ventas";
             this.Size = new System.Drawing.Size(1324, 704);
             this.Load += new System.EventHandler(this.UC_Ventas_Load);
