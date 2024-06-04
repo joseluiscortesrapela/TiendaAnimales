@@ -43,8 +43,22 @@ namespace Tienda.UserControls
         {
             // personalizo dgv
             ocultarColumnasDelDGVClientes();
+            // Añadir texto a los botones al pasar el raton
+            añadirTooltipBotones();
             // Guardo referencia del menu principal.
             this.menuPrincipal = SesionPrograma.ObtenerMenuPrincipal();
+        }
+
+        private void añadirTooltipBotones()
+        {
+            toolTip.SetToolTip(pbCrear, "Crear cliente");
+            toolTip.SetToolTip(pbDetalle, "Detalle cliente");
+            toolTip.SetToolTip(pbEditar, "Editar cliente");
+            toolTip.SetToolTip(pbEliminar, "Eliminar cliente");
+            toolTip.SetToolTip(btnMostrarInformeVentasCliente, "Muestra informe con todas las ventas del cliente");
+            toolTip.SetToolTip(btnCrearVenta, "Crear venta");
+            toolTip.SetToolTip(btnDetallesVenta, "Ver detalle venta");
+            toolTip.SetToolTip(btnEliminarVenta, "Eliminar venta");
         }
 
         // Obtengo el cliente seleccionado.
