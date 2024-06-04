@@ -757,7 +757,7 @@ namespace Tienda.Models
             return idVenta;
         }
 
-
+        //Obtengo el detalle de una venta
         public static DataTable getDetalleVenta(int idVenta)
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
@@ -828,17 +828,20 @@ namespace Tienda.Models
             return eliminado;
         }
 
+        /*
         // Realiza la devolucion
         public static bool realizarDevolucion(List<Devolucion> devoluciones)
         {
-
+            // Establce la conexion con la base de datos
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            // Instancio objeto transacion
             MySqlTransaction transaction = conexion.BeginTransaction();
+            // Variable de control
             bool exito = false;
 
             try
             {
-
+                // Recorro los productos que quiero eliminar
                 foreach (var devolucion in devoluciones)
                 {
                     // Eliminar productos de detalleventa
@@ -858,8 +861,10 @@ namespace Tienda.Models
                     updateCommand.ExecuteNonQuery();
                 }
 
+                // Ejecuto la transacion
                 transaction.Commit();
 
+                // Llegado a ests punto todo salio bien
                 exito = true;
             }
             catch (Exception ex)
@@ -881,6 +886,8 @@ namespace Tienda.Models
 
             return exito;
         }
+
+        */
 
         // Obtengo las ventas de un cliente
         public static DataTable getInformeVentasClienteById(int idCliente)
@@ -968,5 +975,91 @@ namespace Tienda.Models
 
             return table;
         }
+
+
+        // Realiza la devolucion
+        public static bool realizarDevolucion(List<Devolucion> devoluciones)
+        {
+
+            int idVenta = devoluciones[0].IdVenta;
+            Console.WriteLine("realiza devolucion idVenta: " + idVenta);
+
+            bool exito = false;
+            decimal total = 0;
+            MySqlConnection conexion = null;
+            MySqlTransaction transaction = null;
+
+            try
+            {
+                conexion = ConexionBaseDatos.getConexion();
+                transaction = conexion.BeginTransaction();
+
+                // Elimina todos los productos del detalle venta por su idVenta
+                foreach (var devolucion in devoluciones)
+                {
+                    // Eliminar productos de detalleventa
+                    string sql1 = "DELETE FROM detalleventa WHERE idVenta = @idVenta AND idProducto = @idProducto";
+                    MySqlCommand deleteCommand = new MySqlCommand(sql1, conexion);
+                    deleteCommand.Parameters.AddWithValue("@idVenta", idVenta);
+                    deleteCommand.Parameters.AddWithValue("@idProducto", devolucion.IdProducto);
+                    deleteCommand.Transaction = transaction;
+                    deleteCommand.ExecuteNonQuery();
+
+                    // Actualizar la cantidad en productos
+                    string sql2 = "UPDATE productos SET stock = stock + @cantidad WHERE idProducto = @idProducto";
+                    MySqlCommand updateCommand = new MySqlCommand(sql2, conexion);
+                    updateCommand.Parameters.AddWithValue("@cantidad", devolucion.Cantidad);
+                    updateCommand.Parameters.AddWithValue("@idProducto", devolucion.IdProducto);
+                    updateCommand.Transaction = transaction;
+                    updateCommand.ExecuteNonQuery();
+                }
+
+                // Obtener el valor de la columna total de la tabla detalleventa
+                string sql3 = "SELECT total FROM detalleventa WHERE idVenta = @idVenta";
+                MySqlCommand selectTotalCommand = new MySqlCommand(sql3, conexion);
+                selectTotalCommand.Parameters.AddWithValue("@idVenta", idVenta); // Utilizar el idVenta de la primera devolución
+                selectTotalCommand.Transaction = transaction;
+
+                // Ejecutar el comando y lee el resultado
+                MySqlDataReader reader = selectTotalCommand.ExecuteReader();
+                if (reader.Read())
+                {
+                    total = reader.GetDecimal("total");
+                    Console.WriteLine("TOTAL venta: " + total);
+                }
+                reader.Close();
+
+                // Actualizar la columna total en la tabla ventas
+                string sql4 = "UPDATE ventas SET total = @total WHERE idVenta = @idVenta";
+                MySqlCommand updateTotalCommand = new MySqlCommand(sql4, conexion);
+                updateTotalCommand.Parameters.AddWithValue("@total", total);
+                updateTotalCommand.Parameters.AddWithValue("@idVenta", idVenta); // Utilizar el mismo idVenta
+                updateTotalCommand.Transaction = transaction;
+                updateTotalCommand.ExecuteNonQuery();
+
+                // Ejecuta la transaccion
+                transaction.Commit();
+
+                // Llegado a este punto todo salió bien
+                exito = true;
+            }
+            catch (Exception ex)
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                }
+                MessageBox.Show("Error durante la devolución: " + ex.Message + " " + ex.InnerException);
+                exito = false;
+            }
+            finally
+            {
+                conexion.Close();
+
+            }
+
+            return exito;
+        }
+
     }
 }
