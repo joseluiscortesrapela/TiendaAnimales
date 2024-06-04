@@ -19,10 +19,15 @@ namespace Tienda.Forms
             cargarProductosDGV();
             // Ocutlo columnas del dgv
             ocultarColumnasDelDGV();
+            // Configurar tabla
         }
+
+        
 
         private void ocultarColumnasDelDGV()
         {
+
+            // Oculto las columnas
             dgvProductos.Columns["idProducto"].Visible = false;
             dgvProductos.Columns["descripcion"].Visible = false;
             dgvProductos.Columns["categoria"].Visible = false;
